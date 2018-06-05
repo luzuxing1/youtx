@@ -8,6 +8,6 @@ public class Freemaker {
 
     @RequestMapping("/test")
     public String test(){
-        return "index";
+        return "publish_house_5";
     }
 }
