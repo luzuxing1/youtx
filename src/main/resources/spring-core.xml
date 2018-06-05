@@ -9,7 +9,7 @@
     <!-- 需要导入的.xml文件 -->
     <import resource="spring-mybatis.xml"/>
     <import resource="spring-redis.xml"/>
-    <import resource="spring-shiro.xml"/>
+    <!--<import resource="spring-shiro.xml"/>-->
 
     <!-- 下行和<context:component-scan base-package=""/>作用一样，可省略，为防止无法注入最好加入 -->
     <context:annotation-config/>
@@ -19,12 +19,41 @@
     <mvc:default-servlet-handler/>
 
     <!-- 交给spring管理创建的Bean对象，写到包名即可 -->
-    <context:component-scan base-package=""/>
+    <context:component-scan base-package="com.youtx.rent.controller"/>
+    
+    <!-- Freemarker配置 -->
+    <bean id="freemarkerConfig"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/" />
 
-    <!-- 视图解析器 -->
-    <bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"/>
-        <property name="suffix" value=".ftl"/>
+        <property name="freemarkerVariables"><!--设置一些常用的全局变量-->
+            <map>
+                <entry key="webRoot" value="/rent"></entry>
+                <entry key="jsRoot" value="js/"></entry>
+            </map>
+        </property>
+
+        <property name="freemarkerSettings">
+            <props>
+                <!--检查模板更新的时间间隔，默认5s-->
+                <prop key="template_update_delay">0</prop>
+                <prop key="default_encoding">UTF-8</prop>
+                <prop key="number_format">0.##########</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="classic_compatible">true</prop>
+                <prop key="template_exception_handler">ignore</prop>
+                <prop key="locale">zh_CN</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 配置freeMarker视图解析器 -->
+    <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="contentType" value="text/html; charset=UTF-8"/>
+        <property name="cache" value="true" />
+        <property name="suffix" value=".ftl" />
+        <property name="order" value="0"/>
     </bean>
 
 </beans>
