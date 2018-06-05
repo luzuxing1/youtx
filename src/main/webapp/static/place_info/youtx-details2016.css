@@ -1,0 +1,4747 @@
+﻿
+@charset "UTF-8";
+/*-------------- 默认样式----------------- */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 12px;
+    font-family: 'Microsoft YaHei';
+    background-color: #fff;
+    color: #333;
+    line-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b {
+    font-weight: normal;
+}
+
+em, i {
+    font-style: normal;
+}
+
+img {
+    vertical-align: top;
+    border: none;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 16px solid #3ba9ef;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-right: 8px solid #ff9913;
+    border-bottom: 5px solid transparent;
+}
+/*-------------- 置顶条---------------- */
+.coldstick {
+    width: 100%;
+    height: 64px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: -70px;
+    z-index: 50000;
+}
+
+.coldstickcontent {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+    .coldstickcontent ul {
+        margin-top: 29px;
+        margin-left: 5px;
+        float: left;
+    }
+
+    .coldstickcontent li {
+        float: left;
+        font-size: 17px;
+        margin-right: 44px;
+        padding: 0 8px 0 8px;
+        height: 33px;
+        cursor: pointer;
+    }
+
+        .coldstickcontent li.active {
+            border-bottom: 2px solid #ff9913;
+        }
+
+    .coldstickcontent p {
+        float: left;
+        margin: 24px 0 0 190px;
+        font-size: 14px;
+    }
+
+        .coldstickcontent p span {
+            font-size: 26px;
+            color: #ff9913;
+        }
+
+        .coldstickcontent p i {
+            color: #ff9913;
+        }
+
+.youtx-details {
+    background-color: #f2f2f2;
+    padding-bottom: 56px;
+    padding-top: 19px;
+}
+/*-------------- youtx-details-wrapper----------------- */
+.youtx-details-wrapper {
+    width: 1180px;
+    margin: 0 auto;
+}
+/*-------------- 登录审核----------------- */
+.youtx-details-sign {
+    width: 1178px;
+    height: 145px;
+    border: 1px solid #f9c582;
+    background-color: #fffbf6;
+}
+
+    .youtx-details-sign .prompt {
+        width: 500px;
+        margin: 29px auto 0;
+        color: #4d4d4d;
+    }
+
+        .youtx-details-sign .prompt span {
+            float: left;
+            font-size: 18px;
+        }
+
+        .youtx-details-sign .prompt p {
+            float: left;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+    .youtx-details-sign a.edit {
+        width: 180px;
+        height: 38px;
+        background-color: #ff9913;
+        display: block;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 15px;
+        text-align: center;
+        line-height: 38px;
+        font-weight: bold;
+        margin: 30px auto 0;
+    }
+
+/*---------------------------------------------content---------------------------------------------------------------------------- */
+.youtx-details-content {
+    margin-top: 43px;
+    width: 830px;
+    position: relative;
+}
+
+    .youtx-details-content .dsection-1 {
+        width: 830px;
+        background: #fff;
+        padding-top: 21px;
+        height: 630px;
+    }
+
+/*---------------------------------------------details-section-1-------------------------------------------------------------------- */
+.dsection-1 {
+    position: relative;
+}
+
+.detailPath {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    font-size: 14px;
+}
+
+    .detailPath a {
+        float: left;
+        margin-right: 6px;
+    }
+
+        .detailPath a:hover {
+            color: #008ad9;
+        }
+
+    .detailPath span {
+        float: left;
+        width: 7px;
+        height: 7px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -132px -25px;
+        margin-top: 4px;
+        margin-right: 6px;
+    }
+
+.dsection-1 .top {
+    width: 790px;
+    margin: 0 auto;
+}
+
+.dsection-1 .sec-1 {
+    height: 24px;
+}
+
+    .dsection-1 .sec-1 h2 {
+        font-size: 24px;
+        float: left;
+    }
+
+    /*==========2016.5.5修改开始================================================================================*/
+    /*2016.05.09修改第4处开始*/
+    .dsection-1 .sec-1 .stars {
+        float: left;
+        margin: 7px 0 0 7px;
+    }
+/*2016.05.09修改第4处结束*/
+.dsection-1 .stars li {
+    width: 22px;
+    height: 22px;
+    background: url(http://js.youtx.com/publish/images/img2016/star-4.png);
+    background-size: 100% 100%;
+    float: left;
+}
+
+    .dsection-1 .stars li.hemistar {
+        background: url(http://js.youtx.com/publish/images/img2016/star-5.png);
+    }
+
+    .dsection-1 .stars li.nostar {
+        background: url(http://js.youtx.com/publish/images/img2016/star-6.png);
+    }
+/*==========2016.5.5修改结束===================================================================================*/
+
+.dsection-1 .judge {
+    float: left;
+    font-size: 14px;
+    margin: 10px 0 0 8px;
+}
+
+    .dsection-1 .judge span {
+        color: #ff9913;
+    }
+
+.dsection-1 a.collect {
+    float: left;
+    font-size: 14px;
+    height: 15px;
+    border-right: 1px solid #dbdbdb;
+    padding: 3px 10px 0 0;
+    width: 52px;
+    margin: 6px 0 0 11px;
+}
+
+    .dsection-1 a.collect span {
+        float: left;
+        width: 17px;
+        height: 15px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -2px -25px;
+    }
+
+    .dsection-1 a.collect i {
+        float: left;
+        width: 28px;
+        margin-left: 7px;
+    }
+
+.dsection-1 a.share {
+    float: left;
+    font-size: 14px;
+    height: 17px;
+    width: 52px;
+    margin: 7px 0 0 11px;
+}
+
+    .dsection-1 a.share span {
+        float: left;
+        width: 16px;
+        height: 17px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -22px -21px;
+    }
+
+    .dsection-1 a.share i {
+        float: left;
+        width: 28px;
+        margin-left: 7px;
+        margin-top: 3px;
+    }
+
+.dsection-1 .top .sec-2 {
+    height: 20px;
+    margin-top: 20px;
+}
+
+.dsection-1 div.position {
+    float: left;
+    height: 20px;
+}
+
+    .dsection-1 div.position span {
+        float: left;
+        width: 16px;
+        height: 19px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat 0 -59px;
+        margin: 1px 8px 0 0;
+    }
+
+    .dsection-1 div.position i {
+        float: left;
+        font-size: 14px;
+        color: #7d7d7d;
+        margin-top: 6px;
+    }
+
+.dsection-1 a.showmap {
+    float: left;
+    width: 60px;
+    height: 15px;
+    text-decoration: underline;
+    font-size: 15px;
+    color: #2b98dd;
+    margin: 5px 0 0 20px;
+}
+
+.dsection-1 ul.tags {
+    height: 20px;
+    float: left;
+    margin-left: 10px;
+}
+
+    .dsection-1 ul.tags li {
+        float: left;
+        height: 20px;
+        width: 57px;
+        margin-right: 10px;
+    }
+
+        .dsection-1 ul.tags li.first {
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -22px 0;
+        }
+
+        .dsection-1 ul.tags li.second {
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -84px 0;
+        }
+
+        .dsection-1 ul.tags li.third {
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -144px 0;
+        }
+
+.dsection-1 .dpic {
+    width: 790px;
+    height: 480px;
+    margin: 33px auto 0;
+    position: relative;
+}
+
+    .dsection-1 .dpic .dnext {
+        width: 28px;
+        height: 48px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -252px 0;
+        position: absolute;
+        z-index: 1000;
+        left: 603px;
+        top: 212px;
+        cursor: pointer;
+    }
+
+    .dsection-1 .dpic .dprev {
+        width: 28px;
+        height: 48px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -230px -50px;
+        position: absolute;
+        z-index: 1000;
+        left: 15px;
+        top: 212px;
+        cursor: pointer;
+    }
+
+.dsection-1 .dbigpic {
+    width: 640px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+    .dsection-1 .dbigpic li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(125,113,89);
+        display: none;
+    }
+
+        .dsection-1 .dbigpic li.active {
+            display: table;
+        }
+
+        .dsection-1 .dbigpic li b {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .dsection-1 .dbigpic li img {
+            vertical-align: middle;
+        }
+
+        .dsection-1 .dbigpic li div {
+            position: absolute;
+            width: 100%;
+            height: 43px;
+            bottom: 0;
+            background-color: #000;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+        }
+
+        .dsection-1 .dbigpic li p {
+            position: absolute;
+            width: 100%;
+            height: 28px;
+            bottom: 0;
+            color: #f0eeec;
+            font-size: 14px;
+            padding-top: 15px;
+        }
+
+.dbigpic li p span {
+    float: left;
+    margin-left: 14px;
+}
+
+.dbigpic li p i {
+    float: right;
+    margin-right: 16px;
+}
+
+.dsection-1 .dsmallpic {
+    width: 140px;
+    float: right;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+    .dsection-1 .dsmallpic ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .dsection-1 .dsmallpic li {
+        width: 100%;
+        height: 88px;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+
+.dsmallpic li img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.dsmallpic li span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left;
+    0;
+    top: 0;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.dsmallpic li.active span {
+    display: none;
+}
+
+.dsmallpic .dtop {
+    width: 140px;
+    height: 20px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+    .dsmallpic .dtop span {
+        width: 19px;
+        height: 10px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -245px -105px;
+        position: absolute;
+        left: 50%;
+        margin-left: -9.5px;
+        top: 6px;
+    }
+
+.dsmallpic .dbottom {
+    width: 140px;
+    height: 20px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+    .dsmallpic .dbottom span {
+        width: 19px;
+        height: 10px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -245px -121px;
+        position: absolute;
+        left: 50%;
+        margin-left: -9.5px;
+        bottom: 6px;
+    }
+
+.dpictags {
+    height: 16px;
+    width: 790px;
+    margin: 15px auto 0;
+}
+
+    .dpictags li {
+        float: left;
+        font-size: 14px;
+        color: #ffa643;
+        padding: 4px 13px;
+        border: 1px solid #ffcc89;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+/*---------------------------------------------details-section-2------------------------------------------------- */
+.dsection-2 {
+    background: #fff;
+    margin-top: 20px;
+}
+
+.dcalendar {
+    margin: 20px 0 0 20px;
+    height: 37px;
+    width: 510px;
+    padding-top: 20px;
+    position: relative;
+}
+
+    .dcalendar > div {
+        width: 243px;
+        height: 35px;
+        border: 1px solid #e8e8e8;
+        float: left;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+
+        .dcalendar > div span.onespan {
+            font-size: 13px;
+            color: #7d7d7d;
+            float: left;
+            margin: 11px 0 0 8px;
+        }
+
+        /*==========2016.5.5修改开始========================================================================================*/
+        .dcalendar > div p.onep {
+            float: left;
+            font-size: 11px;
+            color: #333;
+            margin: 8px 0 0 59px;
+            position: relative;
+        }
+
+            .dcalendar > div p.onep input {
+                width: 147px;
+                left: 0;
+                top: 0;
+                background: url(http://js.youtx.com/publish/images/img2016/calImg.png) no-repeat 110px center;
+                height: 19px;
+            }
+
+        .dcalendar > div b.oneb {
+            width: 18px;
+            height: 19px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -204px 0;
+            float: left;
+            margin: 8px 0 0 50px;
+        }
+    /*==========2016.5.5修改结束============================================================================================*/
+
+    .dcalendar .dcalendarin {
+        margin-right: 20px;
+        position: relative;
+    }
+
+    .dcalendar .dcalendarout {
+        position: relative;
+    }
+
+    .dcalendar .dconfirm {
+        width: 70px;
+        height: 30px;
+        background: #ff9913;
+        color: #fff;
+        position: absolute;
+        font-size: 14px;
+        border: bold;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 2px;
+        left: 725px;
+        top: 22px;
+    }
+
+.dprice {
+    margin-top: 20px;
+}
+
+    .dprice dl li {
+        float: left;
+    }
+
+    .dprice dl {
+        border-top: 1px solid #cdcdcd;
+    }
+
+    .dprice dt {
+        border-bottom: 1px dashed #cdcdcd;
+        height: 54px;
+        overflow: hidden;
+    }
+
+        .dprice dt ul {
+            margin: 20px 0 0 20px;
+        }
+
+    .dprice dd {
+        height: 40px;
+        border-bottom: 1px dashed #cdcdcd;
+        padding-top: 29px;
+    }
+
+        .dprice dd ul {
+            margin: 0 0 0 20px;
+        }
+
+    .dprice dt li {
+        font-size: 14px;
+    }
+
+    .dprice dd li {
+        font-size: 10px;
+        color: #4d4d4d;
+    }
+
+    .dprice dl li.price {
+        width: 131px;
+    }
+
+    .dprice dl li.shape {
+        width: 164px;
+    }
+
+    .dprice dl li.breakfast {
+        width: 67px;
+    }
+
+    .dprice dl li.net {
+        width: 104px;
+    }
+
+    .dprice dl li.pay {
+        width: 98px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .dprice dl .hovershow {
+        position: absolute;
+        border: 1px solid #3ba9ef;
+        border-radius: 5px;
+        background: #fff;
+        text-align: center;
+        padding: 8px 8px 8px 8px;
+        z-index: 20;
+        width: 160px;
+        left: 0;
+        top: 25px;
+        display: none;
+    }
+
+    .dprice .hovershow span {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 12px solid #3ba9ef;
+        position: absolute;
+        top: -12px;
+        left: 12px;
+    }
+
+        .dprice .hovershow span i {
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 8px solid #fff;
+            position: absolute;
+            left: -4px;
+            top: 4px;
+        }
+
+    .dprice dl .hovershow2 {
+        position: absolute;
+        border: 1px solid #3ba9ef;
+        border-radius: 5px;
+        background: #fff;
+        text-align: center;
+        padding: 8px 8px 8px 8px;
+        z-index: 20;
+        width: 160px;
+        left: 0;
+        top: 25px;
+        display: none;
+    }
+
+    .dprice .hovershow2 span {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 12px solid #3ba9ef;
+        position: absolute;
+        top: -12px;
+        left: 12px;
+    }
+
+        .dprice .hovershow2 span i {
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 8px solid #fff;
+            position: absolute;
+            left: -4px;
+            top: 4px;
+        }
+    /*.dprice dl .hovershow2{
+	position: absolute;
+	border:1px solid #3ba9ef;
+	border-radius: 2px;
+	background: #fff;
+	text-align: center;
+	padding:5px 5px 5px 5px;
+	z-index: 20;
+	width:150px;
+}*/
+    .dprice dl li.policy {
+        width: 89px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .dprice dl li.houseprice {
+        width: 70px;
+        position: relative;
+    }
+
+.detaillists {
+    font-size: 14px;
+}
+
+    .detaillists li {
+        border-bottom: 1px solid #e8e8e8;
+        padding-bottom: 50px;
+    }
+
+        .detaillists li.housemessage {
+            padding-bottom: 17px;
+        }
+
+        .detaillists li h4 {
+            width: 75px;
+            height: 92px;
+            margin: 33px 0 0 48px;
+            float: left;
+        }
+
+    .detaillists .housemessage div.iconimg {
+        width: 44px;
+        height: 51px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -172px -234px;
+        margin: 0 auto;
+    }
+
+    .detaillists h4 p {
+        font-size: 18px;
+        font-weight: bolder;
+        margin-top: 24px;
+    }
+
+    .detaillists div.lists {
+        float: left;
+        width: 646px;
+        margin: 33px 0 0 54px;
+    }
+
+.housemessage div.lists p {
+    float: left;
+    width: 296px;
+    margin-bottom: 16px;
+}
+
+.conven h4 div.iconimg {
+    width: 51px;
+    height: 50px;
+    background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -67px -156px;
+    margin: 0 auto;
+}
+
+.conven {
+    position: relative;
+}
+
+    .conven .showall {
+        width: 73px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #2b98dd;
+    }
+
+    .conven .closeall {
+        width: 45px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #f15a72;
+        display: none;
+    }
+
+        .conven .closeall i {
+            width: 11px;
+            height: 6px;
+            position: absolute;
+            right: 0;
+            background: url(http://js.youtx.com/publish/images/img2016/closeall.png?v=1) no-repeat;
+            top: 2px;
+        }
+
+    .conven .showall i {
+        width: 10px;
+        height: 6px;
+        position: absolute;
+        right: 0;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -60px -27px;
+        top: 2px;
+    }
+    /*===========================2016.05.06修改开始=======================*/
+    .conven div.lists {
+        height: 200px;
+        overflow: hidden;
+    }
+
+        .conven div.lists p {
+            float: left;
+            height: 16px;
+            width: 200px;
+            margin-bottom: 24px;
+        }
+
+    .conven .lists span {
+        width: 22px;
+        height: 16px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -43px -38px;
+        float: left;
+    }
+
+    .conven .lists i {
+        float: left;
+        font-size: 14px;
+        margin-left: 12px;
+        margin-top: 2px;
+    }
+
+.houseintroduce {
+    position: relative;
+    padding-bottom: 60px !important;
+}
+
+    .houseintroduce span.hidden {
+        display: none;
+    }
+
+    .houseintroduce h4 .iconimg {
+        width: 48px;
+        height: 49px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -228px -237px;
+        margin: 0 auto;
+    }
+
+    .houseintroduce .lists {
+        /*height: 120px;*/
+        overflow: hidden;
+    }
+
+        .houseintroduce .lists p {
+            line-height: 30px;
+            width: 602px;
+            /* margin-bottom: 10px;*/
+        }
+
+    .houseintroduce .showall {
+        width: 73px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #2b98dd;
+        display: none;
+    }
+
+    .houseintroduce .closeall {
+        width: 45px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #f15a72;
+        display: none;
+    }
+
+        .houseintroduce .closeall i {
+            width: 11px;
+            height: 6px;
+            position: absolute;
+            right: 0;
+            background: url(http://js.youtx.com/publish/images/img2016/closeall.png?v=1) no-repeat;
+            top: 2px;
+        }
+
+    .houseintroduce .showall i {
+        width: 10px;
+        height: 6px;
+        position: absolute;
+        right: 0;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -60px -27px;
+        top: 2px;
+    }
+
+.traffic {
+    position: relative;
+}
+
+    .traffic h4 .iconimg {
+        width: 48px;
+        height: 49px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -124px -231px;
+        margin: 0 auto;
+    }
+
+    .traffic .lists p, .aroundpos .lists p {
+        line-height: 30px;
+    }
+
+    .traffic .lists {
+        /*  padding-bottom: 10px;
+       height: 119px;*/
+        overflow: hidden;
+    }
+
+    .traffic .showall {
+        width: 73px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #2b98dd;
+    }
+
+    .traffic .closeall {
+        width: 45px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #f15a72;
+        display: none;
+    }
+
+        .traffic .closeall i {
+            width: 11px;
+            height: 6px;
+            position: absolute;
+            right: 0;
+            background: url(http://js.youtx.com/publish/images/img2016/closeall.png?v=1) no-repeat;
+            top: 2px;
+        }
+
+    .traffic .showall i {
+        width: 10px;
+        height: 6px;
+        position: absolute;
+        right: 0;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -60px -27px;
+        top: 2px;
+    }
+
+.aroundpos {
+    position: relative;
+}
+
+    .aroundpos .lists {
+        /* height: 89px;*/
+        overflow: hidden;
+    }
+
+    .aroundpos .showall {
+        width: 73px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #2b98dd;
+    }
+
+    .aroundpos .closeall {
+        width: 45px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #f15a72;
+        display: none;
+    }
+
+        .aroundpos .closeall i {
+            width: 11px;
+            height: 6px;
+            position: absolute;
+            right: 0;
+            background: url(http://js.youtx.com/publish/images/img2016/closeall.png?v=1) no-repeat;
+            top: 2px;
+        }
+
+    .aroundpos .showall i {
+        width: 10px;
+        height: 6px;
+        position: absolute;
+        right: 0;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -60px -27px;
+        top: 2px;
+    }
+
+    .aroundpos .lists {
+        /*padding-bottom: 10px;*/
+    }
+
+.others {
+    position: relative;
+}
+
+    .others .lists {
+        /* height: 89px;*/
+        overflow: hidden;
+    }
+
+    .others .showall {
+        width: 73px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #2b98dd;
+    }
+
+    .others .closeall {
+        width: 45px;
+        height: 12px;
+        position: absolute;
+        left: 173px;
+        bottom: 40px;
+        cursor: pointer;
+        color: #f15a72;
+        display: none;
+    }
+
+        .others .closeall i {
+            width: 11px;
+            height: 6px;
+            position: absolute;
+            right: 0;
+            background: url(http://js.youtx.com/publish/images/img2016/closeall.png?v=1) no-repeat;
+            top: 2px;
+        }
+
+    .others .showall i {
+        width: 10px;
+        height: 6px;
+        position: absolute;
+        right: 0;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -60px -27px;
+        top: 2px;
+    }
+
+    .others .lists {
+        /* padding-bottom: 10px;*/
+    }
+
+
+        .traffic .lists p, .aroundpos .lists p, .others .lists p {
+            line-height: 30px;
+            width: 602px;
+        }
+
+    .traffic .showall, .aroundpos .showall, .others .showall, .traffic .closeall, .aroundpos .closeall, .others .closeall {
+        bottom: 30px !important;
+    }
+/*===========================2016.05.06修改结束=======================*/
+/*=======================================section-3 map===========================*/
+.dsection-3 {
+    height: 350px;
+    background-color: #399;
+    margin-top: 22px;
+    position: relative;
+}
+
+    .dsection-3 div.mapshadow {
+        background-color: #000;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 13px 18px 0;
+    }
+
+        .dsection-3 div.mapshadow p {
+            color: #fff;
+            margin-bottom: 13px;
+        }
+
+    .dsection-3 .movetag {
+        width: 21px;
+        height: 28px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -43px -62px;
+        position: absolute;
+        left: 300px;
+        top: 200px;
+        z-index: 300;
+        cursor: pointer;
+    }
+
+    .dsection-3 .showwindow {
+        width: 283px;
+        height: 94px;
+        background: #fff;
+        position: absolute;
+        background: url(http://js.youtx.com/publish/images/img2016/dshowwindow.png) no-repeat;
+        top: -113px;
+        left: -29px;
+        padding: 16px 0 0 16px;
+    }
+
+        .dsection-3 .showwindow b {
+            display: block;
+            margin-bottom: 16px;
+        }
+
+            .dsection-3 .showwindow b.showtitle {
+                font-size: 14px;
+            }
+
+    .dsection-3 b.showtitle span, .dsection-3 b.showprice span {
+        color: #ff9913;
+    }
+
+    .dsection-3 .showwindow .showwindowclose {
+        width: 9px;
+        height: 9px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -46px -91px;
+        position: absolute;
+        right: 7px;
+        top: 6px;
+        cursor: pointer;
+    }
+
+    .dsection-3 b.showpos, .dsection-3 b.showprice {
+        color: #878787;
+    }
+
+/*===================================dsection-4=========================*/
+.dsection-4 {
+    margin-top: 21px;
+    background: #fff;
+    padding: 30px 0 0 0;
+}
+
+    .dsection-4 .checkin {
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+        .dsection-4 .checkin h5 {
+            font-size: 18px;
+            font-weight: bolder;
+            margin-left: 30px;
+        }
+
+        .dsection-4 .checkin ul {
+            width: 500px;
+            margin: 24px 0 14px 30px;
+        }
+
+        .dsection-4 .checkin li {
+            float: left;
+            font-size: 14px;
+            width: 250px;
+            margin-bottom: 16px;
+        }
+
+    .dsection-4 .userules {
+        border-bottom: 1px solid #e8e8e8;
+        padding-top: 30px;
+    }
+
+        .dsection-4 .userules h5 {
+            font-size: 18px;
+            font-weight: bolder;
+            margin-left: 30px;
+        }
+
+        .dsection-4 .userules ul {
+            margin: 24px 0 14px 30px;
+        }
+
+        .dsection-4 .userules li {
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+    .dsection-4 .checkoutprompt {
+        padding: 30px 0 30px 0;
+    }
+
+        .dsection-4 .checkoutprompt h5 {
+            font-size: 18px;
+            font-weight: bolder;
+            margin-left: 30px;
+        }
+
+    .dsection-4 .graph {
+        width: 727px;
+        margin: 24px 0 0 30px;
+    }
+
+    .dsection-4 .graphname li {
+        float: left;
+        font-size: 14px;
+    }
+
+        .dsection-4 .graphname li.gra2 {
+            margin-left: 148px;
+        }
+
+        .dsection-4 .graphname li.gra3 {
+            margin-left: 174px;
+        }
+
+        .dsection-4 .graphname li.gra4 {
+            margin-left: 165px;
+        }
+
+    .dsection-4 .graphshapes {
+        width: 727px;
+        height: 21px;
+        background: url(http://js.youtx.com/publish/images/img2016/graph.jpg) no-repeat;
+        margin-top: 13px;
+    }
+
+    .dsection-4 .graphdate {
+        margin-top: 15px;
+        position: relative;
+    }
+
+        .dsection-4 .graphdate li {
+            float: left;
+        }
+
+        .dsection-4 .graphdate p {
+            margin-bottom: 8px;
+        }
+
+        .dsection-4 .graphdate li.gra2 {
+            margin-left: 137px;
+        }
+
+        .dsection-4 .graphdate li.gra3 {
+            margin-left: 172px;
+        }
+
+        .dsection-4 .graphdate li.gra4 {
+            margin-left: 148px;
+        }
+
+        .dsection-4 .graphdate .shapefirst {
+            width: 140px;
+            background-color: #3ba9ef;
+            position: relative;
+            border-radius: 2px;
+            color: #fff;
+            line-height: 21px;
+            padding: 12px 9px 9px 9px;
+            float: left;
+            margin-left: 32px;
+        }
+
+    .dsection-4 .shapefirst span {
+        border-bottom: 16px solid #3ba9ef;
+        position: absolute;
+        top: -9px;
+        left: 50%;
+        margin-left: -8px;
+    }
+
+    .dsection-4 .graphdate .shapesecond {
+        width: 140px;
+        background-color: #ff9913;
+        position: relative;
+        float: left;
+        border-radius: 2px;
+        color: #fff;
+        line-height: 21px;
+        padding: 12px 9px 9px 9px;
+        margin-left: 70px;
+    }
+
+    .dsection-4 .shapesecond span {
+        border-bottom: 16px solid #ff9913;
+        position: absolute;
+        top: -9px;
+        left: 50%;
+        margin-left: -8px;
+    }
+
+    .dsection-4 .graphdate .shapethird {
+        width: 140px;
+        background-color: #ff9913;
+        position: relative;
+        float: left;
+        border-radius: 2px;
+        color: #fff;
+        line-height: 21px;
+        padding: 12px 9px 9px 9px;
+        margin-left: 74px;
+    }
+
+    .dsection-4 .shapethird span {
+        border-bottom: 16px solid #ff9913;
+        position: absolute;
+        top: -9px;
+        left: 50%;
+        margin-left: -8px;
+    }
+
+/*==============2016.05.10修改开始=====
+/*==========================section-5==========================*/
+.dsection-5 {
+    background-color: #fff;
+    position: relative;
+}
+
+    .dsection-5 .pagego {
+        position: absolute;
+        height: 20px;
+        bottom: 20px;
+        right: 52px;
+    }
+
+        .dsection-5 .pagego a {
+            float: left;
+            height: 100%;
+            width: 30px;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+
+            .dsection-5 .pagego a.active {
+                background-color: #2b98dd;
+                color: #fff;
+            }
+
+        .dsection-5 .pagego span {
+            float: left;
+            width: 7px;
+            height: 7px;
+            margin-top: 7px;
+            cursor: pointer;
+        }
+
+            .dsection-5 .pagego span.start {
+                background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -118px -24px;
+                margin-right: 10px;
+            }
+
+            .dsection-5 .pagego span.end {
+                background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -131px -25px;
+            }
+
+        .dsection-5 .pagego p {
+            float: left;
+        }
+
+        .dsection-5 .pagego span.points {
+            width: 20px;
+            height: 10px;
+            line-height: 1px;
+        }
+
+    .dsection-5 .housetap {
+        height: 57px;
+        border-bottom: 1px solid #e8e8e8;
+        margin-top: 20px;
+        position: relative;
+    }
+
+.housetap a {
+    font-size: 16px;
+    float: left;
+    height: 100%;
+    line-height: 57px;
+    position: absolute;
+    top: 0;
+}
+
+    .housetap a.active {
+        border-bottom: 2px solid #3ba9ef;
+    }
+
+    .housetap a.thishousetap {
+        left: 20px;
+        width: auto;
+    }
+
+    .housetap a.otherhousetap {
+        left: 230px;
+        width: auto;
+    }
+
+.dsection-5 h2 {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.dsection-5 .leftstars {
+    float: left;
+    width: 135px;
+    height: 73px;
+    margin: 30px 0 0 30px;
+}
+
+.dsection-5 .righttags {
+    float: left;
+    width: 486px;
+    margin: 30px 0 0 54px;
+}
+
+    .dsection-5 .righttags i {
+        padding-left: 5px;
+        color: #ff9913;
+    }
+
+.leftstars p {
+    font-size: 30px;
+    font-weight: 800;
+    margin-left: 13px;
+}
+
+    .leftstars p span {
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+.leftstars .bigStars {
+    width: 120px;
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat;
+    height: 22px;
+    margin-top: 10px;
+}
+
+.sec-1 .bigStars {
+    width: 120px;
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat;
+    height: 22px;
+    float: left;
+    margin-left: 7px;
+}
+
+.leftstars .halfStar, .sec-1 .halfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -96px 0;
+}
+
+.leftstars .oneStar, .sec-1 .oneStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -96px -32px;
+}
+
+.leftstars .onehalfStar, .sec-1 .onehalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -72px 0;
+}
+
+.leftstars .twoStar, .sec-1 .twoStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -72px -32px;
+}
+
+.leftstars .twohalfStar, .sec-1 .twohalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -48px 0;
+}
+
+.leftstars .threeStar, .sec-1 .threeStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -48px -32px;
+}
+
+.leftstars .threehalfStar, .sec-1 .threehalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -24px 0;
+}
+
+.leftstars .fourStar, .sec-1 .fourStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -24px -32px;
+}
+
+.leftstars .fourhalfStar, .sec-1 .fourhalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat 0 0;
+}
+
+.leftstars .fiveStar, .sec-1 .fiveStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat 0 -32px;
+}
+
+.righttags li {
+    float: left;
+    width: 110px;
+    height: 30px;
+    border: 1px solid #e8e8e8;
+    border-radius: 2px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+
+
+/*=========官方评价======*/
+.evaluate h6 {
+    width: 80px;
+    float: left;
+    margin: 10px 0 0 30px;
+}
+
+    .evaluate h6 img {
+        width: 80px;
+        height: 80px;
+        display: block;
+        border-radius: 50%;
+    }
+
+    .evaluate h6 p {
+        font-size: 14px;
+        color: #ff9913;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+.evaluate .text {
+    line-height: 26px;
+}
+
+.evaluate .stars {
+    margin: 0 10px 0 0;
+}
+
+.evacontent {
+    float: left;
+    width: 640px;
+    margin-left: 29px;
+    font-size: 14px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.officialeva .evacontent .name {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-top: 26px;
+}
+
+.evacontent .story {
+    margin-top: 27px;
+    position: relative;
+}
+    /*2016.05.09修改第5处开始*/
+    .evacontent .story .searchmore {
+        position: absolute;
+        bottom: -18px;
+        right: 0;
+        color: #2b98dd;
+        text-decoration: none;
+    }
+
+    .evacontent .story .searchnone {
+        position: absolute;
+        bottom: -18px;
+        right: 0;
+        color: #f15a72;
+        text-decoration: underline;
+        display: none;
+    }
+    /*2016.05.09修改第5处结束*/
+    .evacontent .story .searchmoreshow {
+        display: none;
+    }
+
+    .evacontent .story span {
+        font-weight: bolder;
+        display: block;
+        margin-bottom: 14px;
+        color: #2b98dd;
+    }
+    /*2016.05.09修改第1处开始*/
+    .evacontent .story p {
+        line-height: 26px;
+        position: relative;
+        height: 52px;
+        overflow: hidden;
+    }
+/*2016.05.09修改第1处结束*/
+.reply p a {
+    position: absolute;
+    color: #2b98dd;
+    font-size: 14px;
+    right: 0;
+    bottom: -20px;
+    text-decoration: underline;
+}
+
+.evaluate .photos {
+    margin-top: 10px;
+    position: relative;
+}
+
+    .evaluate .photos li {
+        float: left;
+        width: 86px;
+        height: 66px;
+        margin-right: 10px;
+        border: 2px solid #fff;
+    }
+
+.photos ul {
+    max-height: 70px;
+    overflow: hidden;
+}
+
+.photos li.active {
+    border: 2px solid #0087d2;
+}
+/*2016第5处修改开始*/
+.photos div {
+    width: 480px;
+    position: relative;
+    margin-top: 10px;
+    display: none;
+    height: 360px;
+    overflow: hidden;
+}
+
+    .photos div img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        display: none;
+        height: 100%;
+    }
+
+        .photos div img.active {
+            display: block;
+        }
+/*2016第5处修改结束*/
+.evaluate .photos li.last {
+    margin: 0;
+}
+
+.evaluate .photos a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.evaluate .photos li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.evaluate .photos span {
+    font-size: 14px;
+    font-weight: bolder;
+    display: block;
+    margin-bottom: 19px;
+}
+
+.personeva .stars {
+    margin-top: 19px;
+}
+
+.personeva p {
+    line-height: 26px;
+    margin-top: 14px;
+}
+
+.evacontent .reply {
+    border-top: 1px dashed #cdcdcd;
+    margin-top: 14px;
+}
+
+    .evacontent .reply .left {
+        float: left;
+        width: 80px;
+        height: 80px;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+        .evacontent .reply .left img {
+            border-radius: 50%;
+        }
+
+    .evacontent .reply img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .evacontent .reply .right {
+        float: left;
+        margin-top: 20px;
+        width: 540px;
+    }
+
+        .evacontent .reply .right h4 {
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+
+.reply .right div {
+    line-height: 26px;
+}
+
+.evacontent .duration {
+    font-size: 13px;
+    color: #7d7d7d;
+    margin-top: 15px;
+}
+
+.evacontent .recom {
+    margin-top: 19px;
+    float: none;
+    margin-bottom: 12px;
+}
+
+    .evacontent .recom .stars {
+        float: left;
+    }
+
+    .evacontent .recom p {
+        float: left;
+        position: relative;
+    }
+
+    .evacontent .recom span {
+        width: 18px;
+        height: 18px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -86px -26px;
+        position: absolute;
+    }
+
+    .evacontent .recom i {
+        display: block;
+        margin: 2px 0 0 25px;
+        .evaluate h6 color: #ff9913;
+    }
+
+.perimgrecom .evacontent .photos {
+    margin-top: 12px;
+}
+
+.perhouserecom .housing {
+    margin-top: 18px;
+    border-top: 1px dashed #cdcdcd;
+    background-color: #f9f9f9;
+}
+
+.perhouserecom .photos {
+    max-height: 70px;
+    overflow: hidden;
+}
+/*2016第6处修改开始*/
+.perhouserecom .recombigshow {
+    width: 480px;
+    position: relative;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+    .perhouserecom .recombigshow img {
+        width: 100%;
+        height: 360px;
+        display: none;
+    }
+
+        .perhouserecom .recombigshow img.active {
+            display: block;
+        }
+/*2016第6处修改结束*/
+.housing {
+    padding-left: 25px;
+    padding-bottom: 20px;
+}
+
+    .housing h3 {
+        font-weight: bolder;
+        margin-top: 19px;
+    }
+
+    .housing .housingbox .left {
+        float: left;
+        width: 120px;
+        height: 80px;
+    }
+
+.housingbox .left img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.housingbox .right {
+    float: left;
+    margin-left: 15px;
+}
+
+.housingbox .title p {
+    float: left;
+}
+
+    .housingbox .title p a {
+        color: #3ba9ef;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+.housingbox .title span {
+    float: left;
+    color: #ff9913;
+    font-weight: bold;
+    margin-left: 42px;
+}
+
+.housingbox .pos {
+    font-size: 12px;
+    color: #7d7d7d;
+    margin-top: 30px;
+}
+
+.housingbox .details {
+    font-size: 12px;
+    color: #7d7d7d;
+    margin-top: 12px;
+}
+
+.housingbox {
+    margin-top: 20px;
+}
+/*2016.05.09修改第3处开始*/
+.housnone {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #FFFFCC;
+    margin-top: 10px;
+}
+/*2016.05.09修改第3处结束*/
+.otherhouseshow {
+    display: none;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.thishouseshow {
+    position: relative;
+    padding-bottom: 50px;
+}
+/*==============2016.05.10修改结束=====
+/*===========================主体content 右侧信息栏==============*/
+.contentpos {
+    width: 330px;
+    position: absolute;
+    left: 850px;
+    top: 0;
+}
+
+    .contentpos .part-one {
+        height: 86px;
+        background: #fff;
+        font-size: 15px;
+        padding-top: 19px;
+    }
+/*2016第2处修改开始*/
+.part-one {
+    margin-bottom: 20px;
+    font-size: 12px !important;
+    text-align: center;
+}
+    /*2016第1处修改结束*/
+    .part-one .single {
+        float: left;
+        width: 60px;
+        margin-left: 17px;
+    }
+
+        .part-one .single li {
+            display: none;
+        }
+
+            .part-one .single li.active {
+                display: block;
+            }
+
+    .part-one .singleone span {
+        width: 28px;
+        height: 39px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat 0 -79px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .part-one .singleone p {
+        margin-top: 12px;
+    }
+
+    .part-one .singletwo span {
+        width: 36px;
+        height: 34px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat 0 -118px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .part-one .singletwo p {
+        margin-top: 15px;
+    }
+
+    .part-one .singlethree span {
+        width: 34px;
+        height: 37px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat 0 -154px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .part-one .singlethree p {
+        margin-top: 14px;
+    }
+
+    .part-one .singlefour span {
+        width: 35px;
+        height: 35px;
+        background: url(http://js.youtx.com/publish/images/img2016/bedSingleFour.png) no-repeat;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .part-one .singlefour p {
+        margin-top: 16px;
+    }
+
+
+    .part-one .sec {
+        float: left;
+        width: 30px;
+        margin-left: 37px;
+    }
+
+        .part-one .sec span {
+            width: 30px;
+            height: 35px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat 0 -225px;
+            display: block;
+        }
+
+        .part-one .sec p {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+    .part-one .third {
+        float: left;
+        width: 55px;
+        margin-left: 41px;
+    }
+        /*2016第3处修改开始*/
+        .part-one .third span {
+            width: 35px;
+            height: 30px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat 0 -261px;
+            display: block;
+            margin: 0 auto;
+        }
+        /*2016第3处修改结束*/
+        .part-one .third p {
+            margin-top: 19px;
+            text-align: center;
+        }
+
+    .part-one .fourth {
+        float: left;
+        width: 30px;
+        margin-left: 35px;
+    }
+
+        .part-one .fourth span {
+            display: block;
+            width: 30px;
+            height: 38px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -36px -256px;
+        }
+
+        .part-one .fourth p {
+            margin-top: 11px;
+        }
+
+.part-two {
+    background-color: #fff;
+}
+
+    .part-two div.price {
+        background-color: #fffaf2;
+        height: 35px;
+        padding: 15px 0 0 21px;
+    }
+
+    .part-two .price p {
+        font-size: 26px;
+        color: #ff9913;
+    }
+
+        .part-two .price p i {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .part-two .price p b {
+            font-size: 12px;
+            color: #928E8E;
+            text-decoration: line-through;
+        }
+
+        .part-two .price p span {
+            color: #ff9913;
+        }
+
+        .part-two .price p em {
+            font-size: 14px;
+            color: #ff9913;
+        }
+
+    .part-two .date {
+        margin-top: 15px;
+    }
+
+        .part-two .date .calendar {
+            width: 140px;
+            height: 23px;
+            border: 1px solid #e8e8e8;
+            border-radius: 1px;
+            padding: 12px 0 0 9px;
+            position: relative;
+            cursor: pointer;
+            margin-left: 18px;
+            float: left;
+        }
+    /*==========2016.5.5修改开始=================================================================================*/
+    .part-two .calendar input {
+        position: absolute;
+        left: 47px;
+        top: 10px;
+        width: 100px;
+        background: url(http://js.youtx.com/publish/images/img2016/calImg.png) no-repeat 80px center;
+        height: 19px;
+        margin-top: -2px;
+    }
+
+    .part-two .calendar2 input {
+        position: absolute;
+        left: 47px;
+        top: 10px;
+        width: 100px;
+        height: 19px;
+        background: url(http://js.youtx.com/publish/images/img2016/calImg.png) no-repeat 80px center;
+        margin-top: -2px;
+    }
+    /*==========2016.5.5修改结束============================================================================*/
+    .part-two .date .calendar2 {
+        width: 140px;
+        height: 23px;
+        border: 1px solid #e8e8e8;
+        border-radius: 1px;
+        padding: 12px 0 0 9px;
+        position: relative;
+        cursor: pointer;
+        margin-left: -1px;
+        border-left: none;
+        float: left;
+    }
+
+    .part-two .date .numberall {
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .part-two .date .number {
+        width: 60px;
+        height: 35px;
+        border: 1px solid #e8e8e8;
+        position: relative;
+        margin-left: 18px;
+        float: left;
+        cursor: pointer;
+    }
+
+    .part-two .date .personnumber {
+        float: left;
+        width: 60px;
+        height: 35px;
+        border: 1px solid #e8e8e8;
+        position: relative;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    /*2016第1处修改开始*/
+    .part-two .date .number-all {
+        width: 60px;
+        border: 1px solid #e8e8e8;
+        position: absolute;
+        border-top: none;
+        left: -1px;
+        top: 36px;
+        display: none;
+        background: #fff;
+        z-index: 30;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        max-height: 175px;
+    }
+
+    .part-two .date .personnumber-all {
+        width: 60px;
+        border: 1px solid #e8e8e8;
+        position: absolute;
+        border-top: none;
+        left: -1px;
+        top: 36px;
+        display: none;
+        background: #fff;
+        z-index: 30;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        max-height: 175px;
+    }
+    /*2016第1处修改结束*/
+    .part-two .date li {
+        height: 35px;
+        border-bottom: 1px dashed #e8e8e8;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .part-two .date span {
+        font-size: 13px;
+    }
+
+    .part-two .date .calendarimg {
+        width: 18px;
+        height: 19px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -204px 0;
+        position: absolute;
+        top: 8px;
+        right: 7px;
+    }
+
+    .part-two .date b {
+        font-size: 13px;
+        display: block;
+        margin: 11px 0 0 8px;
+    }
+
+    .part-two .date em {
+        width: 11px;
+        height: 6px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -224px 0;
+        position: absolute;
+        top: 15px;
+        right: 7px;
+    }
+
+    .part-two .detailslists {
+        margin-top: 3px;
+        margin-left: 22px;
+    }
+
+        .part-two .detailslists li {
+            font-size: 13px;
+            margin-top: 18px;
+        }
+
+            .part-two .detailslists li.knowdetail {
+                position: relative;
+            }
+
+        .part-two .detailslists span {
+            color: #ff9913;
+        }
+
+        .part-two .detailslists li.knowdetail .askBox {
+            width: 14px;
+            height: 14px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -236px 0;
+            position: absolute;
+            left: 273px;
+            top: 0;
+        }
+
+    .part-two .askBox a {
+        display: block;
+        text-align: right;
+        color: #2b98dd;
+    }
+
+    .part-two .showmessage {
+        height: 21px;
+        font-size: 13px;
+        color: #ff9913;
+        padding: 2px 0 0 21px;
+        margin: 0;
+    }
+
+    .part-two .clickbutton {
+        width: 290px;
+        height: 40px;
+        background-color: #ff9913;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto 0;
+        font-weight: bold;
+        cursor:pointer;
+    }
+
+    .part-two .clickbutton2 {
+        width: 290px;
+        height: 40px;
+        background-color: #ADA9A9;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto 0;
+        font-weight: bold;
+    }
+
+    .part-two .clickbutton3 {
+        width: 290px;
+        height: 40px;
+        background-color: #2b98dd;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto 0;
+        font-weight: bold;
+        cursor:pointer;
+    }
+
+    .part-two .schedule {
+        height: 55px;
+        border-top: 1px solid #e8e8e8;
+        margin-top: 20px;
+    }
+
+        .part-two .schedule li {
+            float: left;
+            width: 54px;
+            height: 55px;
+            border-right: 1px solid #e8e8e8;
+        }
+
+            .part-two .schedule li.last {
+                border: none;
+                line-height: 20px;
+                text-align: center;
+                padding-top: 9px;
+                height: 45px;
+                position: relative;
+                cursor: pointer;
+            }
+
+.schedule li span {
+    display: block;
+    text-align: center;
+    margin-top: 13px;
+}
+
+.schedule li p {
+    margin-top: 9px;
+    text-align: center;
+}
+
+.schedule li.dark {
+    background-color: #f9f9f9;
+    color: #7d7d7d;
+}
+
+.part-three {
+    margin-top: 20px;
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+    .part-three h3 {
+        height: 45px;
+    }
+
+        .part-three h3 span {
+            font-size: 20px;
+            font-weight: bolder;
+            float: left;
+            margin: 21px 0 0 19px;
+        }
+
+        .part-three h3 a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .part-three h3 i {
+            width: 64px;
+            height: 24px;
+            color: #ff9913;
+            float: left;
+            text-align: center;
+            line-height: 22px;
+            margin-left: 8px;
+            background: url(http://js.youtx.com/publish/images/img2016/triangle-left.png) no-repeat;
+            margin: 21px 0 0 8px;
+        }
+
+        .part-three h3 b {
+            width: 30px;
+            height: 45px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -77px -59px;
+            float: left;
+            margin-left: 115px;
+        }
+
+    .part-three .houseowner {
+        margin-top: 24px;
+    }
+
+
+
+        .part-three .houseowner .left {
+            width: 132px;
+            height: 132px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .part-three .houseowner img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+        }
+
+        .part-three .houseowner .right {
+            float: left;
+            margin-left: 27px;
+        }
+
+.houseowner .se-one span {
+    font-size: 18px;
+    float: left;
+}
+
+.houseowner .se-one div {
+    float: left;
+    height: 17px;
+    position: relative;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+    .houseowner .se-one div p {
+        width: 202px;
+        height: 71px;
+        background: url(http://js.youtx.com/publish/images/img2016/triangle-top.png) no-repeat;
+        position: absolute;
+        bottom: -71px;
+        left: -130px;
+        display: none;
+    }
+
+        .houseowner .se-one div p b {
+            display: block;
+            margin: 20px 0 0 20px;
+        }
+
+        .houseowner .se-one div p .points-go {
+            display: block;
+            margin: 10px 0 0 20px;
+            text-decoration: underline;
+            color: #2b98dd;
+        }
+
+.houseowner .se-one i {
+    width: 17px;
+    height: 16px;
+    background: url(http://js.youtx.com/publish/images/img2016/headimg-a.png) no-repeat;
+    position: absolute;
+    left: 0;
+    top: -1px;
+}
+
+.houseowner .se-one em {
+    height: 14px;
+    display: block;
+    color: #fff;
+    background-color: #4fba92;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-radius: 20px;
+    text-align: right;
+}
+
+.houseowner .se-two, .stars {
+    margin-top: 10px;
+    width: 97px;
+    height: 18px;
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat 0 0;
+}
+/*2016.05.09修改第2处开始*/
+.houseowner .se-two-half, .sec-1 .se-two-half, .dsection-5 .se-two-half {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -78px 0;
+}
+
+.houseowner .se-two-one, .sec-1 .se-two-one, .dsection-5 .se-two-one {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -78px -24px;
+}
+
+.houseowner .se-two-onehalf, .sec-1 .se-two-onehalf, .dsection-5 .se-two-onehalf {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -58px 0;
+}
+
+.houseowner .se-two-two, .sec-1 .se-two-two, .dsection-5 .se-two-two {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -58px -24px;
+}
+
+.houseowner .se-two-twohalf, .sec-1 .se-two-twohalf, .dsection-5 .se-two-twohalf {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -38px 0;
+}
+
+.houseowner .se-two-three, .sec-1 .se-two-three, .dsection-5 .se-two-three {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -38px -24px;
+}
+
+.houseowner .se-two-threehalf, .sec-1 .se-two-threehalf, .dsection-5 .se-two-threehalf {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -19px 0;
+}
+
+.houseowner .se-two-four, .sec-1 .se-two-four, .dsection-5 .se-two-four {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat -19px -24px;
+}
+
+.houseowner .se-two-fourhalf, .sec-1 .se-two-fourhalf, .dsection-5 .se-two-fourhalf {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat 0 0;
+}
+
+.houseowner .se-two-five, .sec-1 .se-two-five, .dsection-5 .se-two-five {
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) no-repeat 0 -24px;
+}
+/*2016.05.09修改第2处结束*/
+/*==========2016.5.5修改开始============================================================================*/
+.houseowner .se-two li {
+    float: left;
+    width: 18px;
+    height: 18px;
+    background: url(http://js.youtx.com/publish/images/img2016/star-1.png) no-repeat;
+    background-size: 100% 100%;
+    margin-right: 5px;
+}
+
+    .houseowner .se-two li.halfstar {
+        background: url(http://js.youtx.com/publish/images/img2016/star-2.png) no-repeat;
+    }
+
+    .houseowner .se-two li.nopestar {
+        background: url(http://js.youtx.com/publish/images/img2016/star-3.png) no-repeat;
+    }
+/*==========2016.5.5修改结束=======================================================================================*/
+.houseowner .se-three {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+    .houseowner .se-three span {
+        color: #ff9913;
+    }
+
+.houseowner .se-four {
+    width: 112px;
+    height: 32px;
+    border: 1px solid #ffcc89;
+    border-radius: 2px;
+    margin-top: 14px;
+    display: block;
+}
+
+    .houseowner .se-four b {
+        width: 18px;
+        height: 18px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -144px -61px;
+        float: left;
+        margin: 9px 0 0 14px;
+    }
+
+    .houseowner .se-four em {
+        float: left;
+        color: #ff9913;
+        font-size: 14px;
+        margin: 9px 0 0 10px;
+    }
+
+.part-four {
+    background-color: #fff;
+}
+
+    .part-four .callphone {
+        background: #fff;
+        height: 69px;
+        background-color: #fffbf6;
+        border-top: 1px solid #ffe0b8;
+        border-bottom: 1px solid #ffe0b8;
+    }
+
+        .part-four .callphone .left {
+            float: left;
+            width: 28px;
+            height: 36px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -172px -57px;
+            margin: 18px 0 0 41px;
+        }
+
+        .part-four .callphone .right {
+            float: left;
+            margin: 14px 0 0 19px;
+        }
+
+            .part-four .callphone .right p {
+                font-size: 14px;
+                width: 200px;
+                text-align: center;
+            }
+
+            .part-four .callphone .right span {
+                font-size: 17px;
+                color: #ff9913;
+                margin-top: 13px;
+                display: block;
+                font-weight: bolder;
+            }
+
+    .part-four .famstore {
+        height: 63px;
+    }
+
+        .part-four .famstore span {
+            width: 22px;
+            height: 22px;
+            background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -114px -60px;
+            float: left;
+            margin: 21px 0 0 21px;
+        }
+
+        .part-four .famstore i {
+            float: left;
+            margin: 24px 0 0 14px;
+            font-size: 15px;
+        }
+
+            .part-four .famstore i a {
+                color: #2b98dd;
+                text-decoration: underline;
+            }
+/*底部轮播图*/
+.youtxdetails-footer {
+    width: 100%;
+    height: 336px;
+    background: #fff;
+    padding-top: 20px;
+}
+
+.details-footer {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+    .details-footer .toplist {
+        height: 36px;
+        border-bottom: 1px solid #e8e8e8;
+        padding-top: 4px;
+        position: relative;
+    }
+
+        .details-footer .toplist a {
+            position: absolute;
+            color: #3ba9ef;
+            right: 0;
+            top: 50%;
+            margin-top: -6px;
+            text-decoration: underline;
+        }
+
+        .details-footer .toplist ul {
+            height: 36px;
+        }
+
+        .details-footer .toplist li {
+            float: left;
+            font-size: 16px;
+            margin-right: 36px;
+            height: 35px;
+            cursor: pointer;
+            position: relative;
+        }
+
+            .details-footer .toplist li.active {
+                border-bottom: 2px solid #3ba9ef;
+                color: #3ba9ef;
+            }
+
+    .details-footer .houselists {
+        height: 250px;
+        margin-top: 20px;
+    }
+
+.houselists li {
+    width: 280px;
+    float: left;
+    margin-right: 20px;
+}
+
+    .houselists li a {
+        display: block;
+    }
+
+    .houselists li img {
+        width: 100%;
+        display: block;
+    }
+
+.houselists ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.houselists-1 {
+    position: relative;
+    height: 100%;
+}
+
+.houselists-2 {
+    position: relative;
+    height: 100%;
+    display: none;
+}
+
+.houselists-3 {
+    position: relative;
+    height: 100%;
+    display: none;
+}
+
+.houselists li .p1 {
+    font-size: 15px;
+    margin-top: 19px;
+}
+
+.houselists li .p2 {
+    margin-top: 11px;
+}
+
+    .houselists li .p2 span {
+        float: left;
+        font-size: 14px;
+        color: #7d7d7d;
+        margin-top: 4px;
+    }
+
+    .houselists li .p2 i {
+        float: right;
+        font-size: 18px;
+        color: #ff9913;
+    }
+
+        .houselists li .p2 i b {
+            font-size: 14px;
+            color: #7d7d7d;
+        }
+
+.houselists .houseprev {
+    position: absolute;
+    width: 38px;
+    height: 79px;
+    background: url(http://js.youtx.com/publish/images/img2016/houseprev.png) no-repeat;
+    top: 50%;
+    margin-top: -70px;
+    left: -38px;
+}
+
+.houselists .housenext {
+    position: absolute;
+    width: 38px;
+    height: 79px;
+    background: url(http://js.youtx.com/publish/images/img2016/housenext.png) no-repeat;
+    top: 50%;
+    margin-top: -70px;
+    right: -38px;
+}
+
+.houselists .housebanner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/*客户服务 帮助中心 关于我们 APP下载*/
+.youtxdetails-about {
+    height: 225px;
+    background-color: #f7f7f7;
+    margin-top: 30px;
+}
+
+    .youtxdetails-about .aboutbox {
+        width: 1180px;
+        margin: 0 auto;
+        padding: 29px 0 0 15px;
+    }
+
+        .youtxdetails-about .aboutbox li {
+            float: left;
+            margin-right: 120px;
+            font-size: 14px;
+        }
+
+.aboutbox li dt {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.aboutbox li dd {
+    margin-bottom: 20px;
+}
+
+.aboutbox li i {
+    color: #fd8121;
+    font-size: 16px;
+}
+
+.aboutbox li.wechat a {
+    width: 40px;
+    height: 40px;
+}
+
+.aboutbox li a:hover {
+    color: #008ad9;
+}
+
+.aboutbox li.wechat a.wechat {
+    width: 40px;
+    height: 40px;
+    background: url(http://js.youtx.com/publish/images/img2016/wechat.png) no-repeat;
+    ;
+    float: left;
+    margin-right: 9px;
+}
+
+.aboutbox li.wechat a.weibo {
+    width: 40px;
+    height: 40px;
+    background: url(http://js.youtx.com/publish/images/img2016/weibo.png) no-repeat;
+    ;
+    float: left;
+}
+
+.aboutbox li.service {
+    position: relative;
+}
+
+    .aboutbox li.service a {
+        width: 84px;
+        height: 28px;
+        background-color: #acacac;
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        line-height: 28px;
+        position: absolute;
+        left: 0;
+        top: 160px;
+    }
+
+/*==============引入日历插件开始======================*/
+.ui-NewDatebox {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0 3px 11px #e8e8e8;
+    display: none;
+    padding: 10px;
+    width: 235px;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 1.1em;
+    color: #929292;
+}
+    /*xg2015-01-07*/
+    .ui-NewDatebox .ui-datepicker-calendar {
+        border-collapse: collapse;
+    }
+
+    .ui-NewDatebox .ui-datepicker-prev {
+        margin-left: 59px;
+        display: inline;
+        background: url(http://js.youtx.com/publish/images/img2016/Calendar.png) no-repeat 0px 0px !important;
+    }
+
+    .ui-NewDatebox .ui-datepicker-next {
+        margin-right: 59px;
+        display: inline;
+        background: url(http://js.youtx.com/publish/images/img2016/Calendar.png) no-repeat 2px -21px !important;
+    }
+
+    .ui-NewDatebox .ui-datepicker-title {
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    .ui-NewDatebox .ui-datepicker-calendar tr th {
+        background: #fff;
+    }
+
+    .ui-NewDatebox .ui-datepicker-calendar tr td, .ui-NewDatebox .ui-datepicker-calendar tr th {
+        width: 30px;
+    }
+
+    .ui-NewDatebox .ui-datepicker-calendar tr {
+        width: 217px;
+        padding-bottom: 0px;
+    }
+
+        .ui-NewDatebox .ui-datepicker-calendar tr td span, .ui-NewDatebox .ui-datepicker-calendar tr th span, .ui-NewDatebox .ui-datepicker-calendar tr td a {
+            width: 30px;
+        }
+
+    .ui-NewDatebox .ui-datepicker-calendar tr {
+        background: #f9f9f9 !important;
+        overflow: visible;
+    }
+
+        .ui-NewDatebox .ui-datepicker-calendar tr.ThDate {
+            background: #fff !important;
+            overflow: visible;
+        }
+        /*==========2016.5.5修改开始=======================================================================================*/
+        .ui-NewDatebox .ui-datepicker-calendar tr td.ui-datepicker-unselectable {
+            background: rgb(199,199,199);
+        }
+        /*==========2016.5.5修改结束========================================================================================*/
+
+        .ui-NewDatebox .ui-datepicker-calendar tr td {
+            margin-right: -1px;
+            margin-top: -1px;
+            border: solid 1px #e7e7e7; /*background:#f9f9f9;*/
+            background: #fff;
+        }
+
+    .ui-NewDatebox .ui-datepicker-calendar .Tbody {
+        border-left: solid 1px #e7e7e7;
+        border-bottom: solid 1px #e7e7e7;
+        overflow: visible;
+    }
+
+    .ui-NewDatebox .ui-datepicker-calendar {
+        margin-left: 5px;
+    }
+
+    .ui-NewDatebox .ui-state-default, .ui-NewDatebox .ui-widget-content .ui-state-default, .ui-NewDatebox .ui-widget-header .ui-state-default {
+        color: #929292;
+        font-family: "宋体";
+        font-size: 12px;
+    }
+
+    .ui-NewDatebox .ui-datepicker-calendar tr td a.ui-state-active {
+        background: #53cdcf !important;
+    }
+
+    .ui-NewDatebox .ui-datepicker-calendar tr td a:hover {
+        background: #53cdcf !important;
+        font-weight: normal;
+    }
+
+.ClearDate {
+    padding: 0px 5px;
+    padding-top: 10px;
+}
+
+.LastLive {
+    float: right;
+    font-size: 12px;
+}
+
+.ui-NewDatebox .ui-datepicker-calendar tr th span {
+    color: #464849;
+    font-family: "宋体";
+    font-weight: normal;
+}
+
+.DateActive {
+    position: relative;
+}
+
+.ui-Date-pop {
+    padding: 5px;
+    border: solid 1px #e7e7e7;
+    border-radius: 5px;
+    position: absolute;
+    background: #fff;
+    height: 17px;
+    top: -35px;
+    left: -15px;
+}
+
+.ui-NewDatebox .ui-datepicker-calendar tr td span.ui-stra {
+    width: 10px;
+    height: 7px;
+    background: url(http://js.youtx.com/publish/images/img2016/ui-stra.png) no-repeat 0px 0px !important;
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.ui-NewDatebox .ui-datepicker-calendar tr td span.ui-Price {
+    width: auto;
+    height: auto;
+    color: #ff9913;
+    font-size: 12px;
+    font-family: Microsoft yahei;
+    padding: 0px;
+}
+
+.ui-NewDatebox .ui-datepicker-calendar tr td.ui-datepicker-today {
+    overflow: visible;
+}
+
+.ui-NewDatebox .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: 1;
+}
+
+.ui-NewDatebox .ui-datepicker-calendar tbody {
+    overflow: visible;
+}
+
+.ui-state-default {
+    cursor: pointer;
+}
+/*弹出层-日历*/
+.ui-corner-all {
+    border-radius: 4px 4px 4px 4px;
+}
+
+.ui-widget-content {
+    border: medium none;
+    color: #222222;
+}
+
+.ui-widget {
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 1.1em;
+}
+
+.ui-datepicker {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #D3D3D3;
+    border-radius: 10px 10px 10px 10px !important;
+    box-shadow: 0 8px 31px #666666;
+    display: none;
+    padding: 10px;
+    width: 205px;
+}
+
+.referral_lightbox .ui-icon, .ui-icon-closethick, .ui-dialog-titlebar-close, .ui-widget-header, .ui-state-hover {
+    background: none repeat scroll 0 0 transparent !important;
+    border: medium none !important;
+}
+
+.ui-widget-header {
+    color: #222222;
+    font-weight: bold;
+    padding-left: 1px;
+}
+
+    .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+        background-image: none;
+        opacity: 0.5;
+    }
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    background: url(http://js.youtx.com/images/calendar_prev_month.gif) no-repeat 3px 3px !important;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+
+.ui-datepicker-next {
+    background: url(http://js.youtx.com/images/calendar_next_month.gif) no-repeat 3px 3px !important;
+    float: right;
+}
+
+.ui-datepicker-title {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -0.25px;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;
+    font-family: inherit;
+    font-size: 1em;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.ui-datepicker-calendar tr {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 1px;
+    width: 203px;
+}
+
+    .ui-datepicker-calendar tr td span, .ui-datepicker-calendar tr th span, .ui-datepicker-calendar tr td a {
+        background: none repeat scroll 0 0 transparent !important;
+        border: medium none !important;
+        display: block;
+        height: 22px;
+        padding-top: 4px;
+        text-align: center;
+        width: 28px;
+    }
+
+    .ui-datepicker-calendar tr th span {
+        background: none repeat scroll 0 0 #FFFFFF !important;
+        font-weight: bold;
+    }
+
+    .ui-datepicker-calendar tr td, .ui-datepicker-calendar tr th {
+        background: none repeat scroll 0 0 #EFEFEF;
+        display: block;
+        float: left;
+        height: 26px;
+        margin-right: 1px;
+        overflow: hidden;
+        width: 28px;
+    }
+
+.caption, th, td {
+    font-weight: normal;
+    text-align: left;
+}
+
+.ui-datepicker-calendar tbody {
+    display: block;
+    overflow: hidden;
+    width: auto;
+}
+
+    .ui-datepicker-calendar tbody tr {
+        background: none repeat scroll 0 0 #E5E5E5 !important;
+    }
+
+.ui-datepicker-calendar tr td.ui-datepicker-unselectable {
+    background: none repeat scroll 0 0 #A7A7A7;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none repeat scroll 0 0 #E6E6E6;
+    border: 1px solid #D3D3D3;
+    color: #555555;
+    font-weight: normal;
+}
+
+.ui-datepicker-buttonpane {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.ui-datepicker-close {
+    background: none repeat scroll 0 0 transparent !important;
+    border: medium none !important;
+    color: #0087D2 !important;
+    cursor: pointer !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+}
+
+    .ui-datepicker-close:hover {
+        font-weight: bold !important;
+    }
+
+.ui-datepicker-calendar tr td a.ui-state-hover {
+    background: none repeat scroll 0 0 #85C7F0 !important;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+.ui-datepicker-calendar tr td a:hover {
+    background: none repeat scroll 0 0 #85C7F0 !important;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.ui-datepicker-calendar tr td a.ui-state-active {
+    background: none repeat scroll 0 0 #85C7F0 !important;
+    color: #FFFFFF;
+}
+
+.font_family_wryh {
+    font-family: "Microsoft YaHei", monospace !important;
+}
+
+.FanXian{background:url(http://js.youtx.com/publish/images/img2016/FanXianIco.gif) 0 -167px no-repeat;padding-left:16px;}
+
+
+
+/*2014-10-15修改*/
+.RoomState h2 {
+    text-align: center;
+    font-size: 17px;
+    font-family: "微软雅黑";
+}
+
+    .RoomState h2 a {
+        font-size: 14px;
+    }
+
+.RoomState {
+    line-height: 30px;
+    margin: 20px 0 12px;
+    border: 1px solid #ff9913;
+    width: 1138px;
+    background: #fff7ea;
+    padding: 20px;
+}
+
+.RoomState {
+    margin-top: 0 !important;
+}
+
+    .RoomState .PT5 {
+        text-align: center;
+    }
+
+.RSInputBtn {
+    height: 48px;
+    line-height: 48px;
+    width: 280px;
+    display: inline-block;
+    background: #ff9913 !important;
+    color: #fff;
+    font-size: 17px;
+    font-family: "微软雅黑";
+    text-align: center;
+}
+
+    .RSInputBtn:hover {
+        color: #fff !important;
+    }
+
+.RoomStateTit {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 15px;
+    width: 100%;
+}
+/*2014-10-24修改*/
+.HelpTxt {
+    position: absolute;
+    display: inline-block;
+    top: 2px;
+    right: 0;
+}
+
+.RoomStateTit02 {
+    border-bottom: 1px dashed #cccccc;
+    margin-bottom: 20px;
+}
+
+.RoomStateUl li {
+    float: left;
+    width: 33%;
+    height: 20px;
+    line-height: 20px;
+    display: inline;
+    color: #999896;
+}
+
+.StateLi01 {
+    text-align: left;
+    border-right: 1px solid #dbdbdb;
+}
+
+.StateLi02 {
+    text-align: center;
+    border-right: 1px solid #dbdbdb;
+}
+
+.StateLi03 {
+    text-align: right;
+}
+
+.RoomStateUl li a {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    padding-right: 20px;
+    color: #008ad9;
+    text-decoration: none;
+}
+
+.Colorff0723 {
+    color: #ff0723;
+}
+/*==============引入日历插件结束======================*/
+
+
+/*==============全部排期开始======================*/
+.Scheduling-box {
+    background-color: #000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000000;
+    display: none;
+}
+
+.Scheduling {
+    width: 840px;
+    padding: 20px;
+    border: 1px solid #eee;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1000000;
+    background-color: #fff;
+    margin-left: -420px;
+    margin-top: -210px;
+    display: none;
+}
+
+#closeScheduling {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.ScheSiderBar {
+    width: 297px;
+    padding: 20px 0;
+    float: right;
+}
+
+.DateBtn {
+    text-align: center;
+    font-size: 17px;
+    font-family: "微软雅黑";
+}
+
+    .DateBtn a {
+        padding: 0 10px;
+        color: #d1d1d1 !important;
+    }
+
+        .DateBtn a:hover {
+            color: #515354 !important;
+        }
+
+.DateTab tr th {
+    width: 95px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    font-weight: normal;
+}
+
+.DateTab tr td {
+    width: 95px;
+    height: 42px;
+    border: 1px solid #e7e7e7;
+    vertical-align: top;
+    padding: 10px 10px 5px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+.GreyBg {
+    background: #f9f9f9;
+}
+
+.GreenBg {
+    background: #53cdcf;
+    color: #fff;
+}
+
+.RedBg {
+    background: #f5838f;
+    color: #fff;
+}
+
+.DateRightit {
+    float: right;
+    text-align: right;
+}
+
+.DateNum {
+    float: left;
+}
+
+.DateTab tr td .DateRightit p {
+    text-align: right;
+    line-height: 14px;
+    font-size: 12px;
+    height: 14px;
+}
+
+.Youhui {
+    padding-left: 20px;
+    background: url(http://js.youtx.com/publish/images/img2016/detailsIco.png) 0 -99px no-repeat;
+}
+
+.RemarksUl, .RemarksUl li, .RemarksUl li span {
+    float: left;
+}
+
+.Remark01, .Remark02, .Remark03 {
+    display: inline-block;
+    background: #53cdcf;
+    border: 1px solid #dce4e4;
+    width: 10px;
+    height: 10px;
+    margin: 3px 5px 0 0;
+}
+
+.RemarksUl li {
+    padding-right: 20px;
+}
+
+.Remark02 {
+    background: #f5838f;
+}
+
+.Remark03 {
+    background: #f9f9f9;
+}
+
+.Remark04 {
+    background: url(http://js.youtx.com/publish/images/img2016/detailsIco.png) 0 -122px no-repeat;
+    width: 12px;
+    height: 12px;
+    margin: 3px 5px 0 0;
+}
+
+.DateTab tr .DateTdBg {
+    background: url(http://js.youtx.com/publish/images/img2016/detailsIco.png) #53cdcf 0 -150px no-repeat;
+}
+
+.ScheduleUl {
+    padding: 0 20px;
+}
+
+.ScheTxt, .DateInput {
+    ;
+    cursor: pointer;
+    width: 245px;
+    height: 35px;
+    padding: 0 5px;
+    border: 1px solid #e7e7e7;
+    line-height: 36px;
+    box-shadow: inset 0 3px 5px #e0e0e0;
+    background: url(../img/detailsIco.png) #fff 105px -188px no-repeat;
+    font-size: 14px;
+    font-family: Microsoft yahei;
+}
+
+.DateInput {
+    background-position: 105px -164px;
+}
+
+.ScheduleUl li {
+    padding-bottom: 20px;
+}
+
+.DateInputbox {
+    position: relative;
+    z-index: 2;
+}
+
+.DateInputInf {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    top: 10px;
+}
+
+.DateInputbox .DateInput, .check_Time .DateInput {
+    padding-left: 40px;
+    width: 205px;
+}
+
+.ScheTxtBtn {
+    background: #ff9913;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    border: none;
+}
+
+.ScheduleDl dt {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    padding-bottom: 8px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+}
+
+.ScheduleDl dd {
+    background: url(http://js.youtx.com/publish/images/img2016/detailsIco.png) -124px -64px no-repeat;
+    padding-left: 25px;
+    line-height: 24px;
+}
+
+.ScheduleDl {
+    padding: 43px 20px 0;
+}
+
+.count {
+    padding: 8px 20px;
+    background-color: #fff;
+    border-top: 1px dashed #dbdbdb;
+    border-bottom: 1px dashed #dbdbdb;
+    margin-bottom: 20px;
+}
+
+    .count .FL {
+        padding: 12px 0 0 5px;
+    }
+
+    .count dt {
+        padding-bottom: 5px;
+    }
+
+    .count dd {
+        height: 24px;
+        line-height: 24px;
+        overflow: hidden;
+    }
+
+.PLR20 {
+    padding: 0 20px;
+}
+
+.IntrBox_L {
+    width: 858px;
+    border: 1px solid #e3e3e3;
+    float: left;
+}
+
+.IntrBox_LTit li {
+    float: left;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    display: inline;
+    margin-right: 38px;
+    height: 48px;
+    line-height: 48px;
+}
+
+.IntrBox_LTit .Cur {
+    border-bottom: 3px solid #2b98dd;
+}
+
+.IntrBox_LTit li a {
+    color: #464849 !important;
+}
+
+    .IntrBox_LTit li a:hover {
+        color: #464849 !important;
+    }
+
+.IntrBox_LTit {
+    padding: 0 15px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.IntrBox_LTxt {
+    padding: 20px 20px 0;
+}
+
+    .IntrBox_LTxt dt, .EvalTit {
+        float: left;
+        width: 128px;
+        font-size: 14px;
+        font-family: "微软雅黑";
+    }
+
+    .IntrBox_LTxt dd, .IntrBoxUl {
+        float: left;
+    }
+
+.Bg63afed {
+    height: 20px;
+    line-height: 20px;
+    background: #63afed;
+    padding: 2px 4px;
+    color: #fff;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.IntrBoxUl {
+    width: 100%;
+    border-bottom: 1px dashed #e3e3e3;
+    padding-bottom: 10px;
+}
+
+    .IntrBoxUl li {
+        float: left;
+        width: 220px;
+        padding: 0 5px;
+        line-height: 24px;
+        height: 24px;
+        overflow: hidden;
+    }
+
+.IntrBox_LTxt dd, .EvalTxt {
+    width: 690px;
+    float: left;
+}
+
+.IntrBoxUl02 li {
+    padding: 0 5px 0 30px;
+    width: 195px;
+}
+
+.IntrBoxUl .Nothing {
+    background: url(http://js.youtx.com/publish/images/img2016/detailsIco.png) -121px -260px no-repeat;
+}
+
+.IntrBoxUl .Has {
+    background: url(http://js.youtx.com/publish/images/img2016/detailsIco.png) -121px -298px no-repeat;
+}
+
+.IntrBoxUl03 h4 {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.IntrBoxUl03 li p {
+    line-height: 26px;
+}
+
+.IntrBoxUl04 li {
+    float: left;
+    width: 220px;
+    padding: 0 5px;
+}
+
+.Map {
+    margin: 20px;
+    border-top: 1px solid #e3e3e3;
+    width: 818px;
+    position: relative;
+}
+/*2014-10-20修改*/
+.Map {
+    margin-left: 0;
+}
+
+.MapTxtUl li {
+    cursor: pointer;
+    display: inline;
+    float: left;
+    padding-left: 25px;
+    margin-right: 50px;
+    background: url(http://js.youtx.com/publish/images/img2016/detailsIco.png) no-repeat;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    height: 46px;
+    line-height: 46px;
+}
+
+.MapTxtUl .MapTxtLi_1 {
+    background-position: 0 -404px;
+}
+
+.MapTxtUl .MapTxtLi_2 {
+    background-position: 0 -232px;
+}
+
+.MapTxtUl .MapTxtLi_3 {
+    background-position: 0 -266px;
+}
+
+.MapTxtUl .MapTxtLi_4 {
+    background-position: 0 -301px;
+}
+
+.MapTxtUl .MapTxtLi_5 {
+    background-position: 0 -335px;
+}
+
+.MapTxtUl .MapTxtLi_6 {
+    background-position: 0 -369px;
+}
+
+.MapTxt {
+    padding: 0 20px 20px;
+}
+
+.MapTxtUl .Cur {
+    border-bottom: 3px solid #2b98dd;
+}
+
+.MapTxtUl {
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.MapTxtBox {
+    display: none;
+}
+
+    .MapTxtBox li {
+        width: 100%;
+        line-height: 30px;
+        padding: 7px 0;
+        border-bottom: 1px dashed #e7e7e7;
+        float: left;
+        height: 30px;
+    }
+        /*2014-10-20修改*/
+        .MapTxtBox li p {
+            width: 620px;
+            float: left;
+        }
+
+.Eval {
+    border-bottom: 1px dashed #e7e7e7;
+    padding-bottom: 10px;
+}
+
+.EvalBox {
+    padding: 20px;
+    border-top: 1px solid #e7e7e7;
+}
+
+.Stars_1, .Stars_2, .Stars_3, .Stars_4, .Stars_5, .Stars_6, .Stars_7, .Stars_8, .Stars_9, .Stars_10 {
+    display: inline-block;
+    background: url(http://js.youtx.com/publish/images/img2016/Stars.png) -78px 3px no-repeat;
+    width: 96px;
+    height: 24px;
+}
+
+.Stars_2 {
+    background-position: -78px -20px;
+}
+
+.Stars_3 {
+    background-position: -58px 4px;
+}
+
+.Stars_4 {
+    background-position: -58px -20px;
+}
+
+.Stars_5 {
+    background-position: -38px 4px;
+}
+
+.Stars_6 {
+    background-position: -38px -20px;
+}
+
+.Stars_7 {
+    background-position: -19px 4px;
+}
+
+.Stars_8 {
+    background-position: -19px -20px;
+}
+
+.Stars_9 {
+    background-position: 0px 4px;
+}
+
+.Stars_10 {
+    background-position: 0px -21px;
+}
+
+.Score {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 10px;
+    float: left;
+}
+
+    .Score b {
+        color: #ff9900;
+        font-size: 21px;
+        font-family: "微软雅黑";
+    }
+
+.EvalTxtDl dt, .EvalTxtDl dd {
+    float: left;
+}
+
+.EvalTxtDl {
+    padding-top: 15px;
+}
+
+    .EvalTxtDl dd {
+        border-left: 1px solid #e7e7e7;
+        padding: 0 20px;
+        line-height: 24px;
+    }
+
+    .EvalTxtDl dt {
+        width: 300px;
+    }
+
+.dtSpan {
+    float: left;
+    border: 1px solid #e7e7e7;
+    display: inline-block;
+    padding: 2px 3px;
+    margin: 0 10px 10px 0;
+}
+/*==============全部排期结束======================*/
+/*大五角星样式*/
+.leftstars .bigStars {
+    width: 120px;
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat;
+    height: 22px;
+    margin-top: 10px;
+}
+
+.leftstars .halfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -96px 0;
+}
+
+.leftstars .oneStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -96px -32px;
+}
+
+.leftstars .onehalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -72px 0;
+}
+
+.leftstars .twoStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -72px -32px;
+}
+
+.leftstars .twohalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -48px 0;
+}
+
+.leftstars .threeStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -48px -32px;
+}
+
+.leftstars .threehalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -24px 0;
+}
+
+.leftstars .fourStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat -24px -32px;
+}
+
+.leftstars .fourhalfStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat 0 0;
+}
+
+.leftstars .fiveStar {
+    background: url(http://js.youtx.com/publish/images/img2016/stars22.png) no-repeat 0 -32px;
+}
+/*翻页*/
+.housePages {
+    overflow: hidden;
+    width: 490px;
+    text-align: right;
+    padding-top: 15px;
+}
+
+    .housePages a {
+        border: solid 1px #ddd;
+        color: #2a98da;
+        width: 23px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+        .housePages a.firstPage {
+            background: url(http://js.youtx.com/images/main2014/firstPage.png) no-repeat;
+            width: 50px;
+        }
+
+        .housePages a.beforePage {
+            background: url(http://js.youtx.com/images/main2014/beforePage1.png) no-repeat;
+            width: 58px;
+        }
+
+        .housePages a.lastPage {
+            background: url(http://js.youtx.com/images/main2014/lastPage.png) no-repeat;
+            width: 59px;
+        }
+
+        .housePages a.endPage {
+            background: url(http://js.youtx.com/images/main2014/endPage.png) no-repeat;
+            width: 50px;
+        }
+
+        .housePages a.firstPage1 {
+            background: url(http://js.youtx.com/images/main2014/firstPage1.png) no-repeat;
+            width: 50px;
+        }
+
+        .housePages a.beforePage1 {
+            background: url(http://js.youtx.com/images/main2014/beforePage1.png) no-repeat;
+            width: 58px;
+        }
+
+        .housePages a.lastPage1 {
+            background: url(http://js.youtx.com/images/main2014/lastPage1.png) no-repeat;
+            width: 59px;
+        }
+
+        .housePages a.endPage1 {
+            background: url(http://js.youtx.com/images/main2014/endPage1.png) no-repeat;
+            width: 50px;
+        }
+
+    .housePages span.points {
+        border: none;
+        font-weight: bold;
+        vertical-align: 4px;
+    }
+
+    .housePages a.pageCheck {
+        background: #2a98da;
+        color: #FFF;
+        border: solid 1px #2a98da;
+    }
+
+.firstPage, .beforePage, .lastPage, .endPage, .firstPage1, .beforePage1, .lastPage1, .endPage1 {
+    vertical-align: -7px;
+    *vertical-align: -4px;
+}
+/*翻页-end*/
+/*限时优惠浮层提示*/
+#askIcon {
+    width: 290px;
+    border: 1px solid #ffcc89;
+    position: absolute;
+    right: -20px;
+    top: 22px;
+    background: #fff;
+    display: none;
+    padding: 5px 5px 5px 15px;
+    line-height: 17px;
+    color: #333;
+    z-index: 9999999;
+}
+
+    #askIcon i {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 8px solid #ffcc89;
+        position: absolute;
+        right: 20px;
+        top: -8px;
+    }
+
+        #askIcon i b {
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 6px solid #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -4px;
+            margin-top: 3px;
+        }
+
+    #askIcon p {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 3px;
+    }
+
+.evaluate .text p {
+    line-height: 26px;
+}
+/*2016第4处修改开始 新增加的*/
+.photos .openImg {
+    position: absolute;
+    color: #008ad9;
+    z-index: 1000000000;
+    right: 15px;
+    top: 87px;
+    width: 30px;
+    height: 14px;
+    display: block;
+    cursor: pointer;
+}
+
+.photos .closeImg {
+    position: absolute;
+    color: #008ad9;
+    z-index: 1000000000;
+    right: 15px;
+    top: 87px;
+    width: 30px;
+    height: 14px;
+    display: none;
+    cursor: pointer;
+}
+/*2016第4处修改结束 新增加的*/
+/*2016第7处修改开始 新增加*/
+.perhouserecom .photosbox {
+    position: relative;
+}
+
+.perhouserecom .moreImg {
+    position: absolute;
+    color: #008ad9;
+    width: 30px;
+    height: 14px;
+    z-index: 100000;
+    right: 15px;
+    top: 55px;
+    cursor: pointer;
+}
+
+.perhouserecom .deImg {
+    position: absolute;
+    color: #008ad9;
+    width: 30px;
+    height: 14px;
+    z-index: 100000;
+    right: 15px;
+    top: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.numberall li.active {
+    color: #333 !important;
+    background-color: #fffbf6 !important;
+}
+
+.personnumber li.active {
+    color: #333;
+    background-color: #fffbf6;
+}
+/*2016第7处修改结束 新增加*/
+.shoucangtupian {
+    background: url(http://js.youtx.com/publish/images/img2016/collect2.png) no-repeat;
+}
+
+/*2015.05.10价格浮层修改开始*/
+#housepricebox {
+    border: 1px solid rgb(171,217,255);
+    position: absolute;
+    z-index: 9999999;
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 0;
+    display: none;
+}
+
+    #housepricebox .everyprice {
+        width: 80px;
+        height: 80px;
+        float: left;
+        margin-right: 5px;
+        border: 1px solid rgb(171,217,255);
+        margin-bottom: 10px;
+    }
+
+        #housepricebox .everyprice h5 {
+            background-color: rgb(237,246,254);
+            line-height: 16px;
+            text-align: center;
+            padding: 10px 0 10px 0;
+        }
+
+        #housepricebox .everyprice p {
+            text-align: center;
+            line-height: 30px;
+        }
+
+.housepricebox .everyprice .houseNope {
+    background-color: #ccc;
+    color: #fff;
+}
+
+#xiajiantou {
+    width: 11px;
+    height: 6px;
+    position: absolute;
+    z-index: 99999999;
+    left: 0;
+    top: -19px;
+    background: url(http://js.youtx.com/publish/images/img2016/xiajiantou.gif) no-repeat;
+    display: none;
+}
+/*2015.05.10价格浮层修改结束*/
+.dsection-4 .userules p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 22px;
+    width: 680px;
+}
+
+.closeall {
+    color: #2b98dd !important;
+}
+
+.pagetoge {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*2016.05.12修改开始*/
+.housepriceboxall {
+    position: absolute;
+    z-index: 9999999;
+    left: 0;
+    top: 0;
+    display: none;
+    padding-bottom: 20px;
+    border: 1px solid rgb(171,217,255);
+    background: #fff;
+}
+
+.upPage {
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #eee;
+    position: absolute;
+    bottom: 5px;
+    right: 100px;
+    cursor: pointer;
+    display: none;
+}
+
+.downPage {
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #eee;
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.housepricebox {
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 0;
+    font-size: 12px;
+    width: 100%;
+}
+
+    .housepricebox .everyprice {
+        width: 80px;
+        height: 80px;
+        float: left;
+        margin-right: 5px;
+        border: 1px solid rgb(171,217,255);
+        margin-bottom: 10px;
+    }
+
+        .housepricebox .everyprice h5 {
+            background-color: rgb(237,246,254);
+            line-height: 16px;
+            text-align: center;
+            padding: 10px 0 10px 0;
+        }
+
+        .housepricebox .everyprice p {
+            text-align: center;
+            line-height: 30px;
+        }
+
+#xiajiantou {
+    width: 11px;
+    height: 6px;
+    position: absolute;
+    z-index: 99999999;
+    left: 50%;
+    bottom: -6px;
+    background: url(http://js.youtx.com/publish/images/img2016/xiajiantou.gif) no-repeat;
+    display: none;
+}
+/*2016.05.12修改结束*/
+.dprice li.desireHouse {
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: -10px;
+}
+
+.dprice .desireHouse a {
+    width: 100%;
+    height: 100%;
+    background-color: #ff9913;
+    color: #fff;
+    display: block;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.dprice .desireHouse div {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    color: #fff;
+    display: block;
+    line-height: 30px;
+    font-size: 14px;
+}
+/*---------------------右侧悬浮框-----------------------*/
+.suspenBox {
+    position: fixed;
+    right: 30px;
+    bottom: 12px;
+    width: 192px;
+    z-index: 99;
+}
+
+.suspensionL, .suspensionR {
+    float: left;
+    width: 150px;
+    background: url("http://js.youtx.com/images/default2016/suspensionBg.png") repeat-x 0 0;
+}
+
+.suspensionR {
+    width: 42px;
+    height: 40px;
+    background-position: right 0;
+    display: none;
+}
+
+    .suspensionR a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url("http://js.youtx.com/images/default2016/indexIconBig.png") no-repeat 12px -1145px;
+    }
+
+.suspensionL li.suspenLi {
+    position: relative;
+    width: 50px;
+    height: 40px;
+    float: left;
+    background: url("http://js.youtx.com/images/default2016/indexIconBig.png") no-repeat 12px -1030px;
+    cursor: pointer;
+}
+
+.suspensionL li.suspenLi2 {
+    background-position: 12px -1071px;
+}
+
+    .suspensionL li.suspenLi2 a {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+.suspensionL li.suspenLi3 {
+    background-position: 12px -1109px;
+}
+
+.suspensionL li.cur {
+    background-color: #828282;
+}
+
+.suspenPop1 {
+    display: none;
+    width: 190px;
+    height: 260px;
+    position: absolute;
+    left: 0;
+    bottom: 44px;
+    background: #fff;
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.15);
+}
+
+.suspenPopTit1 {
+    font-size: 15px;
+    background: #2b98dd;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.suspenPopTxt1 {
+    line-height: 20px;
+}
+
+    .suspenPopTxt1 ul {
+        height: 190px;
+        overflow: auto;
+    }
+
+    .suspenPopTxt1 li {
+        border-bottom: 1px solid #ebebeb;
+        padding: 12px 12px 10px;
+    }
+
+        .suspenPopTxt1 li h3 {
+            color: #2b98dd;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .suspenPopTxt1 li .closeBtn {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 0px;
+            top: 6px;
+            background: url("http://js.youtx.com/images/default2016/indexIconBig.png") no-repeat 0 -1200px;
+        }
+
+    .suspenPopTxt1 .seeMoreMsg {
+        text-align: right;
+        padding: 0 10px;
+    }
+
+.suspenPop3 {
+    height: 165px;
+    left: -100px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+    .suspenPop3 h2 {
+        font-size: 14px;
+        line-height: 34px;
+    }
+
+    .suspenPop3 p {
+        line-height: 30px;
+    }
+
+.suspenBox {
+    right: 0;
+    bottom: 100px;
+    right: 0;
+    position: fixed;
+    width: 50px;
+    z-index: 99;
+    display: none;
+}
+
+    .suspenBox .suspensionL {
+        width: 50px;
+        float: none;
+        position: relative;
+        background: url("http://js.youtx.com/images/default2016/suspenChange.png") repeat-y 0 0;
+        height: 80px;
+    }
+
+        .suspenBox .suspensionL .suspenLi {
+            position: absolute;
+            width: 40px;
+        }
+
+        .suspenBox .suspensionL .suspenLi2 {
+            left: -2px;
+            top: 0;
+        }
+
+        .suspenBox .suspensionL .suspenLi3 {
+            left: -2px;
+            top: 40px;
+        }
+
+    .suspenBox .suspensionR {
+        float: none;
+        width: 50px;
+        background: url("http://js.youtx.com/images/default2016/suspenChange.png") repeat-y 0 0;
+        left: 0;
+        display: block;
+    }
+
+.suspenPop3 {
+    left: -190px;
+    top: -40px;
+}
+/*---------------------右侧悬浮框 end-----------------------*/
+/*分享*/
+.dsection-1 a.collect {
+    float: left;
+    font-size: 14px;
+    height: 15px;
+    border-right: 1px solid #dbdbdb;
+    padding: 3px 10px 0 0;
+    margin: 6px 0 0 11px;
+    width: auto !important;
+}
+
+    .dsection-1 a.collect span {
+        float: left;
+        width: 17px;
+        height: 15px;
+        background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -2px -25px;
+    }
+
+    .dsection-1 a.collect i {
+        width: auto;
+        float: left;
+        margin-left: 7px;
+    }
+
+.dsection-1 .share {
+    float: left;
+    font-size: 14px;
+    height: 17px;
+    width: 52px;
+    margin: 7px 0 0 11px;
+    position: relative;
+    cursor: pointer;
+}
+
+#shareShow {
+    width: 70px;
+    height: 24px;
+    background: #fff;
+    position: absolute;
+    left: -2px;
+    top: -3px;
+    display: none;
+}
+
+    #shareShow a {
+        float: left;
+        width: 24px;
+        height: 24px;
+        margin-right: 20px;
+    }
+
+    #shareShow .bds_wechat {
+        background: url(http://js.youtx.com/publish/images/img2016/shareShow.png) no-repeat 0 0;
+        margin: 0;
+        position: relative;
+    }
+
+#bds_wechat div {
+    width: 130px;
+    height: 140px;
+    background: #fff;
+    position: absolute;
+    left: -100px;
+    top: 30px;
+    z-index: 9999999999;
+    border: 1px solid #eee;
+    display: none;
+}
+
+    #bds_wechat div p {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    #bds_wechat div img {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+.dsection-1 .share span {
+    float: left;
+    width: 16px;
+    height: 17px;
+    background: url(http://js.youtx.com/publish/images/img2016/dicon-all.png) no-repeat -22px -21px;
+}
+
+.dsection-1 .share i {
+    float: left;
+    width: 28px;
+    margin-left: 7px;
+    margin-top: 3px;
+}
+/*分享end*/
+/*便利设施*/
+/*------------------------------------------------------------------------------------------si*/
+.conven div.lists p {
+    float: left;
+    height: 16px;
+    width: 200px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.conven .lists span {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+    .conven .lists span.si-3 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -9px -7px;
+    }
+
+    .conven .lists span.si-4 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -41px -9px;
+    }
+
+    .conven .lists span.si-5 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -81px -6px;
+    }
+
+    .conven .lists span.si-6 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -131px -8px;
+    }
+
+    .conven .lists span.si-7 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -174px -6px;
+    }
+
+    .conven .lists span.si-8 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -213px -6px;
+    }
+
+    .conven .lists span.si-9 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -254px -9px;
+    }
+
+    .conven .lists span.si-10 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -6px -44px;
+    }
+
+    .conven .lists span.si-11 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -42px -42px;
+    }
+
+    .conven .lists span.si-12 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -79px -42px;
+    }
+
+    .conven .lists span.si-13 {
+        height: 20px;
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -127px -49px;
+    }
+
+    .conven .lists span.si-14 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -172px -41px;
+    }
+
+    .conven .lists span.si-15 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -124px -150px;
+    }
+
+    .conven .lists span.si-16 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -215px -38px;
+    }
+
+    .conven .lists span.si-17 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -254px -40px;
+    }
+
+    .conven .lists span.si-18 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -11px -74px;
+    }
+
+    .conven .lists span.si-19 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -46px -74px;
+    }
+
+    .conven .lists span.si-20 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -80px -76px;
+    }
+
+    .conven .lists span.si-21 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -126px -77px;
+    }
+
+    .conven .lists span.si-22 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -174px -73px;
+    }
+
+    .conven .lists span.si-1 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -211px -76px;
+    }
+
+    .conven .lists span.si-2 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -254px -84px;
+    }
+
+    .conven .lists span.si-2 {
+        height: 26px;
+    }
+
+    .conven .lists span.si-23 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -7px -118px;
+    }
+
+    .conven .lists span.si-24 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -53px -112px;
+    }
+
+    .conven .lists span.si-25 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -82px -113px;
+    }
+
+    .conven .lists span.si-26 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -127px -111px;
+    }
+
+    .conven .lists span.si-27 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -171px -109px;
+    }
+
+    .conven .lists span.si-28 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -213px -114px;
+    }
+
+    .conven .lists span.si-29 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -263px -111px;
+    }
+
+    .conven .lists span.si-30 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -9px -147px;
+    }
+
+    .conven .lists span.si-31 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -50px -149px;
+    }
+
+    .conven .lists span.si-32 {
+        background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -95px -148px;
+    }
+
+.conven .lists i {
+    float: left;
+    font-size: 14px;
+    margin-left: 42px;
+    margin-top: 2px;
+}
+
+.conven .lists span.active {
+    background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -158px -149px;
+}
+
+.conven .lists p.active span {
+    background: url(http://js.youtx.com/publish/images/img2016/youtxdetailsAllicon.png) no-repeat -158px -149px;
+}
+
+.conven .lists p.active i {
+    color: #c2cacd;
+}
+/*-------------------------------------------------------------------------------------------si*/
+#ScheTxtBoxDL1, #ScheTxtBoxDL2 {
+    background-color: #fffaf2;
+    margin-top: 18px;
+    padding-top: 10px;
+}
+
+#ScheTxtBoxDL2, li #ScheTxtBoxDL1 li {
+    height: 24px;
+    font-size: 13px;
+    color: #ff9913;
+    padding: 11px 0 0 21px;
+}
+
+.evacontent div.text, .evacontent p {
+    table-layout: fixed;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.PB20 img {
+    margin-top: -3px !important;
+}
+/*20160822*/
+.dash_border{width:600px;margin-bottom: 10px; padding: 10px; border: 1px dashed #e1e1e1;}
+.dash_border em { display: inline-block; padding: 0 6px; height: 20px; line-height: 20px; background: #ededed;position: relative;margin-bottom:5px }
+.dash_border .pab { top: 0; right: -10px; display: inline-block; width: 0; height: 0; border-top: 10px solid transparent; border-left: 10px solid #ededed; border-bottom: 10px solid transparent;position: absolute; }
+.dash_border .under_text { display: block;line-height:30px; }
