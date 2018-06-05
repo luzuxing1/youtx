@@ -1,0 +1,397 @@
+﻿@charset "utf-8";
+/* 构架 */
+.wrapper{width:980px;margin:0 auto;overflow:hidden;}
+.mycenter_main_title{height:22px;margin:-16px -16px 15px -16px;padding:8px;border:1px solid #c3c3c3;border-top-right-radius:7px;-moz-border-radius-topright:7px;-webkit-border-top-right-radius:7px;border-top-left-radius:7px;-moz-border-radius-topleft:7px;-webkit-border-top-left-radius:7px;background:#e6e6e6;background:-webkit-gradient(linear, center top, center bottom, from(white), to(#e6e6e6));background:-moz-linear-gradient(top, white, #e6e6e6);
+background: url(http://js.youtx.com/images/mycenter_main_titleBG.jpg) repeat-x 0 0;}/*2012-10-29修改*/
+.mycenter_m_t_left{float:left;}
+.mycenter_main_comment,.mc_m_c_alone{width:914px;height:400px;height:auto!important;min-height:400px;}
+.mc_m_c_alone li{width:914px;padding:25px 0 10px;border-top:1px solid #cccccc;margin:0;}/*2013-06-05修改*/
+.mc_m_c_alone_img{position:relative;float:left;}
+.mc_m_c_alone_img_img{width:100px;height:65px;background:#fff;padding:3px;border:1px solid #ccc;box-shadow:0 3px 2px -2px rgba(0, 0, 0, 0.2);}
+.mc_m_c_alone_img_word{position:absolute;top:-10px;left:20px;}
+.mc_m_c_alone_img_img img{width:100px;height:65px;}
+.mc_m_c_alone_infr{float:left;margin-left:10px;}/*2013-06-13修改*/
+.mc_m_c_alone_infr h3{text-shadow:0 1px 1px #FFF;font-size:2em;color:#1D95CB;}
+.mc_m_c_alone_actions{display:block;width:500px;margin-top:13px;overflow:hidden;}
+.mc_m_c_alone_btns{float:right;}
+.m_m_t_l_01{position:relative;cursor:pointer;z-index:9;}
+.m_m_t_l_btns{display:inline-block;float:left;margin-right:10px;border:1px solid #c3c3c3;background:#f7f7f7;}
+.m_m_t_l_02{display:block;float:left;width:95px;padding:0 6px;font-size:12px;text-transform:uppercase;overflow:hidden; font-family:"宋体";}/*2012-3-19*/ 
+.m_m_t_l_03{display:block;float:left;height:23px;line-height:23px;}
+.m_m_t_l_04{display:block;float:right;cursor:pointer;height:23px;width:13px;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat -2px -67px;border-left:1px solid transparent;}
+.m_m_t_l_05{float:left;width:107px;overflow:hidden;}/*2012-3-19*/ 
+.m_m_t_l_06 a,.m_m_t_l_06 a:visited{display:block;width:95px;padding:5px 6px;}/*2012-3-19*/ 
+.m_m_t_l_06 a:hover{color:#fff;background:#0087D2;text-decoration:none;}/*2012-3-19*/ 
+.m_m_t_l_07{color:#f00;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -23px;}
+.m_m_t_l_08{display:block;float:left;width:63px;padding:5px 6px 5px 24px;font-weight:bold;font-size:12px;text-shadow:0 1px 0 #fff;overflow:hidden;font-family:"宋体";}/*2012-3-19*/ 
+.m_m_t_l_09{color:#49a010;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -1px;}
+.m_m_t_l_10 a,.m_m_t_l_10 a:visited{display:block;width:102px;}
+.m_m_t_l_10 a:hover{color:#fff;background:#00F url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -1px;text-shadow:0 1px 0 #fff;text-transform:uppercase;text-decoration:none;}
+.m_m_t_l_11 a,.m_m_t_l_11 a:visited{display:block;width:102px;}
+.m_m_t_l_11 a:hover{color:#fff;background:#00F url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -23px;text-shadow:0 1px 0 #fff;text-transform:uppercase;text-decoration:none;}
+.m_m_t_l_12{display:block;float:right;cursor:pointer;height:23px;width:13px;margin:-5px 0 -9px 5px;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat -2px -67px;border-left:1px solid transparent;border-left:#ddd 1px solid;}/*鼠标经过的样式*/
+.c_c_h_a_01{position:relative;cursor:pointer;}
+.c_c_h_a_btns{display:inline-block;float:left;margin-right:10px;border:1px solid #c3c3c3;background:#f7f7f7;}
+.c_c_h_a_02{color:#f00;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -23px;}
+.c_c_h_a_03{display:block;float:left;width:97px;padding:5px 6px 5px 24px;font-weight:bold;font-size:12px;text-shadow:0 1px 0 #fff;text-transform:uppercase;font-family:"宋体";}/*20110828*/ 
+.c_c_h_a_04{display:block;float:left;}
+.c_c_h_a_05{display:block;float:right;cursor:pointer;height:23px;width:13px;margin:-5px 0 -9px 5px;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat -2px -67px;border-left:1px solid transparent;}
+.c_c_h_a_06{display:block;float:right;cursor:pointer;height:23px;width:13px;margin:-5px 0 -9px 5px;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat -2px -67px;border-left:1px solid transparent;border-left:#ddd 1px solid;}/*鼠标经过的样式*/
+.c_c_h_a_cklb{cursor:pointer;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -45px;font-size:12px;font-weight:bold;padding:5px 6px 5px 24px;text-shadow:0 1px 0 #FFF;color:#848484;text-transform:uppercase;font-family:"宋体";}
+.c_c_h_a_ckbj{cursor:pointer;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -89px;font-size:12px;font-weight:bold;padding:5px 6px 5px 24px;text-shadow:0 1px 0 #FFF;color:#848484;text-transform:uppercase;font-family:"宋体";}
+.c_c_h_a_ckrl{cursor:pointer;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -110px;font-size:12px;font-weight:bold;padding:5px 6px 5px 24px;text-shadow:0 1px 0 #FFF;color:#848484;text-transform:uppercase;font-family:"宋体";}
+.c_c_h_a_btns a,.c_c_h_a_btns a:visited{text-decoration:none;color:#848484;}
+.c_c_h_a_btns a:hover{text-decoration:none;color:#848484;}
+.c_c_h_a_07{width:115px;padding:5px 6px;margin-top:1px;font-size:12px;font-weight:normal;border-bottom:1px solid #d5d5d5;border-top:1px solid #d5d5d5;color:#848484;cursor:default;font-family:"宋体";}/*20110828*/ 
+.c_c_h_a_08{color:#49a010;background:url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -1px;}
+.c_c_h_a_09 a,.c_c_h_a_09 a:visited{display:block;width:97px;}
+.c_c_h_a_09 a:hover{color:#fff;background:#00F url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -1px;text-shadow:0 1px 0 #fff;text-transform:uppercase;}
+.c_c_h_a_10{float:left;width:127px;overflow:hidden;}
+.c_c_h_a_11 a,.c_c_h_a_11 a:visited{display:block;width:97px;}
+.c_c_h_a_11 a:hover{color:#fff;background:#00F url(http://js.youtx.com/images/control_ico_01.png) no-repeat 0 -23px;text-shadow:0 1px 0 #fff;text-transform:uppercase;}
+.mycenter_page{width:960px;padding-bottom:15px;overflow:hidden;}
+span.no-listings{color:#666666;}
+span.no-listings h3{font-size:2em;color:#333333;margin-bottom:5px;}
+span.no-listings p{font-size:1.2em;margin-bottom:10px;}
+.button-glossy{display:inline-block;border:1px solid #459A00;font-size:1.15em;font-weight:bold;color:white!important;line-height:2em;min-height:2em;padding:0 1em;text-align:center;cursor:pointer;font-family: "HelveticaNeue","Helvetica Neue","HelveticaNeueRoman","HelveticaNeue-Roman","Helvetica Neue Roman",'TeXGyreHerosRegular',"Helvetica","Tahoma","Geneva","Arial",sans-serif;
+background: -moz-linear-gradient(center top , #5CCD00, #4AA400) repeat scroll 0 0 transparent;border-radius:0.3em 0.3em 0.3em 0.3em;box-shadow: 0 0 0.2em rgba(255, 255, 255, 0.3) inset, 0 0 0.2em rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent, 0 0 0 transparent;text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);}
+.button-glossy.green{border:1px solid #459a00;background:#4aa400;background:-webkit-gradient(linear,center top,center bottom,from(#5ccd00),to(#4aa400));background:-moz-linear-gradient(top,#5ccd00,#4aa400);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5ccd00',endColorstr='#ff4aa400',GradientType=0)}
+/*refund_rule 20110831*/
+.refund_rule h2{color:#434D51;font-size:18px;margin:5px 0 0;font-weight:bold;}
+.refund_rule ul{font-size:14px;}
+.refund_rule ul li{border-top:1px solid #e1e1e1;color:#434D51;margin-top:8px;padding:8px 0 0;}
+/*20110923*/
+.roomstation{float:right;width:120px;height:26px;background:url(http://js.youtx.com/images/rsbg.gif) no-repeat;margin-right:10px;display:inline;}
+.roomstation span{display:block;width:60px;height:26px;line-height:26px;float:left;text-align:center;cursor:pointer;color:#666666;}
+.roomstation span.on{background:url(http://js.youtx.com/images/rsbg_on.gif) no-repeat;color:#fff;}
+/*2011.11.23 从profile项目的rooms2.css拷贝过来*/
+/*2011-11-1*/
+.mc_m_c_alone_img{background:url(../../../../../../Users/sf/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.IE5/0YY5MJDG/roompic_bg.gif) no-repeat;width:154px;text-align:center;padding-top:10px;}
+.mc_m_c_alone_img_word{left:58px;}
+.mc_m_c_alone_img p{padding-top:12px;color:#666;text-align:left;padding-left:15px;line-height:18px}/*2012-5-15添加房间编号*/
+.mc_m_c_alone_infr h3{font-weight:bold;font-size:20px;color:#e30278;}
+.mc_m_c_alone_infr h3 a{color:#333!important;font-family:"宋体";}
+.mc_m_c_alone_infr h3 span{padding-left:30px;}
+.mc_m_c_alone_actions2 p{line-height:18px;color:#888888;}
+.mc_m_c_alone_actions2 p span{padding-right:10px;}
+.mc_m_c_alone_actions2{margin-top:5px;padding-bottom:45px;}
+.mc_m_c_alone_actions2_text,.upload_rooms_pic{position:absolute;left:170px;}
+.mc_m_c_alone_actions2_text{bottom:25px;}
+.upload_rooms_pic{bottom:55px;}
+.mc_m_c_alone_actions2_text a{margin-right:20px;text-decoration:underline;}
+.roomstation{background:url(http://js.youtx.com/images/roompic_bg5.gif) no-repeat;height:28px;margin:0 auto 50px;float:none;display:block;}
+.roomDisabled{ background:url(http://js.youtx.com/images/roompic_disabled.gif) no-repeat; margin-bottom:0px;}  /*2015-08-27增加*/
+.roomDisabled span{ cursor:default; -webkit-user-select:none; -moz-user-select:none; user-select:none;} /*2015-08-27增加*/
+.roomstation span.on{background:url(http://js.youtx.com/images/roompic_bg6.gif) no-repeat;color:#333;}
+.roomstation span{color:#333;}
+.upload_rooms_pic{background:url(http://js.youtx.com/images/roompic_bg4.gif) right no-repeat;height:28px;float:left;margin-left: 70px;}
+.upload_rooms_pic span{display:block;height:28px;background:url(http://js.youtx.com/images/roompic_bg3.gif) left no-repeat;float:left;padding:0 13px;line-height:24px;color:#666;}
+.rooms_examine{text-align:center;padding-top:45px;}
+.rooms_examine a{background:url(http://js.youtx.com/images/roompic_bg2.gif) no-repeat;width:96px;height:28px;line-height:28px;display:block; text-align:center;margin:0 auto;color:#333!important; text-decoration:none;}
+.rooms_examine p{font-size:15px;font-family:"微软雅黑";padding-bottom:8px;color:#0091de;}
+.rooms_pingjia{padding-top:50px;overflow:hidden;width:230px;padding-left:15px;}
+.rooms_pingjia_text{float:left;width:25px;padding-right:8px;}
+.rooms_pingjia_shu{background:url(../../../../../../Users/sf/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.IE5/0YY5MJDG/roompic_bg7.gif) no-repeat;width:25px;height:25px;line-height:25px;text-align:center;color:#bb8834;}
+.rooms_pingjia_shu2{background-position:-33px 0;}
+.rooms_pingjia_text p{color:#aeb0b2;padding-top:3px;}
+.rooms_search{float:right;height:24px;line-height:24px;padding-right:20px;}
+.rooms_search input{vertical-align:middle;}
+.rooms_search_input{width:160px;height:15px;padding:3px 5px;border:1px solid #c9c9c9;color:#999999;font-size:12px;font-family:"宋体";line-height:15px;}
+.rooms_search_btn{background:url(http://js.youtx.com/images/rooms_search.gif) no-repeat;width:53px;height:23px;border:none;cursor:pointer;margin-left:5px;}
+/************2011-11-15 我是房东 显示上架的*************/
+.rooms_inf_right{float:right;width:230px;}
+.landlordReputation .roomReputation{float:left;width:210px;height:27px;}
+.landlordReputation .roomReputation li{float:right; margin-right:8px; vertical-align:middle; line-height:18px; color:#333; border-top:none;}
+.landlordReputation .roomReputation li span{ color:#048cd8; padding:0 1px;}
+.landlordReputation .reputationIcon_review{ background:url(http://js.youtx.com/images/icon_review.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:19px; margin-right:2px;}
+.landlordReputation .reputationIcon_friend{background:url(http://js.youtx.com/images/icon_friend.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:17px; margin-right:2px;}
+.landlordReputation .reputationIcon_verification{ background:url(http://js.youtx.com/images/icon_verification.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:16px; margin-right:2px;}
+.landlordReputation .reputationIcon_camera{ background:url(http://js.youtx.com/images/icon_camera.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:18px; margin-right:2px;}
+.landlordReputation .reputation li a{ color:#333;}
+.landlordReputation .roomReputation .roomReview{ width:86px;}
+.landlordReputation .roomReputation .roomVerification{ width:50px;}
+.landlordReputation .roomReputation .roomCamera{ width:50px;}
+*html .mc_m_c_alone_actions2_text{top:108px;}
+*html .mc_m_c_alone li{width:914px; border-top:#ccc 1px solid; padding-top:20px; padding-bottom:15px;}/*2013-06-05修改*/
+/**2011-11-22修改**/
+.rooms_examine{text-align:center;padding-top:20px; margin-bottom: 15px;} /*2013-06-13修改*/
+.landlordReputation .roomReputationing{float:left;width:210px;height:27px; margin-top:10px;}
+.landlordReputation .roomReputationing li{ float:right; margin-right:8px; vertical-align:middle; line-height:18px; color:#333; border-top:none;}
+.landlordReputation .roomReputationing li span{ color:#048cd8; padding:0 1px;}
+.landlordReputation .reputationIcon_review{ background:url(http://js.youtx.com/images/icon_review.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:19px; margin-right:2px;}
+.landlordReputation .reputationIcon_friend{ background:url(http://js.youtx.com/images/icon_friend.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:17px; margin-right:2px;}
+.landlordReputation .reputationIcon_verification{ background:url(http://js.youtx.com/images/icon_verification.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:16px; margin-right:2px;}
+.landlordReputation .reputationIcon_camera{ background:url(http://js.youtx.com/images/icon_camera.png) no-repeat scroll 0 0 transparent; display:inline; float:left; height:15px; width:18px; margin-right:2px;}
+.landlordReputation .reputation li a{ color:#333;}
+.landlordReputation .roomReputationing .roomReview{ width:86px;}
+.landlordReputation .roomReputationing .roomVerification{ width:50px;}
+.landlordReputation .roomReputationing .roomCamera{ width:50px;}
+/**2011-12-28 修改**/
+.landlordReputation .roomReputationing{float:right;width:150px; height:42px; margin-right:50px;}
+*html .landlordReputation .roomReputationing{float:right;width:130px; height:42px; margin-right:20px;}
+.landlordReputation .roomReputationing li{ float:right; width:30px; height:42px; margin-right:15px; vertical-align:middle; color:#333; position: relative; font-size:11px; font-family:Microsoft Yahei; padding:5px 0 0; border-top:none;}
+.landlordReputation .roomReputationing li span{ display:block; width:28px;}
+.landlordReputation .roomReputationing li a{ color:#333; cursor:pointer; width:30px; height:42px;}
+.landlordReputation .roomReputationing li a:link{ color:#333;}
+.landlordReputation .roomReputationing li a:visited{ color:#333;}
+.landlordReputation .roomReputationing li a:hover{ color:#008bdb; text-decoration:none;}
+.landlordReputation .roomReputationing li .photo_number{color: #333; font-size: 8px; height: 16px; width:16px; position: absolute; left: 11px; top:8px; line-height: 11px; text-align:center; z-index: 13;}
+.house_verfication{height: 18px; width:18px; left: 134px; position: absolute; top: 84px; z-index: 12;}
+.landlordReputation .roomReputation{float:right;width:150px; height:42px; margin-right:50px;}
+*html .landlordReputation .roomReputation{float:right;width:130px; height:42px; margin-right:20px;}
+.landlordReputation .roomReputation li{ float:right; width:30px; height:42px; margin-right:15px; vertical-align:middle; color:#333; position: relative; font-size:11px; font-family:Microsoft Yahei; padding:5px 0 0; border-top:none;}
+.landlordReputation .roomReputation li span{ display:block; width:28px;}
+.landlordReputation .roomReputation li a{ color:#333; cursor:pointer; width:30px; height:42px;}
+.landlordReputation .roomReputation li a:link{ color:#333;}
+.landlordReputation .roomReputation li a:visited{ color:#333;}
+.landlordReputation .roomReputation li a:hover{ color:#008bdb; text-decoration:none;}
+.landlordReputation .roomReputation li .photo_number{color: #333; font-size: 8px; height: 16px; width:16px; position: absolute; left: 11px; top:8px; line-height: 11px; text-align:center; z-index: 13;}
+.house_verfication{height: 18px; width:18px; left: 134px; position: absolute; top: 84px; z-index: 12;}
+/*2011-1-4修改*/
+/*.roomstation{margin:0 auto;padding-bottom:50px;}*/    /*2015-08-27注释*/
+.mc_m_c_alone_actions2_text{width:750px;}
+
+/*2013-06-05修改*/
+.actions2_text01,.actions2_text02,.actions2_text03,.actions2_text04,.actions2_text05,.actions2_text06,.actions2_text07,.actions2_text09,.actions2_text10,.actions2_text11,.actions2_text12,.actions2_text13,.actions2_backCash,.actions2_SOrder{background:url(http://js.youtx.com/publish/images/ListIcos3.gif) 0 2px no-repeat;padding-left:22px;height:18px;line-height:18px;display:block;float:left; text-decoration:underline!important;}/*xg2015-03-02*/
+
+
+/*2013-7-15修改*/
+
+.mc_m_c_alone_actions2_text .actions2_text02{background-position:0 -37px;}
+.mc_m_c_alone_actions2_text .actions2_text03{background-position:0 -74px;}
+.mc_m_c_alone_actions2_text .actions2_text04{background-position:0 -111px;}
+.mc_m_c_alone_actions2_text .actions2_text05{background-position:0 -148px;}
+.mc_m_c_alone_actions2_text .actions2_text06{background-position:0 -183px;}
+.mc_m_c_alone_actions2_text .actions2_text07{background-position:0 -183px;}
+.actions2_textImg{position:absolute;top:-13px;left:22px;z-index:999;}
+/*2012-2-6修改房间发布*/
+.rooms_examine .color666{color:#666;}
+.mc_m_c_alone_infr h3,.mc_m_c_alone_infr h3 a{ font-family:"微软雅黑";font-weight:normal;font-size:18px;}
+/*2012-2-23*/
+/* 2012-09-12 Icon修改*/
+.NewColumn a,.NewColumn02 a{margin-right:14px;_margin-right:12px;text-decoration:underline; height:22px; line-height:22px;}/* 2013-06-13修改*/
+.NewColumn02 .cashBack02 a{ margin-right:5px;}
+/*.NewColumn a,.NewColumn02 a{margin-right:18px;text-decoration:underline;}*/
+.NewColumn02{height:32px;line-height:32px;}/*2013-06-05修改*/
+.upload_rooms_pic{bottom:1px;left:116px;}
+.mc_m_c_alone_img p {padding-top:0;}
+.mc_m_c_alone_actions2{padding-bottom:35px;}
+/* 2012-09-12 Icon修改*/.NewColumn .actions2_text02{background-position:0 -35px;}
+/* 2012-09-12 Icon修改*/.NewColumn .actions2_text03{background-position:0 -72px;}
+/* 2012-09-12 Icon修改*/.NewColumn .actions2_text04{background-position:0 -109px;}
+/* 2012-09-12 Icon修改*/.NewColumn .actions2_text05{background-position:0 -146px;}
+/* 2012-09-12 Icon修改*/.NewColumn02 .actions2_text07{background-position:0 -183px;}
+/* 2012-09-12 Icon修改*/.NewColumn02 .actions2_text09{background-position:0 -213px;padding-bottom:3px;}
+/* 2012-09-12 Icon修改*/.NewColumn02 .actions2_text10{background-position:0 -277px;padding-bottom:3px;}
+/* 2012-09-12 Icon修改*/.NewColumn02 .actions2_text11{background-position:0 -246px;padding-bottom:3px;}
+/*2013-06-05修改*/.NewColumn .actions2_text12{background-position:0 -305px;}
+/*2013-06-05修改*/.NewColumn02 .actions2_text06{background-position:0 -183px;position:relative;}
+.mc_m_c_alone_infr{width:515px;}/*2013-06-13修改*/
+/* 2012-09-12 Icon修改*/.actions2_text08{background:url(http://js.youtx.com/images/ListIcos1.gif) 0 -217px no-repeat;padding-left:22px;height:18px;line-height:18px;position:relative;display:block;float:left; text-decoration:underline!important;}
+/* 2012-03-13 */
+.rooms_examine .rooms_examine_p span {background: url(none);height:12px; line-height:normal; text-align:center; margin:0 auto; display:inline-block; text-decoration:underline; font-size:12px; font-family:"宋体";color:#7cbbed!important;}/*2012-10-29修改*/        /*去掉*/
+.rooms_examine_p{font-size:15px;font-family:"微软雅黑";padding-bottom:8px;color:#0091de; position:relative}
+.rooms_examine_arr b{height:16px;width:16px;font-size:16px;color:#F0F9FF;position:absolute;right:-7px;z-index:10;}/*2012-10-29修改*/
+.rooms_examine_arr .EjectSj02{color:#AAD6F6;right:-9px;z-index:9;}
+.rooms_examine_main{width:230px;background-color:#F0F9FF;padding:5px;}
+.rooms_examine_main p{ text-align:left; font: 12px/20px "宋体"; color: #333; padding:0px; }
+.rooms_examine_new{position:absolute;z-index:11;width:240px;border:1px solid #AAD6F6;background-color:#F0F9FF;top:-3px;left:-168px;_left:-252px;}/*2012-10-29修改*/
+.NewContactMe_new{display:inline;width:24px;height:25px;cursor:pointer;text-align:center;line-height:24px;color:#fff;float:right;margin:6px 15px 0 0;}
+.rooms_examine .rooms_examine_btnG{background:url(http://js.youtx.com/images/roompic_bg2.gif) no-repeat scroll 50 50% transparent; width:96px; height:28px; line-height:28px; display:block; text-align:center; margin:0 auto; color:#333!important; text-decoration:none; }
+/*2012-3-19所有房间-优化排名提示*/
+.prompt{line-height:20px;color:red;text-align:center;padding-top:5px;font-weight:bold; }
+.McOptimization{/*position:relative;*/}
+/*.McOptiPrompt{border:1px solid #dab100;background-color:#fffbde;position:absolute;float:left;z-index:2;left:305px;top:-6px;padding:5px;display:none;}*/
+.McOptiPrompt{border:1px solid #dab100;background-color:#fffbde;position:absolute;float:left;z-index:2;left:245px;top: 55px;padding:5px;display:none;}
+.McOptiPrompt p{color:#333;}
+.McOptiPrompt span{color:#dab100;position:absolute;top:6px;left:-6px;}
+.McOptiPrompt .McOptiPrompt02{color:#fffbde;left:-5px;}
+.PromptRoom{color:#0087D2;text-decoration:underline;cursor:pointer;}
+.mycenterShaiXan{float:left;padding:5px 10px 0 0;font-size:12px; font-family:"宋体"}
+/*2012-3-19优化排名*/
+.PromptRoomH2{font-size:16.5px;font-family:"微软雅黑";}
+.PromptRoomH3{font-size:14px;font-family:"微软雅黑";padding-bottom:10px;border-bottom:1px solid #cccccc;width:100%;}
+.PromptRoomH3 span{color:#E30278;}
+.PromptRoomUl li h4{font-size:14px;font-family:"微软雅黑";padding-bottom:20px;}
+.PromptImg,.PromptImgTxi{float:left;}
+.PromptImg{margin-right:20px;width:140px;text-align:center;position:relative;min-height:120px;_height:120px;}
+.Head_LIco{position:absolute;right:0;top:-8px;z-index:2;}
+.PromptImg p{padding-top:3px;}
+.PromptImg p a,.PromptImg p a:hover{color:#666;}
+.PromptImgTxi h5{font-size:16px;font-family:"微软雅黑";color:#028fd7;padding-bottom:10px;}
+.PromptImgTxi h5 .PrompExp{font-size:12px;color:#888;font-family:"宋体"}
+.PromptImgTxi h5 .PrompFraction{color:#E30278;padding-right:10px;}
+.PrompComment01,.PrompComment02{line-height:30px;padding-left:30px;background:url(http://js.youtx.com/images/PromptIcos.gif) 0 5px no-repeat;}
+.PrompComment02{background-position:0 -66px;}
+.AddFraction{line-height:30px;padding-left:30px;}
+.AddFraction a{margin:0 8px;text-decoration:none;}
+.AddFraction a:hover,.PromptImg p a:hover{text-decoration:underline;}
+.PromptRoomUl li{padding:15px 0;border-bottom:1px solid #ccc;float:left;width:100%;}
+/*2012-4-13 400转接电话*/
+/*2012-4-20 400转接电话*/
+.MarketingLeft{float:left;width:190px;padding-top:1px;}
+.MarketingLeftH2{background-color:#068dd8;height:28px;line-height:28px;color:#fff;font-size:14px;font-family:"微软雅黑";padding-left:15px;border-radius:4px 0 0 4px;}
+.MarketingLefNav li{line-height:28px;height:28px;margin:5px 0;padding-left:30px;border-radius:4px 0 0 4px;}
+.MarketingLefNav li a{font-size:14px;font-family:"微软雅黑";color:#333;}
+.MarkNavCur{background-color:#ededed;}
+.MarketingRight{padding:0 0 30px 0;width:914px;float:left;min-height:400px;_height:400px;}
+.MarketingRighTable tr td{border-bottom:1px solid #cccccc;padding:15px 0;}
+.MarketingCenter h3 span{font-size:16px;font-family:"微软雅黑";}
+.MarketingCenter h3  a{padding-left:10px;}
+.MarketingCenter h4 span{float:right;}
+.MarketingCenter li{line-height:20px;}
+.MarketingCenter h4{padding:8px 0;}
+.MarketingCenter h4 b{background-color:#008ad9;color:#fff;font-weight:normal;margin-left:5px;padding:2px 5px;}
+.MarketingCenter{padding-right:20px;}
+.SidebarBtn,.SidebarGrayBtn{background:url(http://js.youtx.com/images/SideBarBtn.gif) left no-repeat;padding-left:10px;height:27px;line-height:27px;width:58px;margin-top:10px;}
+.SidebarBtn a,.SidebarGrayBtn a{display:block;background:url(http://js.youtx.com/images/SideBarBtn.gif) right no-repeat;height:27px;line-height:27px;padding-right:10px;color:#333!important;}
+.SidebarGrayBtn{background:url(http://js.youtx.com/images/SideBarBtn02.gif) left no-repeat;}
+.SidebarGrayBtn a{background:url(http://js.youtx.com/images/SideBarBtn02.gif) right no-repeat;white-space:nowrap;}
+.SidebarBtn a:hover,.SidebarGrayBtn a{text-decoration:none;}
+.MarketingSidebar{margin:0 auto;position:relative;}
+.MarketingSidebar p{color:#666;line-height:18px;}
+.SidebarBtn02{width:130px;}
+.MarketingSidebar .ColorBlue{color:#068dd8;}
+.SidebarBtnTxt{position:absolute;top:-16px;right:255px;background-color:#fff;border:1px solid #ccc;padding:25px 15px;width:370px;}
+.SidebarBtnTxt02{top:200px;padding:25px 40px;}
+.SidebarBtnTxt02 .SidebarGrayBtn{width:38px;margin:20px auto 0;}
+.SidebarBtnTxt h6{font-size:15px;padding-bottom:20px;text-align:center;font-family:Microsoft yahei;}
+.SidebarBtnTxt p{line-height:24px;color:#666;}
+.SidebarBtnTxt h5{white-space:nowrap;line-height:20px;}
+.SidebarInputBtn span{height:27px;line-height:27px;padding-left:10px;display:inline-block;float:left;background:url(http://js.youtx.com/images/SideBarBtn02.gif) 0 0 no-repeat;margin-left:20px;}
+.SidebarInputBtn{padding:20px 0 0 20px;width:160px;margin:0 auto;}
+.SidebarInputBtn span input{color:#333;border:none;cursor:pointer;text-align:center;background:none;height:27px;line-height:27px;background:url(http://js.youtx.com/images/SideBarBtn02.gif) right no-repeat;padding-right:10px;display:block;float:left;}
+.SidebarBtnTxtClose{width:11px;height:11px;background:url(http://js.youtx.com/images/feedbackClose.gif) no-repeat;position:absolute;top:0;right:0;cursor:pointer;}
+.MarketingRighTit{margin-left:-15px;width:944px;overflow:hidden;}
+.MarketingRighTable02{margin-top:40px;}
+.MarketingInput input{width:180px;height:18px;padding:2px;line-height:18px;font-size:14px;margin-top:2px;border-radius:2px;border:1px solid #7f9db9;}
+.MarketingInput{float:left;color:#666;}
+.MarketingInputxt{float:left;line-height:14px;padding-left:10px;color:#999;}
+.InputErrorTd .MarketingInputError{margin-left:67px;}
+.MarketingRighTable02Tr td{padding-top:15px;}
+.SidebarInputBtnB{padding-right:20px;float:left;}
+.MarketingBtn{background:url(http://js.youtx.com/images/SideBarBtn.gif) left no-repeat;padding-left:10px;height:27px;line-height:27px;width:58px;margin:60px auto 0;}
+.MarketingBtn input{border:none;cursor:pointer;color:#333;background:none;text-align:center;background:url(http://js.youtx.com/images/SideBarBtn.gif) right no-repeat;height:27px;line-height:27px;padding-right:10px;text-align:center;float:left;}
+.MarketingBtnTxt{width:100%;padding-bottom:100px;}
+.MarketingRightSelect,.MarketingRightSelect02{border:1px solid #7f9db9;border-radius:2px;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);color:#393C3D;cursor:pointer;margin:2px 0 1px;padding:2px;text-shadow:0 1px 0 #FFFFFF;}
+.MarketingRightSelect02{margin-right:10px;float:left;}
+.TableCheckbox input{margin:0;vertical-align:middle;}
+.MarketingInputxt02{line-height:28px;height:28px;}
+.MarketingRighTable03Tr td{padding-top:30px;}
+.PromptSuc{background:url(http://js.youtx.com/images/PromptBtns.gif) no-repeat 0 2px;padding-left:20px;height:20px;line-height:20px;margin-top:5px;color:#157312;}
+.PromptFai{background:url(http://js.youtx.com/images/PromptBtns.gif) no-repeat 0 -25px;padding-left:20px;height:20px;line-height:20px;margin-top:5px;color:red;}
+/*2012-4-23添加提示*/
+.MarketingCenterTit{color:#FF6600;font-size:16px;font-family:Microsoft yahei;}
+/* 2012-06-26 */
+.RoomsDescribe{position:absolute;bottom:43px;left:46px;background:url(http://js.youtx.com/images/roompic_bg4.gif) right no-repeat;height:28px;float:left;margin-left:5px;}
+.RoomsDescribe span{display:block;height:28px;background:url(http://js.youtx.com/images/roompic_bg3.gif) left no-repeat;float:left;padding:0 13px;line-height:24px;color:#666;}
+.RoomsDescribe a{ margin-right:10px; display:inline}
+
+/* 2012-08-21新功能上线 */
+.NewFunction{float:right;height:30px;line-height:30px;position:absolute;right:5px;top:5px;z-index:100}/*2012-10-29修改*/
+.NewFunction dt{float:left; background:url(http://js.youtx.com/images/NewFunctionL.gif) no-repeat left 0; padding:0 15px;border-right:1px solid #B6C7D0}
+.NewFunction dd{float:left; background:url(http://js.youtx.com/images/NewFunctionR.gif) no-repeat left 0; color:#BBB}
+.NewFunction .LastNewFunction{background:url(http://js.youtx.com/images/NewFunctionR.gif) no-repeat right 0;}
+.NewFunction a{padding:0 10px;display:inline-block;}/*2012-10-29修改*/
+.NewFunction a:hover{position:relative; z-index:5}
+.NewFunction a span{display:none;position:static; border:none;}
+.NewFuntionText{position:absolute;z-index:0;top:35px;left:0px;display:block;width:327px;line-height:20px;padding:10px; background:#FFF7BC; border:1px solid #D4C79A; display:none; color:#666}
+.NewFunction a:hover .NewFArrow{position:absolute;z-index:10;top:30px;left:50%; margin-left:-5px;display:block;width:11px;line-height:7px; height:7px;padding:0; background: url(http://js.youtx.com/images/NewFunctionArr.gif) no-repeat 0 0; border:none 0;}
+
+/* 2012-09-12 Icon修改*/
+.X_ColumTitle{background:url(http://js.youtx.com/images/ListTitleBG.gif) 0 0 no-repeat;padding-left:5px; height:23px;line-height:23px;display:block;float:left; text-decoration:none!important;padding-bottom:10px;width:60px; color:#FFF !important;}/*2013-06-05修改*/
+
+.cashBack02 a span{display:none;position:static; border:none;}
+
+.cashBack02{background:url(http://js.youtx.com/images/cashBackIcon.gif) no-repeat;line-height:18px;background-color:#fff;float:left;text-align:center;position:relative; margin-right:10px;}/*2013-07-29修改*/
+.cashBack02 a{display:inline-block;text-decoration:none;}/*2013-07-29修改*/
+
+.NewFuntionText02{position:absolute;z-index:1;top:25px;left:-95px;display:block;width:300px;line-height:20px;padding:5px 10px; background:#FFF7BC; border:1px solid #D4C79A;display:none; color:#666; text-align:left; height:auto}/*2013-07-29修改*/
+/*.cashBack02 a .NewFArrow{position:absolute;z-index:10;top:20px;left:50%;margin-left:-5px;display:none;width:11px;line-height:7px;height:7px;padding:0; background: url(http://js.youtx.com/images/NewFunctionArr.gif) no-repeat 0 0; border:none 0;}2013-07-29修改*/
+.NewFuntionText02 span.NewFArrow{position:absolute;top:-7px;left:50%;margin-left:-5px;width:11px;line-height:7px;height:7px;padding:0; background: url(http://js.youtx.com/images/NewFunctionArr.gif) no-repeat 0 0; border:none 0;}/*2013-07-29修改*/
+
+.cashBack02 a .NewFArrow{position:absolute;z-index:10;top:20px;left:50%;margin-left:-5px;display:none;width:11px;line-height:7px;height:7px;padding:0; background: url(http://js.youtx.com/images/NewFunctionArr.gif) no-repeat 0 0; border:none 0;}
+.cashBack02 .X_JoinBtn{display:block;padding-left:10px;height:27px;line-height:28px;background:url(http://js.youtx.com/images/X_joinBtn.gif) no-repeat left 0; float:left; color:#FF6600 !important; margin-left:110px; margin-top:8px; margin-bottom:8px;}
+.cashBack02 .X_JoinBtn span{display:block;padding-right:10px;background:url(http://js.youtx.com/images/X_joinBtn.gif) no-repeat right 0;}
+/*2012-10-29修改*/
+.RoomsNav{float:left;padding-right:2px;}
+.RoomsNav li{float:left;height:29px;line-height:29px;border:1px solid #d3d3d3;border-bottom:none;margin-right:-1px}
+.RoomsNav li span{padding:0 10px;display:block;margin:0 1px; cursor:pointer;color:#0087d2;}
+.RoomsNav .RoomsNavCur{font-weight:bold;border:1px solid #98bcce;border-bottom:none;position:relative;z-index:2;}
+.RoomsNav .RoomsNavCur span{color:#333!important;text-decoration:none;background:url(http://js.youtx.com/images/RoomsNavbg.gif) repeat-x;}
+.NewFunction dd{background:none!important;}/*去掉新功能背景图片*/
+.rooms_examine .rooms_examine_p .Examine_Img{background:url(http://js.youtx.com/images/whyBg.gif) left no-repeat;padding-left:15px;text-align:center;margin:0 auto;display:inline-block;text-decoration:underline;font-size:12px; font-family:"宋体";color:#7cbbed!important;cursor:pointer;}
+/*2013-2-18修改*/
+.mc_m_c_alone_infr2{padding-top:10px;}
+.mc_m_c_alone_infr2 .mc_m_c_alone_actions{padding-bottom:10px;}
+.mc_m_c_alone_infr2 .mc_m_c_alone_actions p{line-height:18px;color:#888888;}
+/*2013-3-4修改*/
+.ShanDingBenefits{background-color:#f2f2f2;margin-top:24px;padding:15px;}
+.ShanDingBenefits dt{line-height:30px;font-size:12px;font-weight:bold;border-bottom:1px solid #fff;margin-bottom:15px;}
+.ShanDingBenefits dt h3{border-bottom:1px solid #e0e0e0;font-weight:bold;}
+.ShanDingBenefits dd{line-height:24px;color:#999;}
+.ShanDingBenefits dd span{padding-right:10px;color:#333;display:inline-block;width:140px;}
+.ShanDingStatus li{line-height:24px;}
+.ShanDingStatus{padding:15px;}
+.ShanDingStatus li a{text-decoration:underline;}
+/*2013-06-05修改*/
+.SidebarBtnTxt03,.SidebarBtnTxt04{right:130px;top:0px;position:absolute;z-index:99999;width:230px;}
+.OutBoxOut {background:#666;padding:6px;}
+.OutBoxIn {background:#FFFFFF;color:#666666;font-size:12px;line-height:18px;}
+.OutBoxTitWhitebg {height:30px;line-height:30px;width:100%;}
+.OutBox_Close{background: url(http://js.youtx.com/images/OutBox_CloseBtn.gif) no-repeat;cursor: pointer;display: inline;float: right;height: 7px;margin:10px 13px 0 0;width:8px;}
+.SidebarBtnTxt03 h5,.SidebarBtnTxt04 h5{text-align:center;line-height:20px;}
+
+
+
+.NewColumn02 .actions2_text13{background-position:0 -333px;padding-bottom:3px;}/*2013-7-15修改*//*新增加*/
+
+.NewColumn02 .actions2_text13{background-position:0 -333px;padding-bottom:3px;position:relative;}/*2013-07-29修改*//*新增加*/
+
+
+/*2013-8-9修改*/
+.AddFractionDl{padding-top:5px;line-height:22px;}
+
+
+/*2014-8-8修改*/
+.optimizeBanner{width:914px;overflow:hidden;margin-bottom:10px;}
+.optimizeContent{width:900px;margin:0 auto;}
+.optimizeTit{padding:20px 0 15px;text-align:center;}
+.optimizeTitUl li{position:relative;z-index:2;float:left;margin:10px 21px 30px;display:inline;}
+.optimizeBox_T,.optimizeBox_B{background:url(/publish/images/optimizeTxtBg.gif) no-repeat;width:408px;height:10px;overflow:hidden;}
+.optimizeBox_B{background-position:0 -17px;}
+.optimizeBox_C{background:url(/publish/images/optimizeTxt_CBg.gif) repeat-y;width:378px;padding:0 15px 5px;height:185px;}
+.optimizeBoxTit_L,.optimizeBoxTit_R{float:left;background:url(/publish/images/optimizeTitBg.gif) no-repeat;width:10px;overflow:hidden;height:35px;}
+.optimizeBoxTit_R{background-position:0 -35px;}
+.optimizeBoxTit_C{float:left;padding:0 10px;line-height:35px;font-weight:bold; font-family:Microsoft yahei;font-size:19px;background-color:#3e9aff;color:#fff;}
+.optimizeBoxTit{position:absolute;top:-20px;left:0px;}
+.optimizeBox_Infro{float:left;width:200px;}
+.fullMark{background:url(/publish/images/fullMark.gif) 0 10px no-repeat;width:100%;height:115px;}
+.fullMark02{background:url(/publish/images/fullMark02.gif) 0 10px no-repeat;width:100%;height:115px;}
+.fullMark dd,.fullMark dt,.fullMark02 dd,.fullMark02 dt{display:none;}
+.optimizeBox_InfroH2{color:#f73a62;font-family:Microsoft yahei;font-size:50px;}
+.optimizeBox_InfroH2 span{color:#888;font-size:12px; font-family:'宋体';}
+.optimizeBox_InfroH2 em{ font-style:normal;font-size:24px;}
+.optimizeTitDl dt,.optimizeTitDl dd{line-height:24px;}
+.optimizeBox_01,.optimizeBox_02,.optimizeBox_03,.optimizeBox_04,.optimizeBox_05,.optimizeBox_06,.optimizeBox_07,.optimizeBox_08{background:url(/publish/images/optimizeIcos.gif) no-repeat;width:114px;height:112px;overflow:hidden;margin:25px 45px 0 10px;float:left;display:inline;}
+.optimizeBox_02{background-position:0 -113px;}
+.optimizeBox_03{background-position:0 -225px;}
+.optimizeBox_04{background-position:0 -338px;}
+.optimizeBox_05{background-position:0 -676px;}
+.optimizeBox_06{background-position:0 -450px;}
+.optimizeBox_07{background-position:0 -564px;}
+.optimizeBox_08{background-position:0 -789px;}
+/*xg2015-03-02*/
+.NewColumn02 .actions2_SOrder{ background:url(http://js.youtx.com/publish/images/ListIcos3-28.png) no-repeat 0px -364px;}
+.NewColumn02 .actions2_backCash{ background:url(http://js.youtx.com/images/ListIcos1.gif) no-repeat 0px -182px;}
+
+/*add2016-08-30上传头像提示*/
+.clearfix:after{ clear:both; content:"\200B"; display:block; height:0;}
+.clearfix{ *zoom:1;}
+.clear{ clear:both; font-size:0; height:0; line-height:0; overflow:hidden;}
+
+.fleft { float: left; }
+.fright { float: right; }
+.close_bar_826 { padding-left: 10px; margin: 10px auto 0; width: 934px; height: 30px; line-height: 30px; background: #ffffcc;}
+.close_bar_826 img { margin-right: 13px; margin-top: 11px; cursor: pointer; }
+

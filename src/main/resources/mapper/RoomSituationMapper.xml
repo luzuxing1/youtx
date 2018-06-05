@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youtx.rent.dao.RoomSituationMapper">
+  <resultMap id="BaseResultMap" type="com.youtx.rent.entity.RoomSituation">
+    <id column="situ_id" jdbcType="INTEGER" property="situId" />
+    <result column="situ_type" jdbcType="VARCHAR" property="situType" />
+    <result column="situ_rent" jdbcType="VARCHAR" property="situRent" />
+    <result column="situ_floor" jdbcType="VARCHAR" property="situFloor" />
+    <result column="situ_room_num" jdbcType="INTEGER" property="situRoomNum" />
+    <result column="situ_bed_num" jdbcType="INTEGER" property="situBedNum" />
+    <result column="situ_bed_type" jdbcType="VARCHAR" property="situBedType" />
+    <result column="situ_standard_people" jdbcType="INTEGER" property="situStandardPeople" />
+    <result column="situ_extra_people" jdbcType="INTEGER" property="situExtraPeople" />
+    <result column="situ_room_area" jdbcType="INTEGER" property="situRoomArea" />
+    <result column="situ_toilet_num" jdbcType="INTEGER" property="situToiletNum" />
+    <result column="situ_toilet_type" jdbcType="VARCHAR" property="situToiletType" />
+    <result column="situ_master" jdbcType="VARCHAR" property="situMaster" />
+    <result column="situ_other_resource" jdbcType="INTEGER" property="situOtherResource" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    situ_id, situ_type, situ_rent, situ_floor, situ_room_num, situ_bed_num, situ_bed_type, 
+    situ_standard_people, situ_extra_people, situ_room_area, situ_toilet_num, situ_toilet_type, 
+    situ_master, situ_other_resource, room_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ytx_room_situation
+    where situ_id = #{situId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ytx_room_situation
+    where situ_id = #{situId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youtx.rent.entity.RoomSituation">
+    insert into ytx_room_situation (situ_id, situ_type, situ_rent, 
+      situ_floor, situ_room_num, situ_bed_num, 
+      situ_bed_type, situ_standard_people, situ_extra_people, 
+      situ_room_area, situ_toilet_num, situ_toilet_type, 
+      situ_master, situ_other_resource, room_id
+      )
+    values (#{situId,jdbcType=INTEGER}, #{situType,jdbcType=VARCHAR}, #{situRent,jdbcType=VARCHAR}, 
+      #{situFloor,jdbcType=VARCHAR}, #{situRoomNum,jdbcType=INTEGER}, #{situBedNum,jdbcType=INTEGER}, 
+      #{situBedType,jdbcType=VARCHAR}, #{situStandardPeople,jdbcType=INTEGER}, #{situExtraPeople,jdbcType=INTEGER}, 
+      #{situRoomArea,jdbcType=INTEGER}, #{situToiletNum,jdbcType=INTEGER}, #{situToiletType,jdbcType=VARCHAR}, 
+      #{situMaster,jdbcType=VARCHAR}, #{situOtherResource,jdbcType=INTEGER}, #{roomId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.youtx.rent.entity.RoomSituation">
+    insert into ytx_room_situation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="situId != null">
+        situ_id,
+      </if>
+      <if test="situType != null">
+        situ_type,
+      </if>
+      <if test="situRent != null">
+        situ_rent,
+      </if>
+      <if test="situFloor != null">
+        situ_floor,
+      </if>
+      <if test="situRoomNum != null">
+        situ_room_num,
+      </if>
+      <if test="situBedNum != null">
+        situ_bed_num,
+      </if>
+      <if test="situBedType != null">
+        situ_bed_type,
+      </if>
+      <if test="situStandardPeople != null">
+        situ_standard_people,
+      </if>
+      <if test="situExtraPeople != null">
+        situ_extra_people,
+      </if>
+      <if test="situRoomArea != null">
+        situ_room_area,
+      </if>
+      <if test="situToiletNum != null">
+        situ_toilet_num,
+      </if>
+      <if test="situToiletType != null">
+        situ_toilet_type,
+      </if>
+      <if test="situMaster != null">
+        situ_master,
+      </if>
+      <if test="situOtherResource != null">
+        situ_other_resource,
+      </if>
+      <if test="roomId != null">
+        room_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="situId != null">
+        #{situId,jdbcType=INTEGER},
+      </if>
+      <if test="situType != null">
+        #{situType,jdbcType=VARCHAR},
+      </if>
+      <if test="situRent != null">
+        #{situRent,jdbcType=VARCHAR},
+      </if>
+      <if test="situFloor != null">
+        #{situFloor,jdbcType=VARCHAR},
+      </if>
+      <if test="situRoomNum != null">
+        #{situRoomNum,jdbcType=INTEGER},
+      </if>
+      <if test="situBedNum != null">
+        #{situBedNum,jdbcType=INTEGER},
+      </if>
+      <if test="situBedType != null">
+        #{situBedType,jdbcType=VARCHAR},
+      </if>
+      <if test="situStandardPeople != null">
+        #{situStandardPeople,jdbcType=INTEGER},
+      </if>
+      <if test="situExtraPeople != null">
+        #{situExtraPeople,jdbcType=INTEGER},
+      </if>
+      <if test="situRoomArea != null">
+        #{situRoomArea,jdbcType=INTEGER},
+      </if>
+      <if test="situToiletNum != null">
+        #{situToiletNum,jdbcType=INTEGER},
+      </if>
+      <if test="situToiletType != null">
+        #{situToiletType,jdbcType=VARCHAR},
+      </if>
+      <if test="situMaster != null">
+        #{situMaster,jdbcType=VARCHAR},
+      </if>
+      <if test="situOtherResource != null">
+        #{situOtherResource,jdbcType=INTEGER},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youtx.rent.entity.RoomSituation">
+    update ytx_room_situation
+    <set>
+      <if test="situType != null">
+        situ_type = #{situType,jdbcType=VARCHAR},
+      </if>
+      <if test="situRent != null">
+        situ_rent = #{situRent,jdbcType=VARCHAR},
+      </if>
+      <if test="situFloor != null">
+        situ_floor = #{situFloor,jdbcType=VARCHAR},
+      </if>
+      <if test="situRoomNum != null">
+        situ_room_num = #{situRoomNum,jdbcType=INTEGER},
+      </if>
+      <if test="situBedNum != null">
+        situ_bed_num = #{situBedNum,jdbcType=INTEGER},
+      </if>
+      <if test="situBedType != null">
+        situ_bed_type = #{situBedType,jdbcType=VARCHAR},
+      </if>
+      <if test="situStandardPeople != null">
+        situ_standard_people = #{situStandardPeople,jdbcType=INTEGER},
+      </if>
+      <if test="situExtraPeople != null">
+        situ_extra_people = #{situExtraPeople,jdbcType=INTEGER},
+      </if>
+      <if test="situRoomArea != null">
+        situ_room_area = #{situRoomArea,jdbcType=INTEGER},
+      </if>
+      <if test="situToiletNum != null">
+        situ_toilet_num = #{situToiletNum,jdbcType=INTEGER},
+      </if>
+      <if test="situToiletType != null">
+        situ_toilet_type = #{situToiletType,jdbcType=VARCHAR},
+      </if>
+      <if test="situMaster != null">
+        situ_master = #{situMaster,jdbcType=VARCHAR},
+      </if>
+      <if test="situOtherResource != null">
+        situ_other_resource = #{situOtherResource,jdbcType=INTEGER},
+      </if>
+      <if test="roomId != null">
+        room_id = #{roomId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where situ_id = #{situId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youtx.rent.entity.RoomSituation">
+    update ytx_room_situation
+    set situ_type = #{situType,jdbcType=VARCHAR},
+      situ_rent = #{situRent,jdbcType=VARCHAR},
+      situ_floor = #{situFloor,jdbcType=VARCHAR},
+      situ_room_num = #{situRoomNum,jdbcType=INTEGER},
+      situ_bed_num = #{situBedNum,jdbcType=INTEGER},
+      situ_bed_type = #{situBedType,jdbcType=VARCHAR},
+      situ_standard_people = #{situStandardPeople,jdbcType=INTEGER},
+      situ_extra_people = #{situExtraPeople,jdbcType=INTEGER},
+      situ_room_area = #{situRoomArea,jdbcType=INTEGER},
+      situ_toilet_num = #{situToiletNum,jdbcType=INTEGER},
+      situ_toilet_type = #{situToiletType,jdbcType=VARCHAR},
+      situ_master = #{situMaster,jdbcType=VARCHAR},
+      situ_other_resource = #{situOtherResource,jdbcType=INTEGER},
+      room_id = #{roomId,jdbcType=INTEGER}
+    where situ_id = #{situId,jdbcType=INTEGER}
+  </update>
+</mapper>

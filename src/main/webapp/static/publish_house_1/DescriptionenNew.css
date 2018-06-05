@@ -1,0 +1,455 @@
+﻿@charset "utf-8";
+/* CSS Document */
+select,input,textarea{font-family:Arial, Helvetica, sans-serif;font-size:12px;vertical-align: middle;}/*2012-8-6修改*/
+.wrapper{width:980px;margin:0 auto;}
+.Description{width:978px;margin:15px auto;border:1px solid #b3b3b3;}
+.ReleaseProcess h1{background:url(http://js.youtx.com/images/ReleaseTitbg.gif) no-repeat;width:978px;height:49px;line-height:49px;text-indent:-999999px;}
+.ReleaseProcessEn h1{background:url(http://js.youtx.com/images/ReleaseTitbgEn.gif) no-repeat;}
+.ReleaseProcess{position:relative;}
+.ProcessDetail{position:absolute;right:30px;top:18px;}
+.DescriptionContent{padding:22px 26px}
+.RoomSituationTit{background:url(http://js.youtx.com/images/RoomPositionIco01.gif) left no-repeat;padding-left:20px;line-height:30px;height:30px;font-family:Microsoft yahei;font-size:17px;border-bottom:1px solid #8bacbb;color:#000;}
+.RoomSituationTxt{padding:10px 0 20px ;position:relative;}
+.RoomDescription{margin-top:15px;}
+.RoomSituationTxt tr .RoomSituationTxtTd{text-align:right;width:15%;vertical-align:top;font-weight:bold; font-family:Arial;}/*2012-8-13修改*/
+.RoomSituationTxtTd b{color:red;padding-right:6px;font-size:16px;margin-bottom:-4px;display:inline-block;vertical-align:bottom;_display:inline;}
+.RoomSituationTxt tr td{line-height:30px;width:85%;}/*2012-8-13修改*/
+.RoomSituationTxt tr td select{/*width:118px;*/height:22px;border: 1px solid #C2C2C2;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);color:#393C3D;cursor:pointer;text-shadow: 0 1px 0 #FFFFFF;vertical-align:middle\0;}/*2012-8-6修改*/
+.RoomSituationTxtInput,.RoomSituationTxtInput60,.RoomSituationTxtInput112{width:70px;border:1px solid #C2C2C2;*border:1px solid #7f9db9;height:16px;line-height:16px;padding:2px;font-size:12px;color:#666;}
+.Roomradio label{padding-right:10px;}
+.Roomradio label input{vertical-align:middle;cursor:pointer;}
+.color666{color:#666;}
+.RoomSituationTxt .textarea{resize:none;border:1px solid #C2C2C2;color:#666;padding:3px;width:280px;height:80px;}
+.textinput{border:1px solid #C2C2C2;height:15px;line-height:15px;padding:2px 2px 3px;color:#666;width:280px;}
+.Roomcheckbox input,.Roomcheckboxs li label input{vertical-align:middle;margin-right:10px;cursor:pointer;}
+.Roomcheckbox label,.Roomcheckboxs li label{cursor:pointer;}
+.Roomcheckboxs{/*width:844px;*/padding:0px 0px 0px 25px;}  /*2015-12-10xg*/
+.Roomcheckboxs li{float:left;width:224px;line-height:25px;color:#666;height:25px;} /*2015-12-10xg*/
+
+.RoomFac .RoomFacTit{ font-family:"宋体"; font-size:12px; color:#666666; height:46px; line-height:46px; font-weight:bold; padding:0px 25px;}/*2015-12-10zj*/
+.RoomFac{ padding-bottom:24px;}/*2015-12-10zj*/
+
+.RoomArea{width:425px;position:absolute;top:220px;left:500px;}
+.RoomToilet{top:295px;}
+.RoomSimilar{top:20px;}
+.RoomDescription{top:100px;}/*2012-8-13修改*/
+.RoomArea h5{font-weight:bold;padding:0 0 5px 10px;}
+.RoomAreaTxt{background:url(http://js.youtx.com/images/Roomboxbg.gif) no-repeat;width:425px;padding-top:12px;color:#666;}
+.RoomAreaTxt div{background:url(http://js.youtx.com/images/Roomboxbg.gif) bottom center no-repeat;width:405px;padding:8px 10px;}
+.RoomAreaTxt div p{line-height:20px;}
+.RoomAreaTxtP{text-indent:-0.8em;padding-left:10px;}
+.RoomDescription h6{color:#bd6600;padding:10px 0 5px;}
+.RoomNextBtn span a{cololr:#0087D2}
+.RoomNextBtn input{background:url(http://js.youtx.com/images/PaymentBtn2.gif) 0 4px no-repeat;width:116px;height:34px;cursor:pointer;border:none; text-align:center;color:#fff;font-family:Microsoft yahei;font-size:16px;}
+.RoomNextBtn{padding:10px 15px;overflow:hidden;width:898px;}
+.RoomNextBtnPrev{float:left;}
+.RoomNextBtnNext{float:right;}
+.RoomPhotoBtn{background:url(http://js.youtx.com/images/RoomUploadBtn.gif) no-repeat;width:140px;height:34px;border:none;}
+.RoomPhotoBtnEn{background:url(http://js.youtx.com/images/RoomUploadBtnEn.jpg) no-repeat;width:188px;height:34px;border:none;cursor:pointer;}
+.colorbd6600{color:#bd6600;}
+.RoomPhoto{padding:30px 0 0 20px;min-height:95px;_height:95px;float:left;width:470px;}/*2012-8-6修改*/
+.RoomPhoto p{padding-bottom:10px;}
+.RoomPhoto p a{text-decoration:underline;}
+.RoomPhotoPics{padding:0 0 0 15px;overflow:hidden;border-top:1px dashed #C2C2C2;}
+.RoomPhotoPics h2{padding:15px 0;font-weight:bold;color:#555;}
+.RoomPhotoPicsTxt li .RoomPhotoImg{padding:5px;border:1px solid #C2C2C2;}
+.RoomPhotoPicsTxt li{width:172px;float:left;margin-right:10px;padding-bottom:10px;height:190px;}
+.RoomPhotoPicsTxt li p{margin-top:10px;}
+.RoomPicolse{position:absolute;top:0;right:0;z-index:2;cursor:pointer;}
+.imageBox{position:relative;}
+.imageBox_label input{border:1px solid #C2C2C2;width:156px;height:18px;padding:2px 3px;color:#666;}
+.SituationWarning,.SitWarSpan{color:red;background:url(http://js.youtx.com/images/RoomErrorBtn.gif) left top no-repeat;line-height:16px;padding-left:20px;margin:5px 0 7px;}
+.SitWarSpan{display:inline-block;/*vertical-align:bottom;*/margin:5px 0 3px 10px;*margin:-2px 0 4px 10px;*background:url(http://js.youtx.com/images/RoomErrorBtn.gif) 0 3px no-repeat;*padding-top:4px;}
+.PhonesUplaoad{background-color:#fff;height: 475px;left: 49%;margin:0 auto 0 -395px;overflow: hidden;position:absolute;top:10%;width:790px;z-index:55;}
+.scbuttonall02 {background: url("http://js.youtx.com/images/shacpic.gif") no-repeat;border:none;clear:both;cursor:pointer;height:37px;margin:10px;width:117px;}
+.tip_holder{height:115px;position:absolute;width:202px;}
+.poplayer01 {background: url("http://js.youtx.com/images/icons_tc.gif") no-repeat scroll 0 -125px transparent;height:120px;width:205px;z-index:5;}
+.poplayer01_content{height: 56px;line-height: 25px;padding: 20px 10px 0;text-align:center;}
+.poplayer01 p {text-align: center;}
+.Charges{color:#be6800;/*padding-left:10px;*/}  /*2015-12-10xg*/
+.Charges input{width:30px;height:16px;border:1px solid #ce9a68;margin:0 2px;color:#666;line-height:16px;}/*2015-12-10xg*/
+.Charges select{border:1px solid #ce9a68;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2); border-radius:2px 2px 2px 2px; color:#393C3D;cursor:pointer;text-shadow: 0 1px 0 #FFFFFF;}
+.c_m_r_b_t_help{vertical-align:middle;cursor:help;}
+.RoomSituationTxt02 tr td{width:79%;} /* 2012-8-6修改*/  
+.RoomSituationTxt02 tr .RoomSituationTxtTd{width:21%;}    /*2012-8-6修改*/  
+.colorBD6600{color:#BD6600;}
+.RoomSituationTxtInput60{width:55px;}
+.RoomSituationTxtInput112{width:112px;}
+.RoomSituationRadio input{vertical-align:middle;margin-right:10px;cursor:pointer;}
+.RoomSituationRadio label{cursor:pointer;color:#666;}
+.PolicyTxt p{line-height:20px;color:#666;font-size:12px;}
+.PolicyTxt p a{text-decoration:underline;padding-left:10px;}
+.submit_buttonNew{text-align:center;}
+.RoomPolicy{top:10px;left:630px;width:300px;} /*2012-8-6修改*/  
+.submit_buttonNew .yulan{background: url(http://js.youtx.com/images/PaymentBtn2.gif) 0 3px no-repeat;color:#FFFFFF;font-family:Microsoft yahei;font-size:16px;height:33px;line-height:33px;text-align:center; width:116px;display:block;margin:0 auto;}
+.RoomPolicy .RoomAreaTxt{background:url(http://js.youtx.com/images/Roombox300bg.gif) no-repeat;width:300px;padding-top:12px;}
+.RoomPolicy .RoomAreaTxt div{background:url(http://js.youtx.com/images/Roombox300bg.gif) bottom center no-repeat;width:280px;padding:8px 10px;}
+.RoomSituationTxt03{padding-left:15px;}
+.clear { clear:both; height:0; line-height:0; font-size:0; overflow:hidden; }
+.wrapper { width:980px; margin:0 auto; }
+.post_room label { float:left; display:block; width:160px; margin:3px 0; color:#383831; }
+.inputstyle { border-color:#CCCCCC #999999 #999999 #CCCCCC; border-style:solid; border-width:1px; color:#A2A29C; font:12px arial, sans-serif normal; height:20px; padding:2px 0px 2px 2px; line-height:22px;}
+.post_room p { line-height:1em; }
+.post_room { width:620px; margin:0 auto; padding:20px; color:#5F5F57; background:#FFFFFF; overflow:hidden; position:relative; box-shadow:0 2px 10px #AAAAAA; border-radius: 10px 10px 10px 10px; }
+.post_room_step1 { margin:10px 0; border:1px solid #D1D1C9; overflow:hidden; border-radius:10px 10px 10px 10px; }
+.post_room_step1 .section_content {padding:5px 20px 15px; overflow:hidden; background:#F6F6F6; }
+.location_btn { margin-left:5px;display:inline; font-size:14px; font-weight:bold; color:white!important; line-height:25px; height:25px; padding:0 6px; padding:0 4px\9; *padding:0 2px;text-align:center; cursor:pointer; border:1px solid #459a00; background:#4aa400; background:-webkit-gradient(linear, center top, center bottom, from(#5ccd00), to(#4aa400)); background:-moz-linear-gradient(top, #5ccd00, #4aa400); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5ccd00', endColorstr='#ff4aa400', GradientType=0); font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;float:left;}/*2012-8-13修改*/
+
+#step1_extras {  font-size:15px; margin-bottom:5px;width:924px;margin-right:0px;}/*2012-8-3修改*/   /*2015-03-03*/
+.contact_info_section_field {width:572px; _padding-bottom:3px;padding:12px 0 0 15px;}/*2012-7-9修改*/
+.get_started_subsection {width:572px; border-top:1px dashed #A7A7A7; overflow:hidden; }
+#contact_info_section { border-top:none; }
+#error_summary { clear:both; width:350px; font-size:13px; font-weight:bold; margin:0 0 0 173px; padding: 10px 0 0; }
+#error_summary p { margin-bottom:10px; }
+.lonInput { color:#333;position:relative;padding:0 0 0 20px;}/*2012-8-3修改*/
+.lonInput li{/*height:30px; line-height:30px;*/ font-size:12px;margin:5px 0px; float:left; margin-right:4px;}    /*2015-03-03*/
+.lonInput li p,.get_started_subsection p,.section_content li p{float:left;line-height:22px; overflow:hidden;font-family:Arial;padding-right:5px;}/*2012-8-3修改*/
+.lonInput li p b,.get_started_subsection p b,.section_content li p b{ vertical-align:middle;color:#f00; padding:0 3px 0px 0px;display:inline-block;font-style:inherit; font-size:18px; font-weight:100; width:8px;height:18px;}/*2012-7-9修改*/
+.get_started_subsection p.errorText,.section_content li p.errorText{background:url(http://js.youtx.com/images/u33.png) no-repeat 0px 2px; padding-left:20px;color:#f00; clear:both; margin:2px 0px 1px 160px;display:inline; height:20px;}
+.errorTextSf{ float:left; background:url(http://js.youtx.com/images/u33.png) no-repeat 0px 2px; padding-left:20px; color:#f00;font-weight:normal!important;}
+.lonInput li.erryi{ position:relative; height:22px;margin-top:-5px;}/*2012-8-3修改*/
+.lonInput li.erryi p.err01{ position:absolute; left:118px; _left:123px; top:0px;}
+.positionOne {position:absolute; width:164px; border:1px solid #909090;left:153px;top:125px;z-index:99;background:#fff; font-size:12px; }
+.positionOne dt {margin:3px; height:16px; line-height:16px; border-bottom:1px dashed #999; padding-bottom:2px;}
+.positionOne dd { margin:1px; height:18px; line-height:18px; width:164px; overflow:hidden}
+.positionOne dd.on { cursor:pointer; background:#008ADB; text-decoration:none; color:#fff}
+.positionTwo {position:absolute; width:409px; border:1px solid #909090; left:0px; top:26px; background:#F2F2F2; height:24px; font-size:12px; line-height:24px; overflow:hidden;}/*2015-03-18修改*/
+.section_content li p.errorText { line-height:24px; height:24px;font-weight:normal!important;}
+.lonInput li .input { float:left;width:110px; height:26px;line-height:26px;/*2015-03-03*/font-family:Arial;font-size:12px;color:#000000;font-style:normal;}/*2012-7-9修改*/
+/*2011年12月12日通用交易规则*/
+.red{color:red;}
+.post_room label{width:130px;}
+.get_started_subsection p.errorText, .section_content li p.errorText{margin:2px 0 1px 130px;}
+/*New填写位置*/
+.post_roomNew{width:978px;margin:15px auto;border:1px solid #b3b3b3;border-radius:0;box-shadow:none;padding:0;}
+.post_roomNew_step1{padding:22px 26px;margin-top:0px;border-radius:0;border:none;}
+#map_canvas{width:482px;margin:10px 0 0 0;border:2px solid #4e575e;height:352px;float:left;}/*2012-7-9修改*/ /*2015-03-03*/
+.map_bag{float:right; width:90px; height:356px; background-color:#4e575e; margin-top:10px;}/*2015-03-03*/
+.map_pos{background:url(http://js.youtx.com/publish/images/dingwei_bg.png) no-repeat 0px 0px; width:53px; height:52px; text-align:center; margin-left:18px; margin-top:136px; cursor:pointer;}/*2015-03-03*/
+.map_pos img{ margin-top:9px;}/*2015-03-03*/
+.map_canvas_mengban{position:absolute; background-color:#000;width:482px;height:352px; left:0px; top:10px; filter:alpha(opacity=30); opacity:0.3;border:2px solid #4e575e; z-index:3; display:none;}/*2015-03-03*/
+.map_canvas_mengbantext{position:absolute;color:white; font-size:14px; font-weight:bold;width:482px;height:352px; line-height:352px; text-align:center;left:0px; top:10px; z-index:3; display:none;}/*2015-03-03*/
+
+.map_pos_tips{ background:url(http://js.youtx.com/publish/images/dingwei_tips.png) no-repeat 0px 0px; width:296px; height:81px; z-index:2; position:absolute; left:95px; top:68px; display:block; }/*2015-03-03*/
+.map_pos_tips p{ font-size:12px; color:black; font-weight:bold; margin-left:18px; margin-top:14px; line-height:18px;}/*2015-03-03*/
+.extrasPosition{padding-top:12px;}/*2012-7-9修改*/
+.post_room_step1 .section_content{padding:5px 5px 0 5px;background:none;}
+.submit_buttonNew input{background:url(http://js.youtx.com/images/PaymentBtn2.gif) no-repeat;width:116px;height:31px;cursor:pointer;border:none; text-align:center;color:#fff;font-family:Microsoft yahei;font-size:16px;}
+.submit_buttonNew{padding-bottom:25px;text-align:center;}
+.lonInput li select{border: 1px solid #C2C2C2;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);color: #393C3D;cursor: pointer;text-shadow: 0 1px 0 #FFFFFF;}
+.get_started_subsection{width:500px;padding:15px 0 0 5px;}
+.inputstyle{border:1px solid #C2C2C2;}
+.lonInput li p{width:128px;font-weight:bold;padding-right:5px;}/*2015-3-23修改*/
+.lonInput li .errorTextSf,.lonInput li .errorText{width:auto;}
+.errorTextSf,.section_content li p.errorText,.get_started_subsection p.errorText{background:url(http://js.youtx.com/images/RoomErrorBtn.gif) 0 4px no-repeat;}
+.errorTextSf{margin-left:0px;}/*2015-03-03*/
+.addressNew_warning{margin-left:130px;line-height:16px;padding-left:20px;color:red;background:url(http://js.youtx.com/images/RoomErrorBtn.gif) 0 0 no-repeat;}
+.inputFocusStyle{ border-color:#CCCCCC #999999 #999999 #CCCCCC; border-style:solid; border-width:1px; color:#000; font:12px arial, sans-serif normal; height:20px; padding:2px 0px 2px 2px; line-height:22px; }/*2012-8-3修改*/
+/*2012-2-14*/
+.RoomSituationTxt tr td select{font-family: "HelveticaNeue","Helvetica Neue","HelveticaNeueRoman","HelveticaNeue-Roman","Helvetica Neue Roman",'TeXGyreHerosRegular',"Helvetica","Tahoma","Geneva","Arial",sans-serif;font-size: 1em;text-shadow: 0 1px 0 #FFFFFF;height:22px;line-height:23px;padding:1px 0;}
+.TdSelect{font-size:13px;}
+/*2012-2-15*/
+.RMB{position:absolute;top:1px;*top:-4px;left:2px;z-index:2px;font-size:12px;color:#666;}
+.RoomSituationTxtInput112{padding-left:34px;width:81px;color:#000;}
+.RoomSituationTxtInput60{padding-left:34px;width:33px;color:#000;}
+.position{width:120px;display:inline-block;float:left;}
+.color666line{line-height:18px;color:#666}
+.Charges input{color:#000;}
+.RoomSituationTxt03{padding: 10px 0 20px;}
+.RoomSituationTxt03 tr td{line-height:30px;}
+.RoomSituationTxt03 tr .RoomSituationTxtTd{text-align:right;vertical-align:top;}
+.RoomSituationTxt03 tr td select{font-family: "HelveticaNeue","Helvetica Neue","HelveticaNeueRoman","HelveticaNeue-Roman","Helvetica Neue Roman",'TeXGyreHerosRegular',"Helvetica","Tahoma","Geneva","Arial",sans-serif;font-size: 1em;text-shadow: 0 1px 0 #FFFFFF;height:22px;line-height:23px;padding:1px 0; border: 1px solid #C2C2C2;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);color: #393C3D; cursor: pointer;width: 118px;}
+/*发布房间*/
+.issuance_top{ height:45px; padding:40px 50px 20px 50px;}
+.issuance_top li{ float:left;}
+.issuance_top li span{ color:#E0007A;}
+.issuance_right{background:url(http://js.youtx.com/images/issuance_03.gif) no-repeat 0 2px; width:30px; height:30px; padding-right:5px;}
+.issuance_text{ font-size:24px; font-family:"微软雅黑"; line-height:30px; color:#333;}/*2013-7-23修改*/
+.issuance_center{ width:410px;height:auto; overflow:hidden;margin:0 auto 20px auto;}
+.issuance_center h2{ line-height:40px;}
+.issuance_center ul{ clear:both;}
+.issuance_center li{ float:left; line-height:26px;}
+.issuance_center a{padding-right:5px;}
+.issuance_jt01{background:url(http://js.youtx.com/images/issuance_07.gif) no-repeat 0 6px;width:20px; height:20px;}
+.issuance_jt02{background:url(http://js.youtx.com/images/issuance_10.gif) no-repeat 0 6px;width:20px; height:20px;}
+a.issuance_green:link,a.issuance_green:visited,a.issuance_green:hover,a.issuance_green:active{color:#459800;text-decoration:underline;font-weight:bold;}
+a.issuance_blue:link,a.issuance_blue:visited,a.issuance_blue:hover,a.issuance_blue:active{color:#0087D2;text-decoration:underline; font-weight:bold;}
+/*2012-2-2修改付款方式*/
+.floatl{ float:left;}
+.floatl p{margin:10px;}
+.floatr{ float:right}
+.font16{ font-size:16px;}
+.font14{ font-size:14px;}
+.bold{ font-weight:bold}
+.padl27{ padding-left:24px;}
+.mt10{ margin-top:10px;}
+.mr10{ margin-right:10px;}
+.mt30{ margin-top:40px;*margin-top:16px;}
+.gray{ color:#999;}
+.gray6{ color:#666;}
+.aglinc{ text-align:center}
+.aglinr{ text-align:right}
+.clear {clear: both;font-size: 0;height: 0;line-height: 0;overflow: hidden;}
+.title{ font-weight:bold; font-size:16px; margin:0 0 15px;}
+.title1{ font-weight:bold; font-size:16px; background-color: #DCDCDC;  padding: 5px 8px;}
+.inputtxt_l, .selecttxt_l {color: #666666;font-family: Tahoma,SimSun;font-size: 14px;}
+.input_b {margin-top: -4px;padding:2px;width: 200px;}
+/*button-------------------------------------------------------------------*/
+.v3_button {background:url(http://js.youtx.com/images/suoyin2.png) repeat-x scroll 0 0 transparent;border: 1px solid #85AA40;border-radius: 7px 7px 7px 7px;color: #FFFFFF !important;cursor: pointer;font-family: Arial,Helvetica,Tahoma;font-size: 18px;font-weight: bold;height: 42px;padding: 5px 28px;text-align: center;text-shadow: 0 -1px 1px #797979;width: auto;}
+.v3_button:hover {box-shadow: 0 0 6px #B9B9B9;}
+.v3_button:active {background-color: #748E2B;background-image: none;color: #EEEEEE !important;}
+/*wapper-------------------------------------------------------------------------------------------------------------------*/
+.wrapper{ width:980px; margin:0 auto}
+.notice1{padding:14px 8px;line-height:18px;margin:10px 0 10px 0;border:1px solid #ecd89b;text-align:center;font-size:12px;font-weight:bold;color:#393c3d;background:#fff9e6;text-shadow:0 1px 1px #fff;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:inset 0 0 0 1px white,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;-moz-box-shadow:inset 0 0 0 1px white,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;-webkit-box-shadow:inset 0 0 0 1px white,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;background:#fff3ce;background:-webkit-gradient(linear,center top,center bottom,from(#fff9e5),to(#fff3ce));background:-moz-linear-gradient(top,#fff9e5,#fff3ce);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffff9e5',endColorstr='#fffff3ce',GradientType=0);}
+.notice1 a{color:#1d95cb}
+.notice1 li{font-weight:normal}
+.payout {width:914px;}
+.payout table{ width:914px; margin-top:5px;}
+.payout table th{padding:3px 2px; text-align:left; font-weight:bold;}
+.payout table td{padding:3px 2px; text-align:left;}
+.payout_country_select {background-color: #F3FAFF;padding: 15px;}
+.payout_country_select p * {display: inline-block;vertical-align: middle;}
+.payout_country_select .card{ margin-left:20px; float:left;}
+.payout_country_select .card li { clear: both; margin-bottom:10px;}
+.payout_country_select .card li label {float: left;}
+.payout_country_select .card .savetxt{color:#333;width:150px;}/*2012-8-6修改*/
+.button_qd:hover{box-shadow:inset 0 0 .2em rgba(255,255,255,0.3),inset 0 0 .2em rgba(255,255,255,0.3),0 1px 5px rgba(0,0,0,0.6),0 0 0 transparent,0 0 0 transparent;-moz-box-shadow:inset 0 0 .2em rgba(255,255,255,0.3),inset 0 0 .2em rgba(255,255,255,0.3),0 1px 5px rgba(0,0,0,0.6),0 0 0 transparent,0 0 0 transparent;-webkit-box-shadow:inset 0 0 .2em rgba(255,255,255,0.3),inset 0 0 .2em rgba(255,255,255,0.3),0 1px 5px rgba(0,0,0,0.6),0 0 0 transparent,0 0 0 transparent;text-decoration:none!important;}
+.positionaaa{position:relative;}
+
+.account_note_zfb,.account_note_bank{background-color:#f0f0f0;border:1px solid #a9aaac;border-radius:3px;height:20px;line-height:20px;padding:0px 5px 0;position:absolute;left:-20px;top:-30px;color:#4c9300; z-index: 2;*top:-10px;}/*2012-8-6修改*/
+.account_note_bank{*top:-22px;}
+
+.hide{display:none}
+.emptyMessage{font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#999999}
+.mr10{cursor:pointer}
+.message_position{padding-left:65px;}
+.li_hidden{display:none;overflow:hidden;}
+.font_right{padding-right:10px;}
+.mr_left{padding-right:20px;}
+.li_bottom input,.li_input input,.pay_zhi{vertical-align:middle;}
+.li_bottom,.li_input{display:inline;}
+.li_bottom{padding-left:30px;}
+.Prompbtn input,.YanzhengButton input{padding:0 8px;cursor:pointer;}
+.Validationtit{font-size:13px;text-align:center;font-family:微软雅黑;}
+.Promptxt{padding-bottom:15px;}
+.positionaaa{float:left;}
+.payout_country_select .card{float:none;}
+.RoomPosition{background:url(http://js.youtx.com/images/RoomPositionIco01.gif) left no-repeat;padding-left:20px;line-height:30px;height:30px;font-family:Microsoft yahei;font-size:17px;border-bottom:1px solid #8bacbb;color:#000;margin-bottom:15px;}/*2012-8-3修改*/
+.payoutNew{padding:15px 0 0 5px;}
+.CountrySelect{border: 1px solid #C2C2C2;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);color:#393C3D;cursor:pointer;text-shadow: 0 1px 0 #FFFFFF;font-size:13px;height:20px;}
+.InCountry{padding:0 0 0 15px;height:30px;overflow:hidden;}/*2012-8-6修改*/
+.floatl h6{font-weight:bold;color:#333;height:60px;*height:40px;}/*2012-8-6修改*/
+.floatl,.positionaaa{float:none;}
+.payout_country_select{background-color:#fff;}
+.payout_country_select .card{margin-left:0;}
+.border_b{padding-left:20px;}
+.payout_country_select .card .li_middle{border-bottom:1px solid #a9a9a9;overflow:hidden;width:100%;margin-bottom:20px;*margin-bottom:10px;}
+.li_input{padding-left:20px;margin-right:30px;float:left;padding-bottom:10px;height:30px;line-height:30px;}/*2012-8-6修改*/
+.li_bottom{padding-left:0;float:left;padding-bottom:10px;height:30px;line-height:30px;_margin-top:5px;}/*2012-8-6修改*/
+.account_note_zfb{left:0;*left:4px;}
+.YanzhengButton span,.message{color:#565656;}
+.UlBorder{border-bottom:2px solid #008bdb;}
+.input_b{border:1px solid #C2C2C2;}
+.message02{color:#565656;padding:5px 0 0 150px;width:500px;}/*2012-8-6修改*/
+.Newerror{color:red;background:url(http://js.youtx.com/images/RoomErrorBtn.gif) 0 1px no-repeat;padding-left:20px;display:inline-block;margin-left:10px;}
+.border_b ul li{line-height:18px;}
+.Prompbtn input, .YanzhengButton input,.submitBtn,.resetBtn{background:url(http://js.youtx.com/images/nextBtn.gif) 0 3px no-repeat;width:117px;height:34px;text-align:center;font-family:微软雅黑;font-size:14px;color:#fff;border:none;cursor:pointer;}
+.resetBtn{background-position:0 -34px;}
+.redmessage{padding:0 5px 0 0;color:red;}
+.YanzhengButton{padding:25px 0 0 150px;}/*2012-8-6修改*/
+.message_position{padding-left:80px;}
+.inputtxt_l, .selecttxt_l{font-size:12px;line-height:18px;height:18px;}
+.account_note_bank{left:144px;*left:158px;}
+/*弹出框-成功接收订单*/
+div,p,h2,h3,a,body{margin:0;padding:0;font-size:12px;}
+.PaymentTan{width:360px;margin-left:-40px;margin-top:-61px;}
+.PaymentTan_L,.PaymentTan_R{background:url(http://js.youtx.com/images/PaymentTanBg.gif) no-repeat;width:5px;height:204px;float:left;}
+.PaymentTan_R{background-position:-5px 0;}
+.PaymentTan_C{float:left;background:url(http://js.youtx.com/images/PaymentTanCenBg.gif) repeat-x;height:204px;width:350px;text-align:center;position:relative;}
+.PaymentErrors{background:url(http://js.youtx.com/images/icons-verification_02.png) left no-repeat;padding-left:30px;height:25px;line-height:25px;margin:40px auto 10px; font-family:Microsoft yahei;font-size:18px; display:inline-block;}
+.PaymentFanhui input{background:url(http://js.youtx.com/images/PaymentBtn.gif) 0 2px no-repeat;width:117px;height:34px;border:none;cursor:pointer;font-family:Microsoft yahei;color:#fff;}
+.PaymentFanhui{padding-top:45px;}
+.PaymentTan_C h3{font-weight:bold;line-height:18px;height:18px;}
+.PaymentClose{display:block;background:url(http://js.youtx.com/images/PaymentTanClose1.gif) no-repeat;height:17px;width:17px;position:absolute;top:10px;right:10px;}
+.PaymentClose:hover{background:url(http://js.youtx.com/images/PaymentTanClose1.gif) 0 -18px no-repeat;}
+.PaymentErrors03{background:url(http://js.youtx.com/images/PaymenteErrorsBtn.gif) left no-repeat;margin-top:70px;}
+.PaymentErrors02{background:url(http://js.youtx.com/images/icons-verification_01.png) left no-repeat;margin-top:60px;}
+.RsTi112{background:url(http://js.youtx.com/images/RMBIco.gif) no-repeat;}
+.RsTi113{background:url(http://js.youtx.com/images/USDIco.gif) no-repeat;}
+/* 2012-03-14 */
+.lonInput .area_error { width: auto; padding-left:5px;}
+.lonInput .area_error a{ text-decoration: underline; }
+.PopAddrBtn{ text-decoration:underline; display:inline-block; line-height:22px;}/*2015-12-10zj*/
+.CancelRule{text-align:right;padding-right:50px;}
+/* 2012-06-26 */
+.RoomTag{border:1px solid #C2C2C2;color:#666;height:21px;padding:3px;width:280px;}
+.RoomTagList li{float:left;background-color:#298DD8;margin-right:2px;margin-bottom:2px;line-height:20px;color:#FFF;padding-left:5px;}
+.RoomTagList a{margin:0px 5px;vertical-align:middle;background:url(http://js.youtx.com/images/TagClose.gif) no-repeat 0 center;display:inline-block;height:20px;width:7px;}
+.TagInput{float:left;border:none 0;width:20px; line-height:20px; height:20px;}
+.TagCase{width:288px;}
+.TagCase li{float:left;background-color:#d7edfa;margin-right:3px;margin-bottom:3px;line-height:20px;color:#0087d2;padding:0 5px; cursor:pointer;white-space:nowrap}/*2013-1-30修改*/
+/*2012-7-9修改*/
+.DesMap{overflow:hidden; width:576px; margin-left:153px; position:relative; clear:both;}  /*2015-03-03*/
+.contact_info_section_field p{font-weight:bold;}
+.spInfo{line-height:16px; padding-left:125px;float:left;padding-top:5px;width:350px;}/*2012-8-3修改*/
+.DesMapTiShi{width:345px;float:right;border:1px solid #dbdbdb;padding:10px 5px 10px 30px;margin-top:15px;background:url(http://js.youtx.com/images/DesMapTiShiIco.gif) 10px 10px no-repeat;line-height:18px;}
+.LonInputRadio{float:left;}
+.lonInput .LonInputRadio{line-height:22px;}
+.LonInputRadio input{vertical-align:middle;margin:0 5px 0 0;}
+.PL15{padding-left:15px;}
+.Iframe{width:180px; position:absolute;top:0px;left:0;display:none;_display:block;height:300px;z-index:100;filter:mask();}
+.NewInput{border:1px solid #C2C2C2;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);text-shadow: 0 1px 0 #FFFFFF;height:24px;font-family:Arial;width:184px;}/*2012-8-3修改*/
+.AreaCode{float:left;padding-right:5px;line-height:22px;line-height:22px;padding-left:125px;}/*2012-8-3修改*/
+.EnglishDes{padding:30px 0 30px 0;}
+.EnglishDes a{text-decoration:underline!important;display:inline-block; text-align:right;width:165px;}
+.RoomSituationTxt .textarea02{height:200px;}
+.select90{ width:115px; _width:118px; margin-right: 7px; height:22px; font-family:'Arial'; font-size:12px; color:#000000; font-style:normal; vertical-align:middle;float: left;}/*2012-8-3修改*/
+.input132{ width: 146px; height: 18px; display:inline; padding:3px 3px 3px 46px; line-height:18px; float: left; border:1px solid #C2C2C2;}
+.input190{ width: 118px;/*2015-03-03*/ height: 18px; padding:3px 3px 3px 3px; border:1px solid #C2C2C2; float: left; line-height:18px;}
+.RoomPosition_Phone {margin-bottom:10px; position: relative; padding-left: 20px; float:left;width:480px;}/*2012-8-3修改*/
+/*2012-8-3修改*/
+.inputstyle572{width:572px;float:left;}/*2015-03-19修改*/
+.inputstyle260{width:260px;float:left;}/*2012-8-13修改*/
+.quhao{position: absolute;left:273px;top:-2px;color:#A2A29C;height:30px;line-height:30px;}
+.location_btn_en{width:80px;}
+.get_started_subsection .ContactTxt{width:120px;text-align:right;font-weight:bold;}
+.ContactTxt02{width:435px;text-align:left;}
+.lonInput li .errorTextSf_en{width:240px;height:28px;text-align:left;margin-left:-1px;}
+.input option{padding:0;width:164px}
+.select90 option{width:87px;}
+.input130{width:134px;}
+.NewInput option{width:156px;}
+/*2012-8-6修改*/
+.Example{width:288px;line-height:16px;padding:5px 0;}
+.RoomSituationPhotoTxt{overflow:hidden;}
+.RoomSimilar02{float:right;width: 425px;}
+.RoomSimilar02 h5{font-weight: bold;padding: 0 0 5px 10px;}
+.PolicyTxt p{width:425px;}
+.RoomSituationTxt02 table{width:100%;}
+.SpanZFB01,.SpanZFB02{background:url(http://js.youtx.com/images/account/tag.jpg) -17px -24px no-repeat;width:20px;height:10px;overflow:hidden;position:absolute;z-index:3;top:-9px;left:16px;*left:21px;*top:11px;}
+.SpanZFB02{left:160px;*left:175px;*top:-1px;}
+/*2012-8-13修改*/
+.InfoStart{float:left;line-height:22px;}
+.lonInput .ErrorAddress{height:auto;margin:0px 0px 5px;width:100%;overflow:hidden;}
+.IE6Iframe{width:185px;height:240px;z-index:10;position:absolute;top:258px;left:150px;display:none;_display:-block;filter:mask();}
+.lonInput li .ddlTimeZone{width:265px;}
+.lonInput li .ddlTimeZone option{width:245px;}
+.RoomSituationTxt table{width:100%;}
+.CKRoomsTipInfo{width:330px;line-height:normal;text-indent:-1.5em;padding-top:10px;}
+.TaR02{display:block;text-align:right;}
+.CheckboxTxt{line-height:16px;float:left;width:350px;}
+
+/*2012-8-21修改*/
+.iconimage{border:#7f9db9 1px solid;height:27px;vertical-align:middle;cursor:pointer;filter:alpha(opacity=0);opacity:0;position:absolute;z-index:4;position:absolute;_left:-185px;_top:107px;}
+.iconimageInput{left:77px;top:107px;border:1px solid #7F9DB9;height:20px;line-height:20px;padding:0 2px;width:220px;margin-right:5px;position:absolute;z-index:3;_left:-190px;}
+.iconimageButton{cursor:pointer;padding:0 5px;position:absolute;z-index:3;left:313px;top:108px;_left:50px;}
+/*2012-8-21修改*/
+/* 2012-09-06价格提示 */
+.PriceTiShi{position:absolute;z-index:2;border:1px solid #d4c79a;background-color:#fff7bc;line-height:22px;white-space:nowrap;padding:0 15px 0 5px;border-radius:3px;color:#666;}
+.PriceTiShi span{position:absolute;top:2px;left:-6px;background:none!important;padding:0!important;color:#d4c79a!important;}
+.PriceTiShi .PriceTiShiImg{left:-5px;color:#fff7bc!important;}
+.PriceTiShi p{cursor:pointer;position:absolute;top:3px;right:4px;width:5px;height:5px;display:inline;line-height:5px;}
+/* 2012-09-12 */
+.X_EnglishDes{ padding:7px 15px; color:#A6790E; background-color:#FFF7BC; border:1px solid #D6C99E; overflow:hidden;height:26px;line-height:26px; margin-top:10px; margin-left:80px; margin-bottom:10px;}/*2015-3-3修改*/
+.X_EnglishDes span{ display:block; float:left; padding-left:50px;}
+.X_EnglishDes a{ display:block; float:left; background:url(http://js.youtx.com/images/X_EnglishDesBtn.gif) no-repeat 0 0; width:110px; text-align:center; color:#FFF !important}
+/*2013-1-17修改*/
+.TagCase02{width:300px;}
+.TagCase02 ul li{background-color:#d7edfa;color:#0087d2;}
+.TagCase02 ul .TagCaseCur{background-color:#298DD8;color:#fff;}
+/*2013-1-25修改*/
+.TdInputDown{background-color:#fff;width:74px;border:1px solid #ACACAC;position:absolute;top:39px;left:224px;*top:35px;_top:38px;}
+.TdInputDown li{line-height:20px;padding:0 5px 0 6px;color:#666;cursor:pointer;}
+.TdInputDown .Curr{background-color:#FFE3F2;}
+#houseType{width:75px;}
+/*2013-1-30修改*/
+.TagCase ul{overflow:hidden;}
+.TagCaseChoose span{cursor:pointer;line-height:18px;height:18px;display:inline-block;padding-right:10px;background:url(http://js.youtx.com/guide/Images/JianTouIco.gif) no-repeat;margin-right:8px;display:none;color:#0087d2;}
+.TagCaseChoose .ZhanKai{background-position:right -87px;display:block;}
+.TagCaseChoose .ShouQi{background-position:right -73px;display:none;}
+.status .ZhanKai{display:none;}
+.status .ShouQi{display:block;}
+.TagCase ul .TagCaseHover{color:#fff;background-color:#298dd8;}
+.TagCase ul .TagCaseCur{background-color:#e9e9e9!important;color:#aaa!important;}
+/*2013-7-3添加 周租月租*/
+.tishi_jiage{border-radius:3px;width:350px; height:auto; overflow:hidden; padding:10px 25px 10px 15px; background:#ffffcd; border:1px solid #ddc98e;margin:15px 0 0 0;}
+.tishi_jiage p{ font-weight:bold; color:#333; line-height:24px;}
+.tishi_jiage li{line-height:24px;}
+.tishi_jiage a{text-decoration:underline; margin-left:10px;float:right;}
+.greenAD09{color:#85c836;}
+.bjrightAD{background:url(http://js.youtx.com/images/right2_03.jpg) no-repeat 0 4px; text-indent:20px;}
+.bjwrongAD{background:url(http://js.youtx.com/images/wrong2_03.jpg) no-repeat 0 4px; text-indent:20px;}
+
+
+/*2013-7-15修改*/
+.JoinTxt{background-color:#eaf7ff;padding:40px 30px;margin:5px 50px 40px;}
+.Purchase{display:inline-block;background:url(http://js.youtx.com/publish/images/PurchaseBtnBg.gif) 0 -68px repeat-x;height:34px;}
+.Purchase span{display:inline-block;background:url(http://js.youtx.com/publish/images/PurchaseBtnBg.gif) 0 -34px no-repeat;height:34px;}
+.Purchase span a{display:inline-block;background:url(http://js.youtx.com/publish/images/PurchaseBtnBg.gif) right 0px no-repeat;height:34px;padding:0 10px;cursor:pointer;color:#8c4d0f!important;font-family:Microsoft yahei;font-size:16px;line-height:32px;font-weight:normal;text-decoration:none!important;}/*2013-7-23修改*/
+/*2013-7-23修改*//*增加*/
+.Best_FirstSearch{padding:0 0 100px 85px}
+/*新增2014-10-10*/
+.TeachDesc{padding-left:50px;padding-top:80px;}
+.TeachDesc p{color:#515151; font-size:20px; font-family:Microsoft yahei;} 
+.TeachDesc ul{margin-top:35px;}
+.TeachDesc ul li{width:150px;float:left;padding-left:70px;height:55px;}
+.TeachDesc ul li.ssg{width:3px;padding:0px;margin:0px 25px 0px 0px;display:inline; background:url(http://js.youtx.com/publish/images/Ssg.png) no-repeat top center; }
+
+.TeachDesc ul li.TeaItem1{ background:url(http://js.youtx.com/publish/images/SuccIcon.png) no-repeat 0px 0px;}
+.TeachDesc ul li.TeaItem2{ background:url(http://js.youtx.com/publish/images/SuccIcon.png) no-repeat 0px -77px;}
+.TeachDesc ul li.TeaItem3{ background:url(http://js.youtx.com/publish/images/SuccIcon.png) no-repeat 0px -148px;}
+.TeachDesc ul li span{ line-height:28px;color:#4c4c4c; font-size:18px; font-family:Microsoft yahei;display:block;}
+.TeachDesc ul li a{ line-height:22px;color:#0087d2;font-size:14px; font-family:Microsoft yahei;display:block;}
+/*2015-12-02新增弹窗*/
+.popBg{ background:#000; position:fixed; left:0px; top:0px; width:100%; height:100%; opacity:0.4; filter:alpha(opacity=40); z-index:2147899999;}
+.popWarmTip{ width:412px;position:fixed; left:50%; margin-left:-206px; top:50%; margin-top:-122px; z-index:2147900000; background:#fff; font-family:Microsoft yahei;}
+.popWarmTip h2{height:61px; line-height:61px; border-bottom:1px dashed #b8b8b8;  position:relative; font-size:21px; color:#333333; text-align:center; }
+/*X不要.popWarmTip h2 span{ width:56px; height:61px; position:absolute; right:0; top:0; background:url(images/popClose.gif) no-repeat center center; cursor:pointer;}*/
+.popWarmTip p{ padding-top:5px; height:88px; line-height:88px; text-align:center; color:#333; font-size:16px;}
+.btnCon{ padding:0px 70px 48px;}
+.identStart,.identEnd{ width:110px; height:39px; line-height:39px; color:#fff; font-size:15px; text-align:center;padding:0px; border:0px none; font-family:Microsoft yahei; cursor:pointer; outline:none; border-radius:4px; -webkit-border-radius:4px; background:#1093db;}
+.identEnd{ background:#57be2d;}
+.identStart:hover,.identStart:visited,.identStart:active{ color:#fff; text-decoration:none;}
+
+/*2015-12-10房源地址弹层Begin*/
+.PopTransP{ width:100%; height:100%; position:fixed; left:0px; top:0px; z-index:2147899999; display:none;}/*透明遮罩*/
+.PopArea{ position:fixed; left:50%; top:50%; margin-left:-360px; margin-top:-145px; z-index:2147900000; display:none;}
+.PopBorder{ position:absolute; left:0px; top:0px; width:720px; height:290px; background:#000; opacity:0.3; filter:alpha(opacity:30);}
+.PopAreaCon{position:absolute; left:10px; top:10px; width:700px;  height:270px; background:#FFF;}
+.AreaTbInner{ height:120px; overflow-y:auto; overflow-x:hidden;}
+.PopAreaCon h2{ font-size:16px; color:#333; font-family:Microsoft yahei; height:43px; line-height:43px; border-bottom:1px solid #d2d2d2; padding:0px 14px;}
+.AreaTb {width:700px;font-family:"宋体"; font-size:12px;}
+.AreaTb tr.curTR{ background:#f1f1f1;}
+.AreaTb th,.AreaTb td{ color:#333; text-align:center;}
+.AreaTb th{ font-weight:bold; height:40px; line-height:40px;padding:0px 4px;}
+.AreaTb td{word-break:break-all; line-height:18px; padding:11px 4px; }
+.AreaTb td.PR15{ padding-right:15px;}
+.AreaBtns{ text-align:center; padding-top:11px;}
+.AreaBtns input{ width:114px; height:28px; cursor:pointer; font-family:Microsoft yahei; font-size:16px; color:#333333; padding:0px; border:1px solid #bfbfbf; outline:none; border-radius:3px; -webkit-border-radius:3px; background: -webkit-gradient(linear,left top, left bottom,from(#ffffff),to(#eeeeee)); background: -moz-linear-gradient(top,#ffffff,#eeeeee);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#eeeeee);}
+/*2015-12-10房源地址弹层End*/
+/*20160822*/
+.dash_border{width:600px;margin-bottom: 10px; padding: 10px; border: 1px dashed #e1e1e1;}
+.dash_border em { display: inline-block; padding: 0 6px; height: 20px; line-height: 20px; background: #ededed;position: relative;margin-bottom:5px }
+.dash_border .pab { top: 0; right: -10px; display: inline-block; width: 0; height: 0; border-top: 10px solid transparent; border-left: 10px solid #ededed; border-bottom: 10px solid transparent;position: absolute; }
+.dash_border .under_text { display: block;line-height:30px; }
+
+/*add2016-08-30上传头像提示*/
+.clearfix:after{ clear:both; content:"\200B"; display:block; height:0;}
+.clearfix{ *zoom:1;}
+.clear{ clear:both; font-size:0; height:0; line-height:0; overflow:hidden;}
+
+.pop_826 { position: fixed; z-index: 10009; top: 0; left: 0; width: 100%; height: 100%; background: url(http://js.youtx.com/publish/images/img2016/bg_826_02.png) repeat; font-family: "Microsoft YaHei";}
+.pop_826 .pop_inner_826 {position:fixed; top:50%; left: 50%; margin-top: -125px; margin-left: -265px; padding: 7px 9px; width: 512px; height: 236px; background: #fff; }
+.pop_826 .close_826 { height: 16px; }
+.pop_826 .close_826 .close_icon { float: right; cursor: pointer; }
+.pop_826 .pop_inner_826 .title_826 { margin-top: 20px; font-size: 20px; text-align: center;  }
+.pop_826 .pop_inner_826 .opt_btn { margin-top: 32px; text-align: center; }
+.pop_826 .pop_inner_826 .opt_btn .a_826 { display: inline-block; height: 40px; border-radius: 2px; border: 1px solid #d8d8d8; line-height: 40px;text-decoration: none; color: #333; font-size: 14px; text-align: left;}
+.pop_826 .pop_inner_826 .opt_btn .a_826.left_826 { padding-left: 16px; width: 104px; background: url(http://js.youtx.com/publish/images/img2016/tick826.png) no-repeat 90px center; }
+.pop_826 .pop_inner_826 .opt_btn .a_826.right_826 {padding-left: 17px; width: 103px; margin-left: 20px; color: #008bda; background: url(http://js.youtx.com/publish/images/img2016/upload826.png) no-repeat 85px center; }
+.pop_826.case2_826 .pop_inner_826 .opt_btn .a_826.right_826 {padding-left: 20px; width: 100px; background: url(http://js.youtx.com/publish/images/img2016/person826.png) no-repeat 85px center; }
+.pop_826.case3_826 .pop_inner_826 .opt_btn .a_826.left_826 {padding-left: 21px; width: 99px; background: url(http://js.youtx.com/publish/images/img2016/upload826.png) no-repeat 89px center; color: #008bda; }
+.pop_826.case3_826 .pop_inner_826 .opt_btn .a_826.right_826 {padding-left: 23px; width: 97px; background: url(http://js.youtx.com/publish/images/img2016/person826.png) no-repeat 85px center; }
+.pop_826 .pop_inner_826 .done_826 { display: block; margin: 28px auto 0; width: 140px; height: 45px; line-height: 45px; color: #fff; background: #008ad9; text-align: center; font-size: 16px; text-decoration: none; border-radius: 2px; }
+
+.pop_827 { cursor: default;}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youtx.rent.dao.LandlordReplyMapper">
+  <resultMap id="BaseResultMap" type="com.youtx.rent.entity.LandlordReply">
+    <id column="landlord_reply_id" jdbcType="INTEGER" property="landlordReplyId" />
+    <result column="opinion_id" jdbcType="INTEGER" property="opinionId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="reply_content" jdbcType="VARCHAR" property="replyContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    landlord_reply_id, opinion_id, user_id, reply_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ytx_landlord_reply
+    where landlord_reply_id = #{landlordReplyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ytx_landlord_reply
+    where landlord_reply_id = #{landlordReplyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youtx.rent.entity.LandlordReply">
+    insert into ytx_landlord_reply (landlord_reply_id, opinion_id, user_id, 
+      reply_content)
+    values (#{landlordReplyId,jdbcType=INTEGER}, #{opinionId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{replyContent,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youtx.rent.entity.LandlordReply">
+    insert into ytx_landlord_reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="landlordReplyId != null">
+        landlord_reply_id,
+      </if>
+      <if test="opinionId != null">
+        opinion_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="replyContent != null">
+        reply_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="landlordReplyId != null">
+        #{landlordReplyId,jdbcType=INTEGER},
+      </if>
+      <if test="opinionId != null">
+        #{opinionId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="replyContent != null">
+        #{replyContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youtx.rent.entity.LandlordReply">
+    update ytx_landlord_reply
+    <set>
+      <if test="opinionId != null">
+        opinion_id = #{opinionId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="replyContent != null">
+        reply_content = #{replyContent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where landlord_reply_id = #{landlordReplyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youtx.rent.entity.LandlordReply">
+    update ytx_landlord_reply
+    set opinion_id = #{opinionId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      reply_content = #{replyContent,jdbcType=VARCHAR}
+    where landlord_reply_id = #{landlordReplyId,jdbcType=INTEGER}
+  </update>
+</mapper>

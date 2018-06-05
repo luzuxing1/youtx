@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youtx.rent.dao.PriceMapper">
+  <resultMap id="BaseResultMap" type="com.youtx.rent.entity.Price">
+    <id column="price_id" jdbcType="INTEGER" property="priceId" />
+    <result column="price_day" jdbcType="INTEGER" property="priceDay" />
+    <result column="price_week" jdbcType="INTEGER" property="priceWeek" />
+    <result column="price_month" jdbcType="INTEGER" property="priceMonth" />
+    <result column="price_weekend" jdbcType="INTEGER" property="priceWeekend" />
+    <result column="price_clean" jdbcType="INTEGER" property="priceClean" />
+    <result column="price_deposit" jdbcType="INTEGER" property="priceDeposit" />
+    <result column="price_invoice" jdbcType="INTEGER" property="priceInvoice" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    price_id, price_day, price_week, price_month, price_weekend, price_clean, price_deposit, 
+    price_invoice, room_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ytx_price
+    where price_id = #{priceId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ytx_price
+    where price_id = #{priceId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youtx.rent.entity.Price">
+    insert into ytx_price (price_id, price_day, price_week, 
+      price_month, price_weekend, price_clean, 
+      price_deposit, price_invoice, room_id
+      )
+    values (#{priceId,jdbcType=INTEGER}, #{priceDay,jdbcType=INTEGER}, #{priceWeek,jdbcType=INTEGER}, 
+      #{priceMonth,jdbcType=INTEGER}, #{priceWeekend,jdbcType=INTEGER}, #{priceClean,jdbcType=INTEGER}, 
+      #{priceDeposit,jdbcType=INTEGER}, #{priceInvoice,jdbcType=INTEGER}, #{roomId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.youtx.rent.entity.Price">
+    insert into ytx_price
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="priceId != null">
+        price_id,
+      </if>
+      <if test="priceDay != null">
+        price_day,
+      </if>
+      <if test="priceWeek != null">
+        price_week,
+      </if>
+      <if test="priceMonth != null">
+        price_month,
+      </if>
+      <if test="priceWeekend != null">
+        price_weekend,
+      </if>
+      <if test="priceClean != null">
+        price_clean,
+      </if>
+      <if test="priceDeposit != null">
+        price_deposit,
+      </if>
+      <if test="priceInvoice != null">
+        price_invoice,
+      </if>
+      <if test="roomId != null">
+        room_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="priceId != null">
+        #{priceId,jdbcType=INTEGER},
+      </if>
+      <if test="priceDay != null">
+        #{priceDay,jdbcType=INTEGER},
+      </if>
+      <if test="priceWeek != null">
+        #{priceWeek,jdbcType=INTEGER},
+      </if>
+      <if test="priceMonth != null">
+        #{priceMonth,jdbcType=INTEGER},
+      </if>
+      <if test="priceWeekend != null">
+        #{priceWeekend,jdbcType=INTEGER},
+      </if>
+      <if test="priceClean != null">
+        #{priceClean,jdbcType=INTEGER},
+      </if>
+      <if test="priceDeposit != null">
+        #{priceDeposit,jdbcType=INTEGER},
+      </if>
+      <if test="priceInvoice != null">
+        #{priceInvoice,jdbcType=INTEGER},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youtx.rent.entity.Price">
+    update ytx_price
+    <set>
+      <if test="priceDay != null">
+        price_day = #{priceDay,jdbcType=INTEGER},
+      </if>
+      <if test="priceWeek != null">
+        price_week = #{priceWeek,jdbcType=INTEGER},
+      </if>
+      <if test="priceMonth != null">
+        price_month = #{priceMonth,jdbcType=INTEGER},
+      </if>
+      <if test="priceWeekend != null">
+        price_weekend = #{priceWeekend,jdbcType=INTEGER},
+      </if>
+      <if test="priceClean != null">
+        price_clean = #{priceClean,jdbcType=INTEGER},
+      </if>
+      <if test="priceDeposit != null">
+        price_deposit = #{priceDeposit,jdbcType=INTEGER},
+      </if>
+      <if test="priceInvoice != null">
+        price_invoice = #{priceInvoice,jdbcType=INTEGER},
+      </if>
+      <if test="roomId != null">
+        room_id = #{roomId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where price_id = #{priceId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youtx.rent.entity.Price">
+    update ytx_price
+    set price_day = #{priceDay,jdbcType=INTEGER},
+      price_week = #{priceWeek,jdbcType=INTEGER},
+      price_month = #{priceMonth,jdbcType=INTEGER},
+      price_weekend = #{priceWeekend,jdbcType=INTEGER},
+      price_clean = #{priceClean,jdbcType=INTEGER},
+      price_deposit = #{priceDeposit,jdbcType=INTEGER},
+      price_invoice = #{priceInvoice,jdbcType=INTEGER},
+      room_id = #{roomId,jdbcType=INTEGER}
+    where price_id = #{priceId,jdbcType=INTEGER}
+  </update>
+</mapper>

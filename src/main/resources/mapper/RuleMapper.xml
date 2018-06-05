@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youtx.rent.dao.RuleMapper">
+  <resultMap id="BaseResultMap" type="com.youtx.rent.entity.Rule">
+    <id column="rule_id" jdbcType="INTEGER" property="ruleId" />
+    <result column="rule_type" jdbcType="VARCHAR" property="ruleType" />
+    <result column="rule_percent" jdbcType="VARCHAR" property="rulePercent" />
+    <result column="rule_before_live" jdbcType="INTEGER" property="ruleBeforeLive" />
+    <result column="rule_order_days" jdbcType="INTEGER" property="ruleOrderDays" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rule_id, rule_type, rule_percent, rule_before_live, rule_order_days, room_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ytx_rule
+    where rule_id = #{ruleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ytx_rule
+    where rule_id = #{ruleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youtx.rent.entity.Rule">
+    insert into ytx_rule (rule_id, rule_type, rule_percent, 
+      rule_before_live, rule_order_days, room_id
+      )
+    values (#{ruleId,jdbcType=INTEGER}, #{ruleType,jdbcType=VARCHAR}, #{rulePercent,jdbcType=VARCHAR}, 
+      #{ruleBeforeLive,jdbcType=INTEGER}, #{ruleOrderDays,jdbcType=INTEGER}, #{roomId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.youtx.rent.entity.Rule">
+    insert into ytx_rule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ruleId != null">
+        rule_id,
+      </if>
+      <if test="ruleType != null">
+        rule_type,
+      </if>
+      <if test="rulePercent != null">
+        rule_percent,
+      </if>
+      <if test="ruleBeforeLive != null">
+        rule_before_live,
+      </if>
+      <if test="ruleOrderDays != null">
+        rule_order_days,
+      </if>
+      <if test="roomId != null">
+        room_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ruleId != null">
+        #{ruleId,jdbcType=INTEGER},
+      </if>
+      <if test="ruleType != null">
+        #{ruleType,jdbcType=VARCHAR},
+      </if>
+      <if test="rulePercent != null">
+        #{rulePercent,jdbcType=VARCHAR},
+      </if>
+      <if test="ruleBeforeLive != null">
+        #{ruleBeforeLive,jdbcType=INTEGER},
+      </if>
+      <if test="ruleOrderDays != null">
+        #{ruleOrderDays,jdbcType=INTEGER},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youtx.rent.entity.Rule">
+    update ytx_rule
+    <set>
+      <if test="ruleType != null">
+        rule_type = #{ruleType,jdbcType=VARCHAR},
+      </if>
+      <if test="rulePercent != null">
+        rule_percent = #{rulePercent,jdbcType=VARCHAR},
+      </if>
+      <if test="ruleBeforeLive != null">
+        rule_before_live = #{ruleBeforeLive,jdbcType=INTEGER},
+      </if>
+      <if test="ruleOrderDays != null">
+        rule_order_days = #{ruleOrderDays,jdbcType=INTEGER},
+      </if>
+      <if test="roomId != null">
+        room_id = #{roomId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rule_id = #{ruleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youtx.rent.entity.Rule">
+    update ytx_rule
+    set rule_type = #{ruleType,jdbcType=VARCHAR},
+      rule_percent = #{rulePercent,jdbcType=VARCHAR},
+      rule_before_live = #{ruleBeforeLive,jdbcType=INTEGER},
+      rule_order_days = #{ruleOrderDays,jdbcType=INTEGER},
+      room_id = #{roomId,jdbcType=INTEGER}
+    where rule_id = #{ruleId,jdbcType=INTEGER}
+  </update>
+</mapper>

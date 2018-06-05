@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youtx.rent.dao.FacilityMapper">
+  <resultMap id="BaseResultMap" type="com.youtx.rent.entity.Facility">
+    <id column="fac_id" jdbcType="INTEGER" property="facId" />
+    <result column="fac_bath" jdbcType="VARCHAR" property="facBath" />
+    <result column="fac_slippers" jdbcType="VARCHAR" property="facSlippers" />
+    <result column="fac_hotwater" jdbcType="VARCHAR" property="facHotwater" />
+    <result column="fac_bathtub" jdbcType="VARCHAR" property="facBathtub" />
+    <result column="fac_shower" jdbcType="VARCHAR" property="facShower" />
+    <result column="fac_tv" jdbcType="VARCHAR" property="facTv" />
+    <result column="fac_fridge" jdbcType="VARCHAR" property="facFridge" />
+    <result column="fac_computer" jdbcType="VARCHAR" property="facComputer" />
+    <result column="fac_washer" jdbcType="VARCHAR" property="facWasher" />
+    <result column="fac_air_con" jdbcType="VARCHAR" property="facAirCon" />
+    <result column="fac_heating" jdbcType="VARCHAR" property="facHeating" />
+    <result column="fac_wired_network" jdbcType="VARCHAR" property="facWiredNetwork" />
+    <result column="fac_wireless_network" jdbcType="VARCHAR" property="facWirelessNetwork" />
+    <result column="fac_water" jdbcType="VARCHAR" property="facWater" />
+    <result column="fac_elevator" jdbcType="VARCHAR" property="facElevator" />
+    <result column="fac_barrier" jdbcType="VARCHAR" property="facBarrier" />
+    <result column="fac_security" jdbcType="VARCHAR" property="facSecurity" />
+    <result column="fac_mahjong" jdbcType="VARCHAR" property="facMahjong" />
+    <result column="fac_park" jdbcType="VARCHAR" property="facPark" />
+    <result column="fac_door" jdbcType="VARCHAR" property="facDoor" />
+    <result column="fac_fit" jdbcType="VARCHAR" property="facFit" />
+    <result column="fac_swim" jdbcType="VARCHAR" property="facSwim" />
+    <result column="fac_shuttle" jdbcType="VARCHAR" property="facShuttle" />
+    <result column="fac_breakfast" jdbcType="VARCHAR" property="facBreakfast" />
+    <result column="fac_family" jdbcType="VARCHAR" property="facFamily" />
+    <result column="fac_party" jdbcType="VARCHAR" property="facParty" />
+    <result column="fac_kitchen" jdbcType="VARCHAR" property="facKitchen" />
+    <result column="fac_pet" jdbcType="VARCHAR" property="facPet" />
+    <result column="fac_luggage" jdbcType="VARCHAR" property="facLuggage" />
+    <result column="fac_extra_bed" jdbcType="VARCHAR" property="facExtraBed" />
+    <result column="fac_proxy" jdbcType="VARCHAR" property="facProxy" />
+    <result column="fac_smoke" jdbcType="VARCHAR" property="facSmoke" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    fac_id, fac_bath, fac_slippers, fac_hotwater, fac_bathtub, fac_shower, fac_tv, fac_fridge, 
+    fac_computer, fac_washer, fac_air_con, fac_heating, fac_wired_network, fac_wireless_network, 
+    fac_water, fac_elevator, fac_barrier, fac_security, fac_mahjong, fac_park, fac_door, 
+    fac_fit, fac_swim, fac_shuttle, fac_breakfast, fac_family, fac_party, fac_kitchen, 
+    fac_pet, fac_luggage, fac_extra_bed, fac_proxy, fac_smoke, room_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ytx_facility
+    where fac_id = #{facId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ytx_facility
+    where fac_id = #{facId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youtx.rent.entity.Facility">
+    insert into ytx_facility (fac_id, fac_bath, fac_slippers, 
+      fac_hotwater, fac_bathtub, fac_shower, 
+      fac_tv, fac_fridge, fac_computer, 
+      fac_washer, fac_air_con, fac_heating, 
+      fac_wired_network, fac_wireless_network, fac_water, 
+      fac_elevator, fac_barrier, fac_security, 
+      fac_mahjong, fac_park, fac_door, 
+      fac_fit, fac_swim, fac_shuttle, 
+      fac_breakfast, fac_family, fac_party, 
+      fac_kitchen, fac_pet, fac_luggage, 
+      fac_extra_bed, fac_proxy, fac_smoke, 
+      room_id)
+    values (#{facId,jdbcType=INTEGER}, #{facBath,jdbcType=VARCHAR}, #{facSlippers,jdbcType=VARCHAR}, 
+      #{facHotwater,jdbcType=VARCHAR}, #{facBathtub,jdbcType=VARCHAR}, #{facShower,jdbcType=VARCHAR}, 
+      #{facTv,jdbcType=VARCHAR}, #{facFridge,jdbcType=VARCHAR}, #{facComputer,jdbcType=VARCHAR}, 
+      #{facWasher,jdbcType=VARCHAR}, #{facAirCon,jdbcType=VARCHAR}, #{facHeating,jdbcType=VARCHAR}, 
+      #{facWiredNetwork,jdbcType=VARCHAR}, #{facWirelessNetwork,jdbcType=VARCHAR}, #{facWater,jdbcType=VARCHAR}, 
+      #{facElevator,jdbcType=VARCHAR}, #{facBarrier,jdbcType=VARCHAR}, #{facSecurity,jdbcType=VARCHAR}, 
+      #{facMahjong,jdbcType=VARCHAR}, #{facPark,jdbcType=VARCHAR}, #{facDoor,jdbcType=VARCHAR}, 
+      #{facFit,jdbcType=VARCHAR}, #{facSwim,jdbcType=VARCHAR}, #{facShuttle,jdbcType=VARCHAR}, 
+      #{facBreakfast,jdbcType=VARCHAR}, #{facFamily,jdbcType=VARCHAR}, #{facParty,jdbcType=VARCHAR}, 
+      #{facKitchen,jdbcType=VARCHAR}, #{facPet,jdbcType=VARCHAR}, #{facLuggage,jdbcType=VARCHAR}, 
+      #{facExtraBed,jdbcType=VARCHAR}, #{facProxy,jdbcType=VARCHAR}, #{facSmoke,jdbcType=VARCHAR}, 
+      #{roomId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youtx.rent.entity.Facility">
+    insert into ytx_facility
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="facId != null">
+        fac_id,
+      </if>
+      <if test="facBath != null">
+        fac_bath,
+      </if>
+      <if test="facSlippers != null">
+        fac_slippers,
+      </if>
+      <if test="facHotwater != null">
+        fac_hotwater,
+      </if>
+      <if test="facBathtub != null">
+        fac_bathtub,
+      </if>
+      <if test="facShower != null">
+        fac_shower,
+      </if>
+      <if test="facTv != null">
+        fac_tv,
+      </if>
+      <if test="facFridge != null">
+        fac_fridge,
+      </if>
+      <if test="facComputer != null">
+        fac_computer,
+      </if>
+      <if test="facWasher != null">
+        fac_washer,
+      </if>
+      <if test="facAirCon != null">
+        fac_air_con,
+      </if>
+      <if test="facHeating != null">
+        fac_heating,
+      </if>
+      <if test="facWiredNetwork != null">
+        fac_wired_network,
+      </if>
+      <if test="facWirelessNetwork != null">
+        fac_wireless_network,
+      </if>
+      <if test="facWater != null">
+        fac_water,
+      </if>
+      <if test="facElevator != null">
+        fac_elevator,
+      </if>
+      <if test="facBarrier != null">
+        fac_barrier,
+      </if>
+      <if test="facSecurity != null">
+        fac_security,
+      </if>
+      <if test="facMahjong != null">
+        fac_mahjong,
+      </if>
+      <if test="facPark != null">
+        fac_park,
+      </if>
+      <if test="facDoor != null">
+        fac_door,
+      </if>
+      <if test="facFit != null">
+        fac_fit,
+      </if>
+      <if test="facSwim != null">
+        fac_swim,
+      </if>
+      <if test="facShuttle != null">
+        fac_shuttle,
+      </if>
+      <if test="facBreakfast != null">
+        fac_breakfast,
+      </if>
+      <if test="facFamily != null">
+        fac_family,
+      </if>
+      <if test="facParty != null">
+        fac_party,
+      </if>
+      <if test="facKitchen != null">
+        fac_kitchen,
+      </if>
+      <if test="facPet != null">
+        fac_pet,
+      </if>
+      <if test="facLuggage != null">
+        fac_luggage,
+      </if>
+      <if test="facExtraBed != null">
+        fac_extra_bed,
+      </if>
+      <if test="facProxy != null">
+        fac_proxy,
+      </if>
+      <if test="facSmoke != null">
+        fac_smoke,
+      </if>
+      <if test="roomId != null">
+        room_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="facId != null">
+        #{facId,jdbcType=INTEGER},
+      </if>
+      <if test="facBath != null">
+        #{facBath,jdbcType=VARCHAR},
+      </if>
+      <if test="facSlippers != null">
+        #{facSlippers,jdbcType=VARCHAR},
+      </if>
+      <if test="facHotwater != null">
+        #{facHotwater,jdbcType=VARCHAR},
+      </if>
+      <if test="facBathtub != null">
+        #{facBathtub,jdbcType=VARCHAR},
+      </if>
+      <if test="facShower != null">
+        #{facShower,jdbcType=VARCHAR},
+      </if>
+      <if test="facTv != null">
+        #{facTv,jdbcType=VARCHAR},
+      </if>
+      <if test="facFridge != null">
+        #{facFridge,jdbcType=VARCHAR},
+      </if>
+      <if test="facComputer != null">
+        #{facComputer,jdbcType=VARCHAR},
+      </if>
+      <if test="facWasher != null">
+        #{facWasher,jdbcType=VARCHAR},
+      </if>
+      <if test="facAirCon != null">
+        #{facAirCon,jdbcType=VARCHAR},
+      </if>
+      <if test="facHeating != null">
+        #{facHeating,jdbcType=VARCHAR},
+      </if>
+      <if test="facWiredNetwork != null">
+        #{facWiredNetwork,jdbcType=VARCHAR},
+      </if>
+      <if test="facWirelessNetwork != null">
+        #{facWirelessNetwork,jdbcType=VARCHAR},
+      </if>
+      <if test="facWater != null">
+        #{facWater,jdbcType=VARCHAR},
+      </if>
+      <if test="facElevator != null">
+        #{facElevator,jdbcType=VARCHAR},
+      </if>
+      <if test="facBarrier != null">
+        #{facBarrier,jdbcType=VARCHAR},
+      </if>
+      <if test="facSecurity != null">
+        #{facSecurity,jdbcType=VARCHAR},
+      </if>
+      <if test="facMahjong != null">
+        #{facMahjong,jdbcType=VARCHAR},
+      </if>
+      <if test="facPark != null">
+        #{facPark,jdbcType=VARCHAR},
+      </if>
+      <if test="facDoor != null">
+        #{facDoor,jdbcType=VARCHAR},
+      </if>
+      <if test="facFit != null">
+        #{facFit,jdbcType=VARCHAR},
+      </if>
+      <if test="facSwim != null">
+        #{facSwim,jdbcType=VARCHAR},
+      </if>
+      <if test="facShuttle != null">
+        #{facShuttle,jdbcType=VARCHAR},
+      </if>
+      <if test="facBreakfast != null">
+        #{facBreakfast,jdbcType=VARCHAR},
+      </if>
+      <if test="facFamily != null">
+        #{facFamily,jdbcType=VARCHAR},
+      </if>
+      <if test="facParty != null">
+        #{facParty,jdbcType=VARCHAR},
+      </if>
+      <if test="facKitchen != null">
+        #{facKitchen,jdbcType=VARCHAR},
+      </if>
+      <if test="facPet != null">
+        #{facPet,jdbcType=VARCHAR},
+      </if>
+      <if test="facLuggage != null">
+        #{facLuggage,jdbcType=VARCHAR},
+      </if>
+      <if test="facExtraBed != null">
+        #{facExtraBed,jdbcType=VARCHAR},
+      </if>
+      <if test="facProxy != null">
+        #{facProxy,jdbcType=VARCHAR},
+      </if>
+      <if test="facSmoke != null">
+        #{facSmoke,jdbcType=VARCHAR},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youtx.rent.entity.Facility">
+    update ytx_facility
+    <set>
+      <if test="facBath != null">
+        fac_bath = #{facBath,jdbcType=VARCHAR},
+      </if>
+      <if test="facSlippers != null">
+        fac_slippers = #{facSlippers,jdbcType=VARCHAR},
+      </if>
+      <if test="facHotwater != null">
+        fac_hotwater = #{facHotwater,jdbcType=VARCHAR},
+      </if>
+      <if test="facBathtub != null">
+        fac_bathtub = #{facBathtub,jdbcType=VARCHAR},
+      </if>
+      <if test="facShower != null">
+        fac_shower = #{facShower,jdbcType=VARCHAR},
+      </if>
+      <if test="facTv != null">
+        fac_tv = #{facTv,jdbcType=VARCHAR},
+      </if>
+      <if test="facFridge != null">
+        fac_fridge = #{facFridge,jdbcType=VARCHAR},
+      </if>
+      <if test="facComputer != null">
+        fac_computer = #{facComputer,jdbcType=VARCHAR},
+      </if>
+      <if test="facWasher != null">
+        fac_washer = #{facWasher,jdbcType=VARCHAR},
+      </if>
+      <if test="facAirCon != null">
+        fac_air_con = #{facAirCon,jdbcType=VARCHAR},
+      </if>
+      <if test="facHeating != null">
+        fac_heating = #{facHeating,jdbcType=VARCHAR},
+      </if>
+      <if test="facWiredNetwork != null">
+        fac_wired_network = #{facWiredNetwork,jdbcType=VARCHAR},
+      </if>
+      <if test="facWirelessNetwork != null">
+        fac_wireless_network = #{facWirelessNetwork,jdbcType=VARCHAR},
+      </if>
+      <if test="facWater != null">
+        fac_water = #{facWater,jdbcType=VARCHAR},
+      </if>
+      <if test="facElevator != null">
+        fac_elevator = #{facElevator,jdbcType=VARCHAR},
+      </if>
+      <if test="facBarrier != null">
+        fac_barrier = #{facBarrier,jdbcType=VARCHAR},
+      </if>
+      <if test="facSecurity != null">
+        fac_security = #{facSecurity,jdbcType=VARCHAR},
+      </if>
+      <if test="facMahjong != null">
+        fac_mahjong = #{facMahjong,jdbcType=VARCHAR},
+      </if>
+      <if test="facPark != null">
+        fac_park = #{facPark,jdbcType=VARCHAR},
+      </if>
+      <if test="facDoor != null">
+        fac_door = #{facDoor,jdbcType=VARCHAR},
+      </if>
+      <if test="facFit != null">
+        fac_fit = #{facFit,jdbcType=VARCHAR},
+      </if>
+      <if test="facSwim != null">
+        fac_swim = #{facSwim,jdbcType=VARCHAR},
+      </if>
+      <if test="facShuttle != null">
+        fac_shuttle = #{facShuttle,jdbcType=VARCHAR},
+      </if>
+      <if test="facBreakfast != null">
+        fac_breakfast = #{facBreakfast,jdbcType=VARCHAR},
+      </if>
+      <if test="facFamily != null">
+        fac_family = #{facFamily,jdbcType=VARCHAR},
+      </if>
+      <if test="facParty != null">
+        fac_party = #{facParty,jdbcType=VARCHAR},
+      </if>
+      <if test="facKitchen != null">
+        fac_kitchen = #{facKitchen,jdbcType=VARCHAR},
+      </if>
+      <if test="facPet != null">
+        fac_pet = #{facPet,jdbcType=VARCHAR},
+      </if>
+      <if test="facLuggage != null">
+        fac_luggage = #{facLuggage,jdbcType=VARCHAR},
+      </if>
+      <if test="facExtraBed != null">
+        fac_extra_bed = #{facExtraBed,jdbcType=VARCHAR},
+      </if>
+      <if test="facProxy != null">
+        fac_proxy = #{facProxy,jdbcType=VARCHAR},
+      </if>
+      <if test="facSmoke != null">
+        fac_smoke = #{facSmoke,jdbcType=VARCHAR},
+      </if>
+      <if test="roomId != null">
+        room_id = #{roomId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fac_id = #{facId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youtx.rent.entity.Facility">
+    update ytx_facility
+    set fac_bath = #{facBath,jdbcType=VARCHAR},
+      fac_slippers = #{facSlippers,jdbcType=VARCHAR},
+      fac_hotwater = #{facHotwater,jdbcType=VARCHAR},
+      fac_bathtub = #{facBathtub,jdbcType=VARCHAR},
+      fac_shower = #{facShower,jdbcType=VARCHAR},
+      fac_tv = #{facTv,jdbcType=VARCHAR},
+      fac_fridge = #{facFridge,jdbcType=VARCHAR},
+      fac_computer = #{facComputer,jdbcType=VARCHAR},
+      fac_washer = #{facWasher,jdbcType=VARCHAR},
+      fac_air_con = #{facAirCon,jdbcType=VARCHAR},
+      fac_heating = #{facHeating,jdbcType=VARCHAR},
+      fac_wired_network = #{facWiredNetwork,jdbcType=VARCHAR},
+      fac_wireless_network = #{facWirelessNetwork,jdbcType=VARCHAR},
+      fac_water = #{facWater,jdbcType=VARCHAR},
+      fac_elevator = #{facElevator,jdbcType=VARCHAR},
+      fac_barrier = #{facBarrier,jdbcType=VARCHAR},
+      fac_security = #{facSecurity,jdbcType=VARCHAR},
+      fac_mahjong = #{facMahjong,jdbcType=VARCHAR},
+      fac_park = #{facPark,jdbcType=VARCHAR},
+      fac_door = #{facDoor,jdbcType=VARCHAR},
+      fac_fit = #{facFit,jdbcType=VARCHAR},
+      fac_swim = #{facSwim,jdbcType=VARCHAR},
+      fac_shuttle = #{facShuttle,jdbcType=VARCHAR},
+      fac_breakfast = #{facBreakfast,jdbcType=VARCHAR},
+      fac_family = #{facFamily,jdbcType=VARCHAR},
+      fac_party = #{facParty,jdbcType=VARCHAR},
+      fac_kitchen = #{facKitchen,jdbcType=VARCHAR},
+      fac_pet = #{facPet,jdbcType=VARCHAR},
+      fac_luggage = #{facLuggage,jdbcType=VARCHAR},
+      fac_extra_bed = #{facExtraBed,jdbcType=VARCHAR},
+      fac_proxy = #{facProxy,jdbcType=VARCHAR},
+      fac_smoke = #{facSmoke,jdbcType=VARCHAR},
+      room_id = #{roomId,jdbcType=INTEGER}
+    where fac_id = #{facId,jdbcType=INTEGER}
+  </update>
+</mapper>

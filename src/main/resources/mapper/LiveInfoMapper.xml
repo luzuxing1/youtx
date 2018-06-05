@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youtx.rent.dao.LiveInfoMapper">
+  <resultMap id="BaseResultMap" type="com.youtx.rent.entity.LiveInfo">
+    <id column="live_id" jdbcType="INTEGER" property="liveId" />
+    <result column="live_starttime" jdbcType="DATE" property="liveStarttime" />
+    <result column="live_endtime" jdbcType="DATE" property="liveEndtime" />
+    <result column="schedule_id" jdbcType="INTEGER" property="scheduleId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    live_id, live_starttime, live_endtime, schedule_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ytx_live_info
+    where live_id = #{liveId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ytx_live_info
+    where live_id = #{liveId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youtx.rent.entity.LiveInfo">
+    insert into ytx_live_info (live_id, live_starttime, live_endtime, 
+      schedule_id)
+    values (#{liveId,jdbcType=INTEGER}, #{liveStarttime,jdbcType=DATE}, #{liveEndtime,jdbcType=DATE}, 
+      #{scheduleId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youtx.rent.entity.LiveInfo">
+    insert into ytx_live_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="liveId != null">
+        live_id,
+      </if>
+      <if test="liveStarttime != null">
+        live_starttime,
+      </if>
+      <if test="liveEndtime != null">
+        live_endtime,
+      </if>
+      <if test="scheduleId != null">
+        schedule_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="liveId != null">
+        #{liveId,jdbcType=INTEGER},
+      </if>
+      <if test="liveStarttime != null">
+        #{liveStarttime,jdbcType=DATE},
+      </if>
+      <if test="liveEndtime != null">
+        #{liveEndtime,jdbcType=DATE},
+      </if>
+      <if test="scheduleId != null">
+        #{scheduleId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youtx.rent.entity.LiveInfo">
+    update ytx_live_info
+    <set>
+      <if test="liveStarttime != null">
+        live_starttime = #{liveStarttime,jdbcType=DATE},
+      </if>
+      <if test="liveEndtime != null">
+        live_endtime = #{liveEndtime,jdbcType=DATE},
+      </if>
+      <if test="scheduleId != null">
+        schedule_id = #{scheduleId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where live_id = #{liveId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youtx.rent.entity.LiveInfo">
+    update ytx_live_info
+    set live_starttime = #{liveStarttime,jdbcType=DATE},
+      live_endtime = #{liveEndtime,jdbcType=DATE},
+      schedule_id = #{scheduleId,jdbcType=INTEGER}
+    where live_id = #{liveId,jdbcType=INTEGER}
+  </update>
+</mapper>

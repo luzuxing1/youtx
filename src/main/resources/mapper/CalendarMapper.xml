@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youtx.rent.dao.CalendarMapper">
+  <resultMap id="BaseResultMap" type="com.youtx.rent.entity.Calendar">
+    <id column="calendar_id" jdbcType="INTEGER" property="calendarId" />
+    <result column="calendar_price" jdbcType="INTEGER" property="calendarPrice" />
+    <result column="calendar_date" jdbcType="DATE" property="calendarDate" />
+    <result column="calendar_room" jdbcType="VARCHAR" property="calendarRoom" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    calendar_id, calendar_price, calendar_date, calendar_room, room_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ytx_calendar
+    where calendar_id = #{calendarId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ytx_calendar
+    where calendar_id = #{calendarId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youtx.rent.entity.Calendar">
+    insert into ytx_calendar (calendar_id, calendar_price, calendar_date, 
+      calendar_room, room_id)
+    values (#{calendarId,jdbcType=INTEGER}, #{calendarPrice,jdbcType=INTEGER}, #{calendarDate,jdbcType=DATE}, 
+      #{calendarRoom,jdbcType=VARCHAR}, #{roomId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youtx.rent.entity.Calendar">
+    insert into ytx_calendar
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="calendarId != null">
+        calendar_id,
+      </if>
+      <if test="calendarPrice != null">
+        calendar_price,
+      </if>
+      <if test="calendarDate != null">
+        calendar_date,
+      </if>
+      <if test="calendarRoom != null">
+        calendar_room,
+      </if>
+      <if test="roomId != null">
+        room_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="calendarId != null">
+        #{calendarId,jdbcType=INTEGER},
+      </if>
+      <if test="calendarPrice != null">
+        #{calendarPrice,jdbcType=INTEGER},
+      </if>
+      <if test="calendarDate != null">
+        #{calendarDate,jdbcType=DATE},
+      </if>
+      <if test="calendarRoom != null">
+        #{calendarRoom,jdbcType=VARCHAR},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youtx.rent.entity.Calendar">
+    update ytx_calendar
+    <set>
+      <if test="calendarPrice != null">
+        calendar_price = #{calendarPrice,jdbcType=INTEGER},
+      </if>
+      <if test="calendarDate != null">
+        calendar_date = #{calendarDate,jdbcType=DATE},
+      </if>
+      <if test="calendarRoom != null">
+        calendar_room = #{calendarRoom,jdbcType=VARCHAR},
+      </if>
+      <if test="roomId != null">
+        room_id = #{roomId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where calendar_id = #{calendarId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youtx.rent.entity.Calendar">
+    update ytx_calendar
+    set calendar_price = #{calendarPrice,jdbcType=INTEGER},
+      calendar_date = #{calendarDate,jdbcType=DATE},
+      calendar_room = #{calendarRoom,jdbcType=VARCHAR},
+      room_id = #{roomId,jdbcType=INTEGER}
+    where calendar_id = #{calendarId,jdbcType=INTEGER}
+  </update>
+</mapper>

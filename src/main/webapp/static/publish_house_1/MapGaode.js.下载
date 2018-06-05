@@ -1,0 +1,450 @@
+﻿var geocoder;
+var map;
+var infowindow;
+var mapRound;
+var locationMarker = null;
+
+var boundArray = [];
+var overint = 0;
+var markersArray = [];
+
+function CreateMarkerEn(pointLat, pointLng, titles, draggable, SetContent, eventType, id, imageurl) {
+    var latlng = new google.maps.LatLng(pointLat, pointLng); var marker = null;
+    locationMarker.setPosition(latlng);
+    switch (eventType) {
+        case "click":
+            infowindow = new google.maps.InfoWindow();
+            infowindow.setContent(SetContent);
+            SetClickEvent(locationMarker, infowindow, houseid);
+            break;
+        case "dragendclick":
+            SetDragendEventEn(locationMarker, id);
+            infowindow = new google.maps.InfoWindow();
+            infowindow.setContent(SetContent);
+            infowindow.open(map, locationMarker);
+            SetMouseOverEventEn(locationMarker, infowindow);
+
+            SetMouseOutEventEn(locationMarker, infowindow, "<br/>" + publishmapvalue1 + "");
+            SetdragendClickEventEn(locationMarker, infowindow);
+            break;
+
+        default: break;
+    }
+
+}
+
+function SetDragendEventEn(marker, id) {
+    locationMarker.setVisible(true);
+    locationMarker.setDraggable(true);
+    google.maps.event.addListener(marker, 'dragend',
+        function (event) {
+            var m_point = event.latLng; overint = 1;
+            $("#duanzuf_address_LatLng").val(event.latLng);
+        });
+}
+function SetdragendClickEventEn(marker, infowindow) {
+    google.maps.event.addListener(marker, 'click', function (event) { /*alert(url);*/ });
+}
+function SetClickEventEn(marker, infowindow, houseid) {
+
+    google.maps.event.addListener(marker, 'click', function (event) { });
+}
+function SetMouseOverEventEn(marker, infowindow) {
+    google.maps.event.addListener(marker, 'mouseover', function (event) { infowindow.close(); });
+}
+function SetMouseOutEventEn(marker, infowindow, content) {
+    google.maps.event.addListener(marker, 'mouseout', function (event) { if (overint == 1) { infowindow.setContent(content); } infowindow.open(map, marker); });
+}
+
+function CreateMarker(pointLat, pointLng, titles, draggable, SetContent, eventType, id, imageurl) {
+    var latlng = new AMap.LngLat(pointLng, pointLat); var marker = null;
+    map.setCenter(latlng);
+    locationMarker.setPosition(latlng);
+    switch (eventType) {
+        case "click":
+            infowindow = new google.maps.InfoWindow();
+            infowindow.setContent(SetContent);
+            SetClickEvent(locationMarker, infowindow, houseid);
+            break;
+        case "dragendclick":
+            SetDragendEvent(locationMarker, id);
+
+            infowindow = new AMap.InfoWindow({
+                offset: new AMap.Pixel(0, -18),
+                content: SetContent
+            });
+            infowindow.open(map, locationMarker.getPosition());
+
+            SetMouseOverEvent(locationMarker, infowindow);
+            SetMouseOutEvent(locationMarker, infowindow, publishmapvalue1 + "");
+            SetdragendClickEvent(locationMarker, infowindow);
+
+            break;
+
+        default: break;
+    }
+
+}
+function deleteOverlays() { if (markersArray) { for (i in markersArray) { markersArray[i].setMap(null); } markersArray.length = 0; } }
+function SetDragendEvent(marker, id) {
+    locationMarker.show();
+    locationMarker.setDraggable(true);
+    AMap.event.addListener(marker, 'dragend',
+        function (event) {
+            var m_point = event.latLng; overint = 1;
+            $("#duanzuf_address_LatLng").val(event.lnglat.lat + ',' + event.lnglat.lng);
+        });
+}
+var url;
+function SetdragendClickEvent(marker, infowindow) {
+    AMap.event.addListener(marker, 'click', function (event) { /*alert(url);*/ });
+}
+function SetClickEvent(marker, infowindow, houseid) {
+
+    google.maps.event.addListener(marker, 'click', function (event) { });
+}
+function SetMouseOverEvent(marker, infowindow) {
+    AMap.event.addListener(marker, 'mouseover', function (event) { infowindow.close(); });
+}
+function SetMouseOutEvent(marker, infowindow, content) {
+    AMap.event.addListener(marker, 'mouseout', function (event) {
+        if (overint == 1) {
+            infowindow = new AMap.InfoWindow({
+                offset: new AMap.Pixel(0, -18),
+                content: content
+            });
+            infowindow.open(map, marker.getPosition());
+        }
+
+        infowindow.open(map, marker.getPosition());
+    });
+}
+function GetPointRange(point1Lat, point1Lng, point2Lat, point2Lng) {
+    var distance = new GLatLng(point1Lat, point1Lng).distanceFrom(new GLatLng(point2Lat, point2Lng));
+    var con = parseFloat(distance / 1000).toString();
+    var arr = con.split('.');
+    return arr[0] + "." + arr[1].substring(0, 3) + "千米";
+}
+
+function moveToDarwin(lat, lng) { var darwin = new google.maps.LatLng(lat, lng); map.setCenter(darwin); }
+function placeMarker(location) {
+
+    map.setCenter(location);
+}
+function codeLatLng(lat, lng, id) {
+
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                map.setZoom(map.getZoom());
+
+                var str = "";
+                try {
+                    str += results[0].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[1].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[2].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[3].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[4].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[5].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[6].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[7].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[8].formatted_address + "";
+                } catch (ex) { }
+
+
+            } else {
+
+                if ($("#NoSearchAdr")) {
+                    $("#NoSearchAdr").show();
+                }
+
+            }
+        } else {
+
+            if ($("#NoSearchAdr")) {
+                $("#NoSearchAdr").show();
+            }
+
+        }
+    });
+}
+
+
+function IDValue(id)
+{ return document.getElementById(id).value; }
+
+function Nopoint_CallBack(data) {
+    if (data.info == "OK") {
+        var geocode = data.geocodes;
+        if (geocode != undefined && geocode.length > 0) {
+            $("#NoSearchAdr").hide();
+           // $("#ChangeHouseInfo").html("").attr("newcode", "").hide();
+            $("#erryiArea").html("").hide();
+            locationMarker.hide();
+            //$("#duanzuf_address_LatLng").val(geocode[0].location.getLat() + "," + geocode[0].location.getLng());
+            map.setCenter(geocode[0].location);
+            if ($("#strCity").val().replace("城市", "") == "") {
+                setTimeout(function () {
+                    map.setCenter(geocode[0].location);
+                }, 300);
+            }
+        }
+        else {
+            if ($("#NoSearchAdr")) {
+                $("#NoSearchAdr").show();
+            }
+        }
+    }
+    else {
+        if ($("#NoSearchAdr")) {
+            $("#NoSearchAdr").show();
+        }
+    }
+}
+
+function codeAddressNoPoint(address, imageurl, zoom) {
+
+    //加载地理编码插件
+    map.plugin(["AMap.Geocoder"], function () {
+        geocoder = new AMap.Geocoder({});
+        //返回地理编码结果
+        AMap.event.addListener(geocoder, "complete", Nopoint_CallBack);
+        geocoder.getLocation(address);
+    });
+    map.setZoom(zoom);
+
+}
+
+function codeAddressNoPointEn(address, imageurl, zoom) {
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            $("#NoSearchAdr").hide();
+            $("#ChangeHouseInfo").html("").attr("newcode", "").hide();
+            $("#erryiArea").html("").hide();
+            // clearOverlays(markersArray);
+            locationMarker.setVisible(false);
+            $("#duanzuf_address_LatLng").val(results[0].geometry.location);
+            map.setZoom(zoom);
+            map.setCenter(results[0].geometry.location);
+        } else {
+            if ($("#NoSearchAdr")) {
+                $("#NoSearchAdr").show();
+            }
+        }
+    });
+}
+
+//英文版地图定位ddb
+function codeAddressEn(id, address, imageurl) {
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            locationMarker.setVisible(false);
+            $("#duanzuf_address_LatLng").val(results[0].geometry.location);
+            locationMarker.setPosition(results[0].geometry.location);
+            codeAddressLatLngEn(results[0].geometry.location.lat(), results[0].geometry.location.lng(), id);
+            map.setZoom(map.getZoom());
+
+            map.setCenter(results[0].geometry.location);
+            isAddressExist = true;
+        } else {
+            isAddressExist = false;
+        }
+    });
+}
+
+function codeAddress(id, address, imageurl) {
+    //加载地理编码插件
+    map.plugin(["AMap.Geocoder"], function () {
+        geocoder = new AMap.Geocoder({});
+        //返回地理编码结果
+        AMap.event.addListener(geocoder, "complete", function (data) {
+            /*开始*/
+            if (data.info == "OK") {
+                var geocode = data.geocodes;
+                if (geocode != undefined && geocode.length > 0) {
+                    $("#map_canvas_mengban").hide();  //定位遮罩层
+                    $("#map_canvas_mengbantext").hide();
+                    $("#NoSearchAdr").hide();
+                    locationMarker.hide();
+                    $("#duanzuf_address_LatLng").val(geocode[0].location.getLat() + "," + geocode[0].location.getLng());
+                    locationMarker.setPosition(geocode[0].location);
+                    codeAddressLatLng(geocode[0].location.getLat(), geocode[0].location.getLng(), id);
+
+                }
+                else {
+                    if ($("#" + id + "1").length > 0) {
+                        $("#" + id).click(function () {
+                            $(this).hide();
+                            $("#" + id + "1").val($("#" + id).html().replace("", "")).css("color", "black");
+                        });
+                    }
+                    if ($("#NoSearchAdr")) {
+                        $("#NoSearchAdr").show();
+                    }
+                    if (havaAreaAndProjName == 1) {
+                        // $("#erryiArea").html("<p class=\"err01 errorTextSf\">" + $("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内</p>").show();
+                        $("#SitWarSpan").text($("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内").show();
+                        $("#ChangeHouseInfo").html("").attr("newcode", "").hide();
+                    }
+                    else if (havaAreaAndProjName == 2) {
+                        //  $("#erryiArea").html("" + $("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内").show();
+                        $("#SitWarSpan").text($("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内").show();
+                        $("#ChangeHouseInfo").html("").attr("newcode", "").hide();
+                        var offset = $("#ChangeHouseInfo1").offset();
+                        var offset1 = $(".c_m_r_box").offset();
+                        $("#NoSearchAdr").css("margin-left", (offset.left - offset1.left - 30) + "px").show();
+                    }
+                    else
+                    { $("#erryiArea").html("").hide(); }
+                    havaAreaAndProjName = 0;
+                }
+            }
+            else {
+                if ($("#" + id + "1").length > 0) {
+                    $("#" + id).click(function () {
+                        $(this).hide();
+                        $("#" + id + "1").val($("#" + id).html().replace("", "")).css("color", "black");
+                    });
+                }
+                if ($("#NoSearchAdr")) {
+                    $("#NoSearchAdr").show();
+                }
+                if (havaAreaAndProjName == 1) {
+                    // $("#erryiArea").html("<p class=\"err01 errorTextSf\">" + $("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内</p>").show();
+                    $("#SitWarSpan").text($("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内").show();
+                    $("#ChangeHouseInfo").html("").attr("newcode", "").hide();
+                }
+                else if (havaAreaAndProjName == 2) {
+                    //$("#erryiArea").html("" + $("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内").show();
+                    $("#SitWarSpan").text($("#AjaxProjName").val() + "不在" + $("#strArea").val() + "商圈内").show();
+                    $("#ChangeHouseInfo").html("").attr("newcode", "").hide();
+                    var offset = $("#ChangeHouseInfo1").offset();
+                    var offset1 = $(".c_m_r_box").offset();
+                    $("#NoSearchAdr").css("margin-left", (offset.left - offset1.left - 30) + "px").show();
+                }
+                else
+                { $("#erryiArea").html("").hide(); }
+                havaAreaAndProjName = 0;
+            }
+            /*结束*/
+        });
+        geocoder.getLocation(address);
+    });
+    map.setZoom(15);
+}
+
+function codeAddressLatLng(lat, lng, id) {
+    var lnglatXY = new AMap.LngLat(lng, lat);
+    //加载地理编码插件
+    map.plugin(["AMap.Geocoder"], function () {
+        geocoder = new AMap.Geocoder({ radius: 1000, extensions: "all" });
+        //返回地理编码结果
+        AMap.event.addListener(geocoder, "complete", function (data) {
+            /*开始*/
+            if (data.info == "OK") {
+                var resl = data.regeocode.formattedAddress;
+                if (haveAddress == "0") {
+                    if (resl != undefined && resl != "") {
+                        $("#" + id).html("" + resl.replace("中国", "").replace($("#strProvince").val(), "").replace($("#strCity").val(), "").replace($("#strDistrict").val(), "")).attr("newcode", "");
+                    }
+                }
+                $("#" + id).click(function () {
+                    $(this).hide();
+                    $("#" + id + "1").val($("#" + id).html().replace("", "")).css("color", "black");
+                });
+                map.setZoom(13);
+                CreateMarker(lat, lng, "您的房屋", true, "" + publishmapvalue2 + "", "dragendclick", id, pin_home);
+            }
+            /*结束*/
+        });
+        //逆地理编码
+        geocoder.getAddress(lnglatXY);
+    });
+
+}
+function codeAddressLatLngEn(lat, lng, id) {
+    var str = "";
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                try {
+                    str += results[0].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[1].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[2].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[3].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[4].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[5].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[6].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[7].formatted_address + ";";
+                } catch (ex) { }
+                try {
+                    str += results[8].formatted_address + "";
+                } catch (ex) { }
+                var resl = str;
+
+                if (resl != undefined) {
+                    if (resl.split(';').length >= 2 && resl.split(';').length < 4) {
+                        CreateMarkerEn(results[0].geometry.location.lat(), results[0].geometry.location.lng(), "您的房屋", true, "<br/>" + publishmapvalue2 + "", "dragendclick", id, pin_home);
+                        map.setZoom(10);
+                    }
+                    else if (resl.split(';').length >= 4) {
+                        CreateMarkerEn(results[0].geometry.location.lat(), results[0].geometry.location.lng(), "您的房屋", true, "<br/>" + publishmapvalue2 + "", "dragendclick", id, pin_home);
+                        map.setZoom(15);
+                    }
+                    else
+                    { map.setZoom(map.getZoom()); }
+                    if (haveAddress == "0") {
+                        if ($.trim(resl.split(';')[0]).indexOf(" ") > 0) {
+                            $("#" + id).html("" + resl.split(';')[0].split(' ')[0].replace("中国", "").replace($("#strProvince").val(), "").replace($("#strCity").val(), "").replace($("#strDistrict").val(), "")).attr("newcode", "");
+                        }
+                        else {
+                            $("#" + id).html("" + resl.split(';')[0].replace("中国", "").replace($("#strProvince").val(), "").replace($("#strCity").val(), "").replace($("#strDistrict").val(), "")).attr("newcode", "");
+                        }
+                    }
+                    $("#" + id).click(function () {
+                        $(this).hide();
+                        $("#" + id + "1").val($("#" + id).html().replace("", "")).css("color", "black");
+                    });
+                }
+            } else {
+
+            }
+        } else {
+
+        }
+    });
+}
+function clearOverlays(markersArray) { if (markersArray) { for (i in markersArray) { markersArray[i].setMap(null); } } }
+
