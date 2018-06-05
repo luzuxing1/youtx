@@ -1,0 +1,677 @@
+// JavaScript Document
+window.onload = function(){
+    YtxMain.app.unfold(); //页底展开、隐藏
+    //YtxMain.app.pullDown();  //表单-模拟下拉
+	  YtxMain.app.DropDown();  //登陆域导航下拉菜单
+	  YtxMain.app.TwoDim(); //底部微信二维码、与头部手机客户端(延时显示)
+//	 // YtxMain.app.FocusPicture();  //焦点图
+}
+
+var YtxMain = {};
+
+YtxMain.tools = {};
+
+YtxMain.tools.getByClass = function (oParent, sClass) {
+    var aEle = oParent.getElementsByTagName('*');
+    var arr = [];
+    for (var i = 0; i < aEle.length; i++) {
+        if (aEle[i].className == sClass) {
+            arr.push(aEle[i]);
+        }
+    }
+    return arr;
+};
+
+YtxMain.tools.getStyle = function (obj, attr) {
+    if (obj.currentStyle) {
+        return obj.currentStyle[attr];
+    }
+    else {
+        return getComputedStyle(obj, false)[attr];
+    }
+}
+
+YtxMain.tools.startMove = function (obj, json, fn) {
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function () {
+        var bStop = true;
+        for (var attr in json) {
+            var iCur = 0;
+
+            if (attr == 'opacity') {
+                iCur = parseInt(parseFloat(YtxMain.tools.getStyle(obj, attr)) * 100);
+            }
+            else {
+                iCur = parseInt(YtxMain.tools.getStyle(obj, attr));
+            }
+
+            var iSpeed = (json[attr] - iCur) / 8;
+            iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+
+            if (iCur != json[attr]) {
+                bStop = false;
+            }
+
+            if (attr == 'opacity') {
+                obj.style.filter = 'alpha(opacity:' + (iCur + iSpeed) + ')';
+                obj.style.opacity = (iCur + iSpeed) / 100;
+            }
+            else {
+                obj.style[attr] = iCur + iSpeed + 'px';
+            }
+        }
+
+        if (bStop) {
+            clearInterval(obj.timer);
+
+            if (fn) {
+                fn();
+            }
+        }
+    }, 30)
+}
+
+YtxMain.ui = {};
+/*模拟下拉*/
+YtxMain.ui.pullDown = function (obj) {
+    var oUl = YtxMain.tools.getByClass(obj, 'TheTotal')[0];
+    var ali = oUl.getElementsByTagName('li');
+    var oDiv = YtxMain.tools.getByClass(obj, 'menuInput')[0];
+    obj.onclick = function (ev) {
+        var ev = ev || window.event;
+        oUl.style.display = "block";
+        document.onclick = function () {
+            oUl.style.display = 'none';
+        };
+        ev.cancelBubble = true;
+    }
+    for (i = 0; i < ali.length; i++) {
+        ali[i].onclick = function (ev) {
+            var ev = ev || window.event;
+            oDiv.innerHTML = this.innerHTML;
+            oUl.style.display = "none";
+            ev.cancelBubble = true;
+        }
+        ali[i].onmouseover = function () {
+            for (i = 0; i < ali.length; i++) {
+                ali[i].className = '';
+            }
+            this.className = 'IndCur';
+        }
+    }
+};
+
+YtxMain.ui.DropDown = function (obj) {
+    var aDl = obj.getElementsByTagName('dl')[0];
+    aDl.onmouseover = obj.onmouseover = function () {
+        obj.className = 'DropUp'
+    }
+    aDl.onmouseout = obj.onmouseout = function () {
+        obj.className = 'DropDown'
+    }
+}
+
+YtxMain.ui.FocusPicture = function (obj, onOff) {
+    var oList = YtxMain.tools.getByClass(obj, 'PictureLis')[0];
+    var oPicUl = obj.getElementsByTagName('ul')[0];
+    var oPicLi = oPicUl.getElementsByTagName('li');
+    var aList = oList.getElementsByTagName('span');
+
+    var num = 0;
+    var timer = null;
+    var aLilen = aList.length;
+    for (var i = 0; i < aLilen; i++) {
+        aList[i].index = i;
+        aList[i].onclick = function () {
+            num = this.index;
+            if (onOff) {
+                for (i = 0; i < aLilen; i++) {
+                    YtxMain.tools.startMove(oPicLi[i], { opacity: 0 });
+                    aList[i].className = '';
+                }
+                YtxMain.tools.startMove(oPicLi[this.index], { opacity: 100 });
+                aList[this.index].className = 'Cur';
+            }
+            else {
+                for (i = 0; i < aLilen; i++) {
+                    oPicLi[i].style.display = "none";
+                    aList[i].className = '';
+                }
+                oPicLi[this.index].style.display = "block";
+                aList[this.index].className = 'Cur';
+            }
+        }
+    }
+
+    timer = setInterval(
+	    function () {
+	        clearInterval(timer);
+	        num++;
+	        if (num == aLilen) {
+	            num = 0;
+	        }
+	        for (i = 0; i < oPicLi.length; i++) {
+	            if (onOff) {
+
+	                YtxMain.tools.startMove(oPicLi[i], { opacity: 0 });
+	            }
+	            else {
+
+	                oPicLi[i].style.display = "none";
+	            }
+
+	            aList[i].className = '';
+	        }
+	        if (onOff) {
+	            YtxMain.tools.startMove(oPicLi[num], { opacity: 100 });
+	        }
+	        else {
+
+	            oPicLi[num].style.display = "block";
+
+	        }
+	        aList[num].className = 'Cur';
+	    }
+
+	, 4000);
+
+    obj.onmouseover = function () {
+        clearInterval(timer);
+    }
+    obj.onmouseout = function () {
+        clearInterval(timer);
+        timer = setInterval(
+		     function () {
+		         num++;
+		         if (num == aLilen) {
+		             num = 0;
+		         }
+		         for (i = 0; i < oPicLi.length; i++) {
+
+		             if (onOff) {
+		                 YtxMain.tools.startMove(oPicLi[i], { opacity: 0 });
+		             }
+		             else {
+		                 oPicLi[i].style.display = "none";
+		             }
+
+		             aList[i].className = '';
+		         }
+		         if (onOff) {
+		             YtxMain.tools.startMove(oPicLi[num], { opacity: 100 });
+		         }
+		         else {
+
+		             oPicLi[num].style.display = "block";
+
+		         }
+		         aList[num].className = 'Cur';
+		     }
+		, 4000);
+    }
+
+}
+
+YtxMain.ui.TwoDim = function (obj) {
+    var aEwmWp = obj.getElementsByTagName('div')[0];
+    var time2 = null;
+    aEwmWp.onmouseover = obj.onmouseover = function () {
+        clearInterval(time2);
+        time2 = setInterval(function () {
+            aEwmWp.style.display = 'block';
+        }, 500)
+    }
+
+    aEwmWp.onmouseout = obj.onmouseout = function () {
+        clearInterval(time2);
+        time2 = setInterval(function () {
+            aEwmWp.style.display = 'none';
+        }, 500)
+
+    }
+}
+
+
+YtxMain.app = {};
+
+YtxMain.app.pullDown = function () {
+    var oPull = document.getElementById('pullDown');
+    YtxMain.ui.pullDown(oPull);
+}
+
+YtxMain.app.DropDown = function () {
+    var aDropDown = YtxMain.tools.getByClass(document, 'DropDown');
+    for (var i = 0; i < aDropDown.length; i++) {
+        YtxMain.ui.DropDown(aDropDown[i]);
+    }
+}
+
+YtxMain.app.FocusPicture = function () {
+    var oPic = document.getElementById('focusPicture');
+    YtxMain.ui.FocusPicture(oPic, false);
+
+    var oColumnTxt_L = document.getElementById('ColumnTxt_L');
+    YtxMain.ui.FocusPicture(oColumnTxt_L, false);
+}
+
+YtxMain.app.TwoDim = function () {
+    //var oYWeixin =document.getElementById('YWeixin');
+    //YtxMain.ui.TwoDim(oYWeixin);       //底部微信
+
+    var oJnkaisar = document.getElementById('jnkaisar');
+    YtxMain.ui.TwoDim(oJnkaisar);       //头部手机客户端下载
+    var oJnkaisar1 = document.getElementById('jnkaisar1');
+    YtxMain.ui.TwoDim(oJnkaisar1);       //头部手机客户端下载
+}
+
+
+YtxMain.app.unfold = function () {
+    var oFooter = document.getElementById('FooterCityUl');
+    var aFooterLi = oFooter.getElementsByTagName('li');
+    var aFooterBtn = YtxMain.tools.getByClass(oFooter, 'CityTxtBtn');
+    for (i = 0; i < aFooterBtn.length; i++) {
+        (function (index) {
+            var onOff = true;
+            aFooterBtn[index].onclick = function () {
+                if (onOff) {
+                    onOff = false;
+                    this.parentNode.style.height = 'auto';
+                    this.innerHTML = '-收起';
+                }
+                else {
+                    onOff = true;
+                    this.parentNode.style.height = '24' + 'px';
+                    this.innerHTML = '+展开';
+                }
+            }
+        })(i);
+    }
+}
+
+//城市下拉查询
+$(function () {
+    //var text = $(".inputCity").val();
+    var text = "城市";
+    $(".inputCity").click(function (event) {
+        event.stopPropagation();
+        if ($(".inputCity").val() == text) {
+            $(".inputCity").val("");
+        } else {
+            $(".inputCity").val();
+        }
+        $(".Ytxcitybox").show();
+
+    });
+    $(document).click(function () {
+        if ($(".inputCity").val() == "") {
+            $(".inputCity").val(text);
+        } else {
+            $(".inputCity").val();
+        }
+        $(".Ytxcitybox").hide();
+    });
+    $(".citylisTab span").mouseover(function () {
+        $(this).addClass("Cur").siblings().removeClass("Cur");
+        var i = $(".citylisTab span").index(this);
+        $(".citylisTabUl li").css("display", "none").eq(i).css("display", "block");
+    });
+    $(".categoriesTxt a").click(function () {
+        $(".inputCity").val($(this).text());
+    });
+});
+
+/*点击事件、获取焦点*/
+$(function () {
+    $(".priceInput").click(function (event) {
+        event.stopPropagation();
+        $(".conditionBtn").show();
+    });
+    $(".conditionBtn").click(function (event) {
+        event.stopPropagation();
+    });
+    $(document).click(function () {
+        $(".conditionBtn").hide();
+    });
+
+});
+$(function () {
+    var text = "请输入地址、商圈、地标、店铺名等";
+    $(".inputAdd").click(function (event) {
+        event.stopPropagation();
+        if ($(".inputAdd").val() == text) {
+            $(this).val("");
+        } else {
+            $(".inputAdd").val();
+        }
+    });
+    $(document).click(function (event) {
+        if ($(".inputAdd").val() == "") {
+            $(".inputAdd").val(text);
+        } else {
+            $(".inputAdd").val();
+        }
+
+    });
+});
+
+
+//订房人数下拉框 begin---------------
+$(function () {
+    $(".menuInput").click(function (event) {
+        event.stopPropagation();
+        var text = $(".TheTotal");
+        if (text.css("display") == 'none') {
+            text.show();
+        } else {
+            text.hide();
+        }
+    });
+    $(".TheTotal li").mouseover(function () {
+        $(this).addClass("IndCur").siblings().removeClass("IndCur");
+    });
+    $(".TheTotal li").click(function () {
+        $(this).parent().siblings(".TxtHintNum").text($(this).text());
+    });
+    $(document).click(function (event) {
+        $(".TheTotal").hide();
+    });
+});
+
+/*位置模拟下拉*/
+$(function () {
+    $(".dropDown").click(function (event) {
+        event.stopPropagation();
+        var i = $(".dropDown").index(this);
+        if ($(this).parent("dd").hasClass("cur")) {
+            $(".dropDownUl").eq(i).hide();
+            $(this).parent("dd").removeClass("cur");
+            $(this).children(".dropDownLogoUp").addClass("dropDownLogoDown").removeClass("dropDownLogoUp");
+        }
+        else {
+            $(this).parent("dd").addClass("cur").siblings().removeClass("cur");
+            $(".dropDownLogoUp").removeClass("dropDownLogoUp").addClass("dropDownLogoDown");
+            $(this).children(".dropDownLogoDown").addClass("dropDownLogoUp").removeClass("dropDownLogoDown");
+            $(".dropDownUl").eq(i).show().siblings(".dropDownUl").hide();
+        }
+    });
+    $(".dropDownChoose li").click(function (event) {
+        event.stopPropagation();
+        if ($(this).parent("ul")[0].id == "ul_SubwayLine") {
+            var i = $("#ul_SubwayLine li").index(this);
+            $(this).children("a").addClass("BlueFont FwB").parent("li").siblings().children("a").removeClass("BlueFont FwB");
+            $("#div_Subway .dropDownArea").eq(i).show().siblings(".dropDownArea").hide();
+        }
+        if ($(this).parent("ul")[0].id == "ul_District") {
+//            var dropTextAray = $(this).children("a").text();
+//            var i = $(".dropDownUl").index($(this).parent("ul").parent("div"));
+//            $(".dropDown").eq(i).children(".dropText").text(dropTextAray);
+        }
+    });
+//    $(".dropDownArea li").click(function (event) {
+//        event.stopPropagation();
+//        var dropTextAray = $(".dropText");
+//        for (var i = 0; i < dropTextAray.length; i++) {
+//            if ($(dropTextAray[i]).parent().parent("dd").hasClass("cur")) {
+//                $($(dropTextAray[i]).text($(this).text()));
+//            }
+//        }
+//    });
+//    $(document).click(function () {
+//        $(".dropDownUl").hide();
+//        $(".dropDown").parent("dd").removeClass("cur");
+//        $(this).find(".dropDownLogoUp").addClass("dropDownLogoDown").removeClass("dropDownLogoUp");
+//    });
+});
+
+/*点击更多的弹窗*/
+$(function () {
+    $(".condition_more").click(function (event) {
+        event.stopPropagation();
+        if ($(".more_pop").css("display") == "none") {
+            $(".more_pop").show();
+        } else {
+            $(".more_pop").hide();
+        }
+    });
+    $(".more_pop,.List_PopArrow").click(function (event) {
+        event.stopPropagation();
+        $(".more_pop").show();
+    });
+    $(".List_Pop_close").click(function (event) {
+        event.stopPropagation();
+        $(".more_pop").hide();
+    });
+    $(document).click(function () {
+        $(".more_pop").hide();
+    });
+});
+/*字母选择*/
+$(function () {
+    $(".keyIndex a").mouseover(function () {
+        var i = $(".keyIndex a").index(this);
+        $(".keyResult").css("display", "none").eq(i).css("display", "block");
+        $(this).addClass("keyIndexChecked").siblings().removeClass("keyIndexChecked");
+    });
+});
+$("#inlandCity dt span").mouseover(function () {
+    var i = $("#inlandCity dt span").index(this);
+    $("#inlandCity dt span").removeClass('Cur');
+    $("#inlandCity dt span").eq(i).addClass('Cur');
+    $(this).parent().siblings('dd').css("display", "none").eq
+(i).css("display", "block");
+})
+
+$("#foreignCity dt span").mouseover(function () {
+    var i = $("#foreignCity dt span").index(this);
+    $("#foreignCity dt span").removeClass('Cur');
+    $("#foreignCity dt span").eq(i).addClass('Cur');
+    $(this).parent().siblings('dd').css("display", "none").eq
+(i).css("display", "block");
+})
+
+//导航国内短租选项卡切换-end-------------------------------
+
+$("dl dd label input").click(function () {
+    window.location.href = $(this).siblings("a").attr("href");
+})
+//input选项筛选条件-end-------------------------------
+
+
+$(function () {
+    $(window).scroll(function () {
+        var sT = document.body.scrollTop || document.documentElement.scrollTop;
+        if (sT <= 50) {
+            $(".BackToTop").hide();
+        }
+        else {
+            $(".BackToTop").show();
+        }
+    });
+    $(".BackToTop").click(function () {
+        $("html,body").animate({ scrollTop: 0 }, 1000);
+    })
+
+    $(".close").click(function () {
+        $(".Overlays").hide();
+    })
+})
+
+
+//StarLandlord Begin
+//xg2014-12-16
+$(function () {
+    var num = 0;
+    var picS = $(".PicsCount span").length;
+
+    /*    $(".showPics_RBtn").click(function () {
+    if (num < picS - 1) {
+    num++;
+    } else {
+    num = 0;
+    }
+    $(".PicsCount span").eq(num).addClass("cur").siblings().removeClass("cur");
+    $('.piclist li').eq(num).addClass("cur").siblings().removeClass("cur");
+    $('.showPicsTxt li').eq(num).addClass("cur").siblings().removeClass("cur");
+    })
+
+    $(".showPics_LBtn").click(function () {
+    if (num > 0) {
+    num--;
+    } else {
+    num = picS - 1;
+    }
+    $(".PicsCount span").eq(num).addClass("cur").siblings().removeClass("cur");
+    $('.piclist li').eq(num).addClass("cur").siblings().removeClass("cur");
+    $('.showPicsTxt li').eq(num).addClass("cur").siblings().removeClass("cur");
+    })*/
+
+    function TabPic() {
+        $('.piclist li').eq(num).addClass("cur").siblings().removeClass("cur");
+        $(".PicsCount span").eq(num).addClass("cur").siblings().removeClass("cur");
+        $('.showPicsTxt li').eq(num).addClass("cur").siblings().removeClass("cur");
+    }
+
+    $('.PicsCount span').click(function () {
+        var index = $(this).index();
+        num = index;
+        TabPic();
+    });
+
+    function AutoPic() {
+        num++;
+        if (num == picS) {
+            num = 0;
+        }
+        TabPic();
+    }
+    //xg2015-01-05Begin
+    function PrePic() {
+        num--;
+        if (num == -1) {
+            num = picS - 1;
+        }
+        TabPic();
+    }
+    $('.RightStr').click(function () {
+        AutoPic();
+    });
+    $('.LeftStr').click(function () {
+        PrePic();
+    });
+    var timer = setInterval(AutoPic, 5000);
+
+    $(".showPicsBox").hover(function () {
+        clearInterval(timer);
+        $('.RightStr').show();
+        $('.LeftStr').show();
+    }, function () {
+        timer = setInterval(function () {
+            AutoPic();
+        }, 5000);
+        $('.RightStr').hide();
+        $('.LeftStr').hide();
+    })
+    //xg2015-01-05End
+})
+//StarLandlord End
+
+
+/*短租房源选择更多--Begin*/
+$(function () {
+    $("#div_Choosen").mouseover(function () {
+        $(".ListDetailchose").addClass("DetailListMoreCon");
+        $(".DetailListMoreNr").show();
+    });
+    $("#div_Choosen").mouseleave(function () {
+        $(".ListDetailchose").removeClass("DetailListMoreCon");
+        $(".DetailListMoreNr").hide();
+
+    });
+})
+/*短租房源选择更多--End*/
+
+
+//从SearchA2014.js移过来的
+function userAttention(tempExtId, tempExt) {
+    var tryCount = 0;
+    var result = SFUserAttention.Send(tempExtId, tempExt);
+    tryCount++;
+    if (result.split('@')[0] == "false" && tryCount < 10) {
+        //SFUV中没有设置cookie 循环调用
+
+        setTimeout(arguments.callee, 200);
+    }
+    else if (result.split('@')[0] == "error" && tryCount < 10) {
+
+        //传入的参数不正确
+    }
+    else if (result.split('@')[0] == "true") {
+
+        //成功发送请求
+    }
+    else {
+        //尝试10次仍然不成功
+    }
+}
+
+
+/*品牌推荐轮播Begin*/
+$(function () {
+    var num = 0;
+    var timer = null;
+    var PicLi = $(".RecommendHLi").length;
+    //xg2015-01-09Begin
+    $(".RecommendHLi").each(function () {
+        $(".OpDotted ul").append("<li></li>");
+    });
+    $(".OpDotted ul li:eq(0)").addClass("cur");
+    var DottedNum = PicLi;
+    var DottedH = $(".OpDotted ul li").outerHeight(true);
+    var oDottUlH = DottedNum * DottedH;
+    $(".OpDotted ul").css("height", oDottUlH);
+    $(".OpDotted ul").css("marginTop", -oDottUlH / 2);
+    //xg2015-01-09End
+    var oListHeight = $(".RecommendHLi").height();
+    function TabLiBox() {
+        $(".OpDotted li").eq(num).addClass('cur').siblings().removeClass('cur');
+        $(".RecommendHourseUl").css({ top: -num * oListHeight + 'px' });
+    }
+
+
+    $(".OpDotted li").click(function () {
+        var index = $(this).index();
+        num = index;
+        TabLiBox();
+    });
+    function AfterDirec() {
+        num++;
+        if (num == DottedNum) {
+            num = 0;
+        }
+        TabLiBox();
+    }
+    function BeforeDirec() {
+        num--;
+        if (num == -1) {
+            num = DottedNum - 1;
+        }
+        TabLiBox();
+    }
+    $("#OpUp").click(function () {
+        BeforeDirec();
+        return false;
+    });
+    $("#OpDown").click(function () {
+        AfterDirec();
+        return false;
+    });
+    timer = setInterval(AfterDirec, 3000);
+
+    $(".RecommendHourse").mouseover(function () {
+        clearInterval(timer);
+    });
+    $(".RecommendHourse").mouseleave(function () {
+        timer = setInterval(AfterDirec, 3000);
+    });
+});
+/*品牌推荐轮播End*/

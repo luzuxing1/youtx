@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)http://www.youtx.com/profile/Passport/Interface/UserPicUpLoad.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script src="./jquery-1.6.2.min.js(1).下载" type="text/javascript"></script>
+    <script src="./jQuery.cookie.js(2).下载" type="text/javascript"></script>
+</head>
+<body marginwidth="0" marginheight="0">
+    <form method="post" action="http://www.youtx.com/profile/Passport/Interface/UserPicUpLoad.aspx" id="theform" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQ2OTk2OTE5M2RkXK/Jovsw4QBDJX+3mGc2Mc9ozUg=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0343F476">
+</div>
+                <input name="localfile" size="22" type="file" id="localfile">
+                <input id="btnupload" onclick="return uploadFile()" type="button" class="uploadbtn" style="display:none" value="上传图片">
+                <span id="spanTip"></span>
+                <iframe id="myframe" name="myframe" src="./saved_resource(1).html" width="200" height="50" style="display: none">
+                </iframe>
+    <script type="text/javascript" language="javascript">
+
+        $('#localfile').change(function () {
+            window.parent.document.getElementById("iconimagetxt").value = $('#localfile').val();
+        });
+        var ssid = "";
+        var theform;
+        function uploadFile() {
+            var channelStr = escape("社区论坛");
+            ssid = Math.random() * 1000;
+            var postAction = 'http://img1nu.soufun.com/upload/hezuo?channel=%C9%E7%C7%F8%C2%DB%CC%B3&seal=no&sid=' + ssid;
+            postAction = "http://imgu.youtx.com/upload/avatar?channel=usercenter.avatar&city=";
+
+
+            localfile = document.getElementById("localfile");
+
+            btnupload = document.getElementById("btnupload");
+
+            theform = document.getElementById("theform");
+            theform.target = "myframe";
+
+            if (localfile.value == "") {
+                return false;
+            }
+
+            var oldAction = theform.action;
+
+            var oldonSubmit = theform.onSubmit;
+
+            theform.action = postAction;
+            theform.onSubmit = "";
+
+            theform.submit();
+            theform.action = oldAction;
+            theform.onSubmit = oldonSubmit;
+            theform.target = "";
+
+            GetCookieValue();
+            return false;
+        }
+
+        function GetCookieValue() {
+
+            var obj = getCookie("Picture_" + ssid);
+            if (obj != "-1") {
+                jQuery("#hidPicUrl", parent.document).val(obj);
+                jQuery("#btnUploadImgEnd", parent.document).click();
+                jQuery("#localfile").val("");
+
+                delCookie("Picture_" + ssid);
+                ssid = "";
+                return;
+            }
+            setTimeout("GetCookieValue()", 500);
+        }
+
+        function getCookie(objName) {//获取指定名称的cookie的值
+            var arrStr = document.cookie.split("; ");
+
+            for (var i = 0; i < arrStr.length; i++) {
+                var temp = arrStr[i].split("=");
+
+                if (temp[0] == objName) {
+
+                    return unescape(temp[1]);
+                }
+            }
+            return "-1";
+        }
+
+        function delCookie(name)//删除cookie 
+        {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+    </script>
+
+    </form>
+
+
+</body></html>

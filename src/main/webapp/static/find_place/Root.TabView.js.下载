@@ -1,0 +1,217 @@
+// Copyright (C) jRoot.net, All rights reserved.
+
+document.tabViews = new Array();
+TabView = function (args) {
+    this.id = args.id;
+    this.changeOn = args.changeOn || 'CLICK';
+    this.changeOn = this.changeOn.toUpperCase();
+    this.fade = TabView.__parseBoolean(args.fade, false);
+    this.tabClass = args.tabClass || '';
+    this.hoverTabClass = args.hoverTabClass || '';
+    this.selectedTabClass = args.selectedTabClass || '';
+    this.selectedIndex = -1;
+    this.selectedItem = null;
+    this.onItemChanged = args.onItemChanged;
+    this.items = new TabViewItemCollection();
+    var tabView = this;
+    this.items.onAdded = function () {
+        var index = this.count - 1;
+        if (this[index].selected || index == 0) {
+            tabView.select(index);
+        }
+        else {
+            this[index].tab.className = this[index].tabClass || tabView.tabClass;
+            this[index].block.style.display = 'none';
+        }
+        this[index].tab.onmouseover = function (ev) {
+            if (tabView.selectedIndex != index) {
+                if (tabView.changeOn == 'MOUSEOVER') {
+                    tabView.change(index, ev);
+                }
+                else if (tabView.changeOn == 'CLICK') {
+                    tabView.items[index].tab.className = tabView.items[index].hoverTabClass || tabView.hoverTabClass;
+                }
+            }
+        }
+        this[index].tab.onmouseout = function (ev) {
+            if (tabView.changeOn == 'CLICK' && tabView.selectedIndex != index) {
+                tabView.items[index].tab.className = tabView.items[index].tabClass || tabView.tabClass;
+            }
+        }
+        this[index].tab.onclick = function (ev) {
+            if (tabView.changeOn == 'CLICK') {
+                tabView.change(index, ev);
+            }
+        }
+    }
+    this.items.onRemove = function (index) {
+        this[index].tab.onmouseover = null;
+        this[index].tab.onmouseout = null;
+        this[index].tab.onclick = null;
+        tabView.select(0);
+    }
+    this.items.onClear = function () {
+        for (var i = 0; i < this.count; i++) {
+            this[i].tab.onmouseover = null;
+            this[i].tab.onmouseout = null;
+            this[i].tab.onclick = null;
+        }
+    }
+    document.tabViews[tabView.id] = this;
+};
+TabView.prototype.select = function (index) {
+    if (index < 0) { index = 0; }
+    if (index > this.items.count - 1) { index = this.items.count - 1; }
+    if (this.selectedIndex != index) {
+        if (this.selectedIndex != -1) {
+            this.selectedItem.tab.className = this.selectedItem.tabClass || this.tabClass;
+            this.selectedItem.block.style.display = 'none';
+            this.selectedItem.selected = false;
+        }
+        this.items[index].tab.className = this.items[index].selectedTabClass || this.selectedTabClass;
+        if (this.fade) { TabView.__fadeBlock(this.items[index].block, 0); }
+        this.items[index].block.style.display = '';
+        this.selectedIndex = index;
+        this.items[index].selected = true;
+        this.selectedItem = this.items[index];
+    }
+};
+TabView.prototype.change = function (index, ev) {
+    if (index < 0) { index = 0; }
+    if (index > this.items.count - 1) { index = this.items.count - 1; }
+    if (this.selectedIndex != index) {
+        var selectedIndex = this.selectedIndex;
+        if (selectedIndex != -1) { this.selectedItem.selected = false; }
+        this.selectedIndex = index;
+        this.items[index].selected = true;
+        this.selectedItem = this.items[index];
+        var returnValue = true;
+        if (this.onItemChanged != null) {
+            if (typeof (this.onItemChanged) == 'function') {
+                returnValue = this.onItemChanged.call(this, ev);
+            }
+            else if (typeof (this.onItemChanged) == 'string') {
+                eval('returnValue = function(ev){' + this.onItemChanged + '}');
+                returnValue = returnValue.call(this, ev);
+            }
+            if (returnValue != false && returnValue != true) { returnValue = true; }
+        }
+        if (returnValue) {
+            if (selectedIndex != -1) {
+                this.items[selectedIndex].tab.className = this.selectedItem.tabClass || this.tabClass;
+                this.items[selectedIndex].block.style.display = 'none';
+            }
+            this.items[index].tab.className = this.items[index].selectedTabClass || this.selectedTabClass;
+            if (this.fade) { TabView.__fadeBlock(this.items[index].block, 0); }
+            this.items[index].block.style.display = '';
+        }
+        else {
+            this.items[index].selected = false;
+            this.selectedIndex = selectedIndex;
+            if (selectedIndex != -1) {
+                this.items[selectedIndex].selected = true;
+                this.selectedItem = this.items[selectedIndex];
+            }
+            else {
+                this.selectedItem = null;
+            }
+        }
+    }
+};
+TabView.__fadeBlock = function (element, alpha) {
+    if (alpha < 10) {
+        alpha++;
+        if (element.style.opacity != null) {
+            element.style.opacity = alpha / 10;
+        }
+        else if (navigator.appName == 'Microsoft Internet Explorer') {
+            element.style.filter = 'alpha(opacity=' + (alpha * 10) + ')';
+        }
+        window.setTimeout(function () { TabView.__fadeBlock(element, alpha); }, 60);
+    }
+};
+TabViewItemCollection = function () { };
+TabViewItemCollection.prototype = new Array();
+TabViewItemCollection.prototype.constructor = TabViewItemCollection;
+TabViewItemCollection.prototype.count = 0;
+TabViewItemCollection.prototype.add = function (item) {
+    if (this.onAdd != null) { this.onAdd.call(this, item); }
+    this.count++;
+    this[this.count - 1] = item;
+    if (this.onAdded != null) { this.onAdded.call(this); }
+};
+TabViewItemCollection.prototype.onAdded = null;
+TabViewItemCollection.prototype.onRemove = null;
+TabViewItemCollection.prototype.onClear = null;
+TabViewItem = function (args) {
+    this.tab = args.tab || '';
+    if (typeof (this.tab) == 'string') { this.tab = document.getElementById(this.tab); }
+    this.block = args.block || '';
+    if (typeof (this.block) == 'string') { this.block = document.getElementById(this.block); }
+    this.tabClass = args.tabClass;
+    this.hoverTabClass = args.hoverTabClass;
+    this.selectedTabClass = args.selectedTabClass;
+    this.selected = TabView.__parseBoolean(args.selected, false);
+};
+TabView.__parseBoolean = function (propertyValue, defaultValue) {
+    if (propertyValue == null) { propertyValue = defaultValue; }
+    if (typeof (propertyValue) == 'string') {
+        if (/^true$/i.test(propertyValue) || /^false$/i.test(propertyValue)) {
+            propertyValue = propertyValue.toLowerCase();
+        }
+        propertyValue = eval(propertyValue);
+    }
+    if (propertyValue != true && propertyValue != false) { propertyValue = defaultValue; }
+    return propertyValue;
+};
+TabView.__InitializeTabViews = function () {
+    var tabViews, tabView, tabItem;
+    tabViews = document.getElementsByTagName('TABVIEW');
+    var ids = new Array(tabViews.length);
+    for (var i = 0; i < tabViews.length; i++) {
+        if (tabViews[i].id == '') { tabViews[i].id = '__TabView_' + i; }
+        ids[i] = tabViews[i].id;
+    }
+    var parentNode;
+    var html, type;
+    for (var i = 0; i < tabViews.length; i++) {
+        parentNode = tabViews[i].parentNode;
+        html = parentNode.innerHTML;
+        while (/<\/?tabview/i.test(html)) {
+            html = html.replace(/<tabview/i, '<label type="TABVIEW"');
+            html = html.replace(/<\/tabview>/i, '</label>');
+        }
+        while (/item/i.test(html)) {
+            html = html.replace(/<item/i, '<span');
+            html = html.replace(/<\/item>/i, '</span>');
+        }
+        parentNode.innerHTML = html;
+    }
+    var element;
+    for (var i = 0; i < ids.length; i++) {
+        element = document.getElementById(ids[i]);
+        tabView = new TabView({
+            id: element.id,
+            changeOn: element.getAttribute('changeOn'),
+            fade: element.getAttribute('fade'),
+            tabClass: element.getAttribute('tabClass'),
+            hoverTabClass: element.getAttribute('hoverTabClass'),
+            selectedTabClass: element.getAttribute('selectedTabClass'),
+            onItemChanged: element.getAttribute('onItemChanged')
+        });
+        for (var j = 0; j < element.childNodes.length; j++) {
+            if (element.childNodes[j].nodeName == 'SPAN') {
+                tabItem = element.childNodes[j];
+                tabView.items.add(new TabViewItem({
+                    tab: tabItem.getAttribute('tab'),
+                    block: tabItem.getAttribute('block'),
+                    selected: tabItem.getAttribute('selected'),
+                    tabClass: tabItem.getAttribute('tabClass'),
+                    hoverTabClass: tabItem.getAttribute('hoverTabClass'),
+                    selectedTabClass: tabItem.getAttribute('selectedTabClass')
+                }));
+            }
+        }
+    }
+};
+TabView.__InitializeTabViews();

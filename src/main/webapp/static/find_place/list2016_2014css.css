@@ -1,0 +1,892 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*color*/
+.BlueFont,a.BlueFont{color:#008ad9 !important;}
+.RedFont{color:#e20179 !important;}
+.GrayFont{color:#999 !important;}
+
+.FwB{font-weight:bold;}
+
+.borderNone{border:none !important;}
+.Ver5{vertical-align:5px;*vertical-align:4px;}
+/*选择城市*/
+
+.Ytxcitybox_text_pd{ padding-left:10px; line-height:29px; color:#ff4401;}/*2015-01-20*/
+.Ytxcitybox{background-color:#fff;border:1px solid #bcbeb3;border-radius:5px;box-shadow:0 5px 12px #666666;display:none;left:8px; top:37px;position:absolute;width:508px;}/*2015-01-20修改*/
+
+.YtxcityboxTit{background:url("http://js.youtx.com/images/citytitle_icon.gif") no-repeat 6px 11px #e8f0f6;border-radius:5px;color:#000;cursor:pointer;height:32px;line-height: 32px;overflow: hidden;padding-left: 22px;}
+.YtxcityboxTit .close{background:url("http://js.youtx.com/images/city_ico_close.gif") no-repeat;float:right;height:14px;margin: 9px 8px 0 0;width: 14px;}
+.citylisTab{background:url("http://js.youtx.com/images/citytab_line.png") repeat-x left bottom;border-radius:5px;height:32px;padding:0 8px 1px;width: auto;}
+.citylisTab span{border-top:1px solid #fff;cursor:pointer;display:block;float:left;height:24px;line-height:24px;margin-right:1px;margin-top:8px;overflow:hidden;text-align:center;}
+.citylisTab .Cur {border-bottom:2px solid #63afee;font-weight bold;height:22px;}
+.citylisTabUl{padding:8px;}
+.categoriesTit,.categoriesTxt{width:100%; float:left;}
+.categoriesTit{color:#008ad9;float:left;height:24px;line-height:24px;}
+.categoriesTxt a{display:inline-block;height:24px;line-height:24px;overflow:hidden;width:76px; float:left;padding-bottom:5px;color:#464849;}
+
+/*位置模拟下拉*/
+.dropDown{cursor:pointer; padding:0 5px;float:left;}
+.dropText{max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; line-height:23px; display:inline-block; float:left;}
+
+/*20140710 修改 begin*/
+.dropDownLogoDown{width:8px; height:5px; float:left;margin:10px 0 0 4px;background:url(http://js.youtx.com/images/main2014/dropDownLogo.png) no-repeat 0 0;}
+.dropDownLogoUp{background:url(http://js.youtx.com/images/main2014/dropDownLogo.png) no-repeat 0 -11px;width:8px; height:5px; float:left;margin:10px 0 0 4px;}
+/*20140710 修改 end*/
+
+.dropDownUl{background:#f9f9f9; float:left; margin:0px 0 -5px 1px; padding:0 15px; width:1105px; display:none;}
+
+.dropDownChoose,.dropDownArea{float:left; padding:5px 0;}
+
+/*201408014 修改 begin*/
+.dropDownChoose li, .dropDownArea li {
+    cursor: pointer;
+    float: left;
+    line-height: 28px;
+    padding: 0 12px;
+}
+/*201408014 修改 end*/
+
+.dropDownChoose li:hover,.dropDownArea li:hover{color:#008ad9;}
+.dropDownChoose{border-bottom:solid 1px #e5e5e5; width:100%;}
+/*.cur{background:#f9f9f9;}*/
+
+/*search*/
+/*201408014 修改 begin*/
+.search_rent {
+    background: none repeat scroll 0 0 #f9f9f9;
+    padding:10px 0;
+	border-top:solid 2px #64b0ee;
+	margin-top:10px;
+}
+/*201408014 修改 end*/
+
+.time_rent{background:url(http://js.youtx.com/images/main2014/searchBg05.png) no-repeat;border:1px solid #D1D1D1;height:35px;line-height:35px;padding-left:66px;width:112px; cursor:pointer;}
+
+/*20140710 修改 begin*/
+.TxtHint,.timeText{font-size:14px;z-index:2;position:absolute;left:20px;top:10px;}
+/*20140710 修改 end*/
+
+.menuInput,.inputCity,.inputAdd{border:1px solid #D1D1D1;font-size:14px;height:35px;line-height:35px;padding-left:5px;color:#464849;}
+
+.menuInput{background:url(http://js.youtx.com/images/main2014/searchBg06.png) no-repeat right 0px;width:118px;cursor:pointer;}/*xg2015-03-17*/
+
+.inputCity{background:url(http://js.youtx.com/images/main2014/citySelect.png) no-repeat;width:56px;border-right:dashed 1px #D1D1D1;padding-right:14px;overflow:hidden;}
+
+.inputAdd{background:url(http://js.youtx.com/images/main2014/cityInput.png) no-repeat;border-left:1px dashed #fff;width:345px;padding-left:10px;}/*xg2015-03-17*/
+
+/*20140710 修改 begin*/
+.TheTotal{background-color:#FFF;border:solid 1px #D1D1D1;height:234px;overflow-y:scroll;position:absolute;top:37px;z-index:100;left:15px;width:123px;}/*xg2015-03-17*/
+/*20140710 修改 end*/
+
+.TheTotal li{border-bottom: 1px dotted #D1D1D1;color: #999;cursor: pointer;line-height:30px;padding:0 10px;}
+.IndCur{background:#85c7f0;color:#FFF;}
+.search_rent dd a.btn{height:38px;width:190px; background:#ff9913; font-size:20px; font-family:Microsoft yahei;color:#fff !important; font-weight:bold; display:inline-block; text-align:center; line-height:38px;cursor:pointer;}
+.search_rent dd input[type="text"]:focus, .search_rent dd div.menuInput:focus {border: 1px solid #63afed;}
+
+
+/*condition*/
+.condition{border-bottom:solid 1px #abd9ff;}
+
+/*201408014 修改 begin*/
+.condition_box {
+    padding: 5px 0 5px 45px;
+}
+/*201408014 修改 end*/
+
+.condition_title{float:left; font-weight:bold; padding:4px;margin-left:-45px;display:inline;}
+.condition_describe dl{float:left;}
+
+/*201408014 修改 begin*/
+.condition_describe dl dt {
+    float: left;
+}
+/*201408014 修改 end*/
+
+.condition_describe dl dt a{color:#FFF;background:#63afed; float:left; padding:4px 12px;}
+.condition_describe dl dd{float:left;padding:0 20px;height:25px;line-height:25px;}
+/*20140716 修改 begin*/
+.condition_describe dl dd a{display:inline-block;margin-right:-8px;line-height:24px;color:#464849;}
+/*20140716 修改 end*/
+.condition_describe dl dd select{border:none;margin:3px -5px 0 -3px;}
+.condition_describe dl dd input[type="checkbox"]{margin-top:4px;}
+
+/*20140710 修改 begin*/
+.condition_describe dl dd input.conditionIext{border:solid 1px #d1d1d1;width:58px;height:23px; vertical-align:middle;}
+.condition_describe dl dd input.conditionBtn{border:solid 1px #d1d1d1;padding:3px 6px; display:none; cursor:pointer; vertical-align:middle;}
+/*20140710 修改 end*/
+
+
+/*单选框*/
+dl dd label{cursor:pointer;}
+/*20140902 修改 begin*/
+dl dd label input[type="checkbox"] {
+    cursor: pointer;
+    margin-right: 4px;
+    vertical-align: -2px;
+}
+/*20140902 修改 end*/
+
+/*更多弹窗*/
+
+/*20140731 修改 begin*/
+.condition_more {
+    background: url("http://js.youtx.com/images/main2014/more.png") no-repeat 0 0;
+    cursor: pointer;
+    float: left;
+    height: 14px;
+    margin-top: 5px;
+    position: relative;
+    width: 40px;
+    z-index: 10;
+}
+/*20140731 修改 end*/
+
+.more_pop{border:1px solid #63AFED; position:absolute; left:-230px; top:25px; width:360px; background-color:#FFF;padding:8px; border-radius:5px;cursor:default;}
+.more_pop dl dd{float:left;width:120px;padding:5px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.more_pop .List_PopArrow{background:url(http://js.youtx.com/images/main2014/List_PopArrow.jpg) no-repeat; width:18px; height:10px; position:absolute; left:230px; top:-18px;}
+.more_pop .List_Pop_close{position:absolute; right:10px; display:block; padding:5px;cursor:pointer;}
+
+/*details*/
+.details{overflow-x:hidden;overflow-y:auto;}
+.details_list{padding-top:15px;width:848px;}
+.detailsList_title{border-bottom:solid 1px #2b98dd;}
+a.blueDetails,a.blueDetails:hover{display:block;padding:11px 16px; font-size:14px; background:#2b98dd; color:#FFF; float:left;}
+a.whiteDetails,a.whiteDetails:hover{display:block;padding:10px 15px; font-size:14px; border:solid 1px #e3e3e3; color:#464849; float:left;}
+.title_span{color:#999; padding-top:14px;}
+
+/*20140902 修改 begin*/
+.detailsList_condition {
+border:solid 1px #e3e3e3;padding:10px 5px; background:#f9f9f9; border-top:none; position:relative; z-index:2;
+}/*xg2014-12-24*/
+.detailsListDL dd {
+    float: left;
+    line-height: 18px;
+    padding-right: 14px;
+	*padding-right:7px;
+}
+/*xg2014-12-24*/
+
+/*20140902 修改 end*/
+
+/*20140710 修改 begin*/
+.RankingDiv a{float:left; margin-right:5px; color:#464849;height:18px;line-height:18px;}
+.RankingDiv span{display:inline-block; margin-left:5px;color:#464849;line-height:18px;}
+
+
+
+/*20140730 修改 begin*/
+.arrowDowned{background-position:-24px 0;}
+.arrowUped{background-position:-16px 0;}
+/*20140730 修改 end*/
+/*20140710 修改 end*/
+
+/*homepic*/
+.detailsListBoxBg{background:#f9f9f9;}
+.detailsListBox{border-bottom:solid 1px #e3e3e3; padding:20px 0;}
+.detailsListBox:hover{background:#f9f9f9;}
+.detailsListBox .detailsListBoximages/main2014 ul{float:left;}
+/*20140715 修改 begin*/
+.detailsListBox .detailsListBoxDetil{width:466px;/*overflow:hidden;*/}  /*2015-08-10修改*/
+/*20140715 修改 end*/
+
+/*201408014 修改 begin*/
+.houseNum {
+    background: url("http://js.youtx.com/images/main2014/houseNumBg.png") no-repeat;
+    color: #fff;
+    display: block;
+    height: 25px;
+    left: 0;
+    padding-left: 6px;
+    padding-top: 3px;
+    position: absolute;
+    top: 0;
+    width: 25px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+/*201408014 修改 end*/
+
+/*20140902 修改 begin*/
+.houseTitle {
+    color: #008ad9;
+    font-family: Microsoft yahei;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+}
+/*20140902 修改 end*/
+
+/*20140730 修改 begin*/
+.houseTitle span.houseAppD{background:url(http://js.youtx.com/images/main2014/ppdianpu.png) no-repeat; width:61px; height:19px;margin-left:5px;}
+.houseTitle span.houseAppJ{background:url(http://js.youtx.com/images/main2014/jingpin.png) no-repeat; width:41px; height:19px;margin-left:5px;}
+/*20140730 修改 end*/
+
+/*20140902 修改 begin*/
+.houseDetil, .houseDetilIcon {
+    min-height: 18px;
+    padding-top: 10px;
+}
+.houseDetilIcon span {
+    border: 1px solid #e3e3e3;
+    display: inline-block;
+    margin-right: 5px;
+	float:left;
+}
+.houseDetilIcon span.detilSpan {
+    height: 15px;
+    line-height: 15px;
+    padding: 1px 4px;
+    text-align: center;
+	border-radius:3px;
+	border: 1px solid #289adb;
+}
+/*20140902 修改 end*/
+
+.serviceCom,.serviceWifi,.serviceBath,.serviceTV,.serviceWash,.serviceIce,.serviceEat,.serviceSwim,.serviceMeet,.serviceBody,.serviceTaxi,.servicePark{width:16px; height:16px; vertical-align:-5px;*vertical-align:-3px;}
+/*20140724 修改 end*/
+
+.houseDetilIcon span.serviceCom{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -2px 0px;}
+.houseDetilIcon span.serviceWifi{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -26px 0px;}
+.houseDetilIcon span.serviceBath{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -51px 0px;}
+.houseDetilIcon span.serviceTV{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -74px 0px;}
+.houseDetilIcon span.serviceWash{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -96px 0px;}
+.houseDetilIcon span.serviceIce{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -114px 0px;}
+.houseDetilIcon span.serviceEat{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -135px 0px;}
+
+/*20140731 修改 begin*/
+.ownerName{display:block; vertical-align:14px;*margin-bottom:-10px;}
+/*20140731 修改 end*/
+
+
+/*20140724 修改 begin*/
+.status2013,.status2012,.statusMobile,.statusTel,.zhimaxy{width:22px; height:22px;display:inline-block; vertical-align:-21px;margin-right:5px;}
+/*20140724 修改 end*/
+
+/*20140715 修改 begin*/
+.status2013{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat 0 0px;}
+/*20140715 修改 end*/
+.status2012{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -33px 0;}
+.statusMobile{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -66px 0;}
+.statusTel{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -98px 0;}
+.zhimaxy{background:url(http://js.youtx.com/images/main2014/zhimaxy3.png) no-repeat; width:24px;}
+
+/*201408014 修改 begin*/
+.housePrice {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 28px;
+	color:#464849;
+}/*xg2014-12-18*/
+/*201408014 修改 end*/
+
+.beforePrice{text-decoration:line-through; color:#999; line-height:30px;}
+
+/*20140730 修改 begin*/
+.zhekouBg{background:url(http://js.youtx.com/images/main2014/zhekouBg.png) no-repeat;width:4px; height:21px;display:inline-block;float:right;line-height:20px;}
+.zhekouTime{border:solid 1px #e20179; height:19px;float:right;line-height:20px; padding:0 5px;height:19px;float:right;line-height:20px;padding:0 4px;}
+/*20140730 修改 end*/
+
+/*resultCount*/
+.resultCount a.publish{display:inline-block; background:#ff9913; color:#fff; padding:4px 5px; font-weight:bold;}
+.housePages{overflow:hidden; width:490px;}
+
+/*20140724 修改 begin*/
+.housePages a{border:solid 1px #ddd; color:#2a98da; width:23px; height:20px; text-align:center; line-height:20px;display:inline-block; margin-right:5px;}
+/*20140724 修改 end*/
+
+/*20140807 修改 being*/
+/*添加了几个新的样式.firstPage1,.beforePage1,.lastPage1,.endPage1*/
+.firstPage, .beforePage, .lastPage, .endPage,.firstPage1,.beforePage1,.lastPage1,.endPage1{
+    vertical-align: -7px;
+}
+/*20140807 修改 end*/
+
+.housePages a.firstPage{background:url(http://js.youtx.com/images/main2014/firstPage.png) no-repeat; width:50px;}
+.housePages a.beforePage{background:url(http://js.youtx.com/images/main2014/beforePage.png) no-repeat; width:58px;}
+.housePages a.lastPage{background:url(http://js.youtx.com/images/main2014/lastPage.png) no-repeat; width:59px;}
+.housePages a.endPage{background:url(http://js.youtx.com/images/main2014/endPage.png) no-repeat; width:50px;}
+.housePages a.firstPage1{background:url(http://js.youtx.com/images/main2014/firstPage1.png) no-repeat; width:50px;}
+.housePages a.beforePage1{background:url(http://js.youtx.com/images/main2014/beforePage1.png) no-repeat; width:58px;}
+.housePages a.lastPage1{background:url(http://js.youtx.com/images/main2014/lastPage1.png) no-repeat; width:59px;}
+.housePages a.endPage1{background:url(http://js.youtx.com/images/main2014/endPage1.png) no-repeat; width:50px;}
+.housePages span.points{border:none;font-weight:bold;vertical-align:4px;}
+.housePages a.pageCheck{background:#2a98da;color:#FFF;border:solid 1px #2a98da;}
+
+/*details_map*/
+/*201408014 修改 begin*/
+.details_map {
+    padding-top:53px;
+    width: 310px;
+}
+/*201408014 修改 end*/
+
+.detailsMap{border:solid 1px #e3e3e3; border-top-color:#2b98dd; margin-bottom:20px;}
+.detailsMap img{cursor:move;}
+
+.detailsTips {
+    border: 1px solid #e3e3e3;
+    padding:0 10px;
+}
+.tipsText {
+    border-bottom: 1px dashed #e3e3e3;
+    padding:10px 0;
+	margin-left:38px;
+}
+.tipsLogo01, .tipsLogo02, .tipsLogo03, .tipsLogo04 {
+    float:left;
+    height: 20px;
+    margin: 0 9px;
+    vertical-align: -5px;
+    width: 23px;
+	margin-left:-38px;
+}
+.tipsLogo01 {
+    background: url("http://js.youtx.com/images/main2014/tipsIcos.png") no-repeat 0 0;
+}
+.tipsLogo02 {
+    background: url("http://js.youtx.com/images/main2014/tipsIcos.png") no-repeat 0 -25px;
+}
+.tipsLogo03 {
+    background: url("http://js.youtx.com/images/main2014/tipsIcos.png") no-repeat 1px -52px;
+}
+.tipsLogo04 {
+    background: url("http://js.youtx.com/images/main2014/tipsIcos.png") no-repeat 0 -82px;
+}
+.tipsText p {
+    padding-top: 5px;
+    width: 240px;
+	float:left;
+}
+
+/*201408014 修改 begin*/
+.tipsText .picText {
+    color: #008ad9;
+    float: left;
+    font-family: Microsoft yahei;
+    font-size: 12px;
+    margin-left: -38px;
+    padding: 1px 4px 0 0;
+}
+/*201408014 修改 end*/
+
+.tipsText p a.signName {
+    background:#ff9913;
+    color: #fff;
+    float: right;
+    font-weight: bold;
+    padding: 1px 7px;
+}
+.tipsText p span.ellText{width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;*vertical-align:5px;}
+
+/*201408014 修改 begin*/
+.tipsText .tipsChoose {
+    float: right;
+    font-size: 12px;
+}
+/*201408014 修改 end*/
+
+.houseRemai{border:solid 1px #e3e3e3;margin-top:20px; padding:10px 10px 0 10px; border-top-color:#2b98dd;}
+/*20140722修改 start*/
+.houseRemai p.remaiText{font-weight:bold; font-size:20px;margin-bottom:5px;}
+/*20140722修改 end*/
+
+.houseRemai img{margin:0 auto; display:block; padding:10px 0;}
+/*201408014 修改 begin*/
+.houseRemai div.remaiDetil {
+    border-bottom: 1px dashed #e3e3e3;
+    padding: 10px 0;
+}
+.houseRemai span {
+    line-height: 22px;
+}
+/*201408014 修改 end*/
+
+/*hotHouse*/
+.hotHouse{border:solid 1px #e3e3e3; border-top-color:#2b98dd; background-color:#f9f9f9;}
+.hotHouseTitle img{vertical-align:top; float:left;}
+.hotHouseTitle span,.hotHouseTitle .hotHouseMe{font-family:Microsoft yahei; margin:10px 20px 12px 5px;}
+.hotHouseTitle .hotHouseMe{border:solid 1px #bdddf1; padding:4px 8px; color:#2a98da !important; background-color:#FFF; float:right;}
+.hotHouseList{padding:0 24px 20px 24px;}
+.hotHouseList ul{list-style:none;}
+/*20140715 修改 begin*/
+.hotHouseList ul li{float:left;padding-right:16px; position:relative;}
+/*20140807 修改 being*/
+.hotHouseList ul li p {
+    overflow: hidden;
+    width: 210px;
+}
+/*20140807 修改 end*/
+/*20140715 修改 end*/
+
+.hotAbout{border:solid 1px #e3e3e3; margin-top:20px; padding:15px 24px;background-color:#f9f9f9; vertical-align:middle; color:#999;}
+
+/*底部搜索*/
+/*201408014 修改 begin*/
+.searchByKey {
+    padding: 10px 0;
+}
+/*201408014 修改 end*/
+
+/*20140811 添加 begin*/
+.condition_describe dl dt a.noChecked:hover{
+	border:solid 1px #63afed;
+	padding:3px 11px;
+}
+/*20140811 添加 end*/
+
+/*201408014 修改 begin*/
+.keyIndex a {
+    border: 1px solid #d7d7d7;
+    color: #464849;
+    display: inline-block;
+    font-family: Microsoft yahei;
+    height: 21px;
+    line-height: 21px;
+    margin: 0 8px 6px 0;
+    text-align: center;
+    width: 21px;
+}
+/*201408014 修改 end*/
+
+.keyIndex a.keyIndexChecked{background:#2fadf5; color:#fff; border:solid 1px #2d8dd0;}
+
+/*20140807 添加 begin*/
+/*201408014 修改 begin*/
+.keyResult {
+    height: 40px;
+    overflow: hidden;
+}
+/*201408014 修改 end*/
+
+.keyResult a:hover{color:#008ad9!important;}
+/*20140807 添加 end*/
+
+/*20140807 修改 begin*/
+.keyResult a {
+    color: #999;
+    display: inline-block;
+    margin-right: 10px;
+	line-height:22px;
+}
+/*20140807 修改 end*/
+
+/*弹出层-日历*/
+.ui-corner-all {border-radius: 4px 4px 4px 4px;}
+.ui-widget-content {border: medium none;color: #222222;}
+.ui-widget {font-family: Arial,Verdana,sans-serif;font-size: 1.1em;}
+.ui-datepicker {background: none repeat scroll 0 0 white;border: 1px solid #D3D3D3;border-radius: 10px 10px 10px 10px !important;box-shadow: 0 8px 31px #666666;
+display: none;padding: 10px;width: 205px;}
+.referral_lightbox .ui-icon, .ui-icon-closethick, .ui-dialog-titlebar-close, .ui-widget-header, .ui-state-hover {background: none repeat scroll 0 0 transparent !important; border: medium none !important;}
+.ui-widget-header {color: #222222; font-weight: bold;padding-left: 1px;}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {background-image: none;opacity: 0.5;}
+.ui-datepicker-prev,.ui-datepicker-next{background: url(http://js.youtx.com/images/calendar_prev_month.gif) no-repeat 3px 3px!important;cursor: pointer;display: block; float: left; height:20px;width:20px;}
+.ui-datepicker-next {background:url(http://js.youtx.com/images/calendar_next_month.gif) no-repeat 3px 3px !important;float:right;}
+.ui-datepicker-title {font-size:15px;font-weight:bold;letter-spacing: -0.25px;padding-bottom: 8px;text-align: center;}
+table {border-collapse: separate; border-spacing:0;}
+table, caption, tbody, tfoot, thead, tr, th, td {border:0 none;font-family:inherit;font-size:1em;font-style:inherit;font-weight:inherit;margin:0;outline:0 none;padding: 0;
+ vertical-align:baseline;}
+.ui-datepicker-calendar tr { background: none repeat scroll 0 0 #FFFFFF;display: block; overflow: hidden;padding-bottom: 1px;width: 203px;}
+.ui-datepicker-calendar tr td span, .ui-datepicker-calendar tr th span, .ui-datepicker-calendar tr td a {background: none repeat scroll 0 0 transparent !important;
+border: medium none !important; display: block; height: 22px;padding-top: 4px;text-align: center;width: 28px;}
+.ui-datepicker-calendar tr th span {background: none repeat scroll 0 0 #FFFFFF !important;font-weight: bold;}
+.ui-datepicker-calendar tr td, .ui-datepicker-calendar tr th {background: none repeat scroll 0 0 #EFEFEF;display: block; float: left;height: 26px;margin-right: 1px;overflow: hidden;width: 28px;}
+.caption, th, td {font-weight: normal;text-align: left;}
+.ui-datepicker-calendar tbody {display: block;overflow: hidden;width: auto;}
+.ui-datepicker-calendar tbody tr {background: none repeat scroll 0 0 #E5E5E5 !important;}
+.ui-datepicker-calendar tr td.ui-datepicker-unselectable {background: none repeat scroll 0 0 #A7A7A7;}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {background: none repeat scroll 0 0 #E6E6E6;border: 1px solid #D3D3D3;color: #555555;font-weight: normal;}
+.ui-datepicker-buttonpane {padding-top: 10px;text-align: center;}
+.ui-datepicker-close {background: none repeat scroll 0 0 transparent !important;border: medium none !important;color: #0087D2 !important;cursor: pointer !important;font-size: 12px !important;font-weight: normal !important;}
+.ui-datepicker-close:hover{ font-weight:bold!important;}
+.ui-datepicker-calendar tr td a.ui-state-hover {background: none repeat scroll 0 0 #85C7F0 !important;color: #FFFFFF;font-weight: normal;}
+.ui-datepicker-calendar tr td a:hover {background: none repeat scroll 0 0 #85C7F0 !important;color: #FFFFFF;font-weight: bold;}
+.ui-datepicker-calendar tr td a.ui-state-active {background: none repeat scroll 0 0 #85C7F0 !important;color: #FFFFFF;}
+.font_family_wryh{font-family: "Microsoft YaHei", monospace !important;}
+
+
+/*color*/
+.BlueFont,a.BlueFont{color:#008ad9 !important;}
+.RedFont{color:#e20179 !important;}
+.GrayFont{color:#999 !important;}
+
+/*20140710 添加 begin*/
+.borderTop{border-top:solid #63afed 2px;}
+.borderBottom{border-bottom:solid #e6e6e6 1px;}
+.hotelNew{background:url(http://js.youtx.com/images/main2014/hotelNew.png) no-repeat; width:20px; height:9px; display:inline-block; position:absolute; right:-10px; top:5px;}
+
+/*20140730 修改 begin*/
+.houseTitle span.collectHeart{background:url(http://js.youtx.com/images/main2014/collheart.png) no-repeat 0 0; width:14px; height:12px; margin:3px 0 0 5px;}
+/*20140730 修改 end*/
+
+.collectFont{font-size:12px; font-weight:normal; padding-left:5px;}
+.houseDetilIcon span.serviceSwim{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -156px 0px;}
+.houseDetilIcon span.serviceMeet{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -177px 0px;}
+.houseDetilIcon span.serviceBody{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -195px 0px;}
+.houseDetilIcon span.serviceTaxi{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -213px 0px;}
+.houseDetilIcon span.servicePark{background:url(http://js.youtx.com/images/main2014/serviceIcos.png) no-repeat -234px 0px;}
+.hotelChoose a{padding:0 5px; color:#999;}
+.hotelChoose a.padding0{padding-left:0;}
+
+.TxtHintNum{font-size:14px;position:absolute;left:53px;top:10px;width: 56px;display: inline-block; text-align: center;}/*xg2015-03-17*/
+
+/*20140716 修改 begin*/
+.houseTitle a{cursor:pointer;float:left;}/*xg2015-03-25*/
+/*20140716 修改 end*/
+.houseTitle span.collectAlready{background:url(http://js.youtx.com/images/main2014/collheart.png) no-repeat -16px 0 !important;}
+
+/*20140731 修改 begin*/
+.filterCollect{background:#eef6fd; padding:6px 16px;}
+.filterCollect .myFilter{color:#999; float:left; height:18px; line-height:18px;}/*20140731添加*/
+.filterCollect ul li{padding-right:10px; float:left;}/*20140731添加*/
+.myCollect{float:left; color:#39aced; padding:0px 4px; border:solid 1px #a8d2f4; height:18px; line-height:18px;}
+.close_f{background:url(http://js.youtx.com/images/main2014/closeCollect.png) no-repeat; width:19px; height:20px; float:left;}/*20140731添加*/
+/*20140731 修改 end*/
+
+.dropDownUlLe{margin-left:28px;}
+.condition_describe dl dt a.noChecked{background:#FFF; color:#000;}
+
+
+.starLevel,.starLevel2,.starLevel3,.starLevel4,.starLevel5{background:url(http://js.youtx.com/images/main2014/star.png) repeat-x; height:13px;display:inline-block;}
+.starLevel{background-repeat:no-repeat; width:13px;}
+.starLevel2{width:26px;}
+.starLevel3{width:39px;}
+.starLevel4{width:52px;}
+.starLevel5{width:65px;}
+/*20140710 添加 end*/
+/*20140711 添加 begin*/
+.empty_house{background:url(http://js.youtx.com/images/main2014/emptyHouse.png) no-repeat; width:110px; height:100px; margin:80px 0 130px 200px; display:inline;}
+.empty_txt{padding:96px 0 130px 20px;}
+.empty_txt p{line-height:22px;}
+.groom_house{border-top:solid 1px #2b98dd;}
+.groom_house ul{margin-right:-24px;padding-bottom:20px;}
+.groom_house li{float:left;width:270px; height:202px; position:relative; margin:18px 18px 0 0;*margin-right:12px;}
+
+/*201408014 修改 begin*/
+.groom_house li div {
+    background: none repeat scroll 0 0 #fff;
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+    padding: 0 8px;
+    position: absolute;
+    right: 0;
+}
+/*201408014 修改 end*/
+
+.groom_house li div span{line-height:22px;}
+
+/*201408014 修改 begin*/  /*去掉.hotHouseList p span.FR*/
+.remaiDetil p span, .fontFamilyWer {
+    font-family: "微软雅黑";
+}
+/*201408014 修改 end*/
+
+/*2016-01-12长租房Begin*/
+.RoomBox{padding:10px 10px 0;border:1px solid #e3e3e3;border-top:1px solid #2b98dd;margin-top:20px;}
+.RoomBoxTit span{font-size:17px; font-family: "Microsoft yahei";}
+.RoomBoxTit{height:22px;line-height:22px;}
+.longRentUl li{padding:16px 0 18px;border-bottom:1px dashed #e7e7e7;margin-bottom:-1px;}
+.longRentUl li .longRentImg{ float: left; width: 100px; height: 66px;}
+.longRentUl li .longRentTxt{  float: right; width: 183px; height: 66px;}
+.longRentTit{ display: block; line-height: 20px; min-height: 20px; font-size: 14px; color:#008ad9; font-family: "Microsoft yahei"; margin-top: -2px; max-height:40px;overflow:hidden;}
+.longRentPrice{ float: right; font-size: 12px; color: #999999;}
+.longRentAdd{ position: relative; color: #999999; font-family: "宋体"; margin-top: 12px;}
+.longRentPrice{ line-height: 20px; position: absolute; right: 0; top: -5px; padding:0 !important;}
+.longRentPrice span{ color:#464849; font-family: "Microsoft yahei";}
+.longRentPrice span b{ font-size:20px; font-weight: bold;  }
+/*2016-01-12长租房End*/
+
+/*20140724 修改 begin*/
+.status2014,.status2015,.status2016,.status2017,.status2018,.status2019,.status2020,.status2021,.statusCreditS,.status2015Apart,.status2015Contr,.status2015Praise,.status2015Villa{width:22px; height:22px;display:inline-block; vertical-align:-21px;margin-right:5px;}/*2015-08-10修改*//*2015-11-20修改*/
+/*20140724 修改 end*/
+
+/*20140715 添加 begin*/
+.status2014{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -129px 0;}
+.status2015{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -160px 0;}
+.status2016{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -191px 0;}
+.status2017{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -223px 0;}
+.status2018{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -255px 0;}
+.status2019{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -286px 0;}
+.status2020{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -316px 0;}
+.status2021{background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -348px 0;}
+.statusCreditS{ background: url(http://js.youtx.com/images/main2014/creditScore.jpg) no-repeat 0px -2px; cursor:pointer; position:relative;}/*2015-08-10新增*/
+.status2015Apart{ background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -380px 0px; }/*2015-11-20zj*/
+.status2015Contr{ background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -412px 0px; }/*2015-11-20zj*/
+.status2015Praise{ background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -444px 0px; }/*2015-11-20zj*/
+.status2015Villa{ background:url(http://js.youtx.com/images/main2014/status.png) no-repeat -476px 0px; }/*2015-11-20zj*/
+
+/*2015-08-10芝麻信用Begin*/
+.EjectPromp_new {font-family:"宋体";background-color:#FFFFFF;border:1px solid #AEAEAE;border-radius:4px;right: -158px;position: absolute;top: 30px;width: 230px;z-index: 11;}
+.EjectSj_new span{color: #FFFFFF;font-size: 16px;height: 16px;left: 52px;position: absolute;top: -8px;width:16px;z-index:10;}
+.EjectSj_new .EjectSj02{color:#AEAEAE;top:-9px;z-index:9;}
+.EjectPrompTxt_new {background-color: #FFFFFF;border-radius: 4px 4px 4px 4px;padding: 10px;width: 210px;}
+.EjectPrompTxt_new p {color: #333333;font: 12px/20px "宋体";text-align: left;}
+.EjectPrompTxt_new .EjectPrompDown_new {padding-top: 6px;text-align: right;}
+/*2015-08-10芝麻信用End*/
+
+em span{margin-left: 5px;}
+
+/*20140730 修改 begin*/
+.zhekouFont{background:url(http://js.youtx.com/images/main2014/zhekouFont.png) repeat-x; color:#FFF;height:21px;display:inline-block; float:right; line-height:20px; max-width:78px; overflow:hidden;font-family:Microsoft yahei;}
+/*20140730 修改 end*/
+
+.zhekouFont a{color:#FFF;}
+
+/*20140807 修改 being*/
+/*去掉了一些没必要的标签，方便复用*/
+.hotHouseList .hotHouseImg img {
+    position: absolute;
+    right: 26px;
+    top: -5px;
+}
+.hotHouseList .hotHouseImg span {
+    color: #fff;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    position: absolute;
+    right: 28px;
+    text-align: center;
+    top: 2px;
+    width: 42px;
+}
+/*20140807 修改 end*/
+
+.condition_describe dl dd a:hover,.tipsText p a:hover{color:#008ad9;}
+.tipsText p a{color:#464849;}
+
+/*20140724 添加 begin*/
+.detailsListPrice{width:158px;overflow:hidden;}
+/*20140724 添加 end*/
+
+/*20140730 添加 begin*/
+dl dd label a{color:#464849;}
+.dropDownChoose li a,.dropDownArea li a{color:#464849;}
+.houseDetil span{float:left; margin-right:5px; height:24px; line-height:24px;}
+.houseDetil span.detilDec{max-width:242px; overflow:hidden;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<242?"242px":"");}
+.houseTitle span{float:left;height:20px;}
+
+.houseTitle .houseTitleDec{max-width:358px;overflow: hidden;white-space:nowrap;}/*2014-11-11修改*/
+
+/*20140730 添加 end*/
+
+/*20140806 添加 begin*/
+.inputcheckbox{vertical-align:-2px;}
+/*20140806 添加 end*/
+
+.cityout{clear:both;position:relative;height:0;}
+.citybox{z-index:99; position:absolute;top:0;background-color:#fff; width:332px; border:1px solid #bcbeb3;border-top:none; box-shadow:0 5px 12px #666; -moz-box-shadow:0 5px 12px #666; -webkit-box-shadow:0 5px 12px #666; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+.citybox .title{line-height:32px;height:32px;color:#000;background:#e8f0f6 url(http://js.youtx.com/images/citytitle_icon.gif) no-repeat 8px 11px;padding-left:22px;overflow:hidden;border-radius:5px;}
+.citybox .tab{padding:0 0 1px 8px; _padding-bottom:0; width:auto;height:32px;background:url(http://js.youtx.com/images/citytab_line.png) left bottom repeat-x;border-radius:5px;}
+.citybox .tab a{display:block;float:left;height:24px;line-height:24px;padding:0 6px;border-top:1px solid #fff;text-decoration:none;text-align:center;margin-top:8px;overflow:hidden;margin-right:1px;}
+.citybox .tab a:hover{height:23px;line-height:24px;padding:0 6px;border-bottom:1px solid #ddd;color:#000;font-weight:700;background:#fff;border-top-left-radius:4px;border-top-right-radius:5px;}
+.citybox .tab a.current{height:24px;line-height:24px;padding:0 6px;border:1px solid #ddd;border-bottom:none;color:#000;font-weight:700;background:#fff;border-top-left-radius:4px;border-top-right-radius:5px;}
+.citybox .citycontent{clear:both;padding:10px 0 10px 10px;}
+.citybox .citycontent a{display:block;float:left;margin-left:5px;padding:5px;width:65px;color:#787878;text-align:left;font-size:12px;line-height:16px;height:16px;}
+.citybox .citycontent a:hover, .citybox .citycontent .current{color:#008bda;font-weight:700;text-decoration:none;}
+.citybox .citycontent p.spe{clear:both; border-top:1px dashed #eee; *padding-top:10px;}
+.citybox .close{float:right;width:14px;height:14px;margin:9px 8px 0 0;background:url(http://js.youtx.com/images/city_ico_close.gif) no-repeat;text-decoration:none;display:inline;}
+.citybox .close:hover,.citybox .close:visited{text-decoration:none;}
+.city_iconbox{height:0px;line-height:0px;width:0px;float:left;position:relative;}
+.city_iconbox .cityicon{position:absolute;right:0;top:0;display:block;width:28px;height:40px;background:url(http://js.youtx.com/images/citylisti.gif) 4px center no-repeat;cursor:pointer;}
+.city_iconbox .cityicon:hover{background:url(http://js.youtx.com/images/citylisti.gif) 4px center no-repeat;}
+.citybox_shu{z-index:100; position:absolute;top:37px;background-color:#fff; width:508px; border:1px solid #bcbeb3;border-top:none; box-shadow:0 5px 12px #666; -moz-box-shadow:0 5px 12px #666; -webkit-box-shadow:0 5px 12px #666; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+.citybox_shu dl{}
+.citybox_shu dt{height:24px;line-height:24px;border-bottom:1px dotted #bdbdbd;padding:0 5px;}
+.citybox_shu dd{clear:both;padding:0 5px;height:26px;line-height:26px;cursor:pointer;}
+.citybox_shu dd.on{background:#FFE3F2;}
+.cityhy{float:right;width:70px;height:26px;overflow:hidden;text-align:right;}
+.citypy{width:110px;height:26px;overflow:hidden;}
+.cityhyword {display: block;font-family: 微软雅黑;font-size: 14px;height: 26px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.citybox_no{z-index:101;position:absolute;top:-1px;width:136px;height:24px;line-height:24px;text-align:center;background:#ffeeab;border:1px solid #b8890d;color:#8a6400;box-shadow:0 5px 12px #666; -moz-box-shadow:0 5px 12px #666; -webkit-box-shadow:0 5px 12px #666; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+.wordactive{color:#333;}
+.wordcolor{color:#999999;}
+
+
+.citybox_no {
+    background: none repeat scroll 0 0 #ffeeab;
+    border: 1px solid #b8890d;
+    border-radius: 5px;
+    box-shadow: 0 5px 12px #666;
+    color: #8a6400;
+    height: 24px;
+    left: 2px;
+    line-height: 24px;
+    position: absolute;
+    text-align: center;
+    top: -1px;
+    width: 136px;
+    z-index: 101;
+}
+
+.citywordTit {
+    border-bottom: 1px solid #bdbdbd;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+}
+
+.citywordUl li {
+    border-bottom: 1px dotted #bdbdbd;
+}
+
+.citywordUl .On {
+    background-color: #85c7f0;
+}
+
+.citywordUl .On a {
+    color: #fff !important;
+}
+.citywordUl li a {
+    display: block;
+    padding: 5px 10px;
+}
+
+.ColorFF4401 {
+    color: #ff4401;
+}
+
+
+/*20140814 添加 begin*/
+.adImg{padding:10px 0 0 0; display:inline-block;}
+.content_pad{margin: 10px auto;}
+.PL14{padding-left:14px;}.PR8{padding-right:8px}.PL8{padding-left:8px;}
+.PT25{padding-top:25px;}
+.groom_house li p{line-height:24px; height:24px;}
+.hotHouseList p span.FR{font-family:Arial, Helvetica, sans-serif;}
+.img_pb5{padding-bottom:5px; display:inline-block;}
+/*20140814 添加 end*/
+
+/*20140902新增 begin*/
+.houseAppL,.houseAppS{background:url(http://js.youtx.com/images/main2014/house_icon.png) no-repeat 2px -2px; width:53px; height:20px; color:#e2017b; font-size:12px; padding-left:12px; line-height:18px; font-weight:normal; font-family:"宋体";}
+.houseAppS{background-position:-67px -2px; width:30px;}
+.PT22{padding-top:22px;}
+.houseAmount{background:url(http://js.youtx.com/images/main2014/amount_icon.png); color:#fff; position:absolute; top:130px; right:2px; height:18px; text-align:center; line-height:18px; display:block;*position:absolute;padding:0 2px;}/*2014-9-22修改*/
+
+.detailsListBoxImg{width:200px; height:150px;}
+/*20140902新增 end*/
+
+/*2014-9-22新增*/
+.houseRec{position:absolute;top:-5px;left:2px;background:url(http://js.youtx.com/images/main2014/houseRecBg.png) no-repeat;color:#fff;width:34px;height:46px;color:#fff;font-size:14px; font-family:Microsoft yahei;padding:6px 4px 0 6px;}
+.houseRecUl li{float:left;margin-right:10px;display:inline;position:relative;}
+.houseRecUl{padding-top:12px;}
+.houseRecDetil{width:520px;}
+
+.MoreHouse{margin-top:32px;display:inline-block;float:right;/*border:1px solid #bababa;*/ background-color:#eee;width:82px;height:62px;text-align:center;color:#b6b6b6;padding-top:18px;}/*xg2014-12-26*/    /*2015-02-06修改*/
+
+.MoreHouse:hover{color:#b6b6b6!important;}
+.MoreHouse b,.MoreHouse span{display:block;}
+.houseRecBg{background:url(http://js.youtx.com/images/main2014/amount_icon.png);color:#fff;position:absolute;bottom:2px;right:2px;height:18px;text-align:center;line-height:18px;display:block;padding:0 2px;}
+/*2014-11-11修改*/
+.detailsTit{float:left;width:628px; position: relative;}/*xg2015-03-25*/
+.houseDetil{padding-top:5px;}
+/*2014-11-17修改*/
+.Tab a{color:#454746;display: block;float: left;font-size: 14px;padding: 11px 16px;border:1px solid #e1e1e1;border-bottom:none;}
+.Tab .blueDetails{background:#2b98dd;color:#fff;border:1px solid #2b98dd;border-bottom:none;}
+
+/*2014-11-26修改*/
+.showPicsBox{width:308px;border:1px solid #e3e3e3;height:328px;position:relative; zoom:1;background:url(http://js.youtx.com/images/main2014/loading2.gif) #7d7159 center center no-repeat;margin-bottom:20px;}/*xg2014-12-17*/
+.showPicsIco{background:url(http://js.youtx.com/images/main2014/starLandlord.png) no-repeat;width:41px;height:75px;position:absolute;top:-5px;left:18px;z-index:2;}
+
+/*20141215 begin*/
+.piclist li{ display: none;}
+.piclist li.cur{ display: block;}
+.showPicsTxt li{ display:none; width:240px;height:60px;position:absolute;z-index:5;left:18px;bottom:20px;_bottom:30px;background-color:#fff;padding:10px 15px;font:14px/20px Microsoft yahei; opacity:0.8;filter:alpha(opacity:80);}/*xg2014-12-22*/
+.showPicsTxt p{font:bold 16px/24px Microsoft yahei;padding-top:10px;width:240px;overflow:hidden;height:24px;}
+.showPicsTxt li.cur{ display: block;}
+/*20141215 end*/
+
+.PicsCount{ text-align:center;position:absolute;bottom:6px;width:308px;left:0;z-index:5;}
+.PicsCount span{background:url(http://js.youtx.com/images/main2014/starLandlord.png) 0 -229px no-repeat;margin:0 2px;display:inline-block;height:8px;width:8px; cursor:pointer;}
+.PicsCount .cur{background:url(http://js.youtx.com/images/main2014/starLandlord.png) 0 -257px no-repeat;}
+/*.showPics_LBtn{width:154px;height:228px;position:absolute;left:0;top:0;z-index:3; cursor:pointer; background-color:#000; filter:alpha(opacity=0);}
+.showPics_RBtn{width:154px;height:228px;position:absolute;right:0;top:0;z-index:3;cursor:pointer; background-color:#000; filter:alpha(opacity=0);}
+.showPics_LBtn:hover{background:url(http://js.youtx.com/images/main2014/LeftBg.png) 20px 115px no-repeat; filter:alpha(opacity=100);}
+.showPics_RBtn:hover{background:url(http://js.youtx.com/images/main2014/RightBg.png) 101px 115px no-repeat; filter:alpha(opacity=100);}*//*xg2014-12-16*/
+
+/*2014-12-9修改*/
+.showPicsTxt dd a,.showPicsTxt dt a{color:#464849!important}
+.showPicsTxt dt a:hover,.showPicsTxt dd a:hover{color:#333!important}
+.showPics_LBtn,.showPics_RBtn{display:block;background:rgba(255,255,255,0);}
+/*xg2014-12-16*/
+.showPicsTxt h3 a{color:#464848;}
+.showPicsTxt h3 a:hover{color:#464848;}
+.showPicsTxt p a{color:#464848;}
+.showPicsTxt p a:hover{color:#464848;}
+
+/*xg2014-12-18*/
+.TipBox{ float:right;position: absolute;top:0px;right: 96px;}/*xg2015-03-25*/
+.TipBtn{height:17px;display:inline-block; overflow:hidden; background: url(http://js.youtx.com/images/main2014/PStra.png) 100% 0px no-repeat; text-decoration:none;}
+
+.TipBtnM{height:17px;margin-right:10px;color:#ffffff; font-size:12px; /*font-weight:bold;*/display:block;padding-left:5px; background:#e20179; line-height:17px;}/*xg2014-12-24*/
+
+.TipBtnM span.F16{ font-family:Microsoft yahei;}
+.TipBtnM span.F11{ font-family:Microsoft yahei; font-size:11px;}
+.TipOldPrice{display:block; font-size:12px;color:#999; text-decoration:line-through;}
+.discountCost{width:98px;margin-top:6px;padding:3px;border:solid 1px #e3e3e3;color:#464849;font-size:12px;border-radius:3px; text-align:right;margin-left:50px;}
+.disNum{ font-weight:bold;margin-left:10px;}
+.disSign{font-family:Microsoft yahei;}
+
+.ListDollar{ font-family:Microsoft yahei; font-weight:bold;}
+
+.ListDetailchose{ position:absolute;width:445px;top:0px; left:0px;padding-top:10px;padding-left:5px;}
+.detailsListDL{width:388px;float:left;}
+.ListMoreBtn{ background:url(http://js.youtx.com/images/main2014/LMoreBtn.png) no-repeat right 6px;padding-right:15px;float:right;margin-right:15px; display:inline; white-space:nowrap;margin-top:2px;color:#464849;}/*xg2014-12-25*/
+.ListMoreBtn:hover{color:#464849;}/*xg2014-12-25*/
+.DetailListMoreCon{ background:#fff;z-index:2;border:solid 1px #cbcbcb;box-shadow:1px 2px 3px #e5e5e5; top:-1px;left:-1px;}
+.DetailListMoreNr{width:388px;float:left;display:none;}
+.DetailListMoreNr dd{float:left;padding-right:14px; line-height:18px;}
+.DetailListMoreCon  dd{padding-bottom:10px;white-space:nowrap;}
+
+/*xg2014-12-26*/
+.RecommendHourse{ position:relative;width:846px;border:solid 1px #e3e3e3;margin-top:20px;height:170px; overflow:hidden;}
+.RecommendHourseUl{ position:absolute;left:0px;width:826px;}/*xg2015-01-09*/
+.RecommendHLi{height:170px;*float:left;}/*xg2015-01-09*/
+.RecommendListBox{padding:10px 0px;border-bottom:0px;}/*xg2015-01-09*/
+.RecommendBtn{ position:absolute;width:19px;height:100%;border-left:solid 1px #e3e3e3;top:0px;right:0px; background:#f9f9f9;}
+.RecommendListBox .houseRecDetil{width:488px;}/*xg2015-01-08*/
+
+.MoreHouse b{ font-size:14px; color:#008ad9; font-weight:bold; line-height:24px; font-family:"微软雅黑";}/*2015-02-06修改*/
+.MoreHouse span{color:#898989; background:url(http://js.youtx.com/images/main2014/small_icon_arrow_right.png) no-repeat 64px 4px; text-align:left; padding-left:13px;}/*2015-02-06增加*/
+
+.RecommendBtn .OpUp,.OpDown{width:13px;height:14px; background: url(http://js.youtx.com/images/main2014/Stas.png) no-repeat 3px 0px; cursor:pointer; position:absolute;left:0px;padding:0px 3px;}/*xg2015-01-09*/
+.OpUp{background-position:0px 0px;top:0px;}
+.OpDown{bottom:0px; background-position:-20px 0px;}/*xg2015-01-09*/
+.OpDotted{margin:14px 0px;height:142px; position:absolute;}/*xg2015-01-09*/
+.OpDotted ul{position:absolute;top:50%;left:4px;}/*xg2015-01-09*/
+.OpDotted ul li{ float:left; background:url(http://js.youtx.com/images/main2014/Dotted.png) no-repeat 0px 0px;width:10px;height:10px; cursor:pointer;margin-bottom:3px; text-align:center;}/*xg2015-01-09*/
+.OpDotted ul li.cur{background:url(http://js.youtx.com/images/main2014/Dotted.png) no-repeat -15px 0px;}
+.RecommendListBox  .TaR{ position:absolute;right:16px;float:none;}/*xg2015-01-09*/
+.houseDetil span.RedFont{float:none;}/*xg2015-01-09*/
+
+/*xg2015-01-05*/
+.LeftStr{width:45px;height:45px; background:url(http://js.youtx.com/images/main2014/l.png) no-repeat 0px 0px; position:absolute;top:130px;left:10px;z-index:2; display:none;}
+.RightStr{width:45px;height:45px; background:url(http://js.youtx.com/images/main2014/r.png) no-repeat 0px 0px; position:absolute;top:130px;right:10px;z-index:2;display:none;}
+
+
+/*xg2015-03-13*/
+.list-NewDatebox{float: left;margin-left:10px;display: inline;border:0px; }
+.list-MainDBox{width: 476px; background: #fff;z-index: 3;border:1px solid #e7e7e7;box-shadow: -3px 0px 5px #efefef;}
+.MessageBox{ position: absolute;left: 200px;top:0px;width: 210px;height: 26px;z-index: 5; line-height: 26px; background: #fffce1; border:solid 1px #ffbf6a;border-radius: 4px; text-align: center;}
+.triangle-character{position: absolute;top: 7px;left:-6px;width:7px;height: 11px;background: url(http://js.youtx.com/images/main2014/TipStra.png) no-repeat 0px 0px; overflow: hidden;}
+
+/*2015-04-20begin*/
+
+
+.FontPage{padding-right: 12px;}
+.AFontChange{float:right; line-height:30px;padding-right: 20px;}
+.AFontChange a,.AFontChange span{float:left;margin-left:5px; display:inline;}
+.PrevP{width:10px;height:12px;background:url(http://js.youtx.com/images/main2014/Strangles.png) no-repeat 0px 0px; margin-top:10px;}
+.PrevPB{width:10px;height:12px;background:url(http://js.youtx.com/images/main2014/Strangles.png) no-repeat 0px -49px; margin-top:10px;}
+.NextP{width:10px;height:12px; background:url(http://js.youtx.com/images/main2014/Strangles.png) no-repeat 2px -33px;margin-top:10px;}
+.NextPN{width:10px;height:12px; background:url(http://js.youtx.com/images/main2014/Strangles.png) no-repeat 2px -13px;margin-top:10px;}
+
+.zIndex101{z-index: 101;}
+/*.SpaceBox{display:block;width:1px;}*/     /*2015-04-22*/
+/*2015-04-20end*/
+
+.borderBottom_dashed{ border-bottom:1px dashed #6b6b6b;}/*2015-04-22*/
+
+.color_ff8432 { color: #ff6600 !important; }
+.color_ff8432：hover { color: #ff6600 !important; } 
+

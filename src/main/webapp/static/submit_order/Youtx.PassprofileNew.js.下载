@@ -1,0 +1,276 @@
+﻿
+(function () {
+    var OtherMobile = {
+}
+//构造函数
+OtherMobile = function (userid) {
+    this.init(userid);
+}
+OtherMobile.prototype = {
+    userid: 0,
+    //初始化
+    init: function (userid) {
+        this.userid = userid;
+        thisUserID = userid;
+        this.BindCilck();
+        this.MobilSelect();
+        this.GetModelList();  //读取其它电话号
+        this.AddorUpdate(); //更新和添加绑定
+    },
+    BindCilck: function () {
+        $(".closeLink").bind("click", function () {
+            _gaq.push(['t0._trackPageview', '/virtual/order/beiyong-wancheng/']);
+            $("#addman").text($("#OtherMobile tr").length);
+            //$(".popup6").hide();
+        })
+        //        $(".add_Contact_tit").bind("click", function () {
+        //            $(this).toggleClass("add_Contact_tit2");
+        //            $(".add_Contact_text").toggle();
+        //            if (Number($('input[name="livenum"]').val()) <= Number($("#OtherMobile tr").length)) {
+        //                $("#noticemsg1").hide();
+        //                $("#noticemsg2").show();
+        //                $(".ScuDet").hide();
+        //            }
+        //            ///初始化
+        //            $("#MobileState").val("");
+        //            $("#MobileMan").val("");
+        //            $('#MobileNumber').val("");
+        //            $("#MobileState").val("Add");
+        //            $("#AddorChange").val("添加");
+        //            $("#error1").hide().text("");
+        //            $("#error2").hide().text("");
+        //            $("#Contact_dltext").empty();
+        //        });
+        //        $(".add_Contact_text_btn_a").bind("click", function () {
+        //            $(".add_Contact_text").hide();
+        //            $(".add_Contact_tit").removeClass("add_Contact_tit2");
+        //            /////初始化
+        //            $("#MobileState").val("");
+        //            $("#MobileMan").val("");
+        //            $('#MobileNumber').val("");
+        //            $("#MobileState").val("Add");
+        //            $("#AddorChange").val("添加");
+        //            $("#error1").hide().text("");
+        //            $("#error2").hide().text("");
+        //            $("#Contact_dltext").empty();
+        //        })
+    },
+    //绑定联系人
+    GetModelList: function () {
+        $.ajax({
+            type: "POST",
+            url: '/payment/Ajax/AjaxPassport.aspx',
+            data: 'type=GetModelList_New&UserID=' + thisUserID + "&seed=" + Math.round(Math.random() * 10000),
+            success: function (data) {
+                if (data != "") {
+                    $("#oplinkerList").parent().show();
+                    $("#oplinkerList").empty().append(data);
+                }
+                else {
+                    $("#oplinkerList").parent().hide();
+                    $("#txtnk").hide();
+                }
+            },
+            error: function () {
+
+            }
+        })
+
+    },
+    MobilSelect: function () {
+        $("#oplinkerList").delegate("input", "click", function () {
+            var data = $(this).attr("dop");
+            var d = data.split('|');
+            if ($(this).attr("checked") == "checked") {
+                if (Number($('input[name="livenum"]').val()) <= Number($("#OtherMobile tr").length)) {
+                    $("#noticemsg1").hide();
+                    $("#noticemsg2").show();
+                    $(this).removeAttr("checked");
+                    return;
+                }
+                $("#OtherMobile").append("<tr op=" + data + "><td>姓名</td> <td>" + d[0] + "</td> <td>电话</td> <td>" + d[1] + "</td> <td>"
+                + "<a href=\"javascript:void(0)\"  onclick=\"deleteMobile('" + data + "')\">删除</a>|"
+                + "<a href=\"javascript:void(0)\"  onclick=\"ClickChange('" + data + "')\">修改</a></td></tr>");
+                $(".leftman").text(Number($(".leftman").text()) - 1);
+                $(".leftman1").text(Number($(".leftman1").text()) - 1);
+            }
+            else {
+                $("#OtherMobile tr[op='" + data + "']").remove();
+                if (Number($('input[name="livenum"]').val()) >= Number($(".leftman").text()) + 1) {
+                    $(".leftman").text(Number($(".leftman").text()) + 1);
+                    $(".leftman1").text(Number($(".leftman1").text()) + 1);
+                }
+                $("#noticemsg1").show();
+                $("#noticemsg2").hide();
+            }
+        })
+    },
+    //添加电话和联系人，并重新加载
+    AddModel: function (MobileNumber, MobileMan, CountryID) {
+        var param = "";
+        $("#OtherMobile tr").each(function myfunction() {
+            param += $(this).attr("op") + ",";
+        })
+        if (param != "") {
+            param = param.substring(0, param.length - 1);
+            $("#othersLinker").val(param);
+            $.ajax({
+                type: 'POST',
+                url: '/payment/Ajax/AjaxPassport.aspx',
+                data: 'type=AddModel&MobileParam=' + param + '&UserID=' + thisUserID,
+                success: function (data) {
+
+                },
+                error: function (err) {
+
+                }
+            });
+        }
+    },
+
+    //更新和添加
+    AddorUpdate: function () {
+        var that = this;
+        $('#AddorChange').bind("click", function (event) {
+            _gaq.push(['t0._trackPageview', '/virtual/order/beiyong-queding/']);
+            var flag = true;
+            if ($.trim($("#MobileMan").val()) == "") {
+                $("#ErrorIco").text("联系人不能为空");
+                flag = false;
+            }
+            else {
+                if ($.trim($("#MobileMan").val()).length > 10) {
+                    $("#ErrorIco").text("姓名长度限制为10");
+                    flag = false;
+                }
+                else {
+                    $("#ErrorIco").text("");
+                }
+            }
+
+            if ($.trim($("#MobileNumber").val()) == "") {
+                $("#ErrorIco").text("联系电话不能为空");
+                flag = false;
+            }
+            else {
+                if (!Youtx.Verification.CheckNumberandPlus($("#MobileNumber").val())) {
+                    $("#ErrorIco").text('请输入正确的联系电话').show();
+                    flag = false;
+                }
+                else {
+                    $("#ErrorIco").text("");
+                }
+            }
+            if (!flag) {
+                $("#ErrorIco").show();
+                return;
+            }
+            else {
+                $("#ErrorIco").hide().text("");
+            }
+            if ($("#MobileState").val() == "Add") {
+                if (Number($('input[name="livenum"]').val()) <= Number($("#OtherMobile tr").length)) {
+                    $("#noticemsg1").hide();
+                    $("#noticemsg2").show();
+                    return;
+                }
+                var addOP = $("#MobileMan").val() + "|" + $("#MobileNumber").val();
+                if ($("#OtherMobile tr[op='" + addOP + "']").length < 1) {
+                    $("#OtherMobile").append("<tr op=" + addOP + "><td>姓名</td> <td>" + $("#MobileMan").val() + "</td> <td>电话</td> <td>" + $("#MobileNumber").val()
+                     + "</td> <td><a href=\"javascript:void(0)\"  onclick=\"deleteMobile('" + addOP + "')\">删除</a>|<a href=\"javascript:void(0)\"  onclick=\"ClickChange('" + addOP + "')\">修改</a></td></tr>");
+                    $(".leftman").text(Number($(".leftman").text()) - 1);
+                    $(".leftman1").text(Number($(".leftman1").text()) - 1);
+                }
+                else {
+                    $("#ErrorIco").show().text("已存在此联系方式");
+                    return;
+                }
+            }
+            else if ($("#MobileState").val() == "Edit") {
+                if ($("#OtherMobile tr[op='" + op + "']").length > 0) {
+                    var addOP = $("#MobileMan").val() + "|" + $("#MobileNumber").val();
+                    $("#OtherMobile tr[op='" + op + "']").replaceWith("<tr op=" + addOP + "><td>姓名</td> <td>" + $("#MobileMan").val() + "</td> <td>电话</td> <td>"
+                     + $("#MobileNumber").val() + "</td> <td><a href=\"javascript:void(0)\"  onclick=\"deleteMobile('" + addOP + "')\">删除</a>|"
+                     + "<a href=\"javascript:void(0)\"onclick=\"ClickChange('" + addOP + "')\">修改</a></td></tr>");
+
+                    $('#MobileNumber').val("");
+                    $("#MobileMan").val("");
+                    $("#MobileState").val("Add");
+                }
+            }
+            else {
+
+            }
+
+        });
+    },
+    //验证电话号码是否已经存在
+    CheckMobileCount: function () {
+        $('#Mobile').bind("blur", function (event) {
+            $.ajax({
+                type: 'POST',
+                url: '/profile/payment/AjaxPassport.aspx',
+                data: 'type=CheckMobileCount&MobileNumber=' + this.value,
+                success: function (data) {
+                    if (data == 'true') {
+                        $('.error2').hide();
+                    }
+                    else {
+                        $('.error2').html('该号码已被使用！请换一个手机号码输入.').show();
+                    }
+                },
+                error: function () {
+
+                }
+            });
+        });
+    }
+
+}
+
+Youtx.OtherMobile = OtherMobile;
+
+})()
+var op = "";
+var thisUserID = "";
+//点击修改按钮,把数据放到下边的文本框里
+function ClickChange(data) {
+    _gaq.push(['t0._trackPageview', '/virtual/order/beiyong-xiugai/']);
+    op = data;
+    $("#MobileState").val("Edit");
+    var d = data.split('|');
+    if (d.length == 2) {
+        $('#MobileMan').val(d[0]);
+        $('#MobileNumber').val(d[1]);
+
+    }
+    else {
+        alert('数据读取错误');
+        $("#MobileState").val("");
+    }
+}
+
+//删除电话和联系人，并重新加载
+function deleteMobile(OtherMobileOP) {
+    _gaq.push(['t0._trackPageview', '/virtual/order/beiyong-delete/']);
+    $("#OtherMobile tr[op='" + OtherMobileOP + "']").remove();
+    if (Number($('input[name="livenum"]').val()) >= Number($(".leftman").text()) + 1) {
+        $(".leftman").text(Number($(".leftman").text()) + 1);
+        $(".leftman1").text(Number($(".leftman1").text()) + 1);
+    }
+    $("#noticemsg2").hide();
+    $("#noticemsg1").show();
+    if ($("#MobileState").val() == "Edit" && op == OtherMobileOP) {
+        $("#MobileState").val("");
+        $("#MobileMan").val("");
+        $('#MobileNumber').val("");
+        $("#MobileState").val("Add");
+
+    }
+    if ($("input[dop='" + OtherMobileOP + "']").attr("checked") == "checked") {
+        $("input[dop='" + OtherMobileOP + "']").removeAttr("checked");
+    }
+}
+
+
+

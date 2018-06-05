@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* 我的订单页面12-12-04*/
+table { border-collapse:collapse; border-spacing:0; cellspacing:0; cellpadding:0; border:0; }
+select, input, textarea { font-family:"宋体"; font-size:12px; }
+/*订单流程*/
+.NewOrder { margin:15px auto; width:980px; overflow:hidden; }
+.NewOrderLeft { float:right; width:720px; border:1px solid #b3b3b3; }
+.NewOrderSiderBar { float:left; width:250px; }
+.X_order_title { overflow:hidden;width:100%; }/*2013-1-23修改*/
+.X_OrderRoom_info p { padding:3px 0 }
+.X_OrderRoom_info .X_OrderRoom_title { padding-bottom:10px; }
+.X_order_step { text-align:center; padding-top:20px; }
+.NewOrderTit { background:url(http://js.youtx.com/payment/images/RoomPositionIco01.gif) left center no-repeat; border-bottom:1px solid #8BACBB; color:#000; font-family:"微软雅黑"; font-size:17px; height:30px; line-height:30px; padding-left:20px; }
+.NewOrderContent { width:690px; padding:15px 15px 0; float:left; }
+.NewOrderTxt { padding:13px 0 0 25px; float:left; }/*2012-1-9修改*/
+.NewOrderTxtImg { float:left; width:220px; padding-right:10px; }
+.NewOrderTxt_Con { float:left; }
+.NewOrderTxt_Con h3 { font-size:16px; font-family:"微软雅黑"; color:#0073c3; line-height:20px; padding-bottom:8px; }
+.NewOrderTxt_Con p { line-height:20px; color:#555; font-family:"宋体"; }
+.NewOrderTxt_Detail { padding-top:26px; }
+.NewOrderTxt_Detail p span { padding-right:20px; }
+.X_Order_Basic { border-collapse:collapse }
+.X_Order_Basic th, .X_Order_Basic td { border:1px solid #D8D8D8; }
+.X_Order_Basic th { height:28px; background:#F2F2F2 }
+.X_Order_Basic td { height:32px; text-align:center }
+.Orange { color:#ea1a7a; }
+.OrderTotal { width:645px; float:left; }
+.OrderToTxt { font-size:16px; font-family:"微软雅黑"; }
+.NewOrderLink a { text-decoration:underline!important; }
+.OrderTotal tr td { line-height:25px; }
+.OrderTotal .OrderTotal_Ltr td { padding-bottom:15px; }
+.color8b4d02 { color:#8b4d02!important; }
+.OrderPrompt { background:url(http://js.youtx.com/payment/images/NewOrderPromptbg.gif) left no-repeat; height:24px; line-height:24px; float:left; padding-left:10px; display:inline; font-size:12px; font-family:"宋体"}
+.OrderPrompt div { background:url(http://js.youtx.com/payment/images/NewOrderPromptbg.gif) right no-repeat; float:left; padding-right:8px; }
+.RequiremenTd { text-align:right; padding-right:30px; }
+.Requirement tr td { line-height:30px; }
+.NewOrderInfor { width:665px;/* padding:10px 5px;*/ float:left; overflow:hidden;}/*2012-1-9修改*/
+.NewOrderInfor_L { float:left; width:100%;padding-top:10px;}/*2013-6-24修改*/
+.NewOrderInfor_R { float:left; width:284px; padding:0 15px;}/*2012-1-9修改*/
+.TableBtn input, .Verification { background:url(http://js.youtx.com/payment/images/PopBtn.gif) no-repeat; width:86px; height:24px; border:none; text-align:center; cursor:pointer; color:#666; font-weight:bold; }
+.TableBtn a { padding-left:10px; text-decoration:underline; }
+.Infor_LTd b { font-size:16px; color:#ff0000;vertical-align:middle;font-weight:normal; display:inline-block;padding-right:5px;}/*2013-6-24修改*/
+.NewOrderInfor .text { border:1px solid #bbb; width:155px; line-height:18px; height:18px; padding:2px 3px; vertical-align: middle; *vertical-align:baseline;
+ font-family:Arial, Helvetica, sans-serif; }/*2013-6-24修改*/
+.Infor_LTd { vertical-align:top; width:75px; line-height:22px; text-align:right;padding-right:5px;}/*2013-6-24修改*//*2015-11-26xg*/
+.OrderCoEnd { width:720px; float:left; padding:20px 0; }
+.OrderCoEnd p { line-height:18px; text-align:center }
+.OrderCoEnd input { vertical-align:middle; }
+.OrderCheckBox input { margin-right:5px; cursor:pointer; }
+.OrderCheckBox label { cursor:pointer; }
+.OrderCoBtn { text-align:center; padding:15px 0 25px; }
+.OrderCoBtn input { background:url(http://js.youtx.com/payment/images/OrderCoBtn.gif) 0 3px no-repeat; width:164px; height:40px; text-align:center; border:none; cursor:pointer; color:#fff; font-size:16px; font-family:"微软雅黑"; }
+.OrderCobot { text-align:center; color:#999; }
+.SiderBarBox { margin-bottom:10px; border:1px solid #b3b3b3; border-top:none; }
+.SiderBarBoxTit { background:url(http://js.youtx.com/payment/images/backgrounds.gif) 0 -129px repeat-x; height:49px; line-height:49px;/* width:198px; */ font-size:17px; font-family:"微软雅黑"; padding-left:10px; }
+.SiderBarBoxTxt { padding:10px 19px; }
+.SiderBarBoxTxt p { line-height:16px; }
+.SiderBarBoxTxt h3 { font-weight:bold; line-height:20px; padding-bottom:15px; }
+.SiderBarBoxTel { background:url(http://js.youtx.com/payment/images/backgrounds.gif) 0 -87px no-repeat; width:188px; height:34px; text-indent:-99999px; margin-bottom:20px; }
+.SiderBarBoxTxt .Contact { text-align:center }
+.SiderBarBoxTxt .Contact a { background:url(http://js.youtx.com/payment/images/PopBtn.gif) no-repeat; width:86px; height:24px; line-height:24px; display: inline-block; text-align:center; color:#333; }
+.SiderBarBoxTxt .Contact a:hover { text-decoration:none; color:#333; }
+.SiderBarBoxTxt .BoxTime { font-weight:normal }
+.SiderBarBoxEnd { padding-bottom:15px; }
+/* 2012-12-05 */.PromptError{background:url(http://js.youtx.com/payment/images/RoomErrorBtnNew.gif) no-repeat 0 center; padding-left:22px; line-height:20px; color:#999; }
+/* 2012-12-05 */.PromptError02{background:url(http://js.youtx.com/payment/images/RoomErrorBtnNew.gif) no-repeat 0 center; padding-left:22px; line-height:20px; color:#999; }
+/* 2012-12-05 .PromptError02{line-height:20px; color:#999;}*/
+/* 2012-12-05 */
+/*.PromptErrorBox{ height:20px;}*//*2013-1-23修改*/
+.Verification { margin-left:5px; }
+.OrderTanchu { position:absolute; width:128px; background:url(http://js.youtx.com/payment/images/OrderTanchubg.gif) bottom no-repeat; padding-bottom:10px; right:-15px; top:-59px; z-index:2; color:#666; }
+.OrderTanchu .OrderTanchu02{width:112px; padding:8px; background:url(http://js.youtx.com/payment/images/OrderTanchubg.gif) no-repeat; line-height:16px; }
+.TanchuColse { position:absolute; background:url(http://js.youtx.com/payment/images/OrderColse.gif) no-repeat; right:0; top:0; z-index:3; width:11px; height:11px; cursor:pointer; }
+.PromptCorrect {display:inline-block; color:#999; line-height:22px; }
+.NewOrderInfor_Rtxt02 p { line-height:22px; color:#333; }
+.NewOrderInfor_Rtxt02 { padding-top:6px; }
+.ContactPeo { width:255px; padding:8px; border:1px solid #b3b3b3; border-radius:4px 4px 4px 4px; margin-top:15px; }
+/*弹出框-成功接收订单*/
+table { border-collapse:collapse; border-spacing:0; cellspacing:0; cellpadding:0; border:0; }
+.cboxContentNew { background-color:#fff; border: 2px solid #333; border-radius:6px 6px 6px 6px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 -1px 0 rgba(255, 255, 255, 0.4) inset, 0 2px 8px 0 rgba(0, 0, 0, 0.9), 0 0 0 transparent, 0 0 0 transparent; padding: 40px 0 30px; position: relative; font-family:"宋体"; }
+.closeNew_btn { background:url(http://js.youtx.com/images/outclose.png) no-repeat; cursor:pointer; height:27px; left:-10px; position:absolute; text-indent:-99999px; top:-11px; width:26px; }
+.cboxContentNew h4 { font-size:16px; color:#333; text-align:center; line-height:30px; padding:8px 0; border-bottom:1px solid #d7d7d7; }
+.Orange { color:#ea1a7a; }
+.ReceiveScu_table .ReceiveScu_td { background-color:#fffee9; }
+.ReceiveScu_table tr td { border-bottom:1px dashed #d7d7d7; line-height:20px; padding:5px 0 5px 10px; color:#5a5a5c; font-size:13px; }
+.ReceiveScu_table tr .ReceiveScu_td { border-right:1px solid #d7d7d7; width:140px; font-weight:bold; }
+
+.cboxContentNew { padding:0; z-index:9999;}
+.ReceiveScu_table p { padding:10px 15px 0; line-height:22px; color:#666; }
+.ReceiveScu_table .ReceiveScuLink { padding-left:30px; }
+.ReceiveScuBtn input { background:url(http://js.youtx.com/payment/images/PopBtn.gif) no-repeat; width:86px; height:24px; cursor:pointer; text-align:center; border:none; color:#666; }
+.ReceiveScuBtn, .ReceiveScu_table .ReceiveScuBtn { text-align:center; padding:15px 0; }
+.ReceiveScu_table02 { padding-top:15px; color:#666; }
+.ReceiveScu_table02 li { line-height:25px; padding-bottom:10px; }
+.ReceiveScu_table02 tr td { padding-left:10px; line-height:22px; }
+.ReceiveScu_table02 tr .ReceiveScu_td { padding-left:35px; }
+.ReceiveScu_table02 p { line-height:25px; padding:0 20px 0 35px; }
+
+.ReceiveScuLink a, .ReceiveScu_table02 p a, .ReceiveScu_table a { text-decoration:underline; color:#0087d8; }
+.Green { color:#439a00; }
+.text01 { border:1px solid #a3a3a3; width:100px; height:18px; padding:2px 3px; }
+.ErrorIco { background:url(http://js.youtx.com/payment/images/RoomErrorBtnNew.gif) 0 1px no-repeat; margin-left:10px; padding:3px 0 3px 22px; }
+.ScuDet, .ScuReset { background:url(http://js.youtx.com/payment/images/PopBtn.gif) 0 -68px no-repeat; width:70px; height:26px; cursor:pointer; text-align:center; border:none; color:#666; vertical-align:middle; }
+.ScuReset { background-position:0 -33px; width:120px; }
+.RecSelect { font-family:"Arial"; font-size:1em; height:22px; line-height: 23px; padding:1px 0; text-shadow:0 1px 0 #FFFFFF; border: 1px solid #ACACAC; color:#666666; vertical-align: middle; width:200px; }
+.ReceiveScu_table03 { width:448px; overflow-y:scroll; height:90px; backgrond-color:#f7f7f7; border:1px solid #a3a3a3; margin:0 15px 15px; padding-top:8px; }
+/* 2012-3-15 为 NewBookingPay 添加 */
+.clear { clear:both }
+.X_order_pay li { float:left; height:30px; line-height:30px; }
+.X_order_pay .OrderToTxt01 { width:120px; font-family:"微软雅黑"; font-size:16px; text-align:right }
+.X_order_pay .OrderToTxt02 { width:80px; font-family:"微软雅黑"; font-size:16px; }
+.X_order_pay_02 li { float:left; height:24px; line-height:24px; padding:3px 0; }
+.X_order_pay_02 .OrderToTxt01 { width:70px; text-align:right; background:url(http://js.youtx.com/payment/images/X_jianglin.gif) no-repeat 11px 6px; padding-left:20px; }
+.X_order_pay_02 .OrderToTxt02 { font-family:"微软雅黑"; font-size:16px; }
+.OrderTotal .NewOrderLink { float:left; padding-left:5px; font-family:"宋体"; color:#0073c3; position:relative; z-index:10; background:#FFF; height:30px; border-top: 1px solid #FFF; border-bottom: 1px solid #FFF; border-left: 1px solid #FFF;}
+.NewOrderLink .Billpop{padding-right:10px; background:url(http://js.youtx.com/payment/images/X_order_arrow.gif) no-repeat right center; text-decoration:none !important; }
+.OrderTotal .X_cur { border-top: 1px solid #9BC3DA; border-bottom: 1px solid #9BC3DA; border-left: 1px solid #9BC3DA; }
+.OrderToTxt_pop { position:relative }
+.Billpop_up { position:absolute; width:390px; border:1px solid #9BC3DA; left:63px; z-index:5; padding:5px; background:#FFF; }
+.Billpop_up_table td { padding:5px; }
+.Billpop_up_table td p { line-height:26px; text-align:center; font-family:Arial; font-size:14px; }
+.Date_pay_gray { width:64px; border:1px solid #D3D3D3 }
+.Date_pay_gray .X_Date_order { background:#E9E9E9; }
+.Date_pay_blue { width:64px; border:1px solid #008BDA }
+.Date_pay_blue .X_Date_order { background:#008BDA; color:#FFF; }
+.Date_pay_red { width:64px; border:1px solid #EF4C94 }
+.Date_pay_red .X_Date_order { background:#EF4C94; color:#FFF; }
+.Date_pay_green { width:64px; border:1px solid #60B935 }
+.Date_pay_green .X_Date_order { background:#60B935; color:#FFF; }
+.X_order_Prompt { height:28px; background:#FCEBF4; border:1px solid #F2A4CD; line-height:28px; padding-left:10px; margin-bottom:5px; }
+.X_order_rules { line-height:22px; }
+.submit_buttonNew { text-align:center; padding-top:15px; }
+.submit_buttonNew a { background:url(http://js.youtx.com/images/PaymentBtn2.gif) no-repeat 0 0; border:none 0; color:#FFF; cursor: pointer; font-family:Microsoft yahei; font-size:16px; height:32px; width:117px; display:inline-block; line-height:30px; text-decoration:none; }
+.X_formActions {padding-top:5px; line-height:20px; overflow:hidden;color:#999;}/*2013-6-24修改*/
+.X_formActions a { background:url(https://passport.youtx.com/profile/images/loginIcons.gif) 0 0 no-repeat; padding-left:20px; margin:0 2px 0; display:inline-block}/*2013-6-24修改*/
+.X_formActions .ActionsXin { background-position:0 -24px; }
+.X_formActions .ActionsRen { background-position:0 -47px; }
+.X_formActions .ActionsTao { background-position:0 -70px; }
+.X_formActions .ActionsSou { background-position:0 -95px; }
+.middle_radio {padding:5px 0; }/*2013-1-23修改*/
+.middle_radio span { float:left; padding-left:5px; padding-right:15px; }
+.inputcheckbox { float:left; *margin-top:-4px;}/*2013-1-23修改*/
+.jiaqianFU { font-family:"微软雅黑"; font-size:14px; }
+.X_orderpageBox { padding:0 5px; }
+.X_orderpageBox li { float:left }
+.X_orderpageBox li span { float:left; display:block; margin-right:5px; }
+.notoColorBl { width:10px; height:10px; background:#008BDA; margin-top:10px; }
+.notoColorGr { width:10px; height:10px; background:#60B935; margin-top:10px; }
+.notoColorRe { width:10px; height:10px; background:#EF4C94; margin-top:10px; }
+.X_Datepage { float:right }
+.X_Datepage li { height:23px; line-height:23px; background:url(http://js.youtx.com/payment/images/OrderNextBg.gif) no-repeat; margin-left:10px;cursor:pointer }
+.X_Datepage .pageUp { background-position:0 0; padding-left:22px; width:46px; }
+.X_Datepage .pageDown { background-position:0 -23px; padding-left:8px; width:61px; }
+.X_Datepage li a { color:#666 !important; text-decoration:none }
+.Order_pay_info { font-family:"微软雅黑"; font-size:14px; }
+.Order_pay_info td { height:30px; }
+.Pay_line { border-top:1px solid #DEDEDE; }
+.PromptCorrect02 { display:inline-block;color:#333; line-height:22px; }
+
+/* 弹窗 */
+.OrderPop{position:absolute;top:50%;left:50%;z-index:100;}
+.OrderTextPop{position:absolute;top:50%;left:50%;z-index:100;}
+.X_AddInput{ width:120px;padding:2px;}
+.OutBoxTit{color:#0087d2;background-color:#e9f1f9;height:36px;text-align:left; font: normal 16px/36px "Microsoft yahei"; padding-left:10px;}
+.OutBoxBtn,.OutBoxGrayBtn{display:inline-block;background:url(http://js.youtx.com/payment/images/OutBox_Lbg.gif) left no-repeat;padding-left:8px;height:27px;line-height:27px;}
+.OutBoxBtn .GusetInput,.OutBoxGrayBtn .GusetInput{background:url(http://js.youtx.com/payment/images/OutBox_Rbg.gif) right no-repeat;display:inline-block;padding-right:8px;height:27px;line-height:27px;cursor:pointer;border:none;text-align:center;color:#2665b6;}
+.OutBoxGrayBtn{background:url(http://js.youtx.com/payment/images/OutBox_GLbg.gif) left no-repeat;}
+.OutBoxGrayBtn .GusetInput{background:url(http://js.youtx.com/payment/images/OutBox_GRbg.gif) right no-repeat;}
+.OutBoxBtn{margin-right:10px;}
+.OutBox_Close{background:url(http://js.youtx.com/payment/images/OutBox_CloseBtn.gif) no-repeat;width:8px;height:7px;float:right;margin:15px 13px 0 0;display:inline;cursor:pointer;}
+.OutBoxOut{background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;filter:Alpha(opacity=100);background:#000;padding:6px;z-index:9999;}
+.OutBoxOut02{filter:Alpha(opacity=100);}
+.OutBoxIn{background:#fff;line-height:18px;color:#666;font-size:12px;position:relative;}
+.select_border{*background:#fff;*border:1px solid #ccc;*width:160px;}
+.container{*border:0;*position:relative;*width:160px;*height:18px;*overflow:hidden;*background:#fff;}
+.select{border:1px solid #ccc;line-height:22px;color:#666;margin:-1px;padding:1px;font-size:13px;width:170px;*width:162px;}
+.OrderPhoneNum{ border:1px solid #ccc; height:20px; width:167px; line-height:20px;}
+.OrderPhoneNum span{ border-right:1px solid #CCC; display:inline-block; padding:2px 5px; line-height:16px; color:#EA1A7A}
+.OrderPhoneNum input{ width:120px; border:none 0; padding-left:5px; *margin-bottom:4px}
+.Order_ph_t{ padding:5px 10px; background:#FFFAB6; color:#FD2264; display:inline-block}
+.PhoneNum_nei,.StepPhoneNum_nei,.StepPhoneNum_wai,.PhoneNum_wai{padding:10px;}
+.PopTishi01{ background:#EEE;line-height:22px;padding:5px 10px; color:#666; margin-top: 10px;margin-bottom: 10px; }
+.InputBox132{font:12px "宋体", arial;height:24px;line-height:24px\9;_line-height:25px;width:126px;padding-left:4px;border:1px solid #ace;overflow:hidden;outline:none; color:#999}
+.PhoneNum_waiNum{ font: bold 14px Arial; color:#EA1A7A; }
+.OrderTextPop_p{ padding:20px; line-height:22px;}
+.Order_textarea{color:#333; border:1px solid #bbb; width:380px; line-height:18px;height:18px; padding:2px 1px; vertical-align: middle;font-size:12px; font-family:"宋体"; resize:none;}/*2013-6-24修改*/
+
+/* 登录pop */
+.WishlistLogin{width:347px;margin:0px auto;z-index:9999;background-color: #fff;}
+.WishlistHeader{background:url(http://js.youtx.com/images/Login/WishlistHeader.gif) 0px 0px; height:36px;width:327px;padding:0px 10px;}
+.WishlistHeader span{display:inline-block;}
+.H2Font{font:bold 12px/36px "宋体";color:#333;margin-right:10px;float:left;}
+.WishlistClose{height:8px;width:7px;padding-top:14px; padding-bottom:14px;float:right;cursor:pointer;}
+.Wishlist_tab{width:345px;position:relative;border-right:1px solid #C5C5C5;border-bottom:1px solid #C5C5C5;border-left:1px solid #C5C5C5;}
+.W_item_Listit{width:337px;height:42px;position:absolute;top:4px;padding-left:10px }
+.W_item_Listit li{margin-left:10px;display:inline;float:left;width:62px;height:27px;background:url(http://js.youtx.com/images/Login/WishlistTab.gif) no-repeat -64px 0px;text-align:center;cursor:pointer;font:bold 12px/27px "宋体";}
+.W_item_Listit .W_item_Listit_cur{background-position:0px 0px;}
+.W_item_listxt{width:325px;padding-top:20px;background-color:#fff;padding-left:20px}
+.W_item_listxt .input290{background:url(http://js.youtx.com/images/Login/Registration_input.gif) no-repeat 0px 0px;height:27px;width:290px;vertical-align:middle;padding-top:9px;padding-left:5px;}
+.W_item_listxt .input290 input{height:20px;width:275px;padding-left:5px;border:none 0px;outline:none;}
+.W_item_listxt .input93{background:url(http://js.youtx.com/images/Login/Registration_input.gif) no-repeat 0px -41px;height:27px;width:93px;vertical-align:middle;padding-top:9px;padding-left:5px;padding-right:5px;display:block;float:left;}
+.W_item_listxt .input93 input{height:20px;width:80px;padding-left:5px;border:none 0px;outline:none;}
+.W_item_listxt .input187{background:url(http://js.youtx.com/images/Login/Registration_input.gif) no-repeat 0px -83px;height:27px;width:182px;vertical-align:middle;padding-top:9px; padding-left:5px;display:block;float:left;}
+.W_item_listxt .input187 input{height:20px;width:172px;padding-left:5px;border:none 0px;outline:none;}
+.W_item_listxt_error{font:12px/20px "宋体";height:20px;color:#F00;background:url(http://js.youtx.com/images/Login/RoomErrorBtn.gif) no-repeat left center;padding-left:20px;visibility:hidden;}
+.W_item_listxt_error_visible{font:12px/20px "宋体";height:20px;color:#F00;background:url(http://js.youtx.com/images/Login/RoomErrorBtn.gif) no-repeat left center;padding-left:20px;visibility:visible;}
+.W_item_listxt .input_passwrod{height:27px;vertical-align:middle;padding-top:9px;padding-left:5px;position:relative;}
+.W_item_listxt .input_passwrod label{position:absolute;z-index:10;left:10px;font:14px/18px "微软雅黑";color:#999}
+.W_item_listxt .passwrod_bg290 input{background:transparent;height:20px;width:275px;padding-left:5px;border:none 0px;outline:none;position:absolute;z-index:9999}
+.W_item_listxt .passwrod_bg290{width: 290px;background:url(http://js.youtx.com/images/Login/Registration_input.gif) no-repeat 0px 0px;}
+.W_item_listxt input{font:14px/18px "微软雅黑"}
+.Wishlist_btn{height: 33px; width: 325px; padding-bottom: 35px; color: #555555; line-height: 33px; }
+.Wishlist_btn .btn152 { background: url(http://js.youtx.com/images/Login/EditBtns.gif) no-repeat 0px -698px; height: 33px; width: 149px; border-width: 0px; border-style: none; font: bold 14px "微软雅黑"; color: #FFF; margin-right:10px; cursor:pointer;}
+.formActions02{padding:16px 0 0 22px;line-height:24px;width:428px;overflow:hidden;}
+.formActions02{padding:27px 0 0 22px\0;}
+/*2013-1-9修改*/
+.InforPopUp{position:absolute;bottom:0;left:275px;border:1px solid #d4c79a;background-color:#fff7bc;padding:8px;z-index:2}
+.InforPopUp p{line-height:18px;}
+/*2013-1-23修改*/
+.NewOrderInfor_L tr td{padding-top:8px;}/*2013-6-24修改*/
+/*.NewOrderInfor .text {margin-bottom:5px;}*//*2013-6-24修改*/
+.middle_radio label{margin-top:1px;float:left;}/*2013-6-24修改*/
+.SiderBarBoxTxt .ShanDing{background:url(http://js.youtx.com/payment/images/ShanDing.gif) right no-repeat;display:inline-block;line-height:18px;padding-right:30px;margin-top:5px;}
+.IE6iframe{width:100%;height:100%;z-index:-1;position:absolute;top:0px;left:0;display:none;_display:block;filter:mask();}
+
+/*2013-6-24修改*/
+.CorrectPass{background:url(http://js.youtx.com/payment/images/RoomCorrectBtnNew.gif) 0 -2px no-repeat;color:#999999;line-height:20px;padding-left: 22px;}
+.PromptErrorBox{margin-top:5px;}
+.VerificationBtn input{background:url(http://js.youtx.com/payment/images/VerificationBtn.gif) no-repeat; width:100px;height:30px;_line-height:34px;cursor:pointer;border:none;text-align:center;}
+
+/*20130727验证码新增*/
+.yzbox{width:196px;height:77px; position:absolute;top:175px;}
+.yzboxa{width:180px;height:50px;background:#dbf2fe; border:1px solid #78c2f5;border-bottom:0px;padding:10px 7px;}
+.yzboxb{width:196px;height:7px;background:url(http://js.youtx.com/payment/images/081401.gif) no-repeat bottom; font-size:0px;}
+.yzboxa01{width:180px;height:23px;}
+.yzboxa01but{float:left;width:44px;height:23px;line-height:23px;border:0px;cursor:pointer;background:url(http://js.youtx.com/payment/images/081402.gif) no-repeat;font-size:12px;color:#fff;}
+.yzboxa01inp{float:left;width:40px;height:19px;line-height:19px;color:#000;overflow:hidden;border:1px solid #6dbfff;font-size:12px;margin-right:5px;}
+.yzboxa01 .s1{float:left;width:80px;height:23px;line-height:23px;overflow:hidden;margin-right:5px;font-size:12;}
+.yzboxa01 .s2{float:left;height:23px;overflow:hidden;}
+.yzboxa02{width:180px;height:20px;line-height:20px;margin-top:8px;font-size:12;}
+.yzboxa02 .s1{float:left;width:80px;text-align:center;overflow:hidden;margin-right:5px;color:#0097ff;}
+.yzboxa02 .s1 a{color:#0097ff;}
+.yzboxa02 .s2{float:left;background:url(http://js.youtx.com/payment/images/081404.gif) no-repeat 0 2px;padding-left:20px;}
+/*2014-4-4修改*/
+.TelVerify{color:#666;}
+.VerifBtn{display:inline-block;background:url(http://js.youtx.com/payment/images/VoiceBg1.gif) left no-repeat;padding-left:5px;height:22px;line-height:22px;}
+.VerifBtn input{overflow:visible;font-size:12px;border:none;background:url(http://js.youtx.com/payment/images/VoiceBg1.gif) right no-repeat;padding-right:5px;height:22px;line-height:22px;cursor:pointer;}
+
+/*2014-9-30修改*/
+.Discount select{height:24px;line-height:24px;border:1px solid #bbb;padding:3px 0;}
+.Rule{border:1px solid #f5b1d6;height:28px;line-height:28px;}
+.RuleFR{float:right;display:block;height:28px;line-height:28px;padding-right:10px;color:#676767; text-decoration:underline;}
+.RuleFR:hover{color:#676767!important;}
+.winMoney{display:inline-block;height:28px;line-height:28px;padding:0 15px 0 10px;background:url(../images/FanXianIco.gif) right #fde9f4 no-repeat;color:#e30076;}
+.used{padding-left:10px;display:inline-block;height:28px;line-height:28px;z-index:11;}
+.UnlPopUp{display:none;position:absolute;top:21px;left:10px;z-index:11;border:1px  solid #c5c5c5;background-color:#fff;width:175px;padding:10px;border-radius:4px;}
+.UnlPop input{ vertical-align:middle;margin-top:-2px; cursor:pointer;}
+.Voucher{ text-decoration:underline;color:#0188d9; cursor:pointer;}
+.VoucherIco{background:url(../images/VoucherIco.gif) no-repeat;width:11px;height:6px;position:absolute;top:-6px;left:25px;z-index:12;}
+
+
+/*2014-11-11修改*/
+.OrderTotalTab{border:1px solid #f080bb;padding:10px 15px;line-height:26px;margin-bottom:10px;}
+.TotalTabTd{cursor:pointer;}
+.OrderTotalTab tr td,.OrderTotalTab tr th{padding:0 5px;}
+.OrderTotalTab tr td em{ font-family:Microsoft yahei;font-style:normal;}

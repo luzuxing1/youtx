@@ -1,0 +1,176 @@
+@charset "utf-8";/* CSS Document by zhuyupu&&zhaoxiaobo  2011.11.18 */
+/*---------------------2011.11.18 zhaoxiaobo 积分涉及到的样式------------------*/
+/*积分-如何赚取*/
+.mycenter_main_center_bi{color:#f9f9f9;}
+.mycenter_main_center_ul li{width:888px;overflow:hidden;padding:10px 0;}
+.name_head_img {width:138px;float:left;text-align:center;}
+.name_head_img img{padding-top:10px}
+.name_head_text{float:left;width:750px;}
+.name_head_text li{width:750px;overflow:hidden;color:#666;line-height:24px;padding:0;}
+.name_head_text .name_head_text_first{font-weight:bold;color:#333;font-size:16px;padding-bottom:10px;}
+.name_head_text a{padding-left:10px;text-decoration:underline!important;}
+.name_eamil_not{padding-left:18px;background:url(http://js.youtx.com/images/cios_10.gif) 0 -303px no-repeat;margin-left:15px;_background-position:0 -304px;}
+.name_eamil_yes{padding-left:18px;background:url(http://js.youtx.com/images/cios_10.gif) 0 -323px no-repeat;margin-left:15px;_background-position:0 -324px;}
+.mycenter_main_center_bi{padding-bottom:0;}
+.name_head_text .name_head_text_fabu{padding:20px 0 0;}
+.name_head_text_fabu h3{padding-bottom:5px;font-weight:bold;font-size:13px;}
+/*信任和验证*/
+.emailTips{float:left;margin:-5px 0px 0px 10px;position:relative}
+.emailTips b{display:block;float:left;width:6px;height:23px;background:url(http://js.youtx.com/images/emailtipsbg.png) no-repeat;}
+.emailTips span{display:block;float:left;font-size:12px;font-weight:100;border:1px solid #ffcc66;height:21px;line-height:21px;padding:0px 5px;border-left:none;background:#fdfeba;}/*2012-8-15修改*/
+.emailTips span strong{color:#cc0000;font-weight:bold;font-family:Arial,Helvetica, sans-serif;margin:0px 3px;}
+.c_m_r_box,.control_main_right{width:720px!important;}
+#dashboard_v2.edit_profile.verification .c_m_r_b_t_text1.phone_number{width:160px;}
+.control_main_right{border-left:1px solid #d5d5d5!important;}
+/*评价*/
+.panels_title{padding: 13px 16px 13px 10px;}
+.panels_title h4{font-size:1.2em;font-weight:bold;padding-bottom:5px;}
+.panels_text{background:url(http://js.youtx.com/images/coin_001.gif) 0 3px no-repeat;padding-left:25px;line-height:22px;color:#666;}
+.panels_text a,.yanzheng_a{text-decoration:underline!important;padding-left:5px;}
+.red_bold{color:#CC0000;font-weight:bold;}
+.yanzheng_a_tishi{background:url(http://js.youtx.com/images/yanzhengbg_01.gif) no-repeat;width:138px;line-height:32px;height:28px;text-align:center;position:absolute;right:5px;top:35px;*+top:38px;z-index:2;}/*2012-8-15修改*/
+/*确认订单*/
+.friends_qq{color:#666666;font-weight:normal;padding-left:10px;}
+.red_font{color:#ff0000;}
+.friends_qq a{text-decoration:underline!important;padding-left:5px;}
+.inner_input2{padding:9px 0 10px 11px!important;width:405px;}
+.emailTips2{margin-top:0px;}
+/*弹出框-友情好友-登录*/
+.friendbox{margin:0 auto;position:absolute;z-index:199;background-color:#fff;}
+.cboxContent2{background: -moz-linear-gradient(center top , white, #EFEFEF) 0 0 repeat;border: 2px solid #000000;border-radius:6px 6px 6px 6px;box-shadow:0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 -1px 0 rgba(255, 255, 255, 0.4) inset, 0 2px 8px 0 rgba(0, 0, 0, 0.9), 0 0 0 transparent, 0 0 0 transparent;overflow:visible;padding: 20px 0 20px;position: relative;}
+.close_btn{background: url(http://js.youtx.com/images/outclose.png) no-repeat;cursor:pointer;height:27px;left:-10px;position:absolute;text-indent:-99999px;top:-11px;width:26px;}
+.cboxContent2 h2{border-bottom:1px solid #e9e9e9;font-size:18px;font:"微软雅黑";font-weight:bold;color:#666666;padding-bottom:20px;padding-left:20px;}
+.friend_qq h3{text-align:center;font-size:14px;font-weight:500;color:#666666;padding-bottom:20px;padding-right:100px;}
+.friend_qq_number,.friend_qq_password{overflow:hidden;padding:11px 0 10px 130px;color:#666;width:284px;}
+.friend_qq{padding-top:25px;border-top:1px solid #e0e0e0;}
+.friend_qq_number span,.friend_qq_password span{float:left;}
+.friend_qq_number input,.friend_qq_password input{float:left;height:28px;line-height:28px;padding:3px;width:180px;font-size:13px;border:1px solid #cccccc;margin-top:-10px;}
+.friends_qq_btn{ padding:0 0 0 183px;text-align:left;}
+/*弹出框-邀请好友*/
+.cboxContent3{padding:20px 30px;}
+.cboxContent3 h4{font-size:14px;color:#666666;padding-bottom:5px;}
+.friends_imf_text{color:#5b5b5b;}
+.friends_imf_text span{padding-right:10px;}
+.friends_imf{padding:10px 0;border:1px solid #cccccc;width:488px;height:400px;overflow-y:scroll;border-radius:3px;}
+.friends_imf tr td{padding:15px 0;vertical-align:middle;}
+.friends_imf tr td input{cursor:pointer;}
+.friends_imf tr td img,.all_checkbox input{vertical-align:middle;}
+.all_check{padding-top:10px;height:50px;width:100%; position:relative;text-align:right;}
+.all_checkbox_btn input{background: url(http://js.youtx.com/images/cios_10.gif) 0 -262px no-repeat;border:none;color:#FFFFFF;cursor:pointer;font-size:16px;font-weight:bold;height:37px;text-align:center;width:109px;}
+.all_checkbox{color:#666;position:absolute;top:15px;left:18px;_left:14px;*+left:14px;cursor:pointer;}
+/*积分如何使用*/
+.mycenter_main_huodong{padding:30px 0 30px 30px;min-height:400px;_height:400px;}
+.mycenter_main_huodong h2{font-size:24px;color:#666;font-weight:bold;}
+.mycenter_huodong_pic{width:884px;overflow:hidden;padding-top:30px;}
+.mycenter_huodong_pic li{float:left;margin-right:36px;width:183px;}
+.mycenter_huodong_pic li p{width:153px;text-align:center;padding-top:10px;font-size:14px;margin:0 auto;}
+.mycenter_huodong_pic li p a{color:#999!important;font-weight:bold;}
+.mycenter_huodong_pic li img{padding:15px;border:1px solid #bbbbbb;background-color:#efefef;border-radius: 5px 5px 5px 5px;}
+.coin_total li{line-height:35px;height:35px;font-size:18px;font-weight:bold;color:#5d5d5d;}
+.coin_total{padding:15px 30px 15px 25px;}
+.coin_total li .coin_earn,.coin_total li .coin_use{background:url(http://js.youtx.com/Images/Coin_icon.gif) no-repeat;height:23px;line-height:23px;margin-top:6px;float:right;padding-left:30px;display:block;color:#068dd8;font-size:14px;}
+/*.coin_total li .coin_use{background-position:0 -375px;}*/
+.coin_frozen{padding-left:30px;}
+.red_font2{color:#e00678;}
+.mycenter_main_center h2{background:url(http://js.youtx.com/images/cios_10.gif) 0 -405px no-repeat;height:25px;line-height:25px;text-indent:-9999999px;}
+.mycenter_main_center_title2 h2{background:url(http://js.youtx.com/images/cios_10.gif) 0 -430px no-repeat;}
+.mycenter_main_center_title{padding:10px 0 10px 25px;border-bottom:1px solid #ebebeb;}
+.activity_picture li{float:left;background:url(http://js.youtx.com/images/ico_pic06bg.gif) no-repeat;width:121px;text-align:center;margin:0 28px 10px;padding-top:8px;display:inline;height:132px;overflow:hidden;}
+.activity_picture li p{padding-top:15px;text-align:left;line-height:18px;}
+.activity_picture{overflow:hidden;border-top:1px solid #d7d7d7;width:888px;padding-top:25px;}
+/*wjl-xg2015-01-19 begin*/
+/*.mingxi_table tr td{line-height:40px;height:40px;border-bottom:1px dashed #a0a0a0;text-align:center;color:#616161;}
+.mingxi_table tr .td_first{padding-left:25px;text-align:left;}
+.mingxi_table .tr_first td{font-weight:bold;font-size:14px;color:#626262;border-bottom:1px solid #dddddd;background-color:#eeeeee;border-top:1px solid #ebebeb;} 
+*/
+/*wjl-xg2015-01-19 end*/
+.mingxi_page{width:880px;text-align:right;padding:15px 0 20px;overflow:hidden;padding-right:8px;}
+.mingxi_page a{width:25px;height:25px;line-height:25px;color:#0088d1!important;background-color:#f9f9f9;border-radius: 3px 3px 3px 3px;border:1px solid #e1e1e1;text-align:center;margin:0 5px;font-family:Arial;font-size:14px;padding:3px 6px;}
+.mingxi_page .mingxi_page_cur{color:#fff!important;background-color:#cfcfcf;border-radius:3px 3px 3px 3px;border:1px solid #a8a8a8;}
+.blue_font{color:#068dd8;}
+.friendbox{border-radius:10px 10px 10px 10px;}
+.cboxContent2{border:none;}
+.friend_qq_number, .friend_qq_password{width:400px;}
+.friend_qq_number input,.friend_qq_password input{margin-top:-5px;height:21px;*margin-top:-1px;*height:17px;*line-height:17px;*border:1px solid #7f9db9;}
+.friend_qq_mail{padding-left:10px;}
+.friend_qq_number, .friend_qq_password{padding:6px 0 10px 100px;}
+.friend_qq_mail select{*font-size:15px;width:120px;cursor:pointer;margin:-5px 0 1px 0;*margin:0 0 1px 0;padding:5px;font-family:"HelveticaNeue","Helvetica Neue","HelveticaNeueRoman","HelveticaNeue-Roman","Helvetica Neue Roman",'TeXGyreHerosRegular',"Helvetica","Tahoma","Geneva","Arial",sans-serif;color:#393c3d;border:1px solid #c2c2c2;background:-webkit-gradient(linear,center top,center bottom,from(#f5f5f5),to(#dcdcdc));box-shadow:0 1px 2px -1px rgba(0,0,0,0.2);-moz-box-shadow:0 1px 2px -1px rgba(0,0,0,0.2);-webkit-box-shadow:0 1px 2px -1px rgba(0,0,0,0.2);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;text-shadow:0 1px 0 #fff;}
+.friends_qq_btn{padding: 0 0 0 153px;}
+/*2011-10-21*/
+/*我的账户好友推荐*/ 
+.mycenter_main_title{padding:30px 0 0 12px;color:#666666;font-size:14px;font-weight:bold;}
+.mycenter_main_title img{vertical-align:middle;padding-left:5px;}
+.mycenter_main_top,.mycenter_main_bottom,.ytx_share_top,.ytx_share_bottom{background:url(http://js.youtx.com/images/cios_10.gif) no-repeat;height:12px;width:890px;overflow:hidden;}
+.mycenter_main_bottom{background-position:0 -12px;}
+.mycenter_main_center{border-left:0px solid #e0e0e0;border-right:0px solid #e0e0e0;overflow:hidden;width:888px;}
+.mycenter_main_center_left{padding:15px 0 20px 25px;float:left;width:390px;}
+.mycenter_main_center_right{background:url(http://js.youtx.com/images/cios_border.gif) left repeat-y;width:428px;}
+.friends{margin:20px 0 0 30px;}
+.friends li{font-size:13px;line-height:30px;color:#333;}
+.friends_email{padding:5px 0 0 29px;}
+.friends_email_btn{text-align:right;padding:15px 18px 0 0;}
+.friends_email_btninput{background:url(http://js.youtx.com/images/cios_10.gif) 0 -262px no-repeat;height:37px;width:109px;text-align:center;font-weight:bold;font-size:16px;color:#fff;border:none; cursor:pointer;}
+.friends_email_btninput1{background:url(http://js.youtx.com/images/graybutton.gif);height:35px;width:107px;text-align:center;font-weight:bold;font-size:16px;color:#fff;border:none; cursor:pointer;}
+.ytx_share_top{background-position:0 -208px; width:730px;margin:10px 0 0 14px;}
+.ytx_share_bottom{background-position:0 -220px;width:730px;margin-left:14px;}
+.ytx_share_center{margin-left:14px;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;width:708px;overflow:hidden;padding:15px 0 15px 20px;}
+.ytx_share_center .txt{color:#919191;float:left;margin-top:5px;}
+.ytx_share_center input{border:1px solid #D4D4D4;float:left;font-size:14px;margin:0 20px 0 5px;padding:4px 2px;width:320px;color:#0087d2;}
+.share{padding-top:5px!important;}
+.share a.iqzon{background-position:0 -48px;}
+.share a.iren{background-position:0 -80px;}
+.share a.ikaixin{background-position:0 -32px;}
+.share a.idouban{background-position:0 -16px;}
+.mycenter_main_center_left h3,.mycenter_main_center_right h3{background:url(http://js.youtx.com/images/cios_10.gif) 0 -24px no-repeat;height:29px;padding-left:35px;line-height:29px;font-weight:bold;font-size:16px;}
+.mycenter_main_center_right h3{background:url(http://js.youtx.com/images/cios_10.gif) 0 -52px no-repeat;}
+.friends_email_inf_text{ margin: 20px 0 0 37px;border:1px solid #d1d4d1;width:368px;height:190px;padding:10px;color:#666;background:url(http://js.youtx.com/images/friends_email_inf_textbg.gif) bottom no-repeat;border-radius: 3px 3px 3px 3px;}
+.friends_email textarea{border:1px solid #d1d4d1;padding:5px;color:#666;font-size:12px;resize:none;width:315px;height:110px; font-family:Arial, Helvetica, sans-serif;    border-radius: 3px 3px 3px 3px;}
+.friends_email_warning{color:red;padding:4px 0 0 29px;}
+/*---------------------2011.11.18 zhaoxiaobo 积分涉及到的样式---------------------结束-----------------------------*/
+/*2011-12-13游天下新添抵值卷*/
+.coin_total li .coin_use a{padding-right:15px;color:#058dd7;font-size:12px;font-weight:normal;}
+.coin_total li .coin_earn a{color:red;font-weight:normal;font-size:12px;display:block;}
+.coin_use,.coin_earn{display:block;width:260px;}
+.coin_total li .coin_earn{background-position:0 -28px;}
+.mycenter_page{padding-top:10px;}
+.InforModify{padding-left:10px;}
+/*wjl-xg2015-01-19 begin*/
+/*.mingxi_table tr .td_first{padding-left:20px;}
+.mingxi_table tr .td_end{padding-right:20px;text-align:right;}
+*/
+/*wjl-xg2015-01-19 end*/
+.mycenter_main h1{padding:20px 0 0 12px;font-weight:bold;font-size:16px;}
+.red{color:red;}
+.CoinTitle{position:relative;}
+.CoinTitle ul li{float:left;line-height:40px;height:40px;width:145px;font-size:16px;text-align:center; cursor:pointer;}
+.CoinTitle .CoinTitle_01,.CoinTitle .CoinTitle_02{background:url(http://js.youtx.com/Images/Coin_txtbg.gif) 0 -42px no-repeat;width:290px;overflow:hidden;height:40px;}
+.CoinTitle .CoinTitle_02{background:url(http://js.youtx.com/Images/Coin_txtbg.gif) 0 3px no-repeat;}
+.CoinTxtbox_Top,.CoinTxtbox_Bottom{background:url(http://js.youtx.com/Images/Coin_txtboxbg.gif) no-repeat;width:890px;height:10px;overflow:hidden;}
+.CoinTxtbox_Bottom{background-position:0 -10px;}
+.mycenter_main h2{font-size:16px; font-family:微软雅黑;}
+.CoinTxtbox_Center{background-color:#f0f0f0;border-right:1px solid #E0E0E0;border-left:1px solid #E0E0E0;width:888px;}
+.CoinTxtbox_CenterTable{padding:20px 0 20px 120px;}
+.CoinTxtbox_CenterTable tr td{padding:0 10px;height:35px;}
+.CoinTxtbox_CenterTable .CoinTxtbox_CenterTableTd{text-align:right;font-size:15px; font-family:"微软雅黑";}
+.CoinTxtbox_CenterTable tr td input{border:1px solid #E0E0E0;height:20px;padding:3px 5px;font-size:12px;width:300px;border-radius:5px 5px 5px 5px;}
+.CoinTxtbox_CenterTable tr td .button{border:none;background:url(http://js.youtx.com/Images/coinbg.jpg) no-repeat;width:70px;height:30px;}
+.CoinTxtbox_CenterUl li{line-height:20px;color:#666666;}
+.CoinTxtbox_CenterUl{padding:10px 20px;}
+.CoinTitle span{float:right;padding-top:15px;}
+.CoinTitle span a{padding-right:10px;text-decoration:underline;}
+/*2011-1-6*/
+.CoinTitle span{float:right;padding:0 5px 10px 0;}
+.CoinTitleleftbg{position:absolute;left:0;bottom:-39px;background:url(Coin_txtleftbg.gif) no-repeat;width:14px;height:14px;_bottom:-19px;}
+.CoinTitleRightbg{position:absolute;right:0;bottom:-14px;background:url(http://js.youtx.com/Images/Coin_txtRightbg.gif) no-repeat;width:14px;height:14px;_bottom:10px;}
+.mycenter_main_text{padding:10px 12px 0}
+.mycenter_main_centerSelect{background: -moz-linear-gradient(center top , #F5F5F5, #DCDCDC) repeat scroll 0 0 transparent;border: 1px solid #C2C2C2;border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2), 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent;color: #393C3D;cursor: pointer;padding: 2px;text-shadow: 0 1px 0 #FFFFFF;}
+.CoinTxtbox_CenterUl li dt{font-weight:bold;}
+.CoinTxtbox_CenterUl li dl{padding-bottom:8px;}
+
+.Upgrade{position:absolute;top:-55px;left:-145px;}/*2014-10-13修改*/
+
+/*2015-01-19*/
+.mingxi_table{border-bottom:1px dashed #d6d6d6}
+.mingxi_table td,.mingxi_table th{padding-left:0px;}/*2015-01-19*/
+.mingxi_table td{border:none; text-align:center;padding-left:0;}
+.mingxi_table td{padding:6px 0;text-align:left;line-height:23px;vertical-align:top; text-align:center;/*border-bottom:solid 1px #e6e6e6;*/}/*2015-01-12*/

@@ -1,0 +1,330 @@
+/*
+* Author: 赵天亮
+* Date:   2016-05-31 10:36:22
+* Last Modified by:   赵天亮
+* @Last Modified time: 2016-11-25 17:21:53
+*/
+
+$(document).ready(function () {
+    'use strict';
+    /*
+    * 品牌推荐区
+    */
+
+    // 品牌推荐轮播框
+    var oBrandListBar = $('#brand-list-bar');
+    // 下一个
+    var oBrandNext = $('.brand-cont .next');
+    // 前一个
+    var oBrandPrev = $('.brand-cont .prev');
+    // 轮播数
+    var brandLen = oBrandListBar.find('.brand-left').length;
+    // 当前轮播数
+    var iNowBrand = 0;
+    // 计时器
+    var timerBrand = null;
+    // 轮播函数
+    function tableBrand(obj, value) {
+        iNowBrand += 1;
+        if (iNowBrand === brandLen) {
+            iNowBrand = 0;
+        }
+        obj.css('position', 'absolute');
+        obj.animate({ left: -iNowBrand * value + 'px' }, 300);
+    }
+
+    // 自动轮播函数-品牌区
+    function turnTableBrand(obj, value) {
+
+        clearInterval(timerBrand);
+        timerBrand = setInterval(function () {
+            tableBrand(obj, value);
+        }, 4000);
+
+    }
+
+    turnTableBrand(oBrandListBar, 1030);
+
+    oBrandNext.on('click', function () {
+        tableBrand(oBrandListBar, 1030);
+    });
+    oBrandPrev.on('click', function () {
+        tableBrand(oBrandListBar, 1030);
+    });
+    // 品牌推荐整个部分
+    var ObrandCont = $('.brand-cont');
+    // 当鼠标放上去时停止计时器，离开时开启计时器
+    ObrandCont.hover(function () {
+        clearInterval(timerBrand);
+
+    }, function () {
+        turnTableBrand(oBrandListBar, 1030);
+    });
+
+    /*
+    * 明星房东区
+    */
+
+    // 明星房东
+    var mxfdBox = $('.mxfd_box ul');
+    var mxfdBoxList = mxfdBox.find('li');
+    var starPoint = $('.mxfd_box p a');
+    // 当前轮播数
+    var iNowStar = 0;
+    // 计时器
+    var timerStar = null;
+    // 轮播数量
+    var starLen = mxfdBoxList.length;
+    // 轮播函数
+    function tableStar(obj, value, point) {
+        iNowStar += 1;
+        if (iNowStar === starLen) {
+            iNowStar = 0;
+        }
+        obj.css('position', 'absolute');
+        obj.animate({ left: -iNowStar * value + 'px' }, 300);
+        point.eq(iNowStar).addClass('cur').siblings('a').removeClass('cur');
+    }
+
+    // 自动轮播函数-品牌区
+    function turnTableStar(obj, value, point) {
+
+        clearInterval(timerStar);
+        timerStar = setInterval(function () {
+            tableStar(obj, value, point);
+        }, 4000);
+
+    }
+
+    turnTableStar(mxfdBox, 300, starPoint);
+
+    starPoint.on('click', function (event) {
+        event.preventDefault();
+        $(this).addClass('cur').siblings('a').removeClass('cur');
+        iNowStar = starPoint.index(this);
+        mxfdBox.animate({ left: -iNowStar * 300 + 'px' }, 300);
+    });
+    $('.mxfd_box').hover(function () {
+        clearInterval(timerStar);
+    }, function () {
+        turnTableStar(mxfdBox, 300, starPoint);
+    });
+
+    /*
+    * 品牌店铺&橱窗推荐
+    */
+
+    // 当前轮播数
+    var iNowHot = 0;
+
+    // 品牌推荐轮播框
+    var oHotBar = $('.scroll_list ul');
+    // 轮播数
+    var hotLen = oHotBar.find('li').length / 4;
+    // 下一个
+    var oScrollWrapNext = $('.scroll_wrap .next');
+    // 前一个
+    var oScrollWrapPrev = $('.scroll_wrap .prev');
+    // 计时器
+    var timerHot = null;
+    // 轮播函数
+    function tableHot(obj, value) {
+        iNowHot += 1;
+        if (iNowHot === hotLen) {
+            iNowHot = 0;
+        }
+        obj.animate({ marginLeft: -iNowHot * value + 'px' }, 300);
+    }
+
+    // 自动轮播函数-品牌区
+    function turnTableHot(obj, value) {
+
+        clearInterval(timerHot);
+        timerHot = setInterval(function () {
+            tableHot(obj, value);
+        }, 4000);
+
+    }
+
+
+    turnTableHot(oHotBar, 1200);
+
+    oScrollWrapNext.on('click', function () {
+        tableHot(oHotBar, 1200);
+    });
+    oScrollWrapPrev.on('click', function () {
+        tableHot(oHotBar, 1200);
+    });
+    // 明星房东整个部分
+    var oBottomInfo = $('.bottomInfo');
+    // 当鼠标放上去时停止计时器，离开时开启计时器
+    oBottomInfo.hover(function () {
+        clearInterval(timerHot);
+    }, function () {
+        turnTableHot(oHotBar, 1200);
+    });
+    // 入住日期框定位
+    //    $('#startDate').focus(function () {
+    //        $('#calroot').css('left', 0);
+    //    });
+
+    //    $('#endDate').focus(function () {
+    //        $('#calroot').css('left', '227px');
+    //    });
+
+    // 位置框操作
+    var locationBox = $('.locationBox');
+    var areaBtn = locationBox.find('dd a');
+    var areaList = locationBox.find('.dropCont');
+    var dropArea = $('.subwayList .dropArea');
+    var hoverNum = 0;
+    areaBtn.on('click', function () {
+
+        var that = $(this);
+        if (that.hasClass('cur')) {
+            that.removeClass('cur').siblings('i').remove();
+            areaList.eq(areaBtn.index(this)).hide();
+            $("#position_hidden").val("0");
+        } else {
+            that.addClass('cur').parent().append($('<i></i>')).siblings('dd').find('a').removeClass('cur').parent().find('i').remove();
+            areaList.eq(areaBtn.index(this)).show().siblings('.dropCont').hide();
+            $("#position_hidden").val("1");
+        }
+
+    });
+
+    // 短租&别墅切换
+    //    var dzBtn = $('.dzBtn');
+    //    var bsBtn = $('.bsBtn');
+    //    var dzList = $('.duanzu');
+    //    var bsList = $('.villa');
+    //    dzBtn.on('click', function (event) {
+    //        event.preventDefault();
+    //        if (dzBtn.hasClass('cur')) {
+    //            return false;
+    //        } else {
+    //            dzBtn.addClass('cur').siblings('.bsBtn').removeClass('cur');
+    //            dzList.show();
+    //            bsList.hide();
+    //        }
+    //    });
+    //    bsBtn.on('click', function (event) {
+    //        event.preventDefault();
+    //        if (bsBtn.hasClass('cur')) {
+    //            return false;
+    //        } else {
+    //            bsBtn.addClass('cur').siblings('.dzBtn').removeClass('cur');
+    //            dzList.hide();
+    //            bsList.show();
+    //        }
+    //    });
+    // 筛选框
+    function shaixuan(obj, type) {
+        var that = $(obj);
+        // 单选
+        if (type === 'dan') {
+            // 点击不限时
+            if (obj.tagName === 'DT') {
+                that.find('a').addClass('active').end().siblings('dd').removeClass('cur');
+                // 点击条件时
+            } else if (obj.tagName === 'DD') {
+                that.addClass('cur').siblings('dd').removeClass('cur').end().siblings('dt').find('a').removeClass('active');
+            }
+            // 多选
+        } else if (type === 'duo') {
+            // 点击不限时
+            if (obj.tagName === 'DT') {
+                that.find('a').addClass('active').end().siblings('dd').removeClass('cur').find('i').removeClass('checked');
+                // 点击条件时
+            } else if (obj.tagName === 'DD') {
+                // 当被点击条件已选中时
+                if (that.hasClass('cur')) {
+                    that.removeClass('cur').find('i').removeClass('checked');
+                    // 当点击后 所有条件都被取消了 将不限特殊显示
+                    if (!that.siblings('dd').hasClass('cur')) {
+                        that.siblings('dt').find('a').addClass('active');
+                    }
+                    //当被点击条件已选中时 
+                } else {
+                    that.addClass('cur').find('i').addClass('checked').end().siblings('dt').find('a').removeClass('active');
+                }
+
+            }
+        } /*else if () {
+
+        }*/
+
+    }
+    var price = $('.price');
+    var tese = $('.tese');
+    var type = $('.type');
+    price.children('dl').children().on('click', function () { shaixuan(this, 'dan') });
+    tese.children('dl').children().on('click', function () { shaixuan(this, 'dan') });
+    type.children('dl').children().on('click', function () { shaixuan(this, 'dan') });
+    var huxing = $('.huxing');
+    var peitao = $('.peitao');
+    var others = $('.others');
+    huxing.children('dl').children().on('click', function () { shaixuan(this, 'duo') });
+    //peitao.children('dl').children().on('click', function () { shaixuan(this, 'duo') });
+    others.children('dl').children().on('click', function () { shaixuan(this, 'duo') });
+    // 区域商圈地铁站等二级分类
+    function shaixuanList() {
+        var that = $(this);
+        var cur = areaBtn.eq(areaList.index(that.parent().parent()));
+        if (that.parent().hasClass('dropSubway-line')) {
+            if (that.hasClass('cur')) {
+                return;
+            } else {
+                console.log(that.index());
+                dropArea.hide();
+                dropArea.eq(that.index()).show();
+            }
+        }
+        if (that.hasClass('cur')) {
+            that.removeClass('cur');
+            cur.css({ fontWeight: 'normal', color: '#333' });
+        } else {
+            //点击某号线的时候，把其它线路的蓝色粗体的样式去掉。
+            that.addClass('cur').siblings('li').removeClass('cur');
+            if (!that.parent().parent().siblings('.dropCont').hasClass('subwayList')) {
+                that.parent().parent().siblings('.dropCont').find('li').removeClass('cur');
+            } else {
+                that.parent().parent().siblings('.dropCont').find('.dropArea li').removeClass('cur');
+            }
+            //设置位置搜索项文字按钮的样式
+            //areaBtn.css({ fontWeight: 'normal', color: '#333' });
+            //设置当前地铁按钮的样式
+            //cur.css({ fontWeight: 'bold', color: '#2b98dd' });
+        }
+    }
+    areaList.on('click', 'li', shaixuanList);
+});
+
+
+//右边悬浮框Begin
+//返回到顶部
+$(window).scroll(function () {
+    var sT = document.body.scrollTop ||
+        document.documentElement.scrollTop;
+    if (sT <= 30) {
+        $(".suspenBox").hide();
+    }
+    else {
+        $(".suspenBox").show();
+    }
+});
+$(".suspensionR").click(function () {
+    $("html,body").animate({ scrollTop: 0 }, 1000);
+});
+$(".suspenLi").on("click", function () {
+    if ($(this).hasClass("cur")) {
+        $(this).removeClass('cur');
+        $(this).find(".suspenPop1").hide();
+    } else {
+        $('.suspenLi').removeClass('cur'); //全部移除cur
+        $(".suspenLi").find(".suspenPop1").hide(); //全部消失
+        $(this).addClass('cur');
+        $(this).find(".suspenPop1").show();  //当前的显示
+    }
+});
+//右边悬浮框End

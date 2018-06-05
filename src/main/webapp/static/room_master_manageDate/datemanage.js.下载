@@ -1,0 +1,707 @@
+﻿
+//想要把功能函数都扒到这个文件里面来！！！
+
+//修改套数
+var clickaddrooms = 0;
+function AddRooms(HouseID) {
+    if (clickaddorder == 0) {
+        clickaddrooms = 1;
+        var dtime = new Date().getTime();
+        $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 8, houseid: HouseID, dtime: dtime }, function (resault) {
+            $("#msg").html(resault);
+            var bodyHeight = $("body").height();
+            var bodyWidth = $("body").width();
+            $(".PopupLayer").css("height", bodyHeight);
+            $(".PopupLayer").css("width", bodyWidth);
+            clickaddrooms = 0;
+        });
+    }
+}
+
+//点击录入订单的功能
+var clickaddorder = 0;
+function AddOrder() {
+    closeTip();
+    if (clickaddorder == 0) {
+        clickaddorder = 1;
+        if (markArray.length > 0) {
+            //遍历数组，只保留有效值
+            for (var i = 0; i < markArray.length; i++) {
+                if (markArray[i] != undefined) {
+                    //只保留“全款支付”“定金支付”“未支付”“不可出租”4种状态的值，其余全部删除
+                    if (markArray[i].CssClass == "DarkBlue" || markArray[i].CssClass == "ColorBlue" || markArray[i].CssClass == "DarkGreen") {
+                        markArray.splice(i, 1); //删除索引为i的这个元素，剩余元素索引自动调整
+                    }
+                }
+            }
+        }
+
+        if (markArray.length > 0) {
+            //如果已经在页面打钩，验证是否属于同一个房间
+            var strData = JSON.stringify(markArray);
+            var dtime = new Date().getTime();
+            $.post("/Publish/Ajax/DateManageBodyAction.aspx", {
+                CheckOneRoomForAddOrder: "CheckOneRoomForAddOrder",
+                strData: strData,
+                dtime: dtime
+            }, function (data) {
+                if (data != "") {
+                    var arrdata = data.split('|');
+                    if (arrdata != undefined && arrdata != null && arrdata.length > 0) {
+                        if (arrdata[0] == "OK") {
+                            var arrtime = arrdata[1].split(',');
+                            $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 1, "isshevelhouse": isshevelhousenew, "DateType": housepublishPlan, "isedit": 0, "houseid": arrdata[2], "checkin": arrtime[0], "checkout": arrtime[1], "dtime": dtime }, function (resault) {
+                                $("#msg").html(resault);
+                                var bodyHeight = $("body").height();
+                                var bodyWidth = $("body").width();
+                                $(".PopupLayer").css("height", bodyHeight);
+                                $(".PopupLayer").css("width", bodyWidth);
+                                clickaddorder = 0;
+                            });
+                        } else { //出现不在同一行的数据，return出去 提示弹出 验证是否属于同一个房间
+                            alert("抱歉，只能选择同一房间的连续日期进行该操作");
+                            clickaddorder = 0;
+                        }
+
+                    } else {
+                        clickaddorder = 0;
+                    }
+                }
+                else {
+                    clickaddorder = 0;
+                }
+            });
+
+        } else {
+            //如果没有在页面打钩，就显示弹出框
+            $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 1, "isshevelhouse": isshevelhousenew, "DateType": housepublishPlan, "dtime": dtime }, function (resault) {
+                $("#msg").html(resault);
+                var bodyHeight = $("body").height();
+                var bodyWidth = $("body").width();
+                $(".PopupLayer").css("height", bodyHeight);
+                $(".PopupLayer").css("width", bodyWidth);
+                clickaddorder = 0;
+            });
+
+        }
+    }
+}
+
+//日历元素单击事件（打钩和取消打钩）
+//function ItemClick(item) {
+//    //只要不是"游天下订单,全款支付 ,定金支付, 未支付 "日历元素，都可打钩
+//    if (item.attr("class") != "ColoreDE" && item.attr("class") != "DarkBlue"&& item.attr("class") != "ColorBlue"&& item.attr("class") != "DarkGreen") {
+//        item.click(function () {
+//            //debugger;
+//            var checkClassName = "CheckMark";
+//            var itemClass = item.attr("class");
+//            if (itemClass.indexOf(checkClassName) != -1) {
+//                //取消打钩动作
+//                item.removeClass(checkClassName);
+//                //先找到要删除的数字元素，然后删除
+//                var dateItemObj = {
+//                    "HouseID": item.attr("houseid"),
+//                    "ChildHouseID": item.attr("childhouseid"),
+//                    "ItemDate": item.attr("itemdate"),
+//                    "CssClass": item.attr("class")
+//                };
+//                for (var i = 0; i < markArray.length; i++) {
+//                    //如果使用delete，会导致数组变成了稀疏数组，需要先判断是否为undefined
+//                    if (markArray[i] != undefined) {
+//                        if (dateItemObj.HouseID == markArray[i].HouseID && dateItemObj.ChildHouseID == markArray[i].ChildHouseID && dateItemObj.ItemDate == markArray[i].ItemDate) {
+//                            markArray.splice(i, 1); //删除索引为i的这个元素，剩余元素索引自动调整
+//                            break;
+//                        }
+//                    }
+//                }
+//            } else {
+//                //打钩动作
+//                //只处理“可出租”、“不可出租”、“已过去”三种日历元素
+//                var dateItemObj = {
+//                    "HouseID": item.attr("houseid"),
+//                    "ChildHouseID": item.attr("childhouseid"),
+//                    "ItemDate": item.attr("itemdate"),
+//                    "CssClass": item.attr("class")
+//                };
+//                markArray.push(dateItemObj);
+//                item.addClass(checkClassName);
+//            }
+//        });
+//    }
+//}
+
+
+//鼠标移动显示提示框体 linsong-2013,4,8
+function MouseMove(item) {
+    //显示订单框体
+    item.mouseover(function (e) {
+        $("#divQipaoXX").empty();
+        $("#divQipaoXXXXX").empty();
+        $("#divQipaoXXXXXXXXXX").empty();
+        $("#divqipao").show();
+        var y = -170;
+        var x = -70;
+        var managechildid = item.attr("managechildid");
+        if (managechildid != "0") { //有排期记录
+            var Orderid = item.attr("ordersid");
+            if (item.attr("class").indexOf("Colore71") != -1 || item.attr("class").indexOf("ColoreFA") != -1) {//不可阻状态
+
+                //                $("#divQipaoXXXXX").show().css({ "top": ($(this).offset().top - 35) + "px", "left": ($(this).offset().left - 7) + "px" });
+                //                $("#divQipaoXXXXX").append("<div class='RoomExplainBox'><div class='NewContactArrow' style='left: 20px;'>◆</div><div class='NewContactArrow02' style='left: 20px;'>◆</div><div class='RoomExplainHeader_L'></div><div class='RoomExplainHeader_R'></div><div class='RoomExplainBottom_L'></div><div class='RoomExplainBottom_R'></div><div class='RoomExplainBoxTxt RoomExplainBoxTxt02' ><a class='PT5' id='changecheck" + managechildid + "'  href='javascript:void(0);'  >改为可租</a></div></div>");
+                // ChangeCheckIn(managechildid);
+            }
+            else {//可租状态
+                var Currency = item.attr("Currency") == "CNY" ? "元" : "美元";
+                if (Number(Orderid) > 0) {//游天下订单
+                    var phone = "";
+                    if (Number(Orderid) > 0) { if (Number(item.attr("paystate")) == 1) { phone = item.attr("ManagePhone") } } else { phone = item.attr("ManagePhone") }
+                    var managestart = item.attr("ManageStart_EndTime").split('-');
+                    var huanstring = "<a ";
+                    huanstring += '' + (item.attr('IsShow') == '1' ? ' style = ""' : ' style = "display:none;"') + ' class="PR10" href="javascript:void(0)" onclick="ChangeHouse(' + item.attr("ManageChildID") + ',' + item.attr("houseid") + ',\'' + managestart[0] + '\',\'' + item.attr("endtime") + '\')">换房间</a>';
+                    huanstring = "<div class='RoomExplainBox'><div class='NewContactArrow' style='left: 80px;'>◆</div><div class='NewContactArrow02' style='left: 80px;'>◆</div><div class='RoomExplainHeader_L'></div><div class='RoomExplainHeader_R'></div><div class='RoomExplainBottom_L'></div><div class='RoomExplainBottom_R'></div> <div class='RoomExplainBoxTxt' ><dl><dt>" + item.attr("ManageUserName") + "，" + item.attr("ManageSexStr") + "，" + phone + "</dt><dd class='ColorGray999'><p>入住时段：" + item.attr("ManageStart_EndTime") + "</p><p>入住时间：" + item.attr("CheckIn_OutTime") + "</p></dd><dd>订金：<span class='ColorRed'>" + item.attr("DingJinPrice").toString("0.0") + "</span>" + Currency + "</dd><dd>余款：<span class='ColorRed'>" + item.attr("yueprice").toString("0.0") + "</span>" + Currency + "</dd><dd>预订渠道：游天下</dd><dd><a class='PR10' href='/payment/User/MyroomEn/OrderManageEn.aspx?paycode=" + item.attr("paycode") + "' target='_blank'>查看</a>" + huanstring + "</dd></dl></div></div>";
+                    $("#divQipaoXX").append(huanstring);
+                    $("#divQipaoXX").show().css({ "top": ($(this).offset().top - 135) + "px", "left": ($(this).offset().left + x) + "px" });
+                    //游天下订单的操作 请写在这个下面
+                }
+                else {//自己录入订单
+                    $("#divQipaoXXXXXXXXXX").append("<div class='RoomExplainBox'><div class='NewContactArrow' style='left: 80px;'>◆</div><div class='NewContactArrow02' style='left: 80px;'>◆</div><div class='RoomExplainHeader_L'></div><div class='RoomExplainHeader_R'></div><div class='RoomExplainBottom_L'></div><div class='RoomExplainBottom_R'></div> <div class='RoomExplainBoxTxt' ><dl><dt>" + item.attr("ManageUserName") + "，" + item.attr("ManageSexStr") + "，" + item.attr("ManagePhone") + "</dt><dd class='ColorGray999'><p>入住时段：" + item.attr("ManageStart_EndTime") + "</p><p>入住时间：" + item.attr("CheckIn_OutTime") + "</p></dd><dd>订金：<span class='ColorRed'>" + item.attr("DingJinPrice").toString("0.0") + "</span>" + Currency + "</dd><dd>余款：<span class='ColorRed'>" + item.attr("yueprice").toString("0.0") + "</span>" + Currency + "</dd> <dd>预订渠道：" + item.attr("qudaoname") + "</dd><dd class='ColorGray999'>备注：" + item.attr("dateremark") + "</dd><dd><a class='PR10' href='javascript:void(0)' onclick='UpdateOrder(" + item.attr("ManageChildID") + "," + item.attr("houseid") + "," + item.attr("roomid") + ",2)'>详情</a><a class='PR10' href='javascript:void(0)' onclick='UpdateOrder(" + item.attr("ManageChildID") + "," + item.attr("houseid") + "," + item.attr("roomid") + ",2)'>修改</a><a class='PR10' href='javascript:void(0)' onclick='CanCleOrder(" + item.attr("ManageChildID") + ")'>取消</a><a class='PR10' href='javascript:void(0)' onclick='UpdateOrder(" + item.attr("ManageChildID") + "," + item.attr("houseid") + "," + item.attr("roomid") + ",4)'>录入新订单</a></dd></dl></div></div>");
+                    $("#divQipaoXXXXXXXXXX").show().css({ "top": ($(this).offset().top + y) + "px", "left": ($(this).offset().left + x) + "px" });
+                    //自己录入订单的操作 请写在这个下面
+                }
+            }
+
+        }
+    })
+    item.mouseout(function (e) {
+        //        var top1 = e.pageY - $("#divQipaoXX").offset().top;
+        //        var left1 = e.pageX - $("#divQipaoXX").offset().left;
+        //        var top2 = e.pageY - $("#divQipaoXXXXX").offset().top;
+        //        var left2 = e.pageX - $("#divQipaoXXXXX").offset().left;
+        //        if ((item.attr("class") == "ColoreDE" && Number(top1) > 160 && Number(left1) > 180) || (item.attr("class").indexOf("Colore71") != -1 && Number(top2) > 50 && Number(left2) > 50)) {
+        //            $("#divQipaoXX").hide()
+        //            $("#divQipaoXXXXXXXXXX").hide()
+        //            $("#divQipaoXXXXX").hide();
+        //        }
+        //$("#divQipaoXX").empty()
+        //$("#divQipaoXXXXXXXXXX").empty()
+        // $("#divQipaoXXXXX").empty();
+        $("#divqipao").hide();
+
+    })
+}
+
+///end
+
+///改为可租状态
+function ChangeCheckIn(ManageChildID) {
+    $("#changecheck" + ManageChildID + "").click(function () {
+        var doubleCilck = true;
+        if (doubleCilck) {
+            doubleCilck = false;
+            if (confirm("确定修改为可租用?")) {
+                $.post("/Publish/Ajax/DateManageBodyAction.aspx", { changecheckin: "changecheckin", ManageChildID: ManageChildID }, function (data) {
+                    if (data == "OK") {
+                        alert("修改成功！");
+                        doubleClick = true;
+                        LoadData();
+                    } else {
+                        doubleClick = true;
+                        alert("修改失败！");
+                    }
+                })
+            }
+            else {
+                doubleClick = true;
+            }
+        }
+    })
+}
+///取消订单
+var clickcancle = 0;
+function CanCleOrder(ManageChildID) {
+    if (clickcancle == 0) {
+        clickcancle = 1; var dtime = new Date().getTime();
+        if (confirm("该操作将取消您已录入的订单，确定该操作？")) {
+            $.post("/publish/ajax/AjaxDayWork.aspx", { "type": "2", "ordersID": "", "manageChildID": ManageChildID, dtime: dtime }, function (resault) {
+                if (resault == "true" || resault == "True") {
+                    alert("取消成功！");
+                    LoadData();
+                } else {
+                    alert("取消失败！");
+                }
+                clickcancle = 0;
+            });
+
+        }
+        else {
+            clickcancle = 0;
+        }
+    }
+}
+///修改订单
+var clickupdateorder = 0;
+function UpdateOrder(ManageChildID, HouseID, RoomID, isEdit) {
+    if (clickupdateorder == 0) {
+        clickupdateorder = 1; var dtime = new Date().getTime();
+        if (RoomID != "0") {
+            HouseID += "-" + RoomID;
+        }
+        //如果没有在页面打钩，就显示弹出框
+        $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 1, "isshevelhouse": isshevelhousenew, "DateType": housepublishPlan, isEdit: isEdit, dtime: dtime, ManageChildID: ManageChildID, houseid: HouseID }, function (resault) {
+            $("#msg").html(resault);
+            var bodyHeight = $("body").height();
+            var bodyWidth = $("body").width();
+            $(".PopupLayer").css("height", bodyHeight);
+            $(".PopupLayer").css("width", bodyWidth);
+            clickupdateorder = 0;
+        });
+    }
+}
+
+///游天下订单
+//var clickupdateytxorder = 0;
+//function UpdateOrder(ManageChildID, HouseID, isEdit) {
+//    if (clickupdateytxorder == 0) {
+//        clickupdateytxorder = 1; var dtime = new Date().getTime();
+//        //如果没有在页面打钩，就显示弹出框
+//        $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 1, isEdit: isEdit, dtime: dtime, ManageChildID: ManageChildID, houseid: HouseID }, function (resault) {
+//            $("#msg").html(resault);
+//            var bodyHeight = $("body").height();
+//            var bodyWidth = $("body").width();
+//            $(".PopupLayer").css("height", bodyHeight);
+//            $(".PopupLayer").css("width", bodyWidth);
+//            clickupdateytxorder = 0;
+//        });
+//    }
+//}
+
+
+//游天下订单换房间
+var clickchangehouse = 0
+function ChangeHouse(ManageChildID, HouseID, checkin, checkout) {
+    if (clickchangehouse == 0) {
+        clickchangehouse = 1; var dtime = new Date().getTime();
+        $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 2, "dtime": dtime, "ManageChildID": ManageChildID, "houseid": HouseID, "checkin": checkin, "checkout": checkout }, function (resault) {
+            $("#msg").html(resault);
+            var bodyHeight = $("body").height();
+            var bodyWidth = $("body").width();
+            $(".PopupLayer").css("height", bodyHeight);
+            $(".PopupLayer").css("width", bodyWidth);
+            clickchangehouse = 0;
+        });
+    }
+}
+
+
+//游天下房源修改价格
+var clickupdatehouseprice = 0
+function UpdateHousePrice(HouseID, price) {
+    if (clickupdatehouseprice == 0) {
+        clickupdatehouseprice = 1; var dtime = new Date().getTime();
+        $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 14, "dtime": dtime, "houseid": HouseID, "dayPrice": price }, function (resault) {
+            $("#msg").html(resault);
+            var bodyHeight = $("body").height();
+            var bodyWidth = $("body").width();
+            $(".PopupLayer").css("height", bodyHeight);
+            $(".PopupLayer").css("width", bodyWidth);
+            clickupdatehouseprice = 0;
+        });
+    }
+}
+
+//游天下房源删除
+var deletehouseroom = 0
+function DeleteHouseRoom(HouseID) {
+    if (deletehouseroom == 0) {
+        deletehouseroom = 1; var dtime = new Date().getTime();
+        $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 15, "dtime": dtime, "houseid": HouseID }, function (resault) {
+            $("#msg").html(resault);
+            var bodyHeight = $("body").height();
+            var bodyWidth = $("body").width();
+            $(".PopupLayer").css("height", bodyHeight);
+            $(".PopupLayer").css("width", bodyWidth);
+            deletehouseroom = 0;
+        });
+    }
+}
+
+
+
+///删除房源
+var clickdeletehouse = 0;
+function DeleteHouse(roomID, houseID) {
+    if (clickdeletehouse == 0) {
+        clickdeletehouse = 1; var dtime = new Date().getTime();
+        $.post("/Publish/ajax/AjaxEditHouseRooms.aspx", { RomoveHouseID: houseID, RoomID: roomID, ditme: dtime, IsDel: 0 }, function (data) {
+            if (data == "cannot") {
+                alert("该房源未来已有订单或设置了不可租，不能进行该操作！"); clickdeletehouse = 0;
+            } else {
+                if (confirm("确认删除该房间？不会删除该房间已录入订单")) {
+                    $.post("/Publish/ajax/AjaxEditHouseRooms.aspx", { RomoveHouseID: houseID, RoomID: roomID, ditme: dtime, IsDel: 1 }, function (data1) {
+                        if (data1 == "OK") {
+                            alert("删除成功！");
+                            clickdeletehouse = 0;
+                            LoadData();
+                        } else if (data1 == "cannot") {
+                            alert("该房源未来已有订单或设置了不可租，不能进行该操作！");
+                            clickdeletehouse = 0;
+                        } else {
+                            alert("删除失败！");
+                            clickdeletehouse = 0;
+                        }
+                    });
+                }
+                else {
+                    clickdeletehouse = 0;
+                }
+            }
+        });
+    }
+}
+///删除房源new(2013.06.17)
+function DeleteHouseNew(HouseID) {
+    if (clickdeletehouse == 0) {
+        clickdeletehouse = 1;
+        $.post("/Publish/Ajax/AjaxEditHouseRooms.aspx", { HouseID: HouseID, Deal: "checkdel" }, function (data) {
+            if (data == "cannot") {
+                alert("该房源未来已有订单或设置了不可租，不能进行该操作！");
+                clickdeletehouse = 0;
+            } else {
+                if (confirm("确认删除该房间？不会删除该房间已录入订单")) {
+                    $.post("/Publish/Ajax/AjaxDeleteHouseRoom.aspx", { RomoveHouseID: HouseID, typeID: "1" }, function (data1) {
+                        if (data1 == "OK") {
+                            alert("删除成功！");
+                            clickdeletehouse = 0;
+                            LoadData();
+                        } else if (data1 == "cannot") {
+                            alert("该房源未来已有订单或设置了不可租，不能进行该操作！");
+                            clickdeletehouse = 0;
+                        } else {
+                            alert("删除失败！");
+                            clickdeletehouse = 0;
+                        }
+                    });
+                }
+                else {
+                    clickdeletehouse = 0;
+                }
+            }
+        })
+    }
+}
+
+//填写备注
+function addTheRemark(theHouseid, bakOrName) {
+    if (bakOrName == "bak") {
+
+        $("#spanRemark_" + theHouseid).hide();
+        $("#editRemark_" + theHouseid).hide();
+        $("#txtRemark_" + theHouseid).show();
+        $("#saveRemark_" + theHouseid).show();
+        $("#cancleRemark_" + theHouseid).show();
+    } else if (bakOrName = "name") {
+        $("#spanName_" + theHouseid).hide();
+        $("#editName_" + theHouseid).hide();
+        $("#txtName_" + theHouseid).show();
+        $("#btSaveName_" + theHouseid).show();
+        $("#spanCancleName_" + theHouseid).show();
+    }
+}
+//取消填写备注
+function cancleTheRemark(theHouseid, bakOrName) {
+    if (bakOrName == "bak") {
+
+        $("#spanRemark_" + theHouseid).show();
+        $("#editRemark_" + theHouseid).show();
+        $("#txtRemark_" + theHouseid).hide();
+        $("#saveRemark_" + theHouseid).hide();
+        $("#cancleRemark_" + theHouseid).hide();
+    } else if (bakOrName == "name") {
+        $("#txtName_" + theHouseid).hide();
+        $("#btSaveName_" + theHouseid).hide();
+        $("#spanCancleName_" + theHouseid).hide();
+        $("#spanName_" + theHouseid).show();
+        $("#editName_" + theHouseid).show();
+    }
+}
+
+//保存子房源名字
+var doubleClick1 = true;
+function SaveTheName(theHouseChildId) {
+    if (doubleClick1 == true) {
+        doubleClick1 = false;
+        var bol_name = true;
+        //验证字数等
+        if ($("#txtName_" + theHouseChildId).val() == "") {
+            doubleClick1 = true;
+            bol_name = false;
+            alert("请填写标题");
+            return;
+        }
+        if (getsLength($("#txtName_" + theHouseChildId).val()) > 10) {
+            bol_name = false;
+            doubleClick1 = true;
+            alert("长度不能超过10个汉字");
+            return;
+        }
+        if (bol_name) {
+            var dtime = new Date().getTime();
+            $.post("/publish/Ajax/DateManageBodyAction.aspx", {
+                saveName: "saveName",
+                childId: theHouseChildId,
+                childName: $("#txtName_" + theHouseChildId).val(),
+                dtime: dtime
+            }, function (data) {
+                if (data == "OK") {
+                    alert("保存成功！");
+                    var bak = $("#txtName_" + theHouseChildId).val();
+                    $("#spanName_" + theHouseChildId).html("&gt;&nbsp;" + bak);
+                    $("#spanName_" + theHouseChildId).attr("title", bak);
+                    //                        var appendStr = '<span onclick="addTheRemark(' + theHouseChildId + ',"name")" class="IconEdit" id="editName_' + theHouseChildId + '"></span>';
+                    //                        $("#spanName_" + theHouseChildId).after(appendStr);
+                    cancleTheRemark(theHouseChildId, 'name');
+                    doubleClick1 = true;
+                } else {
+                    alert("保存失败！")
+                    doubleClick1 = true; ;
+                }
+            });
+        } else {
+            doubleClick1 = true;
+        }
+    }
+}
+
+//快速锁排期
+function LockDate() {
+    closeTip();
+    if (markArray.length > 0) {
+        //遍历数组，只保留有效值
+        for (var i = 0; i < markArray.length; i++) {
+            if (markArray[i] != undefined) {
+                //只保留“可租”“不可租”“已过去”三种状态的值，其余全部删除
+                if (markArray[i].CssClass != "Colorgre" && markArray[i].CssClass != "Colore71" && markArray[i].CssClass != "ColorE1") {
+                    markArray.splice(i, 1); //删除索引为i的这个元素，剩余元素索引自动调整
+                }
+            }
+        }
+    }
+
+    if (markArray.length > 0) {
+        //如果已经在页面打钩，直接异步处理
+        var strData = JSON.stringify(markArray);
+        var doubleCilck = true;
+        var dtime = new Date().getTime();
+        $.post("/Publish/Ajax/DateManageBodyAction.aspx", {
+            lockDateMark: "lockDateMark",
+            strData: strData,
+            dtime: dtime
+        }, function (data) {
+            if (data == "OK") {
+                alert("锁定成功！");
+                doubleClick = true;
+                LoadData();
+            } else {
+                doubleClick = true;
+                alert("锁定失败！");
+            }
+        });
+
+    } else {
+        //如果没有在页面打钩，就显示弹出框
+        var clicklockdate = 0;
+        if (clicklockdate == 0) {
+            clicklockdate = 1; var dtime = new Date().getTime();
+            $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 3, "isshevelhouse": isshevelhousenew, "dtime": dtime }, function (resault) {
+                $("#msg").html(resault);
+                var bodyHeight = $("body").height();
+                var bodyWidth = $("body").width();
+                $(".PopupLayer").css("height", bodyHeight);
+                $(".PopupLayer").css("width", bodyWidth);
+                clicklockdate = 0;
+
+            });
+        }
+    }
+}
+
+//快速释放排期
+function FreeDate() {
+    closeTip();
+    if (markArray.length > 0) {
+        //遍历数组，只保留有效值
+        for (var i = 0; i < markArray.length; i++) {
+            if (markArray[i] != undefined) {
+
+                //只保留“全款支付”“定金支付”“未支付”“不可出租”4种状态的值，其余全部删除
+                if (markArray[i].CssClass != "DarkBlue" && markArray[i].CssClass != "ColorBlue" && markArray[i].CssClass != "Colorgre" && markArray[i].CssClass != "DarkGreen" && markArray[i].CssClass != "Colore71" && markArray[i].CssClass != "ColorE1") {
+                    markArray.splice(i, 1); //删除索引为i的这个元素，剩余元素索引自动调整
+                }
+            }
+        }
+    }
+
+    if (markArray.length > 0) {
+        //如果已经在页面打钩，直接异步处理
+        var strData = JSON.stringify(markArray);
+        var doubleCilck = true;
+        var dtime = new Date().getTime();
+        $.post("/Publish/Ajax/DateManageBodyAction.aspx", {
+            freeDateMark: "freeDateMark",
+            strData: strData,
+            dtime: dtime
+        }, function (data) {
+            if (data == "OK") {
+                alert("解锁成功！");
+                LoadData();
+                doubleClick = true;
+            } else {
+                doubleClick = true;
+                alert("解锁失败！");
+            }
+        });
+
+    } else {
+        //如果没有在页面打钩，就显示弹出框
+        var clickfreedate = 0;
+        if (clickfreedate == 0) {
+            clickfreedate = 1; var dtime = new Date().getTime();
+            $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 6, "isshevelhouse": isshevelhousenew, "dtime": dtime }, function (resault) {
+                $("#msg").html(resault);
+                var bodyHeight = $("body").height();
+                var bodyWidth = $("body").width();
+                $(".PopupLayer").css("height", bodyHeight);
+                $(".PopupLayer").css("width", bodyWidth);
+                clickfreedate = 0;
+
+            });
+        }
+    }
+}
+
+
+
+//=========元素单击事件=======
+var firstClickPressed = false, beginIndex = 0, length = 0;
+function itemClick(item) {
+
+    item.click(function (event) {
+        item.mouseover();
+        if (!firstClickPressed) {
+            jsBeginDate = item.attr("itemdate");
+            firstClickPressed = true;
+            var OldClass = item.attr("oldclass");
+            item.attr("class", "ColoreFA");
+            $("#selectHouseId").val($(this).attr("houseid"));
+            $("#childhouseid").val($(this).attr("childhouseid"));
+
+        } else if ($("#selectHouseId").val() != $(this).attr("houseid") || $("#childhouseid").val() != $(this).attr("childhouseid")) {
+            alert("请在同一条房间上选择日期！"); closeTip();
+        } else if (item.attr("index") == $("#index").val() && $("#selectHouseId").val() == $(this).attr("houseid") && $("#childhouseid").val() == $(this).attr("childhouseid")) {
+            var begin = jsBeginDate.replace('.', '-');
+            var end = item.attr("itemdate").replace('.', '-');
+            var leng = parseInt(item.attr("index")) - beginIndex;
+            for (var i = 0; i <= leng; i++) {
+                var idx = $("li[index=" + (beginIndex + parseInt(i)) + "][houseid=" + $("#selectHouseId").val() + "][childhouseid=" + $("#childhouseid").val() + "]");
+                var dateItemObj = {
+                    "HouseID": idx.attr("houseid"),
+                    "ChildHouseID": idx.attr("childhouseid"),
+                    "ItemDate": idx.attr("itemdate"),
+                    "CssClass": idx.attr("oldclass")
+                };
+                markArray.push(dateItemObj);
+            }
+
+            //弹窗
+            var clickitemclick = 0, clicktype = 0, childhouseid = "";
+            if ($(this).attr("oldclass") == "TimeListBluebg") {//总房源
+                clicktype = 1;
+            }
+            childhouseid = $("#selectHouseId").val();
+            if (parseInt($("#childhouseid").val()) > 0) {
+                childhouseid = $("#selectHouseId").val() + "-" + $("#childhouseid").val();
+            }
+
+            if (clickitemclick == 0) {
+                clickitemclick = 1; var dtime = new Date().getTime();
+                $.post("/Publish/User/DateManage/DateManagePOP.aspx", { "PopType": 13, "DateType": housepublishPlan, "houseid": childhouseid, "HouseChildCount": clicktype, "checkin": begin, "checkout": end }, function (resault) {
+                    $("#msg").html(resault);
+                    var bodyHeight = $("body").height();
+                    var bodyWidth = $("body").width();
+                    $(".PopupLayer").css("height", bodyHeight);
+                    $(".PopupLayer").css("width", bodyWidth);
+                    clickitemclick = 0;
+
+                });
+            }
+
+
+        } else if (parseInt(item.attr("index")) > parseInt($("#index").val()) && $("#selectHouseId").val() == $(this).attr("houseid") && $("#childhouseid").val() == $(this).attr("childhouseid")) {
+            alert("不能跨越选择有订单的日期"); closeTip();
+        } else if (parseInt(item.attr("index")) < parseInt($("#index").val()) && $("#selectHouseId").val() == $(this).attr("houseid") && $("#childhouseid").val() == $(this).attr("childhouseid")) {
+            alert("结束日期不可小于起始日期"); closeTip();
+        }
+    });
+
+
+    //=======鼠标移入事件=======
+    item.mouseover(function () {
+        var temp = $(this).attr("index");
+        if (!firstClickPressed) {
+            beginIndex = parseInt($(this).attr("index"));
+        } else if (parseInt($(this).attr("index")) >= parseInt(beginIndex)) {
+
+            $('li[class="ColoreFA"][index!=' + beginIndex + ']').each(function () {
+                $(this).attr("class", $(this).attr("oldclass"));
+            });
+
+            length = parseInt($(this).attr("index")) - parseInt(beginIndex);
+            for (var i = 1; i <= length; i++) {
+                temp = i + beginIndex;
+                var thisClass = $("li[index=" + temp + "][houseid=" + $("#selectHouseId").val() + "][childhouseid=" + $("#childhouseid").val() + "]");
+                if (thisClass.attr("class") == "ColorBlue" || thisClass.attr("class") == "DarkBlue" || thisClass.attr("class") == "DarkGreen") {//遇到已录入订单的就停止
+                    break;
+                }
+                thisClass.attr("class", "ColoreFA"); //黄色
+            }
+            $("#index").val(temp);
+        }
+    });
+}
+
+function closeTip() {
+    jsBeginDate = "";
+    jsEndDate = "";
+    $("li[oldclass]").each(function () {
+        if ($(this).attr("class") != $(this).attr("oldclass")) {
+            $(this).attr("class", $(this).attr("oldclass"));
+        }
+    });
+    firstClickPressed = false;
+    if (markArray != null) {
+        markArray = new Array();
+    }
+}
+
+
+
+
+
+//获取长度，一个字符长度算1，一个汉字长度算2
+function getsLength(titles) {
+    // alert(titles); //match(/[^\x00-\x80]/g)
+    var len = titles.length;
+    var lengtha = 0; // alert(titles.match(/[^\x00-\x80]/g));
+    for (var i = 0; i < len; i++) {
+        if (titles.charCodeAt(i) > 255) {
+            lengtha += 2;
+        }
+        else {
+            lengtha++;
+        }
+    }
+
+    return parseInt(lengtha / 2);
+}
+
+

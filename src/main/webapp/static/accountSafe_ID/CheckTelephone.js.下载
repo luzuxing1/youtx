@@ -1,0 +1,493 @@
+﻿$(function () {
+    var checkforeigntel = false;
+    var checkForeign = false;
+    var fCellphonenum = 0;
+    var checknum = 0;
+    var timeID;
+    //中英文切换Add
+    var MinuteTxt = "分";
+    var SecondTxt = "秒";
+    var NullTelErrorTxt = "手机不能为空，请输入您的手机号";
+    var CheckTxt = "验证";
+    var ErrorTxt = "错误";
+    var NsecindRetry = "秒后重试";
+    var RetryTxt = "重试";
+    if ($.cookie("LN") == "en-US") {
+        MinuteTxt = "min";
+        SecondTxt = "sec";
+        NullTelErrorTxt = "Vacant phone number.Please enter your phone number";
+        CheckTxt = "Verify";
+        ErrorTxt = "Error";
+        NsecindRetry = "secs to retry";
+        RetryTxt = "Try again";
+    }
+
+    $('#telecountry').change(function () {
+        //if ($(this).val() == '44,86') {
+        if (true) {
+            $('#private_phone1').show();
+            $('#private_phone5').hide();
+            $('#ValidInput1').val($('#telecountry').val().split(',')[1]);
+            $('#CountryID1').val($('#telecountry').val().split(',')[0]);
+            //$('#rtel').hide();
+        }
+        else {
+
+            $('#ValidInput1').val($('#telecountry').val().split(',')[1]);
+            $('#CountryID1').val($('#telecountry').val().split(',')[0]);
+            // $('#rtel').show();
+        }
+    });
+    $('#telecountry4').change(function () {
+        //if ($(this).val() == '44,86') {
+        if (true) {
+            $('.AbroadPhone').hide();
+        }
+        else {
+            $('.lwlb_contact_phone_verify').hide();
+        }
+        $('#ValidInput4').val($('#telecountry4').val().split(',')[1]);
+        $('#CountryID4').val($('#telecountry4').val().split(',')[0]);
+    });
+    //这里发验证码
+
+    $("#SendCellphoneButton").click(function () {
+        //if ($('#ValidInput1').val() == '86') {
+        if (true) {
+            clearInterval(timeID);
+            sendCode(1);
+            LeftTime(60, 'SendCellphoneButton2');
+        }
+        else {
+            checkForeignTel();
+            if (!checkforeigntel) {
+                return false;
+            }
+            fCellphonenum = $("#CellphoneNumInput").val();
+            $.getJSON("/profile/Ajax/VerifyPost.aspx", { "action": "send_message_to_foreign_not_register", "cellphonenum": fCellphonenum }, function (data) {
+                if (data["result"] != "0") {
+                    $("#pmsg").show();
+                    $("#pmsg").text(data["text"]);
+                }
+                else {
+                    var NationCode = $('#ValidInput1').val();
+                    var CountryID = $('#CountryID1').val();
+                    $('#private_phone1').hide();
+                    $('#private_phone5').show();
+                    $('#ValidInput5').html($('#ValidInput1').val());
+                    $('#CellphoneNumInput5').html($('#CellphoneNumInput').val());
+                    clearInterval(timeID);
+                    var minute = 0;
+                    var second = 0;
+                    $("#SpanLeftTime").html('');
+                    $('.lwlb_contact_phone_verify').hide();
+                    $('.AbroadPhone').show();
+                    $("#spanCAPTCHA").show().text(data["text"]);
+                    checknum = data["text"];
+                    var times = 1000;
+
+                    var leftseconds = 1800;
+
+                    clearInterval(timeID);
+                    timeID = setInterval(function () {
+                        if (leftseconds == 0 || checkForeign) {
+                            clearInterval(timeID);
+
+                            if (checkForeign) {
+                                //成功验证
+                                location.reload();
+                            }
+
+                            $("#divBeforeCheck").show();
+                            $("#divCheckSucceed").hide();
+                            $("#btnForeignCheckClose").click();
+                        }
+                        else {
+                            leftseconds--;
+                            minute = parseInt(leftseconds / 60);
+                            second = leftseconds % 60;
+                            $("#SpanLeftTime").text(minute + MinuteTxt + second + SecondTxt).show();
+                            var CountryID = $('#CountryID1').val();
+                            var IsShowTel = 0;
+                            if ($("#IsShowTel").attr('checked') == 'checked') {
+                                IsShowTel = 1;
+                            }
+                            $.ajax({
+                                cache: false,
+                                type: "POST",
+                                url: "/profile/Ajax/VerifyPost.aspx",
+                                async: false,
+                                data: { "action": "verify_cellphone_code_foreign_not_register", "cellphonenum": fCellphonenum, "cellphonecode": checknum, "NationCode": NationCode, "IsShowTel": IsShowTel, "CountryID": CountryID },
+                                dataType: "json",
+                                success: function (data) {
+                                    if (null != data && data != "") {
+                                        if (data["result"] == "0") {
+                                            checkForeign = true;
+                                        }
+                                        else {
+                                            checkForeign = false;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }, times);
+                }
+            })
+        }
+    });
+    $("#SendCellphoneButton4").click(function () {
+        //if ($('#ValidInput4').val() == '86') {
+        if (true) {
+            clearInterval(timeID);
+            sendCode(4);
+            LeftTime(60, 'SendCellphoneButton2');
+        }
+        else {
+            checkForeignTel4();
+            if (!checkforeigntel) {
+                return false;
+            }
+            var NationCode = $('#ValidInput4').val();
+            var CountryID = $('#CountryID4').val();
+            fCellphonenum = $("#CellphoneNumInput4").val();
+            $.getJSON("/profile/Ajax/VerifyPost.aspx", { "action": "send_message_to_foreign_not_register", "cellphonenum": fCellphonenum, "NationCode": NationCode, "CountryID": CountryID }, function (data) {
+                if (data["result"] != "0") {
+                    $("#pmsg4").show();
+                    $("#pmsg4").text(data["text"]);
+                }
+                else {
+                    $('#private_phone4').hide();
+                    $('#private_phone5').show();
+                    $('#ValidInput5').html($('#ValidInput4').val());
+                    $('#CellphoneNumInput5').html($('#CellphoneNumInput4').val());
+                    clearInterval(timeID);
+                    var minute = 0;
+                    var second = 0;
+                    $("#SpanLeftTime").html('');
+                    $('.lwlb_contact_phone_verify').hide();
+                    $('.AbroadPhone').show();
+                    $("#spanCAPTCHA").show().text(data["text"]);
+                    checknum = data["text"];
+                    var times = 1000;
+                    var leftseconds = 1800;
+
+                    clearInterval(timeID);
+                    timeID = setInterval(function () {
+                        if (leftseconds == 0 || checkForeign) {
+                            clearInterval(timeID);
+
+                            if (checkForeign) {
+                                //成功验证
+                                location.reload();
+                            }
+
+                            $("#divBeforeCheck").show();
+                            $("#divCheckSucceed").hide();
+                            $("#btnForeignCheckClose").click();
+
+                        }
+                        else {
+                            leftseconds--;
+                            minute = parseInt(leftseconds / 60);
+                            second = leftseconds % 60;
+                            $("#SpanLeftTime").text(minute + "分" + second + "秒").show();
+                            NationCode = $('#ValidInput4').val();
+                            var IsShowTel = 0;
+                            if ($("#IsShowTel4").attr('checked') == 'checked') {
+                                IsShowTel = 1;
+                            }
+                            $.ajax({
+                                cache: false,
+                                type: "POST",
+                                url: "/profile/Ajax/VerifyPost.aspx",
+                                async: false,
+                                data: { "action": "verify_cellphone_code_foreign_not_register", "cellphonenum": fCellphonenum, "cellphonecode": checknum, "NationCode": NationCode, "IsShowTel": IsShowTel, "CountryID": CountryID },
+                                dataType: "json",
+                                success: function (data) {
+                                    if (null != data && data != "") {
+                                        if (data["result"] == "0") {
+                                            checkForeign = true;
+                                        }
+                                        else {
+                                            checkForeign = false;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }, times);
+                }
+            })
+        }
+    });
+    //重试的时候发
+    $('#SendCellphoneButton2').click(function () {
+        sendCode(2);
+    });
+
+    function sendCode(n) {
+        var NationName = 0;
+        var CountryID = 0;
+        var cellphonenum = '';
+        if (n == 2) {
+            cellphonenum = $("#ColorEA248C").html();
+        }
+        else if (n == 4) {
+            cellphonenum = $('#CellphoneNumInput4').val();
+            //            NationName = $('#ValidInput4').val();
+            //            CountryID = $('#CountryID4').val().split(',')[0];
+
+
+            $('#NationCode').val($('#telecountry4').val().split(',')[1]);
+            $('#CountryID').val($('#telecountry4').val().split(',')[0]);
+            NationName = $('#NationCode').val();
+            CountryID = $('#CountryID').val();
+        }
+        else {
+            NationName = $('#telecountry').val().split(',')[1];
+            CountryID = $('#telecountry').val().split(',')[0];
+            $('#NationCode').val($('#telecountry').val().split(',')[1]);
+            $('#CountryID').val($('#telecountry').val().split(',')[0]);
+            cellphonenum = $('#CellphoneNumInput').val();
+        }
+        $.getJSON("/profile/User/Profile/VerifyPost.aspx", { "action": "check_cellphone_num_and_send_message", "cellphonenum": cellphonenum, "NationName": NationName, "CountryID": CountryID }, function (data) {
+            if (data["result"] != "0") {
+                $('#Verfyspan' + n).html(data["text"]);
+                $('#Verfyspan' + n).show();
+            }
+            else {
+                if (n == 1) {
+                    $('#private_phone1').hide();
+                    $('#private_phone2').show();
+                    $('#ColorEA248C').html(cellphonenum);
+                }
+                if (n == 2) {
+                    LeftTime(60, 'SendCellphoneButton2');
+                }
+                if (n == 4) {
+                    LeftTime(60, 'SendCellphoneButton2');
+                    $('#private_phone2').show();
+                    $('#private_phone4').hide();
+                    $('#ColorEA248C').html($('#CellphoneNumInput4').val());
+                    $('#NationCode').val($('#ValidInput4').val());
+                    $('#Verfyspan4').hide();
+                }
+            }
+        });
+    }
+    function DelSpace(str) {
+        var str1 = str.replace(/\s+/g, "");
+        return str1;
+    }
+    //验证国外手机号
+    function checkForeignTel() {
+        if ($("#CellphoneNumInput").val() != "") {
+            var tel = DelSpace($("#CellphoneNumInput").val());
+
+            var objExp = new RegExp(/^(0|[1-9]\d*)$/g);
+
+            if (objExp.test(tel)) {
+                $("#foreignTelTip").hide();
+                checkforeigntel = true;
+            }
+            else {
+                $("#foreignTelTip").show();
+                checkforeigntel = false;
+            }
+
+        } else {
+            checkforeigntel = false;
+            $("#foreignTelTip").show().text(NullTelErrorTxt);
+        }
+    }
+    //验证国外手机号4
+    function checkForeignTel4() {
+        if ($("#CellphoneNumInput4").val() != "") {
+            var tel = DelSpace($("#CellphoneNumInput4").val());
+
+            var objExp = new RegExp(/^(0|[1-9]\d*)$/g);
+
+            if (objExp.test(tel)) {
+                $("#foreignTelTip4").hide();
+                checkforeigntel = true;
+            }
+            else {
+                $("#foreignTelTip4").show();
+                checkforeigntel = false;
+            }
+
+        } else {
+            checkforeigntel = false;
+            $("#foreignTelTip4").show().text(NullTelErrorTxt);
+        }
+    }
+    $('#Cancel2').click(function () {
+        clearInterval(timeID);
+        $('#private_phone2').hide();
+        $('#private_phone4').show();
+        $('#Verfyspan2').hide();
+        $('#telecountry4').val($('#CountryID').val() + ',' + $('#NationCode').val());
+        $('#ValidInput4').val($('#NationCode').val());
+    });
+    //验证国内手机号
+    $("#CellphoneVerifyButton2").click(function () {
+        var cellphonecode = $("#ValidInput2").val();
+        var cellphonenum = $("#ColorEA248C").html();
+        var NationName = $('#NationCode').val();
+        var NationCode = $('#NationCode').val();
+        var CountryID = $('#CountryID').val();
+        $.getJSON("/profile/User/Profile/VerifyPost.aspx", { "action": "verify_cellphone_code2", "cellphonecode": cellphonecode, "cellphonenum": cellphonenum, "NationName": NationCode, "NationCode": NationCode, "CountryID": CountryID }, function (data) {
+            if (data["result"] != "0") {
+                $('#Verfyspan2').show();
+                $('#Verfyspan2').html(data['text']);
+            } else {
+                $('#private_phone2').hide();
+                //$('#ValidInput3').val($('#ValidInput1').val());
+
+                $('#ValidInput3').val(data['NationName']);
+                $('#CountryID3').val($('#CountryID').val());
+                // $('#CellphoneNumInput3').css('readonly', 'readonly').css('background-color', '#808080');
+                $('#CellphoneNumInput3').css('disabled', 'disabled');
+                $('#CellphoneNumInput3').val($('#ColorEA248C').html());
+
+                $('#private_phone3').show();
+            }
+        });
+    })
+    $("#ResetMail").click(function () {
+        var mailaddress = $("#MailAddressInput").attr("value");
+        $.getJSON("/profile/User/Profile/VerifyPost.aspx", { "action": "check_mail_address_and_send_mail", "mailaddress": mailaddress }, function (data) {
+            if (data["result"] != "0") {
+                MaskAndPopup(data["text"]);
+            }
+            else {
+                window.location.reload();
+            }
+        });
+    })
+    $("#ResetCellphone").click(function () {
+        $.getJSON("/profile/User/Profile/VerifyPost.aspx", { "action": "reset_cellphone" }, function (data) {
+            if (data["result"] == "0") {
+                alert("fail:" + data["report"]);
+            } else {
+
+                $(".CellphoneVerify_inputandbutton").attr("style", "display:none;");
+                $("#SendCellphoneButton").attr("style", "display:block;");
+                $("#SendMailButton").attr("value", CheckTxt);
+                $("#CellphoneNumInput").removeAttr("disabled");
+            }
+        });
+    })
+    $("#ok").click(function () {
+        $("#popup").attr("style", "display:none;opacity:0.8;cursor:pointer;");
+        $("#mask").attr("style", "display:none;width:406px;");
+    })
+    $("#close").click(function () {
+        $("#popup").attr("style", "display:none;opacity:0.8;cursor:pointer;");
+        $("#mask").attr("style", "display:none;width:406px;");
+    })
+    //修改电话号码
+    $('#changeTele3').click(function () {
+        $('#private_phone3').hide();
+        $('#ValidInput4').val($('#ValidInput3').val());
+        $('#CellphoneNumInput4').val($('#CellphoneNumInput3').val());
+        $('#private_phone4').show();
+
+        $('#telecountry4').val($('#CountryID3').val() + ',' + $('#ValidInput3').val());
+        $('#CountryID4').val($('#CountryID3').val());
+        if ($('#ValidInput3').val() != '86') {
+            // $('#rtel4').show();
+        }
+    });
+    //取消修改
+    $('#cancelChange').click(function () {
+        $('#private_phone3').show();
+        $('#private_phone4').hide();
+    });
+    $('#private_phone_btn4').click(function () {
+        sendCode(4);
+    });
+    $('#changeTel5').click(function () {
+        $('#private_phone1').show();
+        $('#private_phone5').hide();
+        clearTimeout(timeID);
+    });
+    function MaskAndPopup(c) {
+        var mask = $("#mask");
+        var popup = $("#popup");
+        var head = $("#head");
+        var content = $("#content");
+        head.html(ErrorTxt);
+        content.html(c);
+        mask.attr("style", "display:block;");
+        if (document.body.scrollWidth == 980) {
+            mask.attr("style", "display:block;width:980px;");
+        }
+        popup.attr("style", "display:block;width:406px;");
+        popup.css({ top: (document.documentElement.scrollTop + (screen.availHeight - 400) / 2), left: (document.body.offsetWidth - 406) / 2 }).show();
+    }
+
+    function LeftTime(leftsecond, id) {
+        if (leftsecond > 0) {
+            clearInterval(timeID);
+            timeID = setInterval(function () {
+                if (leftsecond > 0) {
+                    $('#' + id).val(leftsecond + NsecindRetry).attr("disabled", "disabled");
+                    leftsecond--;
+                }
+                else {
+                    clearInterval(timeID);
+                    $("#" + id).val(RetryTxt).removeAttr("disabled");
+                    $("#" + id).click(function () {
+                        //sendCode(2);
+                    });
+                }
+            }, 1000);
+        }
+        else {
+            $('#' + id).removeAttr("disabled");
+        }
+    }
+     function AddXingHao(value, begin, length)
+        {
+            var l=value.length;
+            var xinghao="*";
+            for(var i=0;i<length-1;i++)
+            {
+                xinghao+="*";
+            }
+            var v1 = value.substring(0, begin);
+            var v2 = xinghao;
+
+            var v3 = value.substring(parseInt(begin) + parseInt(length), l);
+            value = v1 + v2 + v3;
+            return value;
+        }
+
+    function LoadTelephone() {
+        $.getJSON("/Profile/Ajax/AjaxPassport.aspx", { "type": "BindMobileByUserID", "t": Math.random() }, function (data) {
+            if (data["result"] == "1") {
+                $('#private_phone1').hide();
+                $('#ValidInput3').val(data["NationCode"]);
+                $('#CellphoneNumInput3').val(AddXingHao(data["Telephone"],'4','4'));
+                $('#CountryID3').val(data["CountryID"]);
+                $('#private_phone3').show();
+
+            }
+            else if (data["result"] == "2") {
+                $('#private_phone1').show();
+                $('#ValidInput1').val(data["NationCode"]);
+                $('#CountryID1').val(data["CountryID"]);
+                $('#CellphoneNumInput').val(data["Telephone"]);
+                $('#private_phone3').hide();
+                $('#telecountry').val(data["CountryID"] + "," + data["NationCode"]);
+                if (data["NationCode"] != '86') {
+                    //$('#rtel').show();
+                }
+            }
+
+        });
+    }
+    LoadTelephone();
+});

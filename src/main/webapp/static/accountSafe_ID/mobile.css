@@ -1,0 +1,67 @@
+﻿@charset "utf-8";
+.clear{margin:0;padding:0;font-size:0;clear:both;overflow:hidden;}
+.wrapper{width:980px;margin:0 auto;overflow:hidden;}
+input[type="checkbox"]{cursor:pointer;display:inline-block;height:1.4em;margin-top:6px;vertical-align:middle;width:1.4em;}
+/*2011-11-3修改*/
+.private_phone tr td{vertical-align:middle;padding:4px 0;line-height:30px;}
+.private_phone{width:415px;float:left;border:#D2D2D2 1px solid;border-radius:3px 3px 3px 3px;box-shadow:-1px 1px 1px 0 rgba(0, 0, 0, 0.1) inset, 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent;padding:18px 0;}
+.private_phone_td span{padding-right:10px;line-height:normal;}/*2012-8-15修改*/
+.private_phone_td{text-align:right; }
+.private_phone_input input{border:1px solid #dadada;padding:2px 5px;height:18px;line-height:18px;font-family:Arial, Helvetica, sans-serif;font-size:12px;float:left;margin-bottom:0!important;}
+.private_phone_span{display:block;background:url(http://js.youtx.com/images/phone_rightbg.gif) right no-repeat;height:26px;float:left;}
+.phone_qu{float:left;}
+.private_phone_input{padding:0 5px 0 3px;float:left;display:inline!important;}/*2012-8-15修改*/
+.private_phone_input a{text-decoration:underline;color:#003399!important}
+.private_phone_btn{background:url(http://js.youtx.com/images/phone_leftbg.gif) left no-repeat;*margin-top:-0px;border:none;height:26px;padding:0 2px;color:#fff!important;cursor:pointer;font-weight:bold;font-size:12px;margin-bottom:0!important;}/*2012-8-15修改*/
+.private_phone tr .private_phone_td2{line-height:18px;padding-right:40px;color:#c8c8c8;}
+.private_phone_td2 a{color:#003399!important;text-decoration:underline;}
+.private_phone .error2{border:1px solid #FD7270;display: inline-block;padding:5px 10px;margin-left:25px;border-radius:6px 6px 6px 6px;background: -moz-linear-gradient(center top , #F8BFBE, #F5A1A0) repeat scroll 0 0 transparent; text-shadow: 0 -1px 0 #EE9292;color:#FFFFFF; position:relative;background-color:#f8bfbe;line-height:18px; width:auto;float:left;}
+.error2_ico{background:url(http://js.youtx.com/images/error_label_arrow.gif) no-repeat;width:21px;height:11px;position:absolute; top:-11px;left:5px;z-index:2;}
+.c_m_r_box_comment li.private span.private2{background: -moz-linear-gradient(center top , #EFEFEF, #E8E8E8) no-repeat scroll right center transparent;border-color: #D2D2D2 #D0D0D0 #CECECE;border-radius: 3px 3px 3px 3px;border-style: solid;border-width: 0px;color: #959595;display: inline-block;font-size: 12px;font-weight: bold;line-height: 24px;padding: 0 6px;position: absolute;right: 70px;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);text-transform:uppercase;*top:8px;}
+.phone_complete{padding:0 70px;line-height:20px;}
+.private_phone_span2{margin-right:8px;}
+#lip2 .private_phone{border:none;border-left:1px solid #D2D2D2;border-radius:none;box-shadow:none;}
+.private_phone select{cursor:pointer;margin:2px 0 1px 0;padding:5px 5px;font-family:"HelveticaNeue","Helvetica Neue","HelveticaNeueRoman","HelveticaNeue-Roman","Helvetica Neue Roman",'TeXGyreHerosRegular',"Helvetica","Tahoma","Geneva","Arial",sans-serif;font-size:1.00em;color:#393c3d;border:1px solid #c2c2c2;background:#dcdcdc;background:-webkit-gradient(linear,center top,center bottom,from(#f5f5f5),to(#dcdcdc));background:-moz-linear-gradient(top,#f5f5f5,#dcdcdc);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5',endColorstr='#ffdcdcdc',GradientType=0);box-shadow:0 1px 2px -1px rgba(0,0,0,0.2),0 0 0 transparent,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;-moz-box-shadow:0 1px 2px -1px rgba(0,0,0,0.2),0 0 0 transparent,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;-webkit-box-shadow:0 1px 2px -1px rgba(0,0,0,0.2),0 0 0 transparent,0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;text-shadow:0 1px 0 #fff;}
+.private_phone_td span{float:none!important;display:inline-block!important;}/*2012-8-15修改*/
+.private_phone_lianxi{width:575px;padding:0;}
+.private_phone_lianxi2{padding:20px;}
+.private_phone_lianxi tr td{line-height:20px;height:20px;color:#333;}
+.xiugai a,.xiugai{color:#004499;}
+.add_phone div{float:left;padding-right:20px;}
+.add_phone input{border:1px solid #bfcad0;padding:2px 5px;font-family:Arial, Helvetica, sans-serif;font-size:12px;}
+.add_phone .private_phone_span input{border:none;padding:0 5px;}
+.add_phone .private_phone_span{float:right;}
+.add_phone{border-top:1px solid #d5d5d5;padding:15px 57px 15px 20px;overflow:hidden;width:498px;}
+.private_phone_span2{margin-right:8px;}
+.add_Contact{border-left:1px solid #d1d1c9;width:416px;float:left;position:relative;min-height:50px;_height:50px;}
+.add_Contact_tit{width:110px;height:32px;background:url(error_label_arrow_cio.gif) no-repeat;line-height:32px; cursor:pointer;padding-left:31px;font-weight:bold;position:absolute;right:39px;bottom:10px;z-index:100;}
+.add_Contact_tit2{background:url(error_label_arrow_cio2.gif) no-repeat;}
+.add_Contact_text{border:1px solid #e3e3e3;width:365px;overflow:hidden;position:absolute;bottom:-137px;left:0;z-index:99;background-color:#fff;padding:0 5px 20px;display:none;}
+.add_Contact_text_imftit{font-weight:bold;border-bottom:1px dashed #dcdcdc;height:44px;line-height:44px;text-align:center;}
+.add_Contact_text_imftit span{float:none!important;display:inline!important;color:#003399;}
+.book_it_section_li{width: 620px;}
+.add_Contact_text_imftxt{padding-top:15px;}
+.add_Contact_text_imftxt tr td{text-align:center;padding-bottom:10px;}
+.add_Contact_text_imftxt tr td .add_Contact_name,.add_Contact_text_imftxt tr td .add_Contact_phone{width:70px;border:1px solid #d6d6d6;padding:2px 3px;margin-bottom:0!important;color:#666!important;font-size:12px;height:20px;}
+.add_Contact_text_imftxt tr td .add_Contact_phone{width:130px;}
+.add_Contact_text_btn{padding-left:132px;}
+.add_Contact_text_btn_a{color:#004499!important;line-height:25px;padding-left:20px;cursor:pointer;}
+.error3{background:url(alert_exclamation_ico.gif) right no-repeat;padding:0 15px 0 29px;float:left;}
+.add_Contact_table{padding:10px 10px 45px 10px;}
+.add_Contact_table tr td{border-bottom:1px dashed #dcdcdc;line-height:30px;color:#333;}
+.add_Contact_table .end td{border-bottom:none;}
+.ytxReward{position:absolute;top:40px;right:0px;display:block;width:136px;line-height:normal;}/*2012-8-15修改*/
+.EvaInterpretationTxt_long{padding:8px;width:490px; background-color:#eeeeee; border:1px solid #c1c1c1; border-radius:5px; float:left; margin: 10px 0px 0px; min-height:54px;_height:54px; }
+.EvaInterpretationTxt_r{ width:70px; height:70px; float:right; background-color:#999; margin:10px 0px 0px 0px;}
+.EvaInterpretationTxt_r img { padding: 1px; height: 68px; width: 68px; }
+/* 2012-02-29新加 */
+.EvaInterpretationTxt_long{padding:8px;width:490px; background-color:#eeeeee; border:1px solid #c1c1c1; border-radius:5px; float:left; margin: 10px 0px 0px; min-height:54px;_height:54px; }
+.EvaInterpretationTxt_r{ width:70px; height:70px; float:right; background-color:#999; margin:10px 0px 0px 0px;}
+.EvaInterpretationTxt_r img { padding: 1px; height: 68px; width: 68px; }
+/*2012-3-13新增其他联系方式*/
+.private_phone .NewPrivateTableTd td{padding:9px 0 4px;}
+.private_phone_span,.private_phone_btn{line-height:26px;}
+/*2012-4-11  400转接电话*/
+.ColorCB4686{color:#CB4686;}
+.TelXiugai{text-decoration:underline!important;padding-left:5px;}/*2012-8-15修改*/
+.twotishj_z{margin-left:123px!important;}

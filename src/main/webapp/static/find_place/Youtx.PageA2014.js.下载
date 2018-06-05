@@ -1,0 +1,649 @@
+﻿/// <reference path="Youtx.Utility.js" />
+
+(function () {
+    var Page = {
+        //城市提示对象
+        autoComplete: null,
+        //关键字提示对象
+        autoCompleteKeyword: null,
+        //最后输入内容
+        latestValue: null,
+        //提示延迟
+        tipsTimeout: null,
+        //关键字文本框默认值
+        locationsDefaultValue: "请输入地址、商圈、地标、店铺名等",
+        //日历框默认值
+        dateDefaultValue: "yy-mm-dd",
+        //城市默认值
+        cityDefaultValue: "城市",
+        //价格默认值
+        defaultPrice: "10,300",
+        //初始化各种控件事件
+        init: function (o) {
+            var that = this;
+            Youtx.SearchFor.init();
+            //日历控件事件绑定
+            $('#datepicker').datepicker({
+                altField: '#chekcin',
+                minDate: new Date(),
+                prevText: '',
+                nextText: '',
+                dateFormat: 'yy-mm-dd',
+                onSelect: function (dateText, inst) {
+                    $('#checkin').val(dateText);
+                    var end = $("#checkout").val();
+                    var newdate = AddDate(dateText, 1);
+                    $('#checkout').val(newdate);
+                    $('#datepick').datepicker('option', 'minDate', $('#checkout').val());
+                    $("#diyige").hide();
+                    if (end == "yy-mm-dd") {
+                        $("#dierge").show();
+                    }
+                }
+            });
+            $('#datepick').datepicker({
+                altField: '#checkout',
+                minDate: '+1d',
+                prevText: '',
+                nextText: '',
+                dateFormat: 'yy-mm-dd',
+                onSelect: function (dateText, inst) {
+                    var begin = $("#checkin").val();
+                    var end = $("#checkout").val();
+                    var checkin1 = AddDate(begin, 0);
+                    var checkout1 = AddDate(dateText, 0);
+                    var checkDays = Number(DiffLong(checkin1, checkout1));
+                    if (checkDays > 30) {
+                        $("#checkouttip").show();
+                    }
+                    else {
+                        $("#checkouttip").hide();
+                    }
+
+                    if (begin == "yy-mm-dd") {
+                        var datet = new Date(dateText.replace('-', ','));
+                        datet = datet.setDate(datet.getDate() - 1);
+                        var newdate = dateFormat(datet, "yyyy-mm-dd");
+                        $('#datepicker').datepicker('option', 'defaultDate', newdate);
+                        $('#datepicker').datepicker('setDate', newdate);
+                        $('#checkin').val(newdate);
+                    }
+                    $("#dierge").hide();
+                }
+            });
+            $('#checkin').focus(function () {
+                $("#diyige").show();
+                $("#dierge").hide();
+            });
+            $('#checkout').focus(function () {
+                $("#dierge").show();
+                $("#diyige").hide();
+            });
+            $("#checkin").mouseup(function () {
+                return false;
+            });
+            $("#checkout").mouseup(function () {
+                return false;
+            });
+            $("#datepick").mouseup(function () {
+                return false;
+            });
+            $("#datepicker").mouseup(function () {
+                return false;
+            });
+
+            $(document).mouseup(MouseDownOther);
+            $(document).blur(MouseDownOther);
+            function MouseDownOther(evt) {
+                evt = evt || window.event;
+                var ele = evt.target || evt.srcElement;
+                if (ele.parentNode != $("#abcde") || ele.parentNode != $("#datepicker")) {
+                    $("#diyige").hide();
+                }
+                if (ele.parentNode != $("#edcba") || ele.parentNode != $("#datepick")) {
+                    $("#dierge").hide();
+                }
+            };
+            //为搜索框,城市赋值
+            if (o.language != 'en-US') {
+                if (o.params['kw'].value != "") { $("#txtLocation").val(o.params['kw'].value); }
+            } else {
+                $("#txtCity").val(o.params['kw'].value);
+            }
+            //为日历控件赋值
+            if (o.params['in'].value != "" && o.params['in'].value != "yy-mm-dd") { $("#checkin").val(o.params['in'].value.substr(0, 4) + "-" + o.params['in'].value.substr(4, 2) + "-" + o.params['in'].value.substr(6, 2)); }
+            else { //$("#checkin").val("yy-mm-dd"); 
+            }
+            if (o.params['out'].value != "" && o.params['in'].value != "yy-mm-dd") { $("#checkout").val(o.params['out'].value.substr(0, 4) + "-" + o.params['out'].value.substr(4, 2) + "-" + o.params['out'].value.substr(6, 2)); }
+            else { //$("#checkout").val("yy-mm-dd"); 
+            }
+            if (o.params['guest'].value == "10") {
+                $("#number_of_guests").html("10及以上");
+            }
+            else {
+                $("#number_of_guests").html(o.params['guest'].value);
+            }
+            //if (o.list == 1 || o.list == 2) { this.showMapTip(); }
+            if (o.params['puser'].value != "") { $("[href=\"/passport/Interface/Logout.aspx\"]").attr("href", "/passport/Interface/Logout.aspx?backurl=/"); }
+            this.initFlag(o);
+            if (!$.cookie("longrent") == "1") { $("#div_longrent").show(); }
+            $("#div_longrent").click(function () { $("#div_longrent").hide(); Youtx.Utility.setCookie("longrent", "1", null) });
+        },
+        showMapTip: function () {
+            var dragmap = $.cookie("dragmap");
+            if (dragmap != null && dragmap != "") {
+                $('#first_time_map_question').hide();
+                if (dragmap == "1") { $("#redo_search_in_map").attr("checked", "checked"); }
+                else { $("#redo_search_in_map").removeAttr("checked"); }
+            }
+            else { $('#first_time_map_question').show(); setTimeout("$('#first_time_map_question').fadeOut(5000)", 3000); }
+        },
+
+        showhideul: function (id) {
+            $("#" + id).toggle();
+            if ($("#" + id).css("display") == "none") {
+                $("#" + id).parent().addClass("closed");
+            } else {
+                $("#" + id).parent().removeClass("closed");
+            }
+        },
+        doSearch: function (CurrentPage) {
+            doSearch(CurrentPage);
+        },
+        showRoomType: function (data) {
+            var rType = data.roomTypes;
+            var s = "";
+            $("#RoomType .facet_count").text("0"); $("#RoomTypeMore .facet_count").text("0");
+            if (rType.length > 0) {
+                for (var i = 0; i < rType.length; i++) {
+                    var id = rType[i].id;
+                    var name = rType[i].name;
+                    var count = rType[i].rooms;
+
+                    if (id == 3) { $(".facet_count").eq(0).text(count); $("#RoomTypeMore .facet_count").eq(0).text(count); }
+                    if (id == 1) { $(".facet_count").eq(1).text(count); $("#RoomTypeMore .facet_count").eq(1).text(count); }
+                    if (id == 2) { $(".facet_count").eq(2).text(count); $("#RoomTypeMore .facet_count").eq(2).text(count); }
+                }
+
+                if (o.params['rtype'].value != "") {
+                    var array1 = o.params['rtype'].value.split(",");
+                    for (var i = 0; i < array1.length; i++) {
+                        $("#RoomType input[value=" + array1[i] + "]").attr("checked", "checked");
+                        $("#RoomTypeMore input[value=" + array1[i] + "]").attr("checked", "checked");
+                    }
+                }
+            }
+        },
+        pager: function (CurrentPage, totalpage, func, divid) {
+            var startPage = CurrentPage - 3;
+            var endPage = startPage + 6;
+            if (startPage < 1) startPage = 1;
+            if (endPage > totalpage) endPage = totalpage;
+            var s = [];
+            s.push("<div class=\"page\">");
+            if (CurrentPage > 1) {
+                s.push("<a href=\"/" + o.path + "/page" + (Number(CurrentPage) - 1) + "/\" >&lt;</a>");
+            }
+            if (totalpage < 13) {
+                for (var i = 1; i <= totalpage; i++) {
+                    if (i == CurrentPage) {
+                        s.push("<span class=\"page_sele\" >" + i + "</span>");
+                    }
+                    else {
+                        if (i <= totalpage) {
+                            s.push("<a href=\"/" + o.path + "/page" + i + "/\">" + i + "</a>");
+                        }
+                    }
+                }
+            }
+            else {
+                if (CurrentPage > 6) {
+                    s.push("<a href=\"/ " + o.path + "/page1/\" >1</a>");
+                    s.push("<span class=\"page_slh\">…</span>");
+                }
+                else {
+                    if (CurrentPage < 5) {
+                        for (var i = 1; i < 8; i++) {
+                            if (i == CurrentPage) {
+                                s.push("<span class=\"page_sele\" >" + i + "</span>");
+                            }
+                            else {
+                                if (i <= totalpage) {
+                                    s.push("<a href=\"/" + o.path + "/page" + i + "/\" >" + i + "</a>");
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        for (var i = 1; i < (Number(CurrentPage) + 4); i++) {
+                            if (i == CurrentPage) {
+                                s.push("<span class=\"page_sele\">" + i + "</span>");
+                            }
+                            else {
+                                if (i <= totalpage) {
+                                    s.push("<a href=\"/" + o.path + "/page" + i + "/\">" + i + "</a>");
+                                }
+                            }
+                        }
+                    }
+                }
+                if (CurrentPage > 6 && (Number(CurrentPage) + 5) < totalpage) {
+                    for (var i = startPage; i <= endPage; i++) {
+                        if (i == CurrentPage) {
+                            s.push("<span class=\"page_sele\" > " + i + "</span>");
+                        }
+                        else {
+                            s.push("<a href=\"/" + o.path + "/page" + i + "/\" >" + i + "</a>");
+                        }
+                    }
+                }
+                if ((Number(CurrentPage) + 5) >= totalpage) {
+                    for (var i = totalpage - 8; i < totalpage; i++) {
+                        if (i > 0) {
+                            if (i == CurrentPage) {
+                                s.push("<span class=\"page_sele\" > " + i + "</span>");
+                            }
+                            else {
+                                s.push("<a href=\"/" + o.path + "/page" + i + "/\">" + i + "</a>");
+                            }
+                        }
+                    }
+                }
+                if ((Number(CurrentPage) + 5) < totalpage) {
+                    s.push("<span class=\"page_slh\">…</span>");
+                }
+                if (CurrentPage == totalpage) {
+                } else {
+                    s.push("<a href=\"/" + o.path + "/page" + totalpage + "/\">" + totalpage + "</a>");
+                }
+            }
+            if (CurrentPage < totalpage) {
+                s.push("<a href=\"/" + o.path + "/page" + (Number(CurrentPage) + 1) + "/\" >&gt;</a>");
+            }
+            s.push("</div>");
+            $("#" + divid).html(s.join(''));
+
+            $("#paging").click(function (ev) {
+                ev = ev || window.event;
+                var target = ev.target || ev.srcElement;
+                if (target.nodeName == 'A') {
+                    var mr = target.href.match(/page(\d+)/i);
+                    if (mr != null && mr.length > 1) {
+                        o.params['page'].value = mr[1];
+                    } else {
+                        o.params['page'].value = 1;
+                    }
+                    var path = o.join();
+                    if (path != "") {
+                        target.href = path;
+                    }
+                    //return false;
+                }
+            });
+        },
+        closeSearchFlag: function (Divid) {
+
+            if (Divid == "FlagRoomType") {
+                o.params['rtype'].value = "";
+            }
+            if (Divid == "FlagDistrict") {
+                o.params['district'].value = "";
+            }
+            if (Divid == "FlagHouseType") {
+                o.params['htype'].value = "";
+            }
+            if (Divid == "FlagHouseCondition") {
+                o.params['am'].value = "";
+            }
+            if (Divid == "FlagPrice") {
+                o.params['price'].value = "";
+            }
+            if (Divid == "FlagDistance") {
+                o.params['dis'].value = "";
+            }
+            if (Divid == "FlagInvoice") {
+                o.params['invoice'].value = "";
+            }
+            if (Divid == "Flagpuserid") {
+                o.params['puser'].value = "";
+                //$(".collapsable_filters").show();
+            }
+            if (Divid == "Flagfuserid") {
+                o.params['fuser'].value = "";
+                //$(".collapsable_filters").show();
+            }
+            if (Divid == "Flagpid") {
+                o.params['pid'].value = "";
+            }
+            if (Divid == "FlagSpecialPrice") {
+                o.params['sp'].value = "";
+            }
+            if (Divid.indexOf("Flagstag") > -1) {
+                var stag = Divid.replace("Flagstag", "");
+                stag = new RegExp(stag + ",|" + stag + "$");
+                o.params['stag'].value = o.params['stag'].value.replace(stag, "");
+
+            }
+            window.location.href = o.join();
+
+        },
+        addFavourite: function (houseid, housetitle, userid, fid) {
+
+            housetitle = housetitle;
+            if (islogin2 == 0) {
+                if (typeof (showDiv2) != "undefined") { showDiv2(houseid, housetitle, "1") }
+                else {
+                    $.ajax({
+                        url: "/HouseFile/Login2014.aspx",
+                        success: function (data) { $("body").append(data); showDiv2(houseid, housetitle, "1"); },
+                        dataType: "html"
+                    });
+                }
+            } else {
+                if ($("#" + fid).attr("class") == "collectHeart") {
+                    r = 0;
+                } else {
+                    r = 1;
+                }
+                var date1;
+                $.post("/Ajax/AddFavourite.aspx?", {
+                    houseid: houseid,
+                    housetitle: housetitle,
+                    userid: userid,
+                    r: r,
+                    date: new Date().getTime() + "1"
+                },
+                function (data) {
+                    if (data == "success") {
+                        if (r == 0) {
+                            //if ($("#FavNum").text() == 0) $("#FavNum").parents("li").show();
+                            //$("#FavNum").text(Number($("#FavNum").text()) + 1);
+                            $("#favourites").val($("#favourites").val() + houseid + ",");
+                            $("#" + fid).addClass("collectAlready").parent("a").attr("title", Youtx.Resources[o.language].List_RemoveFavorites);
+                            $("#text" + fid).html("取消收藏");
+                        } else {
+                            //$("#FavNum").text(Number($("#FavNum").text()) - 1);
+                            $("#favourites").val($("#favourites").val().replace(houseid + ",", ""));
+                            $("#" + fid).removeClass("collectAlready").parent("a").attr("title", Youtx.Resources[o.language].List_AddFavorites);
+                            $("#text" + fid).html("收藏");
+                            //pzp修改20140408
+                            //if (o.params['fuser'].value != "") { $("#" + fid).parents("li").hide(); }
+                        }
+                    }
+                });
+            }
+        },
+        initFlag: function (o) {
+            switch (o.params['sort'].value) {
+                case "4":
+                    $("#ul_sort li").eq(1).children("a").removeClass("SearchPrice03").addClass("SearchPrice03Up");
+                    break;
+                case "5":
+                    $("#ul_sort li").eq(1).addClass("CurSearchType").children("a").removeClass("SearchPrice03Up").toggleClass("SearchPrice03Down");
+                    break;
+                case "6":
+                    if (isDistance == "True") {
+                        $("#ul_sort li").eq(5).addClass("CurSearchType").bind("click", function () { sortBy(6, this) }).children("a").removeClass("Anone");
+                    } else { o.params['sort'].value = "0"; }
+                    break;
+                case "3":
+                    $("#ul_sort li").eq(4).addClass("CurSearchType"); break;
+                case "10":
+                    $("#ul_sort li").eq(2).addClass("CurSearchType"); break;
+                case "13":
+                    $("#ul_sort li").eq(3).addClass("CurSearchType"); break;
+                default:
+                    $("#ul_sort li").eq(0).addClass("CurSearchType");
+                    break;
+            };
+            if (isDistance == "True") {
+                $("#ul_sort li").eq(5).bind("click", function () { sortBy(6, this) }).children("a").removeClass("Anone");
+            }
+            //if (o.params['sptype'].value == 10) { $(".HousingResources li").eq(1).addClass("ResourcesCur"); }
+            if (o.params['boutique'].value) { $(".HousingResources li").eq(1).addClass("ResourcesCur"); }
+            //else if (o.params['longrent'].value) { $(".HousingResources li").eq(3).addClass("ResourcesCur"); }
+            else { $(".HousingResources li").eq(0).addClass("ResourcesCur"); }
+            if (o.params['approve'].value) { $("#approve").attr("checked", "checked"); }
+            if (o.params['shop'].value) { $("#chk_brandshop").attr("checked", "checked"); }
+            if (o.params['phone'].value) { $("#chk_phone").attr("checked", "checked"); }
+            if (isDistance == "False") { $("#sortdistance").attr("disabled", true).addClass("newpost3"); $("#sortlist li:eq(3)").css("display", "none"); }
+            $("#sortnewpost,#sortdistance").mouseover(function () { $(this).removeClass().addClass("newpost"); }).mouseout(function () { $(this).removeClass("newpost").addClass("newpost2"); })
+
+            if (o.params['sp'].value != "") { $("#blank_state_sp").show(); $("#FlagSpecialPrice").show(); }
+            else { $("#blank_state_text").show(); }
+            if (o.params['invoice'].value != "") { $("#invoice").attr("checked", "checked"); }
+            if (o.params['photo'].value != "") { $("#photo").attr("checked", "checked"); }
+            if (o.params['mobile'].value) { $("#mobilemaster").attr("checked", "checked"); }
+            if (o.params['sding'].value) { $("#shanding").attr("checked", "checked"); }
+
+            //            if (o.params['room'].value != "") {
+            //                $("#ul_bedroom a[data='" + o.params['room'].value + "']").parent("li").addClass("nolimited");
+            //            } else { $("#ul_bedroom > li").eq(0).addClass("nolimited"); }
+            //            if (o.params['rtype'].value != "") {
+            //                $("#ul_roomtype a[data='" + o.params['rtype'].value + "']").parent("li").addClass("nolimited");
+            //            } else { $("#ul_roomtype > li").eq(0).addClass("nolimited"); }
+            if (o.params['range'].value != "") {
+                $("#ul_distance a[data='" + o.params['range'].value + "']").parent("li").addClass("nolimited");
+            } else { $("#ul_distance > li").eq(0).addClass("nolimited"); }
+            if (o.params['kw'].value != "" && $("#ul_hotarea a[data='" + o.params['kw'].value + "']").length > 0) {
+                $("#ul_hotarea a[data='" + o.params['kw'].value + "']").parent("li").addClass("nolimited");
+            }
+            else if (o.path != "" && $("#ul_hotarea a[path=" + o.path + "]").length > 0) {
+                $("#ul_hotarea a[path=" + o.path + "]").parent("li").addClass("nolimited");
+            } else { $("#ul_hotarea > li").eq(0).addClass("nolimited"); }
+            if (o.params['kw'].value != "" && $("#ul_hotarea2 a[data=" + o.params['kw'].value + "]").length > 0) {
+                $("#ul_hotarea2 a[data=" + o.params['kw'].value + "]").parent("li").addClass("nolimited");
+            } else { $("#ul_hotarea2 > li").eq(0).addClass("nolimited"); }
+            if (o.params['kw'].value != "" && $("#ul_division a[data='" + o.params['kw'].value + "']").length > 0) {
+                $("#ul_division a[data='" + o.params['kw'].value + "']").parent("li").addClass("nolimited");
+            }
+            else if (o.path != "" && $("#ul_division a[path=" + o.path + "]").length > 0) {
+                $("#ul_division a[path=" + o.path + "]").parent("li").addClass("nolimited");
+            } else { $("#ul_division  li").eq(0).addClass("nolimited"); }
+            if (o.params['htype'].value != "") {
+                var housetype = o.params['htype'].value.split(",");
+                for (var i in housetype) {
+                    if (housetype[i] == 19 && o.params['htag'].value) { $("#ul_housetype a[data='" + o.params['htag'].value + "']").parent("li").addClass("nolimited"); }
+                    else { $("#ul_housetype a[data='" + housetype[i] + "']").parent("li").addClass("nolimited"); }
+                }
+                if ($("#span_housetype_more .nolimited").length > 0) { $("#span_housetype_more").show(); }
+            } else { $("#ul_housetype li").eq(0).addClass("nolimited"); }
+            if (o.params['am'].value != "") {
+                var amenities = o.params['am'].value.split(",");
+                for (var i in amenities) {
+                    $("#ul_amenities :checkbox[data='" + amenities[i] + "']").attr("checked", "checked");
+                }
+            } else { $("#ul_amenities li").eq(0).addClass("nolimited"); }
+            if (o.params['price'].value != "") {
+                $("#ul_price a[data='" + o.params['price'].value + "']").parent("li").addClass("nolimited");
+                $("#minprice").val(o.params['price'].value.split(",")[0]);
+                $("#maxprice").val(o.params['price'].value.split(",")[1]);
+            }
+            else { $("#ul_price > li").eq(0).addClass("nolimited"); }
+            if (o.params['puser'].value != "") { $("#Flagpuserid").show(); }
+            else { $("#Flagpuserid").hide(); }
+            if (o.params['fuser'].value != "") { $("#Flagfuserid").show(); }
+            else { $("#Flagfuserid").hide(); }
+            if (o.params['pid'].value != "") { $("#Flagpid").show(); }
+            else { $("#Flagpid").hide(); }
+            if (o.params['stag'].value != "") {
+                var taglist = o.params['stag'].value.split(",");
+                for (var i in taglist) {
+                    if (taglist[i] && i < 8) { $(".applied_filters").append('<li id="Flagstag"><span class="myCollect">' + taglist[i] + '</span><a class="close_f" href="javascript:Youtx.Page.closeSearchFlag(\'Flagstag' + taglist[i] + '\');"></a></li>'); }
+                }
+            }
+            if (o.params['puser'].value == "" && o.params['fuser'].value == "" && o.params['pid'].value == "" && o.params['stag'].value == "" && !o.params['sp'].value) {
+                $("#results_filters").hide();
+            } else {
+                $("#results_filters").show();
+            }
+        }
+    }
+    var Resources = {
+        "zh": {
+            List_References: "好友",
+            List_Reservation: "预订",
+            List_Reviews: "评价",
+            List_SuperHosts: "明星房东",
+            List_Video: "视频",
+            List_Photo: "实拍",
+            List_Promotion: "促销类型",
+            List_MyFavourites: "我的收藏",
+            List_NoResults: "没有检索结果",
+            List_AppOnlineTip: "该房东已安装游天下客户端，能随时接收您的留言和订单，让您的订房更省时",
+            List_MinDayTip: "可筛选允许租期超过7天的房源",
+            List_DestinationExperts: "目的地专家",
+            List_Nightly: "每晚",
+            List_SpecialOfferTime: "活动时间",
+            List_RecommendedTip: "有好友推荐此房东",
+            List_ReviewsTip: "租客入住结束后对房间的评价",
+            List_PhotoTip: "游天下实拍，照片由游天下专业摄影师上门拍摄",
+            List_AddFavorites: "点此收藏该房间",
+            List_RemoveFavorites: "取消收藏该房间",
+            List_Price: "原价",
+            List_IntegerTip: "请输入数字",
+            List_PriceTip2: "最大价格应大于最小价格",
+            List_VerficationTip: "游天下100%实地验真，保证房间真实性",
+            List_Favorites: "收藏",
+            List_BoutiqueTip: "精品公寓，游天下精心挑选，精品住所精品服务",
+            List_BookingTip: "该房间已被预订天数",
+            List_mobilemaster: "手机在线",
+            List_mobilemasterTip: '该房东是当地专家，对本地的吃住游玩了如指掌，有问题尽管向他提问吧',
+            List_shandingTip: '无需房东确认，直接支付预订，保障有房',
+            List_shanding: '闪订',
+            List_baozhangTip: '预订后支付，保证有房',
+            List_baozhang: '有房保障'
+        },
+        "en-US": {
+            List_References: "References",
+            List_Reservation: "Reservation",
+            List_Reviews: "Reviews",
+            List_SuperHosts: "Super Hosts",
+            List_Video: "Video",
+            List_Photo: "Photo",
+            List_Promotion: "Promotion",
+            List_MyFavourites: "My Favorites",
+            List_NoResults: "No Results",
+            List_AppOnlineTip: "App online to receive message and reservation timely",
+            List_MinDayTip: "可筛选允许租期超过7天的房源",
+            List_DestinationExperts: "Destination Experts",
+            List_Nightly: "Nightly",
+            List_SpecialOfferTime: "time for special offer",
+            List_RecommendedTip: "A friend has recommended the host",
+            List_ReviewsTip: "Guest's review after check out",
+            List_PhotoTip: "Professional photography by youtx",
+            List_AddFavorites: "add to favorites",
+            List_RemoveFavorites: "remove from favorites",
+            List_Price: "Price",
+            List_IntegerTip: "Please input digit",
+            List_PriceTip2: "the maximum price should be higher than minimum price",
+            List_VerficationTip: "100% field verification by youtx to ensure the authenticity of the property",
+            List_Favorites: "Favorites",
+            List_BoutiqueTip: "High-quality property with high-quality service",
+            List_BookingTip: "Booked days of the property",
+            List_mobilemaster: "mobile master",
+            List_mobilemasterTip: 'Local expert who knows everything about the recreational areas here. Resort to him when coming across any problem',
+            List_shandingTip: '',
+            List_shanding: '',
+            List_baozhangTip: '',
+            List_baozhang: ''
+        }
+    }
+    Youtx.Page = Page;
+    Youtx.Resources = Resources;
+})()
+
+
+function cleardate() {
+    $('#datepicker').datepicker('option', 'minDate', new Date());
+    $('#datepicker').datepicker('setDate', new Date());
+    $('#datepick').datepicker('option', 'minDate', '+1d');
+    $('#datepick').datepicker('setDate', '+1d');
+    $("#checkin").val("yy-mm-dd");
+    $("#checkout").val("yy-mm-dd");
+    $("#diyige").hide();
+    $("#dierge").hide();
+}
+
+// 关闭和打开按钮
+function maxdiv() {
+    if (jQuery("#search_filters_toggle").hasClass("search_filters_toggle_off")) {
+        document.getElementById("divMove").style.display = "";
+        jQuery("#map_message").width(507);
+        jQuery("#mapbody").width(739);
+        jQuery("#serachmaps").width(739);
+        jQuery("#first_time_map_question").hide();
+        jQuery("#redo_search_in_map_tip").hide();
+        document.getElementById("search_filters_toggle").className = "search_filters_toggle_on";
+    } else {
+        document.getElementById("divMove").style.display = "none";
+        jQuery("#search_filters").show();
+        jQuery("#map_message").width(707);
+        jQuery("#mapbody").width(980);
+        jQuery("#serachmaps").width(980);
+        jQuery("#first_time_map_question").hide();
+        jQuery("#redo_search_in_map_tip").hide();
+        document.getElementById("search_filters_toggle").className = "search_filters_toggle_off";
+    }
+
+}
+//Checkbox搜索
+function mapsearch(maptype) {
+    if (document.getElementById("redo_search_in_map").checked) {
+        $.cookie("dragmap", "1", {
+            expires: 7,
+            path: '/',
+            domain: 'youtx.com'
+        });
+    } else {
+        $.cookie("dragmap", "0", {
+            expires: 7,
+            path: '/',
+            domain: 'youtx.com'
+        });
+        o.params['ne'].value = "";
+        o.params['sw'].value = "";
+    }
+}
+//提示框
+function redo_search_in_map_link(mapst) {
+
+    document.getElementById("redo_search_in_map").checked = true;
+    jQuery("#first_time_map_question").hide();
+    jQuery("#first_time_map_question2").hide();
+    jQuery("#redo_search_in_map_tip").hide();
+    $.cookie("dragmap", "1", {
+        expires: 7,
+        path: '/',
+        domain: 'youtx.com'
+    });
+}
+function hidediv() {
+    jQuery("#first_time_map_question").hide();
+    jQuery("#first_time_map_question2").hide();
+    $.cookie("dragmap", "0", {
+        expires: 7,
+        path: '/',
+        domain: 'youtx.com'
+    });
+}
+
+//时间处理
+function DiffLong(datestr1, datestr2) {
+    var date1 = new Date(Date.parse(datestr1.replace(/-/g, "/")));
+    var date2 = new Date(Date.parse(datestr2.replace(/-/g, "/")));
+    var datetimeTemp;
+    if (date1.getTime() > date2.getTime()) {
+
+        datetimeTemp = date1;
+        date1 = date2;
+        date2 = datetimeTemp;
+    }
+    difference = date2.getTime() - date1.getTime();
+    thisdays = Math.floor(difference / (1000 * 60 * 60 * 24));
+    //小时的计算可以不要看，理解下就可以了
+    difference = difference - thisdays * (1000 * 60 * 60 * 24);
+    thishours = Math.floor(difference / (1000 * 60 * 60));
+    //var strRet = thisdays + '天' + thishours + '小时';
+    return thisdays;
+}
