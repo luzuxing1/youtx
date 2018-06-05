@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 是过滤器代理类所代理的实体对象 -->
+    <!-- name的取值必须要和web.xml中的filter的名称一致，因为过滤器代理是通过filter的名称查找spring容器中的代理对象-->
+    <bean name="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!--指定登录界面，按实际更改路径，如  /login.jsp  -->
+        <property name="loginUrl" value=""/>
+
+        <property name="filterChainDefinitions">
+            <value>
+                <!--anon不需要登录，注意路径-->
+                <!-- /user/login=anon -->
+
+                <!--静态资源不拦截，注意路径-->
+                <!-- /css/**=anon -->
+
+                <!--authc需要登录才能访问-->
+                <!--user配合rememberMe使用有效，authc不能配合rememberMe使用-->
+                <!-- /**=user -->
+            </value>
+        </property>
+
+    </bean>
+
+    <!--
+    Realm配置，如不需要多表登录，请删掉<property name="authenticator" ref="myAuthenticator"/>
+    并将realms里list集合更改为ref="自己写的realm"
+    -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="authenticator" ref="myAuthenticator"/>
+        <property name="realms">
+            <list>
+                <!-- 多表选择登录需要配置如下 -->
+                <!-- <ref bean="userRealm"/> -->
+                <!-- <ref bean="merhcantRealm"/> -->
+            </list>
+        </property>
+        <!--记住登录状态方便下次直接进入-->
+        <property name="rememberMeManager" ref="rememberMeManager"/>
+
+    </bean>
+    <!--多表登录配置realm类-->
+    <!--<bean id="userRealm" class="com.qianfeng.shiro.realm.UserRealm"/>-->
+    <!--多表登录配置realm类-->
+    <!--<bean id="merhcantRealm" class="com.qianfeng.shiro.realm.MerchantRealm"/>-->
+    <!--多表登录配置更改Authenticator源代码，使能进入自己重写的reamls-->
+    <!--<bean id="myAuthenticator" class="com.qianfeng.shiro.realm.authenticator.QfRealmAuthenticator"/>-->
+
+    <!--配置RememberMe-->
+    <bean name="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="rememberMeCookie"/>
+    </bean>
+
+
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <property name="httpOnly" value="true"/> <!--避免XSS攻击-->
+        <property name="maxAge" value="30000"/><!-- 失效时间 -->
+    </bean>
+
+    <!--不需要多表登录，配置单一realm-->
+    <!--<bean name="mybatisRealm" class="com.qianfeng.shiro.realm.MyBatisRealm"/>-->
+
+</beans>

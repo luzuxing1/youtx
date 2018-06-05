@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 需要导入的.xml文件 -->
+    <import resource="spring-mybatis.xml"/>
+    <import resource="spring-redis.xml"/>
+    <import resource="spring-shiro.xml"/>
+
+    <!-- 下行和<context:component-scan base-package=""/>作用一样，可省略，为防止无法注入最好加入 -->
+    <context:annotation-config/>
+    <!-- 采取默认注解驱动 -->
+    <mvc:annotation-driven/>
+    <!-- 不拦截静态资源如css等 -->
+    <mvc:default-servlet-handler/>
+
+    <!-- 交给spring管理创建的Bean对象，写到包名即可 -->
+    <context:component-scan base-package=""/>
+
+    <!-- 视图解析器 -->
+    <bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".ftl"/>
+    </bean>
+
+</beans>
