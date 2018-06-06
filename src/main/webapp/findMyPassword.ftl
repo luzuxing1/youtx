@@ -2,13 +2,14 @@
 <!-- saved from url=(0068)https://passport.youtx.com/profile/Passport/EditPassword.aspx?Email= -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+    <#assign base=request.contextPath />
+    <base id="base" href="${base}">
  
     <meta http-equiv="Cache-Control" content="max-age=86400">
-    <img src="static/findPassword/countpv" width="0" height="0"><script type="text/javascript" async="" src="static/findPassword/load.min.js.下载"></script><script src="static/findPassword/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
-    <script src="static/findPassword/jQuery.cookie.js.下载" language="javascript" type="text/javascript"></script>
+    <img src="${base}/static/findPassword/countpv" width="0" height="0"><script type="text/javascript" async="" src="${base}/static/findPassword/load.min.js.下载"></script><script src="${base}/static/findPassword/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
+    <script src="${base}/static/findPassword/jQuery.cookie.js.下载" language="javascript" type="text/javascript"></script>
    
-    <link href="static/findPassword/public_PassPort.css" rel="Stylesheet" type="text/css">
+    <link href="${base}/static/findPassword/public_PassPort.css" rel="Stylesheet" type="text/css">
     
     
     <script type="text/javascript" language="javascript">
@@ -31,8 +32,8 @@
     </script>
     
     <title>找回密码-游天下</title>
-    <link href="static/findPassword/register.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="static/findPassword/ValidCode.css">
+    <link href="${base}/static/findPassword/register.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="${base}/static/findPassword/ValidCode.css">
 
     
 </head>
@@ -69,7 +70,7 @@
     });
 </script>
 <!--<script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21036824"></script> -->
-<script type="text/javascript" src="static/findPassword/Login_Cookie.js.下载"></script>
+<script type="text/javascript" src="${base}/static/findPassword/Login_Cookie.js.下载"></script>
 <script type="text/javascript">
     function setLang(lang) { $.cookie('LN', lang, { expires: 7, path: '/' }); location.reload(); }
     </script>
@@ -99,7 +100,7 @@
 <div id="youtxlogin" class="header" style="display: none">
     <p class="logo">
         <a href="http://www.youtx.com/" target="_blank">
-            <img src="static/findPassword/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+            <img src="${base}/static/findPassword/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <p class="btncz"><a id="A2" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
     <ul class="HeadLandlord">
@@ -112,7 +113,7 @@
     </ul>
     <ul class="subnav">
         <li><a href="http://www.youtx.com/help/" rel="nofollow">帮助</a></li>
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/findPassword/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/findPassword/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <li><a target="_blank" href="http://bang.youtx.com/DateManage/DateManage.aspx">短租帮</a></li>
         <li class="HeadLanguage"><a href="http://en.youtx.com/">English</a></li>
         <li class="ytxMob">
@@ -122,11 +123,11 @@
                 <span class="arrowWt">◆</span>
                 <dl>
             	    <dt>扫描二维码安装游天下客户端</dt>
-                    <dd><a href="http://www.youtx.com/mo/"><img src="static/findPassword/ewmANew.jpg" width="120" height="120"></a></dd>
+                    <dd><a href="http://www.youtx.com/mo/"><img src="${base}/static/findPassword/ewmANew.jpg" width="120" height="120"></a></dd>
                 </dl>
                 <dl>
             	    <dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                    <dd><img src="static/findPassword/ewmBNew.jpg" width="102" height="102"></dd>
+                    <dd><img src="${base}/static/findPassword/ewmBNew.jpg" width="102" height="102"></dd>
                     <dd>微信公众号：游天下</dd>
                 </dl>
                 <dl style="border:none;">
@@ -152,7 +153,7 @@
 <div id="youtxloginw" class="header">
     <p class="logo">
         <a href="http://www.youtx.com/" target="_blank">
-            <img src="static/findPassword/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+            <img src="${base}/static/findPassword/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <p class="btncz"><a id="A3" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
     <ul class="HeadLandlord">
@@ -165,7 +166,7 @@
     </ul>
     <ul class="subnav">
         <li><a href="http://www.youtx.com/help/" rel="nofollow">帮助</a></li>
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/findPassword/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/findPassword/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <li><a target="_blank" href="http://bang.youtx.com/">短租帮</a></li>
         <li class="HeadLanguage"><a href="http://en.youtx.com/">English</a></li>
         <li class="ytxMob">
@@ -175,11 +176,11 @@
                 <span class="arrowWt">◆</span>
                 <dl>
             	    <dt>扫描二维码安装游天下客户端</dt>
-                    <dd><a href="http://www.youtx.com/mo/"><img src="static/findPassword/ewmANew.jpg" width="120" height="120"></a></dd>
+                    <dd><a href="http://www.youtx.com/mo/"><img src="${base}/static/findPassword/ewmANew.jpg" width="120" height="120"></a></dd>
                 </dl>
                 <dl>
             	    <dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                    <dd><img src="static/findPassword/ewmBNew.jpg" width="102" height="102"></dd>
+                    <dd><img src="${base}/static/findPassword/ewmBNew.jpg" width="102" height="102"></dd>
                     <dd>微信公众号：游天下</dd>
                 </dl>
                 <dl style="border:none;">
@@ -215,7 +216,7 @@
                     <div class="yzboxa">
                     <div class="yzboxa01">
                         <div class="s1">
-                            <img width="78" height="25" src="static/findPassword/ValidCode.aspx" id="imgcode" name="imgcode" style="cursor:pointer;">
+                            <img width="78" height="25" src="${base}/static/findPassword/ValidCode.aspx" id="imgcode" name="imgcode" style="cursor:pointer;">
                         </div>
                         <div class="s2">
                             <input type="text" value="" maxlength="4" class="yzboxa01inp" id="txt_vcode">
@@ -394,7 +395,7 @@
       <li class="footer_link_space">|</li>
       <li><a href="http://www.youtx.com/feedback/" target="_blank" rel="nofollow" id="A1">意见反馈</a></li>
       <li class="footer_link_space">|</li>
-      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="static/findPassword/at.jpg"> <span>youtx.com</span></li>
+      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="${base}/static/findPassword/at.jpg"> <span>youtx.com</span></li>
     </ul>   
     <ul class="footer_link02">
       <li class="FooterDesktop"><a href="http://www.youtx.com/downloadshortcut/" target="_blank" rel="nofollow">下载桌面游天下</a> | <a href="http://www.youtx.com/mo/" target="_blank" rel="nofollow">手机游天下</a> | <a href="http://www.youtx.com/zhuanti/duanzufang/" target="_blank" rel="nofollow">短租房推荐</a> | <a href="http://blog.youtx.com/" target="_blank" rel="nofollow">博客</a> | </li>
@@ -403,8 +404,8 @@
     </ul>
 
     <ul class="FooterNet" style="width:475px;"><li class="FontArial02">Copyright © <script type="text/javascript">document.write((new Date()).getFullYear());</script>2018 Youtx.com, All Rights Reserved<br><a href="https://passport.youtx.com/profile/images/icp.jpg" target="_blank" rel="nofollow">京ICP证041065号</a> 京公网安备11010602010093号-2</li>
-    <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="static/findPassword/VerisignYoutx.gif" height="35" width="60"></a></li>
-    <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="static/findPassword/FooterNetPic.gif"></a></li>
+    <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="${base}/static/findPassword/VerisignYoutx.gif" height="35" width="60"></a></li>
+    <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="${base}/static/findPassword/FooterNetPic.gif"></a></li>
     </ul>
 </div>
 <!--2013-6-26修改-->
@@ -422,4 +423,4 @@
     </div>
 
 
-<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="static/findPassword/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/findPassword/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div></body></html>
+<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="${base}/static/findPassword/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/findPassword/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div></body></html>
