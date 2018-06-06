@@ -2,13 +2,14 @@
 <!-- saved from url=(0055)https://passport.youtx.com/profile/passport/regist.aspx -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
- 
+
+    <#assign base=request.contextPath />
+    <base id="base" href="${base}">
     <meta http-equiv="Cache-Control" content="max-age=86400">
-    <img src="static/register/countpv" width="0" height="0"><script type="text/javascript" async="" src="static/register/load.min.js.下载"></script><script src="static/register/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
-    <script src="static/register/jQuery.cookie.js.下载" language="javascript" type="text/javascript"></script>
+    <img src="${base}/static/register/countpv" width="0" height="0"><script type="text/javascript" async="" src="${base}/static/register/load.min.js.下载"></script><script src="${base}/static/register/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
+    <script src="${base}/static/register/jQuery.cookie.js.下载" language="javascript" type="text/javascript"></script>
    
-    <link href="static/register/public_PassPort.css" rel="Stylesheet" type="text/css">
+    <link href="${base}/static/register/public_PassPort.css" rel="Stylesheet" type="text/css">
     
     
     <script type="text/javascript" language="javascript">
@@ -35,8 +36,8 @@
         var Regs = 'a';
         $.cookie('Reg', '2', { path: '/', domain: 'youtx.com', expires: 30 }); //转完之后更新为2
     </script>
-    <script type="text/javascript" language="javascript" src="static/register/Youtx.Utility.js.下载"></script>
-    <script type="text/javascript" language="javascript" src="static/register/Youtx.Verification.js.下载"></script>
+    <script type="text/javascript" language="javascript" src="${base}/static/register/Youtx.Utility.js.下载"></script>
+    <script type="text/javascript" language="javascript" src="${base}/static/register/Youtx.Verification.js.下载"></script>
     <!--Cps页面布码Begin Beta测试CPS时候需要调整-->
     <script type="text/javascript">
         var ScrW = window.screen.width;                   //宽
@@ -47,13 +48,13 @@
         var PassPortSite = 'https://passport.youtx.com'; //CPS站点
         var PostUrl = PassPortSite + '/profile/Cps/CpsViewRecordPP.aspx?ScrW=' + ScrW + '&ScrH=' + ScrH + "&LyUrl=" + LyUrl + "&VPType=" + VPType + "&DqUrl=" + DqUrl;
         document.write("<scri" + "pt src='" + PostUrl + "'></scr" + "ipt>"); 
-    </script><script src="static/register/CpsViewRecordPP.aspx"></script>
+    </script><script src="${base}/static/register/CpsViewRecordPP.aspx"></script>
     <!--Cps页面布码End-->
     
-        <link href="static/register/NewEdit_PassPort.css" rel="stylesheet" type="text/css">
-       <link href="static/register/register_PassPort.css" rel="stylesheet" type="text/css">
+        <link href="${base}/static/register/NewEdit_PassPort.css" rel="stylesheet" type="text/css">
+       <link href="${base}/static/register/register_PassPort.css" rel="stylesheet" type="text/css">
     
-    <link rel="stylesheet" type="text/css" href="static/register/ValidCode.css">
+    <link rel="stylesheet" type="text/css" href="${base}/static/register/ValidCode.css">
     <title>注册游天下帐号</title>
     <meta name="keywords" content="注册游天下帐号">
     <meta name="description" content="注册游天下帐号">
@@ -93,7 +94,7 @@
     });
 </script>
 <!--<script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21036824"></script> -->
-<script type="text/javascript" src="static/register/Login_Cookie.js.下载"></script>
+<script type="text/javascript" src="${base}/static/register/Login_Cookie.js.下载"></script>
 <script type="text/javascript">
     function setLang(lang) { $.cookie('LN', lang, { expires: 7, path: '/' }); location.reload(); }
     </script>
@@ -123,7 +124,7 @@
 <div id="youtxlogin" class="header" style="display: none">
     <p class="logo">
         <a href="http://www.youtx.com/" target="_blank">
-            <img src="static/register/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+            <img src="${base}/static/register/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <p class="btncz"><a id="A2" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
     <ul class="HeadLandlord">
@@ -136,7 +137,7 @@
     </ul>
     <ul class="subnav">
         <li><a href="http://www.youtx.com/help/" rel="nofollow">帮助</a></li>
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/register/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/register/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <li><a target="_blank" href="http://bang.youtx.com/DateManage/DateManage.aspx">短租帮</a></li>
         <li class="HeadLanguage"><a href="http://en.youtx.com/">English</a></li>
         <li class="ytxMob">
@@ -146,11 +147,11 @@
                 <span class="arrowWt">◆</span>
                 <dl>
             	    <dt>扫描二维码安装游天下客户端</dt>
-                    <dd><a href="http://www.youtx.com/mo/"><img src="static/register/ewmANew.jpg" width="120" height="120"></a></dd>
+                    <dd><a href="http://www.youtx.com/mo/"><img src="${base}/static/register/ewmANew.jpg" width="120" height="120"></a></dd>
                 </dl>
                 <dl>
             	    <dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                    <dd><img src="static/register/ewmBNew.jpg" width="102" height="102"></dd>
+                    <dd><img src="${base}/static/register/ewmBNew.jpg" width="102" height="102"></dd>
                     <dd>微信公众号：游天下</dd>
                 </dl>
                 <dl style="border:none;">
@@ -176,7 +177,7 @@
 <div id="youtxloginw" class="header">
     <p class="logo">
         <a href="http://www.youtx.com/" target="_blank">
-            <img src="static/register/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+            <img src="${base}/static/register/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <p class="btncz"><a id="A3" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
     <ul class="HeadLandlord">
@@ -189,7 +190,7 @@
     </ul>
     <ul class="subnav">
         <li><a href="http://www.youtx.com/help/" rel="nofollow">帮助</a></li>
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/register/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/register/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <li><a target="_blank" href="http://bang.youtx.com/">短租帮</a></li>
         <li class="HeadLanguage"><a href="http://en.youtx.com/">English</a></li>
         <li class="ytxMob">
@@ -199,11 +200,11 @@
                 <span class="arrowWt">◆</span>
                 <dl>
             	    <dt>扫描二维码安装游天下客户端</dt>
-                    <dd><a href="http://www.youtx.com/mo/"><img src="static/register/ewmANew.jpg" width="120" height="120"></a></dd>
+                    <dd><a href="http://www.youtx.com/mo/"><img src="${base}/static/register/ewmANew.jpg" width="120" height="120"></a></dd>
                 </dl>
                 <dl>
             	    <dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                    <dd><img src="static/register/ewmBNew.jpg" width="102" height="102"></dd>
+                    <dd><img src="${base}/static/register/ewmBNew.jpg" width="102" height="102"></dd>
                     <dd>微信公众号：游天下</dd>
                 </dl>
                 <dl style="border:none;">
@@ -290,7 +291,7 @@
                                     	<div class="s1">
                                             
                                             
-                                                 <img src="static/register/Display.aspx" 1257571139="" id="imgcode" name="imgcode" style="cursor: pointer; width:150px;height:80px;">
+                                                 <img src="${base}/static/register/Display.aspx" 1257571139="" id="imgcode" name="imgcode" style="cursor: pointer; width:150px;height:80px;">
                                         </div>
                                         <!--<div class="s1">-->
                                             <a href="javascript:void(0);" id="resh">换一题</a>
@@ -395,7 +396,7 @@
                           
                                 
                                 
-                                 <img src="static/register/Display.aspx" 1469968792="" id="regEmail" name="imgcode" style="cursor: pointer; float: left; padding:3px 0px 3px 3px;">
+                                 <img src="${base}/static/register/Display.aspx" 1469968792="" id="regEmail" name="imgcode" style="cursor: pointer; float: left; padding:3px 0px 3px 3px;">
                             <a class="ChangeQuestion" href="javascript:void(0);" id="regResh">换一题</a>
                         </div>
                     </div>
@@ -486,7 +487,7 @@
                             <div style="overflow:hidden; width:208px; border:1px solid #e9e9e9; border-top:0px none;">
                              
                                   
-                                    <img src="static/register/Display.aspx" 1659979525="" id="imgEmail" name="imgcode" style="cursor: pointer; float: left; padding:3px 0px 3px 3px;">
+                                    <img src="${base}/static/register/Display.aspx" 1659979525="" id="imgEmail" name="imgcode" style="cursor: pointer; float: left; padding:3px 0px 3px 3px;">
                                 <a class="ChangeQuestion" href="javascript:void(0);" style="float:left" id="regResh2">换一题</a>
                             </div>
                             
@@ -1597,7 +1598,7 @@
       <li class="footer_link_space">|</li>
       <li><a href="http://www.youtx.com/feedback/" target="_blank" rel="nofollow" id="A1">意见反馈</a></li>
       <li class="footer_link_space">|</li>
-      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="static/register/at.jpg"> <span>youtx.com</span></li>
+      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="${base}/static/register/at.jpg"> <span>youtx.com</span></li>
     </ul>   
     <ul class="footer_link02">
       <li class="FooterDesktop"><a href="http://www.youtx.com/downloadshortcut/" target="_blank" rel="nofollow">下载桌面游天下</a> | <a href="http://www.youtx.com/mo/" target="_blank" rel="nofollow">手机游天下</a> | <a href="http://www.youtx.com/zhuanti/duanzufang/" target="_blank" rel="nofollow">短租房推荐</a> | <a href="http://blog.youtx.com/" target="_blank" rel="nofollow">博客</a> | </li>
@@ -1606,8 +1607,8 @@
     </ul>
 
     <ul class="FooterNet" style="width:475px;"><li class="FontArial02">Copyright © <script type="text/javascript">document.write((new Date()).getFullYear());</script>2018 Youtx.com, All Rights Reserved<br><a href="https://passport.youtx.com/profile/images/icp.jpg" target="_blank" rel="nofollow">京ICP证041065号</a> 京公网安备11010602010093号-2</li>
-    <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="static/register/VerisignYoutx.gif" height="35" width="60"></a></li>
-    <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="static/register/FooterNetPic.gif"></a></li>
+    <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="${base}/static/register/VerisignYoutx.gif" height="35" width="60"></a></li>
+    <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="${base}/static/register/FooterNetPic.gif"></a></li>
     </ul>
 </div>
 <!--2013-6-26修改-->
@@ -1625,4 +1626,4 @@
     </div>
 
 
-<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="static/register/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/register/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div></body></html>
+<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="${base}/static/register/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/register/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div></body></html>

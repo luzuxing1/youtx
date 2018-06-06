@@ -1,0 +1,91 @@
+﻿///<summary>获得字符串实际长度（字节数），中文2，英文1</summary>
+///<param name="str">要获得长度的字符串</param>
+function getStringLength(str) {
+    var realLength = 0;
+    var len = str.length;
+    var charCode = -1;
+    for (var i = 0; i < len; i++) {
+        charCode = str.charCodeAt(i);
+        if (charCode >= 0 && charCode <= 128)
+            realLength += 1;
+        else
+            realLength += 2;
+    }
+    return realLength;
+}
+
+//获取字符串的字节数
+function getBytesCount(str) {
+    var bytesCount = 0;
+    if (str != null) {
+        for (var i = 0; i < str.length; i++) {
+            var c = str.charAt(i);
+            if (/^[\u0000-\u00ff]$/g.test(c)) {
+                bytesCount += 1;
+            }
+            else {
+                bytesCount += 2;
+            }
+        }
+    }
+    return bytesCount;
+}
+/*验证各地区手机是否合法以及验证输入其他联系方式是否合法
+*参数说明：phoneStr为要验证的字符串，phoneType为要验证的号码属于哪个地区
+*该验证方法目前只支持验以下几种开放的号码段，如果有新开放的号码段自己添加上去
+*移动：134、135、136、137、138、139、150、151、157(TD)、158、159、187、188
+*联通：130、131、132、152、155、156、185、186
+*电信：133、153、180、189、（1349卫通）
+****************************************************************************/
+function validatePhone(phoneStr, phoneType) {
+    var regExgPhone;
+    switch ($.trim(phoneType)) {
+        case "1": //大陆地区的手机号
+            regExgPhone = /^[1]([3][0-9]{1}|[5][0-9]{1}|[8][0-9]{1}|[4][0-9]{1})[0-9]{8}$/g; //13[0-9]|15[0-9]|18[0-9]|14[0-9]
+            break;
+        default: //其他号码，支持手机号码(^(1[3-9]\d{9})$)，3-4位区号，7-8位直播号码，1－4位分机号
+            regExgPhone = /^((\d{3,4})?-?\d{7,8}转?(\d{1,4})?)$|^(1[3-9]\d{9})$|^((\d{3,4})?-?\d{7,8}转?(\d{4})?,?(1[3-9]\d{9}))$|^((1[3-9]\d{9})?,?(\d{3,4})?-?\d{7,8}转?(\d{4}))$/;
+            break;
+    }
+    phoneStr = phoneStr.replace(/\s+/g, "");
+    if (regExgPhone.test(phoneStr) === false) {
+        return false;
+    } else {
+        return true;
+    }
+}
+//验证邮箱是否准确
+function validateEmail(emailString) {
+    var regExgEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/g;
+    if (regExgEmail.test($.trim(emailString)) === false) {
+        return false;
+    } else {
+        return true;
+    }
+}
+//验证字符串是否包含至少多少位，至多多少位的数字
+//num1至少多少位数字，num2表示至多多少位数字，strVal表示要匹配的字符串
+function validateNum(num1, num2, strVal) {
+    var reExg = new RegExp("^\\d{" + num1 + "," + num2 + "}$", "g")
+    strVal = strVal.replace(/\s+/g, "");
+    if (reExg.test(strVal) === false) {
+        return false;
+    } else {
+        return true;
+    }
+}
+/*字符串拼接方法:使用说明(            
+var stringArr = new stringBuilder();
+stringArr.append("linjie");
+stringArr.append("heibao");
+var s=stringArr.toString();
+*/
+function stringBuilder() {
+    this._strs = new Array();
+}
+stringBuilder.prototype.append = function (str) {
+    this._strs.push(str);
+}
+stringBuilder.prototype.toString = function () {
+    return this._strs.join("");
+}
