@@ -19,7 +19,7 @@
     <mvc:default-servlet-handler/>
 
     <!-- 交给spring管理创建的Bean对象，写到包名即可 -->
-    <context:component-scan base-package="com.youtx.rent.controller"/>
+    <context:component-scan base-package="com.youtx.rent"/>
     
     <!-- Freemarker配置 -->
     <bean id="freemarkerConfig"
@@ -51,6 +51,7 @@
     <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
         <property name="contentType" value="text/html; charset=UTF-8"/>
+        <property name="requestContextAttribute" value="request" />
         <property name="cache" value="true" />
         <property name="suffix" value=".ftl" />
         <property name="order" value="0"/>
