@@ -3,20 +3,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
- 
+
+    <#assign base=request.contextPath />
+    <base id="base" href="${base}">
     <meta http-equiv="Cache-Control" content="max-age=86400">
-    <img src="static/accountSafe_ID/countpv" width="0" height="0"><script charset="utf-8" src="static/accountSafe_ID/v.js.下载"></script><script type="text/javascript" async="" src="static/accountSafe_ID/load.min.js.下载"></script><script src="static/accountSafe_ID/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
-    <link href="static/accountSafe_ID/public.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="static/accountSafe_ID/jQuery.cookie.js.下载"></script>
+
+    <img src="${base}/static/accountSafe_ID/countpv" width="0" height="0"><script charset="utf-8" src="${base}/static/accountSafe_ID/v.js.下载"></script><script type="text/javascript" async="" src="${base}/static/accountSafe_ID/load.min.js.下载"></script><script src="${base}/static/accountSafe_ID/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
+    <link href="${base}/static/accountSafe_ID/public.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${base}/static/accountSafe_ID/jQuery.cookie.js.下载"></script>
     
     
   <script type="text/javascript" language="javascript">
       window.onerror = function () { return true; }
         </script>
     
-<link href="static/accountSafe_ID/Control_Panel.css" rel="stylesheet" type="text/css">
-<link href="static/accountSafe_ID/modify.css" rel="stylesheet" type="text/css">
+<link href="${base}/static/accountSafe_ID/Control_Panel.css" rel="stylesheet" type="text/css">
+<link href="${base}/static/accountSafe_ID/modify.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" language="javascript">
     if (parseInt('402') > 0) {
         $.ajax({
@@ -33,18 +35,18 @@
     }
         </script>
 <title>个人信息修改 - 游天下</title> 
-<link rel="stylesheet" type="text/css" href="static/accountSafe_ID/Invegratel.css">
-<link rel="stylesheet" type="text/css" href="static/accountSafe_ID/jquery.imagecropper.css">
-<link rel="stylesheet" type="text/css" href="static/accountSafe_ID/mobile.css">
-<script type="text/javascript" src="static/accountSafe_ID/ui.core.min.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/Youtx.Utility.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/Youtx.Verification.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/Youtx.Passprofile.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/Youtx.UploadImage.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/ui.draggable.min.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/jquery.imagecropper.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/utility.js.下载"></script>
-<script type="text/javascript" src="static/accountSafe_ID/JSConfigInfo.js.下载"></script>
+<link rel="stylesheet" type="text/css" href="${base}/static/accountSafe_ID/Invegratel.css">
+<link rel="stylesheet" type="text/css" href="${base}/static/accountSafe_ID/jquery.imagecropper.css">
+<link rel="stylesheet" type="text/css" href="${base}/static/accountSafe_ID/mobile.css">
+<script type="text/javascript" src="${base}/static/accountSafe_ID/ui.core.min.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/Youtx.Utility.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/Youtx.Verification.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/Youtx.Passprofile.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/Youtx.UploadImage.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/ui.draggable.min.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/jquery.imagecropper.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/utility.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/JSConfigInfo.js.下载"></script>
 <script type="text/javascript" language="javascript">
     //点击修改按钮,把数据放到下边的文本框里
     function ClickChange(data) {
@@ -320,11 +322,11 @@ input[type="checkbox"] { height: auto; }
 
 <title></title>
 
-     <script type="text/javascript" src="static/accountSafe_ID/CheckTelephone.js.下载"></script>
+     <script type="text/javascript" src="${base}/static/accountSafe_ID/CheckTelephone.js.下载"></script>
 
 
     
-<script src="static/accountSafe_ID/saved_resource"></script><link rel="stylesheet" type="text/css" href="static/accountSafe_ID/Youtx_WebIM.css"></head> 
+<script src="${base}/static/accountSafe_ID/saved_resource"></script><link rel="stylesheet" type="text/css" href="${base}/static/accountSafe_ID/Youtx_WebIM.css"></head> 
 <body>
     
     
@@ -361,7 +363,7 @@ input[type="checkbox"] { height: auto; }
     });
     //140226end
 </script>
-<script type="text/javascript" src="static/accountSafe_ID/Login_Cookie.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/Login_Cookie.js.下载"></script>
 <script type="text/javascript">
     //监控代码请勿删除
     var _dctc = _dctc || {}; _dctc._account = _dctc._account || ['UA-25297079-1']; _dctc.isNorth = _dctc.isNorth || 'Y'; _dctc.bid = '27'; (function () {
@@ -378,7 +380,7 @@ input[type="checkbox"] { height: auto; }
 <!-- ClickTale end of Top part -->
 <div id="youtxlogin" class="header" style="">
     <p class="logo">
-        <a href="http://www.youtx.com/" id="youtx_01" target="_blank"><img src="static/accountSafe_ID/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+        <a href="http://www.youtx.com/" id="youtx_01" target="_blank"><img src="${base}/static/accountSafe_ID/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <!--2013-5-3修改-->
     <p class="btncz"><a id="A2" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
@@ -394,7 +396,7 @@ input[type="checkbox"] { height: auto; }
     <ul class="subnav">
         <li><a target="_self" href="http://www.youtx.com/help/" rel="nofollow" id="youtx_05">帮助</a></li>
 <!--        <li class="PosRe"><a href="http://www.youtx.com/mo/" target="_blank"  rel="nofollow" id="youtx_04">手机游天下</a></li>-->
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/accountSafe_ID/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/accountSafe_ID/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <!--<li><a href="http://guide.youtx.com/" target="_blank" >目的地专家</a>
             <div class="HeaderTiShi"> 出行问答，游记攻略！<span>◆</span> <span class="HeaderTiShiImg">◆</span>
                  <p><img alt="关" src="http://js.youtx.com/images/QuAnTiShiColse.gif" id="imgx" /></p>
@@ -415,11 +417,11 @@ input[type="checkbox"] { height: auto; }
             <span class="arrowWt">◆</span>
             <dl>
             	<dt>扫描二维码安装游天下客户端</dt>
-                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/accountSafe_ID/youtxapp.png" width="120" height="120"></a></dd>
+                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/accountSafe_ID/youtxapp.png" width="120" height="120"></a></dd>
             </dl>
             <dl>
             	<dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                <dd><img src="static/accountSafe_ID/ewmBNew.jpg" width="102" height="102"></dd>
+                <dd><img src="${base}/static/accountSafe_ID/ewmBNew.jpg" width="102" height="102"></dd>
                 <dd>微信公众号：游天下</dd>
             </dl>
             <dl style="border:none;">
@@ -449,7 +451,7 @@ input[type="checkbox"] { height: auto; }
 <div id="youtxloginw" class="header" style="display: none;">
     <p class="logo">
         <a href="http://www.youtx.com/" target="_blank" id="youtx_01">
-            <img src="static/accountSafe_ID/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+            <img src="${base}/static/accountSafe_ID/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <!--2013-5-3修改-->
     <p class="btncz"><a id="A3" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
@@ -464,7 +466,7 @@ input[type="checkbox"] { height: auto; }
     <!--2013-5-3修改-结束-->
     <ul class="subnav">
         <li><a target="_self" href="http://www.youtx.com/help/" rel="nofollow" id="youtx_05">帮助</a></li>
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/accountSafe_ID/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/accountSafe_ID/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <li><a target="_blank" href="http://bang.youtx.com/">短租帮</a></li>
         <li class="HeadLanguage"><a target="_self" href="http://en.youtx.com/">English</a></li>
         <li class="ytxMob" id="mobYtx">
@@ -475,11 +477,11 @@ input[type="checkbox"] { height: auto; }
             <span class="arrowWt">◆</span>
             <dl>
             	<dt>扫描二维码安装游天下客户端</dt>
-                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/accountSafe_ID/youtxapp.png" width="120" height="120"></a></dd>
+                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/accountSafe_ID/youtxapp.png" width="120" height="120"></a></dd>
             </dl>
             <dl>
             	<dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                <dd><img src="static/accountSafe_ID/ewmBNew.jpg" width="102" height="102"></dd>
+                <dd><img src="${base}/static/accountSafe_ID/ewmBNew.jpg" width="102" height="102"></dd>
                 <dd>微信公众号：游天下</dd>
             </dl>
             <dl style="border:none;">
@@ -555,7 +557,7 @@ input[type="checkbox"] { height: auto; }
           <div class="control_main_right">
             <div class="telTerify">
               <h2>身份验证</h2><!--2015-11-26文本-->
-              <div class="terifyStep"><img src="static/accountSafe_ID/IDCardVT3.jpg" width="674" height="30"><!--2015-11-26图片--></div>
+              <div class="terifyStep"><img src="${base}/static/accountSafe_ID/IDCardVT3.jpg" width="674" height="30"><!--2015-11-26图片--></div>
               <div class="terifyCon">
      			<!--2015-11-26Begin--><p class="terifySuc" style="width:310px;">恭喜，身份验证成功！已送100积分</p><!--2015-11-26End-->
                 <p class="terifySucBtn"><input class="cklb_btncz1" name="" type="button" value="确定" onclick="javascript: window.location.href = &#39;/User/Profile/&#39;;"></p>
@@ -623,7 +625,7 @@ input[type="checkbox"] { height: auto; }
       <li class="footer_link_space">|</li>
       <li><a href="http://www.youtx.com/feedback/" target="_blank" rel="nofollow" id="youtx_34">意见反馈</a></li>
       <li class="footer_link_space">|</li>
-      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="static/accountSafe_ID/at.jpg"> <span>youtx.com</span></li>
+      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="${base}/static/accountSafe_ID/at.jpg"> <span>youtx.com</span></li>
     </ul>
     <ul class="footer_link02">
       <li class="FooterDesktop"><a href="http://www.youtx.com/downloadshortcut/" target="_blank" rel="nofollow">下载桌面游天下</a> | <a href="http://www.youtx.com/mo/" target="_blank" rel="nofollow">手机游天下</a> | <a href="http://www.youtx.com/star/" target="_blank" rel="nofollow">明星房东</a> | <a href="http://www.youtx.com/" target="_blank">日租房</a> | <a href="http://blog.youtx.com/" target="_blank" rel="nofollow">博客</a> | <a href="http://www.youtx.com/jifen/exchange/" target="_blank" rel="nofollow">积分换礼</a> | </li>
@@ -633,9 +635,9 @@ input[type="checkbox"] { height: auto; }
     <ul class="FooterNet">
       <li class="FontArial02">Copyright © 2017 Youtx.com, All Rights Reserved<br>
         <a href="http://js.youtx.com/icp.jpg" target="_blank" rel="nofollow" style="font-family:&#39;宋体&#39;">京ICP证041065号</a> <span style="font-family:&#39;宋体&#39;">京公网安备11010602010093号-2</span></li>
-      <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="static/accountSafe_ID/VerisignYoutx.gif" height="35" width="60"></a></li>
-      <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="static/accountSafe_ID/FooterNetPic.gif"></a></li>
-      <li><a target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=e12032211010015160307708&amp;ct=df&amp;pa=318891" rel="nofollow"><img src="static/accountSafe_ID/TrustYoutx.gif" width="100" height="35px"></a></li>
+      <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="${base}/static/accountSafe_ID/VerisignYoutx.gif" height="35" width="60"></a></li>
+      <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="${base}/static/accountSafe_ID/FooterNetPic.gif"></a></li>
+      <li><a target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=e12032211010015160307708&amp;ct=df&amp;pa=318891" rel="nofollow"><img src="${base}/static/accountSafe_ID/TrustYoutx.gif" width="100" height="35px"></a></li>
     </ul>
   </div>
 <!--2013-6-26修改-->
@@ -662,7 +664,7 @@ input[type="checkbox"] { height: auto; }
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Feb4b7b326a601c545c14e8b6b965e4a0' type='text/javascript'%3E%3C/script%3E"));
-</script><script src="static/accountSafe_ID/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=eb4b7b326a601c545c14e8b6b965e4a0" target="_blank"><img border="0" src="static/accountSafe_ID/21.gif" width="20" height="20"></a>
+</script><script src="${base}/static/accountSafe_ID/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=eb4b7b326a601c545c14e8b6b965e4a0" target="_blank"><img border="0" src="${base}/static/accountSafe_ID/21.gif" width="20" height="20"></a>
 
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -674,7 +676,7 @@ var google_conversion_label = "yFTtCPvC6gMQzfb-yQM";
 var google_conversion_value = 0;
 /* ]]> */
 </script>
-<script type="text/javascript" src="static/accountSafe_ID/conversion.js.下载">
+<script type="text/javascript" src="${base}/static/accountSafe_ID/conversion.js.下载">
 </script>
 <noscript>
 &lt;div style="display:inline;"&gt;
@@ -685,7 +687,7 @@ var google_conversion_value = 0;
 <script type="text/javascript">
     var bd_cpro_rtid = "nWnknWD";
 </script>
-<script type="text/javascript" src="static/accountSafe_ID/rt.js.下载"></script>
+<script type="text/javascript" src="${base}/static/accountSafe_ID/rt.js.下载"></script>
 <noscript>
 &lt;div style="display:none;"&gt;
 &lt;img height="0" width="0" style="border-style:none;" src="http://eclick.baidu.com/rt.jpg?t=noscript&amp;rtid=nWnknWD" /&gt;
@@ -694,15 +696,15 @@ var google_conversion_value = 0;
 </div>
 <!-- ClickTale Bottom part -->
 <div id="ClickTaleDiv" style="display: none;"></div>
-<script src="static/accountSafe_ID/clicktale.js.下载" type="text/javascript"></script><script src="http://s.clicktale.net/WRd.js" type="text/javascript"></script>
+<script src="${base}/static/accountSafe_ID/clicktale.js.下载" type="text/javascript"></script><script src="http://s.clicktale.net/WRd.js" type="text/javascript"></script>
 <script type="text/javascript">
     if (typeof ClickTale == 'function') ClickTale(12600, 0.0005, "www14");
 </script>
 <!-- ClickTale end of Bottom part -->
-<script src="static/accountSafe_ID/Youtx_WebIM_HTML.js.下载" type="text/javascript"></script><script src="static/accountSafe_ID/youtx_mi_query.js.下载" type="text/javascript"></script><script src="static/accountSafe_ID/WebIM.js.下载" type="text/javascript"></script><script src="static/accountSafe_ID/WebIM.Query.js.下载" type="text/javascript"></script>
+<script src="${base}/static/accountSafe_ID/Youtx_WebIM_HTML.js.下载" type="text/javascript"></script><script src="${base}/static/accountSafe_ID/youtx_mi_query.js.下载" type="text/javascript"></script><script src="${base}/static/accountSafe_ID/WebIM.js.下载" type="text/javascript"></script><script src="${base}/static/accountSafe_ID/WebIM.Query.js.下载" type="text/javascript"></script>
 
 <!--尾部2011-9-6修改 end-->        
     
 
 
-<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="static/accountSafe_ID/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/accountSafe_ID/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div><div id="TalkBox_Youtx_ID" class="TalkBox" style="display: none;"><div class="Talk  PosRe" id="Talk"><div class="UserMenu" id="UserBox"><div class="UserMain" id="UserM" style="cursor: move;"><ul class="TabHeader" id="UserNr" style="top:0px;"></ul></div><div class="UserScroll" id="UserScroll" style="display: none;"><span class="UserBar" id="UserBar" style="display:block; top:0px;"></span></div></div><div class="Talk_center"><span class="DownArrow" style="display:none;"><img src="static/accountSafe_ID/dowearrow.gif" width="16" height="16"></span><ul class="Yichu" style="display:none;"></ul><div id="TalkBox_Youtx_ID_s" style=" width:480px;height:26px; cursor: move;"><span class="RentName"></span><span class="Chat_min"><img src="static/accountSafe_ID/SIcon.png" width="25" height="25"></span></div><div class="clear"></div><div id="youtx_ch_webim"></div></div><div class="Talk_right"> </div><div class="HouseRe PosAb" style="display:none;"></div></div></div><div style="display:none;"> <ul id="youtx_none_li"></ul><div id="youtx_none_div"></div> </div><div id="house_webim_s" style="display:none;"></div> <div id="soundContainer" style=" width:10px; height:10px ;"><embed id="soundplayer" name="soundplayer" allowscriptaccess="always" wmode="window" src="http://js.youtx.com/profile/message.swf" loop="false" menu="false" quality="high" align="middle" allowfullscreen="true" width="0" height="0" flashvars="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div><div id="OutBox" class="OutBox" style="top: 355px; left: 759.5px;"><div class="OutBoxbg" id="OutBoxbg"></div><a href="http://www.youtx.com/profile/passport/javascript;;" class="CloseBtn" id="CloseBtn"></a><img id="OutBoxPic" class="OutBoxPic" src="http://www.youtx.com/profile/passport/IdCardSuccess.aspx" style="top: 0px;"></div><div class="ChatSmall"><div><ul id="ChatSmallUl"><li id="ChatMes" class="ChatMes">短消息（0）</li></ul><div class="ChatMes_C_T"><h2><span class="Mes_h2">短消息</span><span class="Mes_min" title="最小化"></span></h2><p class="All_mes"><a target="blank" href="http://www.youtx.com/profile/User/MailBox/MyMailBox.aspx?type=All">查看全部历史消息&gt;&gt;</a></p><ul class="Mes_main" id="IDUlMes_main"></ul></div></div></div></body></html>
+<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="${base}/static/accountSafe_ID/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/accountSafe_ID/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div><div id="TalkBox_Youtx_ID" class="TalkBox" style="display: none;"><div class="Talk  PosRe" id="Talk"><div class="UserMenu" id="UserBox"><div class="UserMain" id="UserM" style="cursor: move;"><ul class="TabHeader" id="UserNr" style="top:0px;"></ul></div><div class="UserScroll" id="UserScroll" style="display: none;"><span class="UserBar" id="UserBar" style="display:block; top:0px;"></span></div></div><div class="Talk_center"><span class="DownArrow" style="display:none;"><img src="${base}/static/accountSafe_ID/dowearrow.gif" width="16" height="16"></span><ul class="Yichu" style="display:none;"></ul><div id="TalkBox_Youtx_ID_s" style=" width:480px;height:26px; cursor: move;"><span class="RentName"></span><span class="Chat_min"><img src="${base}/static/accountSafe_ID/SIcon.png" width="25" height="25"></span></div><div class="clear"></div><div id="youtx_ch_webim"></div></div><div class="Talk_right"> </div><div class="HouseRe PosAb" style="display:none;"></div></div></div><div style="display:none;"> <ul id="youtx_none_li"></ul><div id="youtx_none_div"></div> </div><div id="house_webim_s" style="display:none;"></div> <div id="soundContainer" style=" width:10px; height:10px ;"><embed id="soundplayer" name="soundplayer" allowscriptaccess="always" wmode="window" src="http://js.youtx.com/profile/message.swf" loop="false" menu="false" quality="high" align="middle" allowfullscreen="true" width="0" height="0" flashvars="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div><div id="OutBox" class="OutBox" style="top: 355px; left: 759.5px;"><div class="OutBoxbg" id="OutBoxbg"></div><a href="http://www.youtx.com/profile/passport/javascript;;" class="CloseBtn" id="CloseBtn"></a><img id="OutBoxPic" class="OutBoxPic" src="http://www.youtx.com/profile/passport/IdCardSuccess.aspx" style="top: 0px;"></div><div class="ChatSmall"><div><ul id="ChatSmallUl"><li id="ChatMes" class="ChatMes">短消息（0）</li></ul><div class="ChatMes_C_T"><h2><span class="Mes_h2">短消息</span><span class="Mes_min" title="最小化"></span></h2><p class="All_mes"><a target="blank" href="http://www.youtx.com/profile/User/MailBox/MyMailBox.aspx?type=All">查看全部历史消息&gt;&gt;</a></p><ul class="Mes_main" id="IDUlMes_main"></ul></div></div></div></body></html>
