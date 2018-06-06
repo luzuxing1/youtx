@@ -3,12 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
- 
+
+<#assign base=request.contextPath />
+    <base id="base" href="${base}">
     <meta http-equiv="Cache-Control" content="max-age=86400">
-    <img src="static/personCenter/countpv" width="0" height="0"><script charset="utf-8" src="static/personCenter/v.js.下载"></script><script type="text/javascript" async="" src="static/personCenter/load.min.js.下载"></script><script src="static/personCenter/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
-    <link href="static/personCenter/public.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="static/personCenter/jQuery.cookie.js.下载"></script>
+    <img src="${base}/static/personCenter/countpv" width="0" height="0"><script charset="utf-8" src="${base}/static/personCenter/v.js.下载"></script><script type="text/javascript" async="" src="${base}/static/personCenter/load.min.js.下载"></script><script src="${base}/static/personCenter/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
+    <link href="${base}/static/personCenter/public.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${base}/static/personCenter/jQuery.cookie.js.下载"></script>
     
     
   <script type="text/javascript" language="javascript">
@@ -16,11 +17,11 @@
         </script>
     
     <title>用户中心-游天下</title>
-    <link href="static/personCenter/Control_Panel.css" rel="stylesheet" type="text/css">
-    <link href="static/personCenter/mycenter.css" rel="stylesheet" type="text/css">
+    <link href="${base}/static/personCenter/Control_Panel.css" rel="stylesheet" type="text/css">
+    <link href="${base}/static/personCenter/mycenter.css" rel="stylesheet" type="text/css">
 
     
-<script src="static/personCenter/saved_resource"></script></head> 
+<script src="${base}/static/personCenter/saved_resource"></script></head> 
 <body>
     
     
@@ -57,7 +58,7 @@
     });
     //140226end
 </script>
-<script type="text/javascript" src="static/personCenter/Login_Cookie.js.下载"></script>
+<script type="text/javascript" src="${base}/static/personCenter/Login_Cookie.js.下载"></script>
 <script type="text/javascript">
     //监控代码请勿删除
     var _dctc = _dctc || {}; _dctc._account = _dctc._account || ['UA-25297079-1']; _dctc.isNorth = _dctc.isNorth || 'Y'; _dctc.bid = '27'; (function () {
@@ -74,7 +75,7 @@
 <!-- ClickTale end of Top part -->
 <div id="youtxlogin" class="header" style="">
     <p class="logo">
-        <a href="http://www.youtx.com/" id="youtx_01" target="_blank"><img src="static/personCenter/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+        <a href="http://www.youtx.com/" id="youtx_01" target="_blank"><img src="${base}/static/personCenter/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <!--2013-5-3修改-->
     <p class="btncz"><a id="A2" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
@@ -90,7 +91,7 @@
     <ul class="subnav">
         <li><a target="_self" href="http://www.youtx.com/help/" rel="nofollow" id="youtx_05">帮助</a></li>
 <!--        <li class="PosRe"><a href="http://www.youtx.com/mo/" target="_blank"  rel="nofollow" id="youtx_04">手机游天下</a></li>-->
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/personCenter/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/personCenter/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <!--<li><a href="http://guide.youtx.com/" target="_blank" >目的地专家</a>
             <div class="HeaderTiShi"> 出行问答，游记攻略！<span>◆</span> <span class="HeaderTiShiImg">◆</span>
                  <p><img alt="关" src="http://js.youtx.com/images/QuAnTiShiColse.gif" id="imgx" /></p>
@@ -111,11 +112,11 @@
             <span class="arrowWt">◆</span>
             <dl>
             	<dt>扫描二维码安装游天下客户端</dt>
-                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/personCenter/youtxapp.png" width="120" height="120"></a></dd>
+                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/personCenter/youtxapp.png" width="120" height="120"></a></dd>
             </dl>
             <dl>
             	<dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                <dd><img src="static/personCenter/ewmBNew.jpg" width="102" height="102"></dd>
+                <dd><img src="${base}/static/personCenter/ewmBNew.jpg" width="102" height="102"></dd>
                 <dd>微信公众号：游天下</dd>
             </dl>
             <dl style="border:none;">
@@ -145,7 +146,7 @@
 <div id="youtxloginw" class="header" style="display: none;">
     <p class="logo">
         <a href="http://www.youtx.com/" target="_blank" id="youtx_01">
-            <img src="static/personCenter/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+            <img src="${base}/static/personCenter/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <!--2013-5-3修改-->
     <p class="btncz"><a id="A3" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
@@ -160,7 +161,7 @@
     <!--2013-5-3修改-结束-->
     <ul class="subnav">
         <li><a target="_self" href="http://www.youtx.com/help/" rel="nofollow" id="youtx_05">帮助</a></li>
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/personCenter/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/personCenter/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <li><a target="_blank" href="http://bang.youtx.com/">短租帮</a></li>
         <li class="HeadLanguage"><a target="_self" href="http://en.youtx.com/">English</a></li>
         <li class="ytxMob" id="mobYtx">
@@ -171,11 +172,11 @@
             <span class="arrowWt">◆</span>
             <dl>
             	<dt>扫描二维码安装游天下客户端</dt>
-                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/personCenter/youtxapp.png" width="120" height="120"></a></dd>
+                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/personCenter/youtxapp.png" width="120" height="120"></a></dd>
             </dl>
             <dl>
             	<dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                <dd><img src="static/personCenter/ewmBNew.jpg" width="102" height="102"></dd>
+                <dd><img src="${base}/static/personCenter/ewmBNew.jpg" width="102" height="102"></dd>
                 <dd>微信公众号：游天下</dd>
             </dl>
             <dl style="border:none;">
@@ -246,7 +247,7 @@
                   <div class="pm_shadow_inner t"> </div>
                   <div class="pm_shadow_inner b"> </div>
                           <a title="查看资料" href="http://www.youtx.com/user/show/2600363/">
-                                        <img width="209" height="209" title=" 卢祖兴" src="static/personCenter/225_2600363_851.jpg" alt=" 卢祖兴"></a> </div>
+                                        <img width="209" height="209" title=" 卢祖兴" src="${base}/static/personCenter/225_2600363_851.jpg" alt=" 卢祖兴"></a> </div>
               </div>
             </div>
           </div>
@@ -332,7 +333,7 @@
                                           
 <!--2014-6-18修改-结束-->  
                              <dd class="CreditSpan">
-                                  <a rel="" href="javascript:void(0)"><img src="static/personCenter/UserIdentify2015.jpg" height="24" class="VerMid"></a>
+                                  <a rel="" href="javascript:void(0)"><img src="${base}/static/personCenter/UserIdentify2015.jpg" height="24" class="VerMid"></a>
                                   <div class="EjectPromp_new" style="display: none;">
                                         <div class="EjectSj_new"><span>◆</span> <span class="EjectSj02">◆</span></div>
                                         <div class="EjectPrompTxt_new">
@@ -446,7 +447,7 @@
         </tbody></table>
           <!--2012-5-28我的账户修改-结束--> 
         </div>
-        <div style="margin:20px 10px 0;"><a href="http://www.youtx.com/Topic/event-newhouse-new/" target="_blank"><img alt="" src="static/personCenter/mxmxfd1.jpg"></a></div>
+        <div style="margin:20px 10px 0;"><a href="http://www.youtx.com/Topic/event-newhouse-new/" target="_blank"><img alt="" src="${base}/static/personCenter/mxmxfd1.jpg"></a></div>
        <!--租客广告-->
        
         
@@ -601,7 +602,7 @@
       <li class="footer_link_space">|</li>
       <li><a href="http://www.youtx.com/feedback/" target="_blank" rel="nofollow" id="youtx_34">意见反馈</a></li>
       <li class="footer_link_space">|</li>
-      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="static/personCenter/at.jpg"> <span>youtx.com</span></li>
+      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="${base}/static/personCenter/at.jpg"> <span>youtx.com</span></li>
     </ul>
     <ul class="footer_link02">
       <li class="FooterDesktop"><a href="http://www.youtx.com/downloadshortcut/" target="_blank" rel="nofollow">下载桌面游天下</a> | <a href="http://www.youtx.com/mo/" target="_blank" rel="nofollow">手机游天下</a> | <a href="http://www.youtx.com/star/" target="_blank" rel="nofollow">明星房东</a> | <a href="http://www.youtx.com/" target="_blank">日租房</a> | <a href="http://blog.youtx.com/" target="_blank" rel="nofollow">博客</a> | <a href="http://www.youtx.com/jifen/exchange/" target="_blank" rel="nofollow">积分换礼</a> | </li>
@@ -611,9 +612,9 @@
     <ul class="FooterNet">
       <li class="FontArial02">Copyright © 2017 Youtx.com, All Rights Reserved<br>
         <a href="http://js.youtx.com/icp.jpg" target="_blank" rel="nofollow" style="font-family:&#39;宋体&#39;">京ICP证041065号</a> <span style="font-family:&#39;宋体&#39;">京公网安备11010602010093号-2</span></li>
-      <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="static/personCenter/VerisignYoutx.gif" height="35" width="60"></a></li>
-      <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="static/personCenter/FooterNetPic.gif"></a></li>
-      <li><a target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=e12032211010015160307708&amp;ct=df&amp;pa=318891" rel="nofollow"><img src="static/personCenter/TrustYoutx.gif" width="100" height="35px"></a></li>
+      <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="${base}/static/personCenter/VerisignYoutx.gif" height="35" width="60"></a></li>
+      <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="${base}/static/personCenter/FooterNetPic.gif"></a></li>
+      <li><a target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=e12032211010015160307708&amp;ct=df&amp;pa=318891" rel="nofollow"><img src="${base}/static/personCenter/TrustYoutx.gif" width="100" height="35px"></a></li>
     </ul>
   </div>
 <!--2013-6-26修改-->
@@ -640,7 +641,7 @@
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Feb4b7b326a601c545c14e8b6b965e4a0' type='text/javascript'%3E%3C/script%3E"));
-</script><script src="static/personCenter/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=eb4b7b326a601c545c14e8b6b965e4a0" target="_blank"><img border="0" src="static/personCenter/21.gif" width="20" height="20"></a>
+</script><script src="${base}/static/personCenter/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=eb4b7b326a601c545c14e8b6b965e4a0" target="_blank"><img border="0" src="${base}/static/personCenter/21.gif" width="20" height="20"></a>
 
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -652,7 +653,7 @@ var google_conversion_label = "yFTtCPvC6gMQzfb-yQM";
 var google_conversion_value = 0;
 /* ]]> */
 </script>
-<script type="text/javascript" src="static/personCenter/conversion.js.下载">
+<script type="text/javascript" src="${base}/static/personCenter/conversion.js.下载">
 </script>
 <noscript>
 &lt;div style="display:inline;"&gt;
@@ -663,7 +664,7 @@ var google_conversion_value = 0;
 <script type="text/javascript">
     var bd_cpro_rtid = "nWnknWD";
 </script>
-<script type="text/javascript" src="static/personCenter/rt.js.下载"></script>
+<script type="text/javascript" src="${base}/static/personCenter/rt.js.下载"></script>
 <noscript>
 &lt;div style="display:none;"&gt;
 &lt;img height="0" width="0" style="border-style:none;" src="http://eclick.baidu.com/rt.jpg?t=noscript&amp;rtid=nWnknWD" /&gt;
@@ -672,12 +673,12 @@ var google_conversion_value = 0;
 </div>
 <!-- ClickTale Bottom part -->
 <div id="ClickTaleDiv" style="display: none;"></div>
-<script src="static/personCenter/clicktale.js.下载" type="text/javascript"></script><script src="http://s.clicktale.net/WRd.js" type="text/javascript"></script>
+<script src="${base}/static/personCenter/clicktale.js.下载" type="text/javascript"></script><script src="http://s.clicktale.net/WRd.js" type="text/javascript"></script>
 <script type="text/javascript">
     if (typeof ClickTale == 'function') ClickTale(12600, 0.0005, "www14");
 </script>
 <!-- ClickTale end of Bottom part -->
-<script src="static/personCenter/Youtx_WebIM_HTML.js.下载" type="text/javascript"></script><script src="static/personCenter/youtx_mi_query.js.下载" type="text/javascript"></script><script src="static/personCenter/WebIM.js.下载" type="text/javascript"></script><script src="static/personCenter/WebIM.Query.js.下载" type="text/javascript"></script>
+<script src="${base}/static/personCenter/Youtx_WebIM_HTML.js.下载" type="text/javascript"></script><script src="${base}/static/personCenter/youtx_mi_query.js.下载" type="text/javascript"></script><script src="${base}/static/personCenter/WebIM.js.下载" type="text/javascript"></script><script src="${base}/static/personCenter/WebIM.Query.js.下载" type="text/javascript"></script>
 
 <!--尾部2011-9-6修改 end-->        
     

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <!-- saved from url=(0030)http://www.youtx.com/room/new/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="static/publish_authen/style1503546983737.css"><style type="text/css">.amap-indoor-map .label-canvas{position:absolute;top:0;left:0}.amap-indoor-map .highlight-image-con *{pointer-events:none}.amap-indoormap-floorbar-control{position:absolute;margin:auto 0;bottom:165px;right:12px;width:35px;text-align:center;line-height:1.3em;overflow:hidden;padding:0 2px}.amap-indoormap-floorbar-control .panel-box{background-color:rgba(255,255,255,.9);border-radius:3px;border:1px solid #ccc}.amap-indoormap-floorbar-control .select-dock{position:absolute;top:0;left:0;width:100%;box-sizing:border-box;height:30px;border:solid #4196ff;border-width:0 2px;border-radius:2px;pointer-events:none;background:linear-gradient(to bottom,#f6f8f9 0,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%)}.amap-indoor-map .transition{transition:opacity .2s},.amap-indoormap-floorbar-control .transition{transition:top .2s,margin-top .2s}.amap-indoormap-floorbar-control .select-dock:after,.amap-indoormap-floorbar-control .select-dock:before{content:"";position:absolute;width:0;height:0;left:0;top:10px;border:solid transparent;border-width:4px;border-left-color:#4196ff}.amap-indoormap-floorbar-control .select-dock:after{right:0;left:auto;border-left-color:transparent;border-right-color:#4196ff}.amap-indoormap-floorbar-control.is-mobile{width:37px}.amap-indoormap-floorbar-control.is-mobile .floor-btn{height:35px;line-height:35px}.amap-indoormap-floorbar-control.is-mobile .select-dock{height:35px;top:36px}.amap-indoormap-floorbar-control.is-mobile .select-dock:after,.amap-indoormap-floorbar-control.is-mobile .select-dock:before{top:13px}.amap-indoormap-floorbar-control.is-mobile .floor-list-box{height:105px}.amap-indoormap-floorbar-control .floor-list-item .floor-btn{color:#555;font-family:"Times New Roman",sans-serif,"Microsoft Yahei";font-size:16px}.amap-indoormap-floorbar-control .floor-list-item.selected .floor-btn{color:#000}.amap-indoormap-floorbar-control .floor-btn{height:28px;line-height:28px;overflow:hidden;cursor:pointer;position:relative;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.amap-indoormap-floorbar-control .floor-btn:hover{background-color:rgba(221,221,221,.4)}.amap-indoormap-floorbar-control .floor-minus,.amap-indoormap-floorbar-control .floor-plus{position:relative;text-indent:-1000em}.amap-indoormap-floorbar-control .floor-minus:after,.amap-indoormap-floorbar-control .floor-plus:after{content:"";position:absolute;margin:auto;top:9px;left:0;right:0;width:0;height:0;border:solid transparent;border-width:10px 8px;border-top-color:#777}.amap-indoormap-floorbar-control .floor-minus.disabled,.amap-indoormap-floorbar-control .floor-plus.disabled{opacity:.3}.amap-indoormap-floorbar-control .floor-plus:after{border-bottom-color:#777;border-top-color:transparent;top:-3px}.amap-indoormap-floorbar-control .floor-list-box{max-height:153px;position:relative;overflow-y:hidden}.amap-indoormap-floorbar-control .floor-list{margin:0;padding:0;list-style:none}.amap-indoormap-floorbar-control .floor-list-item{position:relative}.amap-indoormap-floorbar-control .floor-btn.disabled,.amap-indoormap-floorbar-control .floor-btn.disabled *,.amap-indoormap-floorbar-control.with-indrm-loader *{-webkit-pointer-events:none!important;pointer-events:none!important}.amap-indoormap-floorbar-control .with-indrm-loader .floor-nonas{opacity:.5}.amap-indoor-map-moverf-marker{color:#555;background-color:#FFFEEF;border:1px solid #7E7E7E;padding:3px 6px;font-size:12px;white-space:nowrap;display:inline-block;position:absolute;top:1em;left:1.2em}.amap-indoormap-floorbar-control .amap-indrm-loader{-moz-animation:amap-indrm-loader 1.25s infinite linear;-webkit-animation:amap-indrm-loader 1.25s infinite linear;animation:amap-indrm-loader 1.25s infinite linear;border:2px solid #91A3D8;border-right-color:transparent;box-sizing:border-box;display:inline-block;overflow:hidden;text-indent:-9999px;width:13px;height:13px;border-radius:7px;position:absolute;margin:auto;top:0;left:0;right:0;bottom:0}@-moz-keyframes amap-indrm-loader{0%{-moz-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes amap-indrm-loader{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes amap-indrm-loader{0%{-moz-transform:rotate(0);-ms-transform:rotate(0);-webkit-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<#assign base=request.contextPath />
+    <base id="base" href="${base}"><link rel="stylesheet" type="text/css" href="${base}/static/publish_authen/style1503546983737.css"><style type="text/css">.amap-indoor-map .label-canvas{position:absolute;top:0;left:0}.amap-indoor-map .highlight-image-con *{pointer-events:none}.amap-indoormap-floorbar-control{position:absolute;margin:auto 0;bottom:165px;right:12px;width:35px;text-align:center;line-height:1.3em;overflow:hidden;padding:0 2px}.amap-indoormap-floorbar-control .panel-box{background-color:rgba(255,255,255,.9);border-radius:3px;border:1px solid #ccc}.amap-indoormap-floorbar-control .select-dock{position:absolute;top:0;left:0;width:100%;box-sizing:border-box;height:30px;border:solid #4196ff;border-width:0 2px;border-radius:2px;pointer-events:none;background:linear-gradient(to bottom,#f6f8f9 0,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%)}.amap-indoor-map .transition{transition:opacity .2s},.amap-indoormap-floorbar-control .transition{transition:top .2s,margin-top .2s}.amap-indoormap-floorbar-control .select-dock:after,.amap-indoormap-floorbar-control .select-dock:before{content:"";position:absolute;width:0;height:0;left:0;top:10px;border:solid transparent;border-width:4px;border-left-color:#4196ff}.amap-indoormap-floorbar-control .select-dock:after{right:0;left:auto;border-left-color:transparent;border-right-color:#4196ff}.amap-indoormap-floorbar-control.is-mobile{width:37px}.amap-indoormap-floorbar-control.is-mobile .floor-btn{height:35px;line-height:35px}.amap-indoormap-floorbar-control.is-mobile .select-dock{height:35px;top:36px}.amap-indoormap-floorbar-control.is-mobile .select-dock:after,.amap-indoormap-floorbar-control.is-mobile .select-dock:before{top:13px}.amap-indoormap-floorbar-control.is-mobile .floor-list-box{height:105px}.amap-indoormap-floorbar-control .floor-list-item .floor-btn{color:#555;font-family:"Times New Roman",sans-serif,"Microsoft Yahei";font-size:16px}.amap-indoormap-floorbar-control .floor-list-item.selected .floor-btn{color:#000}.amap-indoormap-floorbar-control .floor-btn{height:28px;line-height:28px;overflow:hidden;cursor:pointer;position:relative;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.amap-indoormap-floorbar-control .floor-btn:hover{background-color:rgba(221,221,221,.4)}.amap-indoormap-floorbar-control .floor-minus,.amap-indoormap-floorbar-control .floor-plus{position:relative;text-indent:-1000em}.amap-indoormap-floorbar-control .floor-minus:after,.amap-indoormap-floorbar-control .floor-plus:after{content:"";position:absolute;margin:auto;top:9px;left:0;right:0;width:0;height:0;border:solid transparent;border-width:10px 8px;border-top-color:#777}.amap-indoormap-floorbar-control .floor-minus.disabled,.amap-indoormap-floorbar-control .floor-plus.disabled{opacity:.3}.amap-indoormap-floorbar-control .floor-plus:after{border-bottom-color:#777;border-top-color:transparent;top:-3px}.amap-indoormap-floorbar-control .floor-list-box{max-height:153px;position:relative;overflow-y:hidden}.amap-indoormap-floorbar-control .floor-list{margin:0;padding:0;list-style:none}.amap-indoormap-floorbar-control .floor-list-item{position:relative}.amap-indoormap-floorbar-control .floor-btn.disabled,.amap-indoormap-floorbar-control .floor-btn.disabled *,.amap-indoormap-floorbar-control.with-indrm-loader *{-webkit-pointer-events:none!important;pointer-events:none!important}.amap-indoormap-floorbar-control .with-indrm-loader .floor-nonas{opacity:.5}.amap-indoor-map-moverf-marker{color:#555;background-color:#FFFEEF;border:1px solid #7E7E7E;padding:3px 6px;font-size:12px;white-space:nowrap;display:inline-block;position:absolute;top:1em;left:1.2em}.amap-indoormap-floorbar-control .amap-indrm-loader{-moz-animation:amap-indrm-loader 1.25s infinite linear;-webkit-animation:amap-indrm-loader 1.25s infinite linear;animation:amap-indrm-loader 1.25s infinite linear;border:2px solid #91A3D8;border-right-color:transparent;box-sizing:border-box;display:inline-block;overflow:hidden;text-indent:-9999px;width:13px;height:13px;border-radius:7px;position:absolute;margin:auto;top:0;left:0;right:0;bottom:0}@-moz-keyframes amap-indrm-loader{0%{-moz-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes amap-indrm-loader{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes amap-indrm-loader{0%{-moz-transform:rotate(0);-ms-transform:rotate(0);-webkit-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Cache-Control" content="max-age=86400">
-    <img src="static/publish_authen/countpv" width="0" height="0"><script charset="utf-8" src="static/publish_authen/v.js.下载"></script><script type="text/javascript" async="" src="static/publish_authen/load.min.js.下载"></script><script src="static/publish_authen/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
-    <script src="static/publish_authen/jQuery.cookie.js.下载" language="javascript" type="text/javascript"></script>
-    <link href="static/publish_authen/public.css" rel="stylesheet" type="text/css"> 
+    <img src="${base}/static/publish_authen/countpv" width="0" height="0"><script charset="utf-8" src="${base}/static/publish_authen/v.js.下载"></script><script type="text/javascript" async="" src="${base}/static/publish_authen/load.min.js.下载"></script><script src="${base}/static/publish_authen/jquery-1.6.2.min.js.下载" language="javascript" type="text/javascript"></script>
+    <script src="${base}/static/publish_authen/jQuery.cookie.js.下载" language="javascript" type="text/javascript"></script>
+    <link href="${base}/static/publish_authen/public.css" rel="stylesheet" type="text/css"> 
     
     <script type="text/javascript">
         var userid1;
@@ -19,9 +21,9 @@
         我要出租-填写位置-游天下</title>
     
     
-    <link href="static/publish_authen/DescriptionenNew.css" rel="stylesheet" type="text/css">
-           <link href="static/publish_authen/DescriptionenNew(1).css" rel="stylesheet" type="text/css">
-    <script src="static/publish_authen/Province_citynew.js.下载" type="text/javascript"></script>
+    <link href="${base}/static/publish_authen/DescriptionenNew.css" rel="stylesheet" type="text/css">
+           <link href="${base}/static/publish_authen/DescriptionenNew(1).css" rel="stylesheet" type="text/css">
+    <script src="${base}/static/publish_authen/Province_citynew.js.下载" type="text/javascript"></script>
     
     <script type="text/javascript">
        // window.onerror = function () { return true; };
@@ -884,7 +886,7 @@
 
     
    
-<style type="text/css">.amap-container{cursor:url(http://webapi.amap.com/theme/v1.3/openhand.cur),default;}.amap-drag{cursor:url(http://webapi.amap.com/theme/v1.3/closedhand.cur),default;}</style><script src="static/publish_authen/saved_resource"></script><link rel="stylesheet" type="text/css" href="static/publish_authen/Youtx_WebIM.css"><script type="text/javascript" charset="UTF-8" src="static/publish_authen/common.js.下载"></script><script type="text/javascript" charset="UTF-8" src="static/publish_authen/util.js.下载"></script><script type="text/javascript" charset="UTF-8" src="static/publish_authen/stats.js.下载"></script><script type="text/javascript" charset="UTF-8" src="static/publish_authen/AuthenticationService.Authenticate"></script></head>
+<style type="text/css">.amap-container{cursor:url(http://webapi.amap.com/theme/v1.3/openhand.cur),default;}.amap-drag{cursor:url(http://webapi.amap.com/theme/v1.3/closedhand.cur),default;}</style><script src="${base}/static/publish_authen/saved_resource"></script><link rel="stylesheet" type="text/css" href="${base}/static/publish_authen/Youtx_WebIM.css"><script type="text/javascript" charset="UTF-8" src="${base}/static/publish_authen/common.js.下载"></script><script type="text/javascript" charset="UTF-8" src="${base}/static/publish_authen/util.js.下载"></script><script type="text/javascript" charset="UTF-8" src="${base}/static/publish_authen/stats.js.下载"></script><script type="text/javascript" charset="UTF-8" src="${base}/static/publish_authen/AuthenticationService.Authenticate"></script></head>
 <body>
     
     
@@ -921,7 +923,7 @@
     });
     //140226end
 </script>
-<script type="text/javascript" src="static/publish_authen/Login_Cookie.js.下载"></script>
+<script type="text/javascript" src="${base}/static/publish_authen/Login_Cookie.js.下载"></script>
 <script type="text/javascript">
     //监控代码请勿删除
     var _dctc = _dctc || {}; _dctc._account = _dctc._account || ['UA-25297079-1']; _dctc.isNorth = _dctc.isNorth || 'Y'; _dctc.bid = '27'; (function () {
@@ -938,7 +940,7 @@
 <!-- ClickTale end of Top part -->
 <div id="youtxlogin" class="header" style="">
     <p class="logo">
-        <a href="http://www.youtx.com/" id="youtx_01" target="_blank"><img src="static/publish_authen/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+        <a href="http://www.youtx.com/" id="youtx_01" target="_blank"><img src="${base}/static/publish_authen/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <!--2013-5-3修改-->
     <p class="btncz"><a id="A2" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
@@ -954,7 +956,7 @@
     <ul class="subnav">
         <li><a target="_self" href="http://www.youtx.com/help/" rel="nofollow" id="youtx_05">帮助</a></li>
 <!--        <li class="PosRe"><a href="http://www.youtx.com/mo/" target="_blank"  rel="nofollow" id="youtx_04">手机游天下</a></li>-->
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/publish_authen/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/publish_authen/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <!--<li><a href="http://guide.youtx.com/" target="_blank" >目的地专家</a>
             <div class="HeaderTiShi"> 出行问答，游记攻略！<span>◆</span> <span class="HeaderTiShiImg">◆</span>
                  <p><img alt="关" src="http://js.youtx.com/images/QuAnTiShiColse.gif" id="imgx" /></p>
@@ -975,11 +977,11 @@
             <span class="arrowWt">◆</span>
             <dl>
             	<dt>扫描二维码安装游天下客户端</dt>
-                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/publish_authen/youtxapp.png" width="120" height="120"></a></dd>
+                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/publish_authen/youtxapp.png" width="120" height="120"></a></dd>
             </dl>
             <dl>
             	<dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                <dd><img src="static/publish_authen/ewmBNew.jpg" width="102" height="102"></dd>
+                <dd><img src="${base}/static/publish_authen/ewmBNew.jpg" width="102" height="102"></dd>
                 <dd>微信公众号：游天下</dd>
             </dl>
             <dl style="border:none;">
@@ -1009,7 +1011,7 @@
 <div id="youtxloginw" class="header" style="display: none;">
     <p class="logo">
         <a href="http://www.youtx.com/" target="_blank" id="youtx_01">
-            <img src="static/publish_authen/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
+            <img src="${base}/static/publish_authen/logo.jpg" alt="游天下 搜房网旗下-专业短租房、日租房网站" title="游天下 搜房网旗下-专业短租房、日租房网站"></a>
     </p>
     <!--2013-5-3修改-->
     <p class="btncz"><a id="A3" style="cursor:default;" target="_blank" rel="nofollow" onclick="if(_dctc.trackEvent){_dctc.trackEvent({c:&#39;index&#39;, a:&#39;publish&#39;});}">我是房东</a></p>
@@ -1024,7 +1026,7 @@
     <!--2013-5-3修改-结束-->
     <ul class="subnav">
         <li><a target="_self" href="http://www.youtx.com/help/" rel="nofollow" id="youtx_05">帮助</a></li>
-        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="static/publish_authen/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
+        <li><a href="http://www.youtx.com/profile/BookingTeam" target="_blank">团队订房</a><img alt="新" src="${base}/static/publish_authen/NewIco.gif" style="display:none;left:45px;" class="PosAb TN17"></li>
         <li><a target="_blank" href="http://bang.youtx.com/">短租帮</a></li>
         <li class="HeadLanguage"><a target="_self" href="http://en.youtx.com/">English</a></li>
         <li class="ytxMob" id="mobYtx">
@@ -1035,11 +1037,11 @@
             <span class="arrowWt">◆</span>
             <dl>
             	<dt>扫描二维码安装游天下客户端</dt>
-                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/publish_authen/youtxapp.png" width="120" height="120"></a></dd>
+                <dd><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/publish_authen/youtxapp.png" width="120" height="120"></a></dd>
             </dl>
             <dl>
             	<dt><span class="ColorBlue">微信</span>扫描二维码使用游天下</dt>
-                <dd><img src="static/publish_authen/ewmBNew.jpg" width="102" height="102"></dd>
+                <dd><img src="${base}/static/publish_authen/ewmBNew.jpg" width="102" height="102"></dd>
                 <dd>微信公众号：游天下</dd>
             </dl>
             <dl style="border:none;">
@@ -1075,7 +1077,7 @@
             <a href="http://www.youtx.com/help/Manage/" target="_blank" class="ProcessDetail">了解详情&nbsp;&gt;&gt;</a>
         </div>
         <div class="DescriptionContent">
-            <h3><img id="daohang" src="static/publish_authen/publishPlan501_.jpg" alt=""></h3>
+            <h3><img id="daohang" src="${base}/static/publish_authen/publishPlan501_.jpg" alt=""></h3>
             
     <form method="post" action="http://www.youtx.com/room/new/" id="form1">
 <div class="aspNetHidden">
@@ -1204,7 +1206,7 @@
                                 请输入小区/街道/地名等
                             </p>
                             <div class="addressNew_warning" id="NoSearchAdr" style="margin-left: 0px; margin-top: 4px; width: 145px; float: left; display: none;">
-                                您输入的地址不存在，请重新输入。如仍遇到困难，请联系service<img style="margin: 0px 2px" src="static/publish_authen/Email@.gif">youtx.com
+                                您输入的地址不存在，请重新输入。如仍遇到困难，请联系service<img style="margin: 0px 2px" src="${base}/static/publish_authen/Email@.gif">youtx.com
                             </div>
                             </li>
                         <li style="position: relative;">
@@ -1296,7 +1298,7 @@
                     <!--小区地名的联想样式-->
                     <div id="positionOne" class="positionOne" style="display: none;">
                     </div>
-                    <iframe class="IE6Iframe" src="static/publish_authen/saved_resource.html"></iframe>
+                    <iframe class="IE6Iframe" src="${base}/static/publish_authen/saved_resource.html"></iframe>
                     <script type="text/javascript">
                         var haveAddress = "0";  //详细地址，如：门牌号必填、小区楼号单元房间号等
                         function ShowDownAddress() {
@@ -1798,7 +1800,7 @@
                     <!--地图 begin-->
                     <div class="DesMap">
                         <div style="position: relative; background: rgb(252, 249, 242); overflow: hidden;" id="map_canvas" class="amap-container">
-                        <object style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;" type="text/html" data="static/publish_authen/saved_resource(1).html"></object><div class="amap-maps"><div class="amap-drags" style=""><div class="amap-layers" style="transform: translateZ(0px);"><canvas class="amap-layer" width="602" height="440" style="position: absolute; z-index: 0; transform-origin: 301px 220px 0px; transform: scale3d(0.8, 0.8, 1); top: -44px; left: -60px; height: 440px; width: 602px;"></canvas><div class="amap-markers" style="position: absolute; z-index: 120; top: 176px; left: 241px;"><div class="amap-marker" style="top: -18px; left: -15px; z-index: 100; transform: rotate(0deg); transform-origin: 15px 18px 0px; display: block;"><div class="amap-icon" style="position: absolute; overflow: inherit; opacity: 1;"><img src="static/publish_authen/ding_wei_position.png" style="top: 0px; left: 0px;"></div></div></div><canvas class="amap-labels" draggable="false" style="position: absolute; z-index: 99; height: 352px; width: 482px; top: 0px; left: 0px;" width="964" height="704"></canvas></div><div class="amap-overlays" style=""></div></div></div><div style="display: none;"></div><div class="amap-controls"><div class="amap-toolbar" style="left: 10px; top: 10px; visibility: visible;"><div class="amap-pancontrol" style="position: relative; display: none;"><div class="amap-pan-left"></div><div class="amap-pan-top"></div><div class="amap-pan-right"></div><div class="amap-pan-bottom"></div></div><div class="amap-locate" style="position: relative; left: 17px; display: block;"></div><div class="amap-zoomcontrol" style="position: relative; left: 14px;"><div class="amap-zoom-plus"></div><div class="amap-zoom-ruler" style="display: none;"><div class="amap-zoom-mask" style="height: 137px;"></div><div class="amap-zoom-cursor" style="top: 137px;"></div><div class="amap-zoom-labels"><div class="amap-zoom-label-street"></div><div class="amap-zoom-label-city"></div><div class="amap-zoom-label-province"></div><div class="amap-zoom-label-country"></div></div></div><div class="amap-zoom-minus amap-zoom-minus2"></div></div></div><div class="amap-scalecontrol" style="left: 2px; bottom: 20px; visibility: visible;"><div class="amap-scale-text" style="width: 71.0578px;">1000 公里</div><div class="amap-scale-line"><div class="amap-scale-edgeleft"></div><div class="amap-scale-edgeright" style="left: 64.0578px;"></div><div class="amap-scale-middle" style="width: 63.0578px;"></div></div></div></div><a class="amap-logo" href="http://gaode.com/" target="_blank"><img src="static/publish_authen/mapinfo_05.png"></a><div class="amap-copyright" style="display: none;"><!--v1.3.28--> © 2018 AutoNavi <span class="amap-mcode">- GS(2018)1709号</span></div></div>
+                        <object style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;" type="text/html" data="${base}/static/publish_authen/saved_resource(1).html"></object><div class="amap-maps"><div class="amap-drags" style=""><div class="amap-layers" style="transform: translateZ(0px);"><canvas class="amap-layer" width="602" height="440" style="position: absolute; z-index: 0; transform-origin: 301px 220px 0px; transform: scale3d(0.8, 0.8, 1); top: -44px; left: -60px; height: 440px; width: 602px;"></canvas><div class="amap-markers" style="position: absolute; z-index: 120; top: 176px; left: 241px;"><div class="amap-marker" style="top: -18px; left: -15px; z-index: 100; transform: rotate(0deg); transform-origin: 15px 18px 0px; display: block;"><div class="amap-icon" style="position: absolute; overflow: inherit; opacity: 1;"><img src="${base}/static/publish_authen/ding_wei_position.png" style="top: 0px; left: 0px;"></div></div></div><canvas class="amap-labels" draggable="false" style="position: absolute; z-index: 99; height: 352px; width: 482px; top: 0px; left: 0px;" width="964" height="704"></canvas></div><div class="amap-overlays" style=""></div></div></div><div style="display: none;"></div><div class="amap-controls"><div class="amap-toolbar" style="left: 10px; top: 10px; visibility: visible;"><div class="amap-pancontrol" style="position: relative; display: none;"><div class="amap-pan-left"></div><div class="amap-pan-top"></div><div class="amap-pan-right"></div><div class="amap-pan-bottom"></div></div><div class="amap-locate" style="position: relative; left: 17px; display: block;"></div><div class="amap-zoomcontrol" style="position: relative; left: 14px;"><div class="amap-zoom-plus"></div><div class="amap-zoom-ruler" style="display: none;"><div class="amap-zoom-mask" style="height: 137px;"></div><div class="amap-zoom-cursor" style="top: 137px;"></div><div class="amap-zoom-labels"><div class="amap-zoom-label-street"></div><div class="amap-zoom-label-city"></div><div class="amap-zoom-label-province"></div><div class="amap-zoom-label-country"></div></div></div><div class="amap-zoom-minus amap-zoom-minus2"></div></div></div><div class="amap-scalecontrol" style="left: 2px; bottom: 20px; visibility: visible;"><div class="amap-scale-text" style="width: 71.0578px;">1000 公里</div><div class="amap-scale-line"><div class="amap-scale-edgeleft"></div><div class="amap-scale-edgeright" style="left: 64.0578px;"></div><div class="amap-scale-middle" style="width: 63.0578px;"></div></div></div></div><a class="amap-logo" href="http://gaode.com/" target="_blank"><img src="${base}/static/publish_authen/mapinfo_05.png"></a><div class="amap-copyright" style="display: none;"><!--v1.3.28--> © 2018 AutoNavi <span class="amap-mcode">- GS(2018)1709号</span></div></div>
                         <div style="position: relative; background-color: #E5E3DF; overflow: hidden; display: none;" id="map_canvas_google">
                             
                         </div>
@@ -1812,10 +1814,10 @@
                         
                         <div class="map_bag">
                             <div class="map_pos" id="changeMapBythis">
-                                <img src="static/publish_authen/ding_wei_position.png">
+                                <img src="${base}/static/publish_authen/ding_wei_position.png">
                             </div>
                             <div class="map_pos" id="changeMapBythis_En" style="display: none;">
-                                <img src="static/publish_authen/ding_wei_position.png">
+                                <img src="${base}/static/publish_authen/ding_wei_position.png">
                             </div>
                             <p style="width: 53px; margin: 20px 0px 0px 20px; line-height: 16px; color: white;">
                                 点击图标<br>标记位置
@@ -1830,7 +1832,7 @@
                                 请确保位置准确，以免租客因位置问题投诉索赔！
                             </p>
                             <div style="width: 300px; text-align: center; margin-top: 28px;">
-                                <img src="static/publish_authen/ding_wei_position.png">
+                                <img src="${base}/static/publish_authen/ding_wei_position.png">
                             </div>
                         </div>
                         <!--点击图标标记位置 end-->
@@ -2184,7 +2186,7 @@
                     }
                 });
                               </script>
-     <iframe name="hidden_frame" id="hidden_frame" style="display: none" src="static/publish_authen/saved_resource(2).html"></iframe>
+     <iframe name="hidden_frame" id="hidden_frame" style="display: none" src="${base}/static/publish_authen/saved_resource(2).html"></iframe>
     <form id="postImg" enctype="multipart/form-data" action="http://www.youtx.com/room/new/" method="post" target="hidden_frame" style="display:none;">
     <input type="text" id="CloseTime" style="display: none;" value="">
     <div id="listCount" style="display: none;">
@@ -2374,9 +2376,9 @@
     <!--2015-12-10房源地址弹层End-->
     <!--2015-12-02End-->
     
-    <script type="text/javascript" src="static/publish_authen/js"></script>
-    <script src="static/publish_authen/maps" type="text/javascript"></script>
-    <script src="static/publish_authen/MapGaode.js.下载" type="text/javascript"></script>
+    <script type="text/javascript" src="${base}/static/publish_authen/js"></script>
+    <script src="${base}/static/publish_authen/maps" type="text/javascript"></script>
+    <script src="${base}/static/publish_authen/MapGaode.js.下载" type="text/javascript"></script>
     
         </div>
     </div>
@@ -2434,7 +2436,7 @@
       <li class="footer_link_space">|</li>
       <li><a href="http://www.youtx.com/feedback/" target="_blank" rel="nofollow" id="youtx_34">意见反馈</a></li>
       <li class="footer_link_space">|</li>
-      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="static/publish_authen/at.jpg"> <span>youtx.com</span></li>
+      <li class="footer_link_grey footer_link_space" style="margin: 0;">客服热线：400-630-0088，客服邮箱：<span>service</span> <img src="${base}/static/publish_authen/at.jpg"> <span>youtx.com</span></li>
     </ul>
     <ul class="footer_link02">
       <li class="FooterDesktop"><a href="http://www.youtx.com/downloadshortcut/" target="_blank" rel="nofollow">下载桌面游天下</a> | <a href="http://www.youtx.com/mo/" target="_blank" rel="nofollow">手机游天下</a> | <a href="http://www.youtx.com/star/" target="_blank" rel="nofollow">明星房东</a> | <a href="http://www.youtx.com/" target="_blank">日租房</a> | <a href="http://blog.youtx.com/" target="_blank" rel="nofollow">博客</a> | <a href="http://www.youtx.com/jifen/exchange/" target="_blank" rel="nofollow">积分换礼</a> | </li>
@@ -2444,9 +2446,9 @@
     <ul class="FooterNet">
       <li class="FontArial02">Copyright © 2017 Youtx.com, All Rights Reserved<br>
         <a href="http://js.youtx.com/icp.jpg" target="_blank" rel="nofollow" style="font-family:&#39;宋体&#39;">京ICP证041065号</a> <span style="font-family:&#39;宋体&#39;">京公网安备11010602010093号-2</span></li>
-      <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="static/publish_authen/VerisignYoutx.gif" height="35" width="60"></a></li>
-      <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="static/publish_authen/FooterNetPic.gif"></a></li>
-      <li><a target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=e12032211010015160307708&amp;ct=df&amp;pa=318891" rel="nofollow"><img src="static/publish_authen/TrustYoutx.gif" width="100" height="35px"></a></li>
+      <li><a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf%2Fsplash.fdf&amp;sap=&amp;dn=passport.youtx.com&amp;zoneoff=&amp;lang=zh_CN" rel="nofollow"><img src="${base}/static/publish_authen/VerisignYoutx.gif" height="35" width="60"></a></li>
+      <li><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1766253730" rel="nofollow" target="_blank"><img src="${base}/static/publish_authen/FooterNetPic.gif"></a></li>
+      <li><a target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=e12032211010015160307708&amp;ct=df&amp;pa=318891" rel="nofollow"><img src="${base}/static/publish_authen/TrustYoutx.gif" width="100" height="35px"></a></li>
     </ul>
   </div>
 <!--2013-6-26修改-->
@@ -2473,7 +2475,7 @@
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Feb4b7b326a601c545c14e8b6b965e4a0' type='text/javascript'%3E%3C/script%3E"));
-</script><script src="static/publish_authen/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=eb4b7b326a601c545c14e8b6b965e4a0" target="_blank"><img border="0" src="static/publish_authen/21.gif" width="20" height="20"></a>
+</script><script src="${base}/static/publish_authen/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=eb4b7b326a601c545c14e8b6b965e4a0" target="_blank"><img border="0" src="${base}/static/publish_authen/21.gif" width="20" height="20"></a>
 
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -2485,7 +2487,7 @@ var google_conversion_label = "yFTtCPvC6gMQzfb-yQM";
 var google_conversion_value = 0;
 /* ]]> */
 </script>
-<script type="text/javascript" src="static/publish_authen/conversion.js.下载">
+<script type="text/javascript" src="${base}/static/publish_authen/conversion.js.下载">
 </script>
 <noscript>
 &lt;div style="display:inline;"&gt;
@@ -2496,7 +2498,7 @@ var google_conversion_value = 0;
 <script type="text/javascript">
     var bd_cpro_rtid = "nWnknWD";
 </script>
-<script type="text/javascript" src="static/publish_authen/rt.js.下载"></script>
+<script type="text/javascript" src="${base}/static/publish_authen/rt.js.下载"></script>
 <noscript>
 &lt;div style="display:none;"&gt;
 &lt;img height="0" width="0" style="border-style:none;" src="http://eclick.baidu.com/rt.jpg?t=noscript&amp;rtid=nWnknWD" /&gt;
@@ -2505,15 +2507,15 @@ var google_conversion_value = 0;
 </div>
 <!-- ClickTale Bottom part -->
 <div id="ClickTaleDiv" style="display: none;"></div>
-<script src="static/publish_authen/clicktale.js.下载" type="text/javascript"></script><script src="http://s.clicktale.net/WRd.js" type="text/javascript"></script>
+<script src="${base}/static/publish_authen/clicktale.js.下载" type="text/javascript"></script><script src="http://s.clicktale.net/WRd.js" type="text/javascript"></script>
 <script type="text/javascript">
     if (typeof ClickTale == 'function') ClickTale(12600, 0.0005, "www14");
 </script>
 <!-- ClickTale end of Bottom part -->
-<script src="static/publish_authen/Youtx_WebIM_HTML.js.下载" type="text/javascript"></script><script src="static/publish_authen/youtx_mi_query.js.下载" type="text/javascript"></script><script src="static/publish_authen/WebIM.js.下载" type="text/javascript"></script><script src="static/publish_authen/WebIM.Query.js.下载" type="text/javascript"></script>
+<script src="${base}/static/publish_authen/Youtx_WebIM_HTML.js.下载" type="text/javascript"></script><script src="${base}/static/publish_authen/youtx_mi_query.js.下载" type="text/javascript"></script><script src="${base}/static/publish_authen/WebIM.js.下载" type="text/javascript"></script><script src="${base}/static/publish_authen/WebIM.Query.js.下载" type="text/javascript"></script>
 
 <!--尾部2011-9-6修改 end-->  
     
 
 
-<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="static/publish_authen/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="static/publish_authen/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div><div id="TalkBox_Youtx_ID" class="TalkBox" style="display: none;"><div class="Talk  PosRe" id="Talk"><div class="UserMenu" id="UserBox"><div class="UserMain" id="UserM" style="cursor: move;"><ul class="TabHeader" id="UserNr" style="top:0px;"></ul></div><div class="UserScroll" id="UserScroll" style="display: none;"><span class="UserBar" id="UserBar" style="display:block; top:0px;"></span></div></div><div class="Talk_center"><span class="DownArrow" style="display:none;"><img src="static/publish_authen/dowearrow.gif" width="16" height="16"></span><ul class="Yichu" style="display:none;"></ul><div id="TalkBox_Youtx_ID_s" style=" width:480px;height:26px; cursor: move;"><span class="RentName"></span><span class="Chat_min"><img src="static/publish_authen/SIcon.png" width="25" height="25"></span></div><div class="clear"></div><div id="youtx_ch_webim"></div></div><div class="Talk_right"> </div><div class="HouseRe PosAb" style="display:none;"></div></div></div><div style="display:none;"> <ul id="youtx_none_li"></ul><div id="youtx_none_div"></div> </div><div id="house_webim_s" style="display:none;"></div> <div id="soundContainer" style=" width:10px; height:10px ;"><embed id="soundplayer" name="soundplayer" allowscriptaccess="always" wmode="window" src="http://js.youtx.com/profile/message.swf" loop="false" menu="false" quality="high" align="middle" allowfullscreen="true" width="0" height="0" flashvars="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div><div id="OutBox" class="OutBox" style="top: 355px; left: 759.5px;"><div class="OutBoxbg" id="OutBoxbg"></div><a href="http://www.youtx.com/room/new/javascript;;" class="CloseBtn" id="CloseBtn"></a><img id="OutBoxPic" class="OutBoxPic" src="http://www.youtx.com/room/new/" style="top: 0px;"></div><div class="ChatSmall"><div><ul id="ChatSmallUl"><li id="ChatMes" class="ChatMes">短消息（0）</li></ul><div class="ChatMes_C_T"><h2><span class="Mes_h2">短消息</span><span class="Mes_min" title="最小化"></span></h2><p class="All_mes"><a target="blank" href="http://www.youtx.com/profile/User/MailBox/MyMailBox.aspx?type=All">查看全部历史消息&gt;&gt;</a></p><ul class="Mes_main" id="IDUlMes_main"></ul></div></div></div></body></html>
+<div id="feedbackbox" class="feedbackbox"><div class="feedback"><div class="FeedBackColseImg"><img class="FeedBackColse" title="关闭" src="${base}/static/publish_authen/FeedBackClose.gif"></div><a class="feedbackA1" href="http://www.youtx.com/feedback/" target="_blank">意见反馈</a><a href="http://www.youtx.com/mo/" target="_blank"><img src="${base}/static/publish_authen/ewm.png"></a><a class="feedbackA2" href="http://www.youtx.com/mo/" target="_blank">游天下手机客户端<br>扫描或点击下载</a></div></div><div id="TalkBox_Youtx_ID" class="TalkBox" style="display: none;"><div class="Talk  PosRe" id="Talk"><div class="UserMenu" id="UserBox"><div class="UserMain" id="UserM" style="cursor: move;"><ul class="TabHeader" id="UserNr" style="top:0px;"></ul></div><div class="UserScroll" id="UserScroll" style="display: none;"><span class="UserBar" id="UserBar" style="display:block; top:0px;"></span></div></div><div class="Talk_center"><span class="DownArrow" style="display:none;"><img src="${base}/static/publish_authen/dowearrow.gif" width="16" height="16"></span><ul class="Yichu" style="display:none;"></ul><div id="TalkBox_Youtx_ID_s" style=" width:480px;height:26px; cursor: move;"><span class="RentName"></span><span class="Chat_min"><img src="${base}/static/publish_authen/SIcon.png" width="25" height="25"></span></div><div class="clear"></div><div id="youtx_ch_webim"></div></div><div class="Talk_right"> </div><div class="HouseRe PosAb" style="display:none;"></div></div></div><div style="display:none;"> <ul id="youtx_none_li"></ul><div id="youtx_none_div"></div> </div><div id="house_webim_s" style="display:none;"></div> <div id="soundContainer" style=" width:10px; height:10px ;"><embed id="soundplayer" name="soundplayer" allowscriptaccess="always" wmode="window" src="http://js.youtx.com/profile/message.swf" loop="false" menu="false" quality="high" align="middle" allowfullscreen="true" width="0" height="0" flashvars="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div><div id="OutBox" class="OutBox" style="top: 355px; left: 759.5px;"><div class="OutBoxbg" id="OutBoxbg"></div><a href="http://www.youtx.com/room/new/javascript;;" class="CloseBtn" id="CloseBtn"></a><img id="OutBoxPic" class="OutBoxPic" src="http://www.youtx.com/room/new/" style="top: 0px;"></div><div class="ChatSmall"><div><ul id="ChatSmallUl"><li id="ChatMes" class="ChatMes">短消息（0）</li></ul><div class="ChatMes_C_T"><h2><span class="Mes_h2">短消息</span><span class="Mes_min" title="最小化"></span></h2><p class="All_mes"><a target="blank" href="http://www.youtx.com/profile/User/MailBox/MyMailBox.aspx?type=All">查看全部历史消息&gt;&gt;</a></p><ul class="Mes_main" id="IDUlMes_main"></ul></div></div></div></body></html>
